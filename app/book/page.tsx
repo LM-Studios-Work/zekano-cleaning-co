@@ -60,7 +60,7 @@ export default function BookPage() {
               </h1>
               <p className="mt-4 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
                 {isConfirmed 
-                  ? "Thank you for choosing SparkleClean Pro. We'll see you soon!"
+                  ? "Thank you for choosing Zekano Cleaning Co. We'll see you soon!"
                   : "Schedule your cleaning in just a few easy steps. Choose your service, pick a date, and we'll handle the rest."
                 }
               </p>

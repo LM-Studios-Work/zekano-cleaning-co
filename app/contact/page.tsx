@@ -29,8 +29,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    details: "info@sparklecleanpro.com",
-    action: "mailto:info@sparklecleanpro.com",
+    details: "info@zekanocleaningco.com",
+    action: "mailto:info@zekanocleaningco.com",
     actionText: "Email us",
   },
   {
@@ -255,7 +255,7 @@ export default function ContactPage() {
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="SparkleClean Pro Location"
+                      title="Zekano Cleaning Co Location"
                       className="absolute inset-0"
                     />
                   </div>
@@ -287,9 +287,9 @@ export default function ContactPage() {
                       </a>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
-                      <a href="mailto:info@sparklecleanpro.com">
+                      <a href="mailto:info@zekanocleaningco.com">
                         <Mail className="mr-3 h-5 w-5 text-primary" />
-                        Email: info@sparklecleanpro.com
+                        Email: info@zekanocleaningco.com
                       </a>
                     </Button>
                   </CardContent>

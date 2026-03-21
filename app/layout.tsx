@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'SparkleClean Pro | Professional Cleaning Services',
-  description: 'Professional cleaning services for homes and offices. Deep cleaning, standard cleaning, move-in/move-out cleaning, office cleaning, and pest control. Book your cleaning today!',
+  title: 'Zekano Cleaning Co | Professional Cleaning Services',
+  description: 'Professional cleaning services for homes and offices. Deep cleaning, standard house cleaning, move-in/move-out cleaning, office cleaning, and pest control. Book your cleaning today!',
   keywords: ['cleaning services', 'house cleaning', 'office cleaning', 'deep cleaning', 'pest control', 'professional cleaners'],
   generator: 'v0.app',
   icons: {

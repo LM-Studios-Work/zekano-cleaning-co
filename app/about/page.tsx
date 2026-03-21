@@ -9,8 +9,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Target, Heart, Users, Award, CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "About Us | SparkleClean Pro",
-  description: "Learn about SparkleClean Pro - your trusted professional cleaning service with over 10 years of experience serving homes and businesses.",
+  title: "About Us | Zekano Cleaning Co",
+  description: "Learn about Zekano Cleaning Co - your trusted professional cleaning service with over 10 years of experience serving homes and businesses.",
 }
 
 const values = [
@@ -41,7 +41,7 @@ const teamMembers = [
     name: "Jennifer Martinez",
     role: "Founder & CEO",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
-    bio: "With 15 years in the cleaning industry, Jennifer founded SparkleClean Pro to bring professional-grade cleaning to every home.",
+    bio: "With 15 years in the cleaning industry, Jennifer founded Zekano Cleaning Co to bring professional-grade cleaning to every home.",
   },
   {
     name: "David Thompson",
@@ -58,7 +58,7 @@ const teamMembers = [
 ]
 
 const milestones = [
-  { year: "2014", event: "SparkleClean Pro founded with a small team of 3" },
+  { year: "2014", event: "Zekano Cleaning Co founded with a small team of 3" },
   { year: "2016", event: "Expanded to commercial cleaning services" },
   { year: "2018", event: "Reached 1,000 happy customers milestone" },
   { year: "2020", event: "Introduced eco-friendly cleaning products" },
@@ -76,7 +76,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl font-bold text-primary-foreground sm:text-5xl text-balance">
-                About SparkleClean Pro
+                About Zekano Cleaning Co
               </h1>
               <p className="mt-6 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
                 For over a decade, we've been transforming homes and businesses with our professional cleaning services.
@@ -96,7 +96,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    SparkleClean Pro was founded in 2014 by Jennifer Martinez, a passionate entrepreneur who saw a need for reliable, professional cleaning services in her community. What started as a one-woman operation has grown into a trusted team of dedicated cleaning professionals.
+                    Zekano Cleaning Co was founded in 2014 by Jennifer Martinez, a passionate entrepreneur who saw a need for reliable, professional cleaning services in her community. What started as a one-woman operation has grown into a trusted team of dedicated cleaning professionals.
                   </p>
                   <p>
                     Our journey began with a simple belief: everyone deserves to come home to a clean, welcoming space. We understand that life gets busy, and maintaining a spotless home can feel overwhelming. That's where we come in.
@@ -110,7 +110,7 @@ export default function AboutPage() {
                 <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
                   <Image
                     src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                    alt="SparkleClean Pro team"
+                    alt="Zekano Cleaning Co team"
                     fill
                     className="object-cover"
                   />
@@ -151,7 +151,7 @@ export default function AboutPage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Meet Our Leadership</h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                The people behind SparkleClean Pro's success
+                The people behind Zekano Cleaning Co's success
               </p>
             </div>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -260,7 +260,7 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold text-primary-foreground sm:text-4xl text-balance">
-                Ready to Experience the SparkleClean Difference?
+                Ready to Experience the Zekano Difference?
               </h2>
               <p className="mt-4 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
                 Join thousands of satisfied customers who trust us with their homes and businesses.

@@ -8,7 +8,7 @@ import Link from "next/link"
 
 const serviceNames: Record<string, string> = {
   "deep-cleaning": "Deep Cleaning",
-  "standard-cleaning": "Standard Cleaning",
+  "standard-house-cleaning": "Standard Cleaning",
   "move-cleaning": "Move-in/Move-out Cleaning",
   "office-cleaning": "Office Cleaning",
   "pest-control": "Pest Control",
@@ -208,7 +208,7 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
         Need to make changes? Contact us at{" "}
         <a href="tel:+1234567890" className="text-primary hover:underline">(123) 456-7890</a>
         {" "}or{" "}
-        <a href="mailto:info@sparklecleanpro.com" className="text-primary hover:underline">info@sparklecleanpro.com</a>
+        <a href="mailto:info@zekanocleaningco.com" className="text-primary hover:underline">info@zekanocleaningco.com</a>
       </p>
     </div>
   )

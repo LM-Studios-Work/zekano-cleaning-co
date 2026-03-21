@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { CheckCircle2, Sparkles, Home, Building2, Truck, Bug, Wrench, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Our Services | SparkleClean Pro",
+  title: "Our Services | Zekano Cleaning Co",
   description: "Explore our professional cleaning services including deep cleaning, standard house cleaning, move-in/move-out cleaning, office cleaning, and pest control.",
 }
 
@@ -32,7 +32,7 @@ const services = [
     ],
   },
   {
-    id: "standard-cleaning",
+    id: "standard-house-cleaning",
     icon: Home,
     title: "Standard House Cleaning",
     description: "Regular maintenance cleaning to keep your home looking its best. Perfect for weekly, bi-weekly, or monthly cleaning schedules.",

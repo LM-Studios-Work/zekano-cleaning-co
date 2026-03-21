@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
-  title: "Pricing & Packages | SparkleClean Pro",
+  title: "Pricing & Packages | Zekano Cleaning Co",
   description: "View our competitive pricing for cleaning services. Choose from standard, deep cleaning, and premium packages. Get a free quote today!",
 }
 
@@ -22,7 +22,7 @@ const packages = [
   {
     name: "Standard Clean",
     description: "Perfect for regular maintenance cleaning",
-    price: "From $99",
+    price: "From R99",
     frequency: "per visit",
     features: [
       "Dusting and surface cleaning",
@@ -37,7 +37,7 @@ const packages = [
   {
     name: "Deep Clean",
     description: "Comprehensive cleaning for a spotless home",
-    price: "From $199",
+    price: "From R199",
     frequency: "per visit",
     features: [
       "Everything in Standard Clean",
@@ -54,7 +54,7 @@ const packages = [
   {
     name: "Premium Package",
     description: "Ultimate cleaning experience with extras",
-    price: "From $299",
+    price: "From R299",
     frequency: "per visit",
     features: [
       "Everything in Deep Clean",
@@ -72,14 +72,14 @@ const packages = [
 ]
 
 const additionalServices = [
-  { name: "Inside Refrigerator", price: "$35" },
-  { name: "Inside Oven", price: "$35" },
-  { name: "Interior Windows (per window)", price: "$10" },
-  { name: "Laundry (wash & fold)", price: "$25" },
-  { name: "Inside Cabinets", price: "$50" },
-  { name: "Garage Cleaning", price: "$75+" },
-  { name: "Carpet Cleaning (per room)", price: "$50" },
-  { name: "Pest Control Treatment", price: "$150+" },
+  { name: "Inside Refrigerator", price: "R35" },
+  { name: "Inside Oven", price: "R35" },
+  { name: "Interior Windows (per window)", price: "R10" },
+  { name: "Laundry (wash & fold)", price: "R25" },
+  { name: "Inside Cabinets", price: "R50" },
+  { name: "Garage Cleaning", price: "R75+" },
+  { name: "Carpet Cleaning (per room)", price: "R50" },
+  { name: "Pest Control Treatment", price: "R150+" },
 ]
 
 const faqs = [
