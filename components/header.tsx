@@ -81,18 +81,12 @@ export function Header() {
           </button>
         </div>
 
-        <div className="hidden lg:flex lg:gap-x-4">
+        <div className="hidden lg:flex lg:gap-x-8">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className={`text-sm font-medium px-3 py-2 rounded-lg transition-all duration-300 ${
-                item.name === "Services" || item.name === "Book Online"
-                  ? "bg-[#6fbf00] text-white hover:bg-[#5ca000]"
-                  : scrolled
-                  ? "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
-                  : "text-white/90 hover:text-white hover:bg-white/10"
-              }`}
+              className={`text-sm font-medium transition-colors duration-300 ${scrolled ? "text-gray-700 hover:text-gray-900" : "text-white/90 hover:text-white"}`}
             >
               {item.name}
             </Link>
@@ -132,18 +126,13 @@ export function Header() {
               <div className="-my-6 divide-y divide-white/10">
                 <div className="space-y-1 py-6">
                   {navigation.map((item) => {
-                    const isHighlighted = item.name === "Services" || item.name === "Book Online"
                     const isActive = pathname === item.href
                     return (
                       <Link
                         key={item.name}
                         href={item.href}
                         className={`block rounded-lg px-3 py-2 text-base font-medium ${
-                          isHighlighted
-                            ? "bg-[#6fbf00] text-white"
-                            : isActive
-                            ? "text-lime-400 hover:bg-white/10"
-                            : "text-white/80 hover:text-white hover:bg-white/10"
+                          isActive ? "text-lime-400" : "text-white/80 hover:text-white hover:bg-white/10"
                         }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
