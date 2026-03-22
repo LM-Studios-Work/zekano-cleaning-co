@@ -124,7 +124,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans), 'Poppins', sans-serif;
+    font-family: var(--font-sans), 'Roboto', sans-serif;
   }
   /* Restore circles explicitly */
   .rounded-full {
