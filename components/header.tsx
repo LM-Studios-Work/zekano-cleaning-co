@@ -86,7 +86,7 @@ export function Header() {
             <Link
               key={item.name}
               href={item.href}
-              className={`text-sm font-medium transition-colors duration-300 ${scrolled ? "text-gray-700 hover:text-gray-900" : "text-white/90 hover:text-white"}`}
+              className={`text-sm font-medium transition-colors duration-300 !bg-transparent ${scrolled ? "text-gray-700 hover:text-gray-900" : "text-white/90 hover:text-white"}`}
             >
               {item.name}
             </Link>
