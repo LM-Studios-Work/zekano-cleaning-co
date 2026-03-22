@@ -52,7 +52,7 @@ export function WhyChooseUs() {
               <div className="grid grid-cols-2 gap-4">
                 {stats.map((stat) => (
                   <div key={stat.label} className="text-center">
-                    <div className="text-2xl lg:text-3xl font-bold" style={{ color: "#1B9FD9" }}>{stat.value}</div>
+                    <div className="text-2xl lg:text-3xl font-bold" style={{ color: "#1A9AD2" }}>{stat.value}</div>
                     <div className="text-xs lg:text-sm text-muted-foreground font-medium">{stat.label}</div>
                   </div>
                 ))}
@@ -75,7 +75,7 @@ export function WhyChooseUs() {
                 const Icon = feature.icon
                 return (
                   <div key={feature.title} className="flex gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg" style={{ color: "#1B9FD9" }}>
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg" style={{ color: "#1A9AD2" }}>
                       <Icon className="w-8 h-8" />
                     </div>
                     <div>

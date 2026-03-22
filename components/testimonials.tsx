@@ -47,7 +47,7 @@ export function Testimonials() {
                   "{testimonial.content}"
                 </blockquote>
                 <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-full flex items-center justify-center font-bold text-white" style={{ backgroundColor: "#1B9FD9" }}>
+                  <div className="h-12 w-12 rounded-full flex items-center justify-center font-bold text-white" style={{ backgroundColor: "#1A9AD2" }}>
                     <span className="text-sm">
                       {testimonial.author.split(' ').map(n => n[0]).join('')}
                     </span>

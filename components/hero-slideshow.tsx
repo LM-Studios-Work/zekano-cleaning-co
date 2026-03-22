@@ -146,7 +146,7 @@ export function HeroSlideshow() {
       </div>
 
       {/* Hotline Information Box - hidden on mobile, shown on desktop inside hero */}
-      <div className="hidden md:block absolute right-6 lg:right-8 bottom-16 lg:bottom-32 z-30 rounded-lg p-6 shadow-2xl w-72 lg:w-80" style={{ backgroundColor: "#1B9FD9" }}>
+      <div className="hidden md:block absolute right-6 lg:right-8 bottom-16 lg:bottom-32 z-30 rounded-lg p-6 shadow-2xl w-72 lg:w-80" style={{ backgroundColor: "#1A9AD2" }}>
         <p className="text-white text-xs uppercase tracking-widest font-bold mb-3">Get Information:</p>
         <a href="tel:+27844020733" className="flex items-center gap-3 text-white hover:text-blue-100 transition-colors">
           <Phone className="h-6 w-6 flex-shrink-0" />
@@ -210,7 +210,7 @@ export function HeroSlideshow() {
 
     {/* Mobile Hotline Box - Below hero, visible on mobile only */}
     <div className="md:hidden relative z-20 -mt-6 mx-[8%]">
-      <div className="rounded-xl p-5 text-center shadow-xl" style={{ backgroundColor: "#1B9FD9" }}>
+      <div className="rounded-xl p-5 text-center shadow-xl" style={{ backgroundColor: "#1A9AD2" }}>
         <p className="text-white/80 text-xs uppercase tracking-widest font-bold mb-1">Hotline</p>
         <p className="text-white text-base font-bold mb-2">Get Information:</p>
         <a href="tel:+27844020733" className="inline-flex items-center gap-3 text-white">
