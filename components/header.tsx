@@ -30,7 +30,7 @@ export function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}>
       {/* Top Tier - Social icons left, Address + Phone right */}
-      <div className={`transition-colors duration-300 ${scrolled ? "bg-gray-800" : "bg-white/10 backdrop-blur-sm"}`}>
+      <div className={`transition-colors duration-300 border-b ${scrolled ? "bg-gray-800/95 border-white/10" : "bg-black/40 backdrop-blur-sm border-white/10"}`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between h-12">
           {/* Left - Social Icons */}
           <div className="flex items-center gap-5">
