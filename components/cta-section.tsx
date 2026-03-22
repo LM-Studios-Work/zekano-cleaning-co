@@ -23,11 +23,11 @@ export function CTASection() {
               Book Online
             </Link>
             <a
-              href="tel:+27084402"
+              href="tel:+27844020733"
               className="inline-flex items-center justify-center gap-2 rounded px-8 py-3 text-sm font-medium transition-colors duration-200 border border-gray-300 text-foreground hover:bg-gray-50"
             >
               <Phone className="h-5 w-5" />
-              Call 084 402
+              Call 0844 020 733
             </a>
           </div>
           <p className="mt-6 text-sm text-muted-foreground">

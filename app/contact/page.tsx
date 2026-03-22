@@ -22,8 +22,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: "084 402",
-    action: "tel:+27084402",
+    details: "0844 020 733",
+    action: "tel:+27844020733",
     actionText: "Call us",
   },
   {
@@ -191,7 +191,7 @@ export default function ContactPage() {
                           <Input
                             id="phone"
                             type="tel"
-                            placeholder="084 402 XXXX"
+                            placeholder="0844 020 733 XXXX"
                             value={formState.phone}
                             onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                           />
@@ -247,14 +247,14 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <Button variant="outline" className="w-full justify-start" asChild>
-                      <a href="tel:+27084402">
+                      <a href="tel:+27844020733">
                         <Phone className="mr-3 h-5 w-5 text-primary" />
-                        Call Us: 084 402
+                        Call Us: 0844 020 733
                       </a>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <a
-                        href="https://wa.me/27084402"
+                        href="https://wa.me/27844020733"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
