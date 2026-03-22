@@ -123,7 +123,7 @@ export function ServicesPreview() {
                 const Icon = service.icon
                 return (
                   <div key={service.title} className="flex flex-col">
-                    <div className="mb-6 flex h-16 w-16 items-center justify-center" style={{ color: "#1f9fd9" }}>
+                    <div className="mb-6 flex h-16 w-16 items-center justify-center" style={{ color: "#1B9FD9" }}>
                       <Icon />
                     </div>
                     <h3 className="font-bold text-foreground text-base mb-3">{service.title}</h3>
