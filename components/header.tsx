@@ -1,8 +1,9 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X, Phone, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navigation = [
@@ -15,6 +16,7 @@ const navigation = [
 ]
 
 export function Header() {
+  const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -68,7 +70,6 @@ export function Header() {
             <Link href="/book">Book Now</Link>
           </Button>
         </div>
-      </div>
       </nav>
 
       {/* Mobile menu */}

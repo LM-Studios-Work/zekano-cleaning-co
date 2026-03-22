@@ -65,27 +65,28 @@ export function HeroSlideshow() {
       <div className="relative z-10 flex h-full items-center">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="max-w-2xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
+            <p className="mb-4 text-sm font-medium uppercase tracking-widest text-white/85">
               Welcome to Our Site
             </p>
-            <h1 className="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-tight">
-              The Best Help in<br />Cleaning the House
+            <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl leading-tight">
+              The Best Help in<br />
+              <span style={{ color: "#6fbf00" }}>Cleaning</span> the House
             </h1>
-            <p className="mt-6 text-base text-white/75 leading-relaxed max-w-lg">
+            <p className="mt-6 text-base text-white/80 leading-relaxed max-w-lg font-normal">
               Experience the difference professional cleaning makes. From deep cleaning to regular maintenance, we bring sparkle to every corner of your space.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               {/* White outline button */}
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded px-7 py-3 text-sm font-semibold text-white border border-white/70 hover:bg-white hover:text-gray-900 transition-colors duration-200"
+                className="inline-flex items-center justify-center rounded px-8 py-3 text-sm font-medium text-white border border-white/70 hover:bg-white hover:text-gray-900 transition-colors duration-200"
               >
                 Read More
               </Link>
-              {/* Lime green solid button */}
+              {/* Green solid button */}
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center gap-2 rounded px-7 py-3 text-sm font-semibold text-white transition-colors duration-200"
+                className="inline-flex items-center justify-center gap-2 rounded px-8 py-3 text-sm font-medium text-white transition-colors duration-200"
                 style={{ backgroundColor: "#6fbf00" }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#5ea800")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#6fbf00")}

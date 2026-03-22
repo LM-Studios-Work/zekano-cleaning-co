@@ -48,8 +48,10 @@ export function ServicesPreview() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center mb-12">
           <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">What We Offer</span>
-          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">Our Services</h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">
+            Our <span style={{ color: "#6fbf00" }}>Services</span>
+          </h2>
+          <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             From regular house cleaning to specialized services, we have everything you need for a spotless space.
           </p>
         </div>
@@ -58,16 +60,17 @@ export function ServicesPreview() {
           {services.map((service) => (
             <Card key={service.title} className="group hover:shadow-lg transition-shadow duration-300 border-border">
               <CardHeader>
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg" style={{ backgroundColor: "rgba(31, 159, 217, 0.1)", color: "#1f9fd9" }}>
                   <service.icon className="h-6 w-6" />
                 </div>
-                <CardTitle className="text-xl text-card-foreground">{service.title}</CardTitle>
+                <CardTitle className="text-lg font-bold text-foreground">{service.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-base mb-4">{service.description}</CardDescription>
+                <CardDescription className="text-sm text-muted-foreground mb-4 leading-relaxed">{service.description}</CardDescription>
                 <Link 
                   href={service.href} 
-                  className="text-sm font-medium text-primary hover:underline inline-flex items-center gap-1"
+                  className="text-sm font-medium hover:underline inline-flex items-center gap-1"
+                  style={{ color: "#1f9fd9" }}
                 >
                   Learn more
                   <span aria-hidden="true">&rarr;</span>
@@ -78,9 +81,15 @@ export function ServicesPreview() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button size="lg" asChild>
-            <Link href="/services">View All Services</Link>
-          </Button>
+          <Link 
+            href="/services" 
+            className="inline-flex items-center justify-center rounded px-8 py-3 text-sm font-medium text-white transition-colors duration-200"
+            style={{ backgroundColor: "#6fbf00" }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#5ea800")}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#6fbf00")}
+          >
+            View All Services
+          </Link>
         </div>
       </div>
     </section>
