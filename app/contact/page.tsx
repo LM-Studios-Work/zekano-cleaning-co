@@ -22,7 +22,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: "0844 020 733",
+    details: "084 402 0733",
     action: "tel:+27844020733",
     actionText: "Call us",
   },
@@ -76,7 +76,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main className="pt-32">
         {/* Hero Section */}
         <section className="bg-primary py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -191,7 +191,7 @@ export default function ContactPage() {
                           <Input
                             id="phone"
                             type="tel"
-                            placeholder="0844 020 733 XXXX"
+                            placeholder="084 402 0733 XXXX"
                             value={formState.phone}
                             onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                           />
@@ -249,7 +249,7 @@ export default function ContactPage() {
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <a href="tel:+27844020733">
                         <Phone className="mr-3 h-5 w-5 text-primary" />
-                        Call Us: 0844 020 733
+                        Call Us: 084 402 0733
                       </a>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>

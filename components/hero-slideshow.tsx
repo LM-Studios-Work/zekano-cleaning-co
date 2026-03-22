@@ -97,11 +97,11 @@ export function HeroSlideshow() {
       </div>
 
       {/* Hotline Information Box - Positioned to Extend Beyond Hero */}
-      <div className="absolute right-6 lg:right-8 bottom-16 lg:bottom-32 z-30 bg-blue-500 rounded-lg p-6 shadow-2xl w-72 lg:w-80">
+      <div className="absolute right-6 lg:right-8 bottom-16 lg:bottom-32 z-30 rounded-lg p-6 shadow-2xl w-72 lg:w-80" style={{ backgroundColor: "#1B9FD9" }}>
         <p className="text-white text-xs uppercase tracking-widest font-bold mb-3">Get Information:</p>
         <a href="tel:+27844020733" className="flex items-center gap-3 text-white hover:text-blue-100 transition-colors">
           <Phone className="h-6 w-6 flex-shrink-0" />
-          <span className="text-2xl font-bold">0844 020 733</span>
+          <span className="text-2xl font-bold">084 402 0733</span>
         </a>
       </div>
 

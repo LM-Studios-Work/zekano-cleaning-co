@@ -61,7 +61,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main className="pt-32">
         {/* Hero Section */}
         <section className="bg-primary py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
