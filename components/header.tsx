@@ -83,14 +83,9 @@ export function Header() {
             </div>
 
             {/* Phone */}
-            <div className="flex items-center gap-3">
-              <span className="flex items-center justify-center h-9 w-9 rounded-full border-2 border-[#6fbf00] text-[#6fbf00]">
-                <i className="fa-solid fa-phone text-sm"></i>
-              </span>
-              <a href="tel:+27844020733" className="text-base font-bold hover:text-[#6fbf00] transition-colors text-white">
-                084 402 0733
-              </a>
-            </div>
+            <a href="tel:+27844020733" className="text-sm md:text-base font-semibold hover:text-[#6fbf00] transition-colors text-white">
+              084 402 0733
+            </a>
           </div>
         </div>
       </div>
