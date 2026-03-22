@@ -39,22 +39,27 @@ export function Header() {
   }, [mobileMenuOpen, desktopPanelOpen])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-lg" : ""}`}>
       {/* Top Tier - Social icons left, Address + Phone right */}
-      <div className={`transition-colors duration-300 border-b ${scrolled ? "bg-gray-800/90 border-white/10" : "bg-black/32 backdrop-blur-sm border-white/10"}`}>
+      {/* Hides on scroll for a cleaner compact header */}
+      <div className={`transition-all duration-300 border-b overflow-hidden ${
+        scrolled
+          ? "h-0 opacity-0 border-transparent"
+          : "h-12 opacity-100 bg-black/32 backdrop-blur-sm border-white/10"
+      }`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between h-12">
           {/* Left - Social Icons */}
           <div className="flex items-center gap-5">
-            <a href="https://twitter.com" className={`transition-colors hover:opacity-100 ${scrolled ? "text-white/70 hover:text-white" : "text-white/80 hover:text-white"}`} title="Twitter">
+            <a href="https://twitter.com" className="text-white/80 hover:text-white transition-colors" title="Twitter">
               <i className="fa-brands fa-twitter text-base"></i>
             </a>
-            <a href="https://facebook.com" className={`transition-colors hover:opacity-100 ${scrolled ? "text-white/70 hover:text-white" : "text-white/80 hover:text-white"}`} title="Facebook">
+            <a href="https://facebook.com" className="text-white/80 hover:text-white transition-colors" title="Facebook">
               <i className="fa-brands fa-facebook-f text-base"></i>
             </a>
-            <a href="https://instagram.com" className={`transition-colors hover:opacity-100 ${scrolled ? "text-white/70 hover:text-white" : "text-white/80 hover:text-white"}`} title="Instagram">
+            <a href="https://instagram.com" className="text-white/80 hover:text-white transition-colors" title="Instagram">
               <i className="fa-brands fa-instagram text-base"></i>
             </a>
-            <a href="https://youtube.com" className={`transition-colors hover:opacity-100 ${scrolled ? "text-white/70 hover:text-white" : "text-white/80 hover:text-white"}`} title="YouTube">
+            <a href="https://youtube.com" className="text-white/80 hover:text-white transition-colors" title="YouTube">
               <i className="fa-brands fa-youtube text-base"></i>
             </a>
           </div>
@@ -68,7 +73,7 @@ export function Header() {
               </span>
               <div className="text-sm leading-snug">
                 <span className="block font-medium text-white">Zekano Cleaning Co</span>
-                <span className={`block text-xs ${scrolled ? "text-white/60" : "text-white/70"}`}>Johannesburg, South Africa</span>
+                <span className="block text-xs text-white/70">Johannesburg, South Africa</span>
               </div>
             </div>
 
@@ -86,7 +91,11 @@ export function Header() {
       </div>
 
       {/* Bottom Tier - Logo, Navigation, Search/Menu */}
-      <nav className={`transition-colors duration-300 ${scrolled ? "bg-gray-900/90 shadow-lg" : "bg-black/32 backdrop-blur-sm"}`}>
+      <nav className={`transition-all duration-300 ${
+        scrolled
+          ? "bg-white shadow-md"
+          : "bg-black/32 backdrop-blur-sm"
+      }`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
@@ -98,21 +107,27 @@ export function Header() {
               className="h-12 w-12 object-contain"
             />
             <div className="flex flex-col">
-              <span className="text-2xl font-extrabold leading-none tracking-tight text-white">
+              <span className={`text-2xl font-extrabold leading-none tracking-tight transition-colors duration-300 ${
+                scrolled ? "text-gray-800" : "text-white"
+              }`}>
                 Zekano
               </span>
-              <span className="text-xs font-medium text-white/60 tracking-wide">Cleaning services</span>
+              <span className={`text-xs font-medium tracking-wide transition-colors duration-300 ${
+                scrolled ? "text-gray-400" : "text-white/60"
+              }`}>Cleaning services</span>
             </div>
           </Link>
 
           {/* Mobile menu button */}
           <div className="flex lg:hidden items-center gap-3">
-            <button className="text-white/70 hover:text-white transition-colors p-2">
+            <button className={`transition-colors p-2 ${
+              scrolled ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"
+            }`}>
               <i className="fa-solid fa-magnifying-glass text-lg"></i>
             </button>
             <button
               type="button"
-              className="text-white p-2.5"
+              className={`p-2.5 transition-colors ${scrolled ? "text-gray-800" : "text-white"}`}
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -131,7 +146,9 @@ export function Header() {
                   className={`relative text-base font-medium px-5 py-6 transition-colors duration-200 ${
                     isActive
                       ? "text-[#6fbf00]"
-                      : "text-white/80 hover:text-white"
+                      : scrolled
+                        ? "text-gray-600 hover:text-gray-900"
+                        : "text-white/80 hover:text-white"
                   }`}
                 >
                   {item.name}
@@ -145,12 +162,16 @@ export function Header() {
 
           {/* Right side - Search + Hamburger with divider */}
           <div className="hidden lg:flex lg:items-center lg:gap-x-4">
-            <div className="h-6 w-px bg-white/20" aria-hidden="true" />
-            <button className="text-white/70 hover:text-white transition-colors p-2">
+            <div className={`h-6 w-px ${scrolled ? "bg-gray-200" : "bg-white/20"}`} aria-hidden="true" />
+            <button className={`transition-colors p-2 ${
+              scrolled ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"
+            }`}>
               <i className="fa-solid fa-magnifying-glass text-lg"></i>
             </button>
             <button
-              className="text-white/70 hover:text-white transition-colors p-2"
+              className={`transition-colors p-2 ${
+                scrolled ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"
+              }`}
               onClick={() => setDesktopPanelOpen(true)}
             >
               <i className="fa-solid fa-bars text-lg"></i>
