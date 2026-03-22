@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Phone, Calendar } from "lucide-react"
 
 export function CTASection() {
@@ -11,10 +10,10 @@ export function CTASection() {
             Ready for a <span style={{ color: "#6fbf00" }}>Spotless</span> Space?
           </h2>
           <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Book your cleaning today and experience the Zekano Cleaning Co difference. First-time customers get 15% off their first cleaning!
+            Book your cleaning today and experience the Zekano Cleaning Co difference. We bring the right team, the right products, and the attention to detail your space deserves.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-            <Link 
+            <Link
               href="/book"
               className="inline-flex items-center justify-center gap-2 rounded px-8 py-3 text-sm font-medium text-white transition-colors duration-200"
               style={{ backgroundColor: "#6fbf00" }}

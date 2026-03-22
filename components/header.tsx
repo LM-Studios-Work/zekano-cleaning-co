@@ -20,6 +20,8 @@ export function Header() {
   const [desktopPanelOpen, setDesktopPanelOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
+  const isHomePage = pathname === "/"
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 80)
@@ -38,12 +40,15 @@ export function Header() {
     return () => { document.body.style.overflow = "" }
   }, [mobileMenuOpen, desktopPanelOpen])
 
+  // On non-home pages, always use "scrolled" (white) style
+  const useWhiteStyle = !isHomePage || scrolled
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "shadow-lg" : ""}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${useWhiteStyle ? "shadow-lg" : ""}`}>
       {/* Top Tier - Social icons left, Address + Phone right */}
       {/* Hides on scroll for a cleaner compact header */}
       <div className={`transition-all duration-300 border-b overflow-hidden ${
-        scrolled
+        useWhiteStyle
           ? "h-0 opacity-0 border-transparent"
           : "h-12 opacity-100 bg-black/32 backdrop-blur-sm border-white/10"
       }`}>
@@ -92,8 +97,8 @@ export function Header() {
 
       {/* Bottom Tier - Logo, Navigation, Search/Menu */}
       <nav className={`transition-all duration-300 ${
-        scrolled
-          ? "bg-white shadow-md"
+        useWhiteStyle
+          ? "bg-white/95 backdrop-blur-sm shadow-md"
           : "bg-black/32 backdrop-blur-sm"
       }`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between h-20">
@@ -108,12 +113,12 @@ export function Header() {
             />
             <div className="flex flex-col">
               <span className={`text-2xl font-extrabold leading-none tracking-tight transition-colors duration-300 ${
-                scrolled ? "text-gray-800" : "text-white"
+                useWhiteStyle ? "text-gray-800" : "text-white"
               }`}>
                 Zekano
               </span>
               <span className={`text-xs font-medium tracking-wide transition-colors duration-300 ${
-                scrolled ? "text-gray-400" : "text-white/60"
+                useWhiteStyle ? "text-gray-400" : "text-white/60"
               }`}>Cleaning services</span>
             </div>
           </Link>
@@ -121,13 +126,13 @@ export function Header() {
           {/* Mobile menu button */}
           <div className="flex lg:hidden items-center gap-3">
             <button className={`transition-colors p-2 ${
-              scrolled ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"
+              useWhiteStyle ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"
             }`}>
               <i className="fa-solid fa-magnifying-glass text-lg"></i>
             </button>
             <button
               type="button"
-              className={`p-2.5 transition-colors ${scrolled ? "text-gray-800" : "text-white"}`}
+              className={`p-2.5 transition-colors ${useWhiteStyle ? "text-gray-800" : "text-white"}`}
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -146,7 +151,7 @@ export function Header() {
                   className={`relative text-base font-medium px-5 py-6 transition-colors duration-200 ${
                     isActive
                       ? "text-[#6fbf00]"
-                      : scrolled
+                      : useWhiteStyle
                         ? "text-gray-600 hover:text-gray-900"
                         : "text-white/80 hover:text-white"
                   }`}
@@ -162,15 +167,15 @@ export function Header() {
 
           {/* Right side - Search + Hamburger with divider */}
           <div className="hidden lg:flex lg:items-center lg:gap-x-4">
-            <div className={`h-6 w-px ${scrolled ? "bg-gray-200" : "bg-white/20"}`} aria-hidden="true" />
+            <div className={`h-6 w-px ${useWhiteStyle ? "bg-gray-200" : "bg-white/20"}`} aria-hidden="true" />
             <button className={`transition-colors p-2 ${
-              scrolled ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"
+              useWhiteStyle ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"
             }`}>
               <i className="fa-solid fa-magnifying-glass text-lg"></i>
             </button>
             <button
               className={`transition-colors p-2 ${
-                scrolled ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"
+                useWhiteStyle ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"
               }`}
               onClick={() => setDesktopPanelOpen(true)}
             >

@@ -57,10 +57,10 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000))
-    
+
     setIsSubmitting(false)
     setIsSubmitted(true)
     setFormState({
@@ -76,29 +76,29 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="pt-32">
-        {/* Hero Section */}
-        <section className="bg-primary py-16 lg:py-24">
+      <main className="pt-24">
+        {/* Page Title - Simple text, no blue wall */}
+        <section className="py-12 lg:py-16 bg-background">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-primary-foreground sm:text-5xl text-balance">
-                Contact Us
-              </h1>
-              <p className="mt-6 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-                Have questions or ready to book? We'd love to hear from you. Reach out anytime!
-              </p>
-            </div>
+            <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#6fbf00" }}>Get In Touch</span>
+            <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
+              Contact <span style={{ color: "#1A9AD2" }}>Us</span>
+            </h1>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
+              Have a question or ready to book? Drop us a message, give us a call, or reach out on WhatsApp.
+            </p>
+            <div className="mt-4 h-1 w-24 bg-gray-300"></div>
           </div>
         </section>
 
         {/* Contact Info Cards */}
-        <section className="py-16 bg-background">
+        <section className="py-16 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {contactInfo.map((info) => (
                 <Card key={info.title} className="text-center border-border">
                   <CardContent className="pt-6">
-                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(26, 154, 210, 0.1)", color: "#1A9AD2" }}>
                       <info.icon className="h-6 w-6" />
                     </div>
                     <h3 className="font-semibold text-card-foreground">{info.title}</h3>
@@ -106,7 +106,8 @@ export default function ContactPage() {
                     {info.action && (
                       <a
                         href={info.action}
-                        className="mt-3 inline-block text-sm font-medium text-primary hover:underline"
+                        className="mt-3 inline-block text-sm font-medium hover:underline"
+                        style={{ color: "#6fbf00" }}
                         target={info.action.startsWith("http") ? "_blank" : undefined}
                         rel={info.action.startsWith("http") ? "noopener noreferrer" : undefined}
                       >
@@ -120,8 +121,8 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Contact Form & Map */}
-        <section className="py-16 lg:py-24 bg-card">
+        {/* Contact Form & Quick Contact */}
+        <section className="py-16 lg:py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
@@ -136,15 +137,15 @@ export default function ContactPage() {
                   <CardContent>
                     {isSubmitted ? (
                       <div className="text-center py-8">
-                        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600">
+                        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(111, 191, 0, 0.1)", color: "#6fbf00" }}>
                           <Send className="h-8 w-8" />
                         </div>
                         <h3 className="text-xl font-semibold text-foreground">Message Sent!</h3>
                         <p className="mt-2 text-muted-foreground">
                           Thank you for reaching out. We'll get back to you soon.
                         </p>
-                        <Button 
-                          className="mt-6" 
+                        <Button
+                          className="mt-6"
                           variant="outline"
                           onClick={() => setIsSubmitted(false)}
                         >
@@ -191,14 +192,14 @@ export default function ContactPage() {
                           <Input
                             id="phone"
                             type="tel"
-                            placeholder="084 402 0733 XXXX"
+                            placeholder="084 XXX XXXX"
                             value={formState.phone}
                             onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                           />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="service">Service Interested In</Label>
-                          <Select 
+                          <Select
                             value={formState.service}
                             onValueChange={(value) => setFormState({ ...formState, service: value })}
                           >
@@ -237,7 +238,6 @@ export default function ContactPage() {
 
               {/* Quick Contact */}
               <div className="space-y-8">
-                {/* Quick Actions */}
                 <Card className="border-border">
                   <CardHeader>
                     <CardTitle className="text-card-foreground">Quick Contact</CardTitle>
@@ -248,7 +248,7 @@ export default function ContactPage() {
                   <CardContent className="space-y-4">
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <a href="tel:+27844020733">
-                        <Phone className="mr-3 h-5 w-5 text-primary" />
+                        <Phone className="mr-3 h-5 w-5" style={{ color: "#1A9AD2" }} />
                         Call Us: 084 402 0733
                       </a>
                     </Button>
@@ -264,7 +264,7 @@ export default function ContactPage() {
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <a href="mailto:info@zekanocleaningco.com">
-                        <Mail className="mr-3 h-5 w-5 text-primary" />
+                        <Mail className="mr-3 h-5 w-5" style={{ color: "#1A9AD2" }} />
                         Email: info@zekanocleaningco.com
                       </a>
                     </Button>
