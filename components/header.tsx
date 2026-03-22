@@ -28,10 +28,10 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-gray-900/90 backdrop-blur-sm shadow-lg" : "bg-black/20 backdrop-blur-[2px]"
+        scrolled ? "bg-gray-900/95 backdrop-blur-sm shadow-lg" : "bg-black/55 backdrop-blur-[3px]"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         {/* Logo */}
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
