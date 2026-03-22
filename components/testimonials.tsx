@@ -28,8 +28,8 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center mb-12">
           <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Testimonials</span>
-          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">What Our Customers Say</h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">What Our <span style={{ color: "#6fbf00" }}>Customers</span> Say</h2>
+          <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Don't just take our word for it. Here's what our satisfied customers have to say about our services.
           </p>
         </div>
@@ -43,18 +43,18 @@ export function Testimonials() {
                     <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <blockquote className="text-foreground leading-relaxed mb-6">
+                <blockquote className="text-foreground leading-relaxed mb-6 text-sm">
                   "{testimonial.content}"
                 </blockquote>
                 <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-lg font-semibold text-primary">
+                  <div className="h-12 w-12 rounded-full flex items-center justify-center font-bold text-white" style={{ backgroundColor: "#1f9fd9" }}>
+                    <span className="text-sm">
                       {testimonial.author.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
                   <div>
-                    <div className="font-semibold text-foreground">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                    <div className="font-bold text-foreground text-sm">{testimonial.author}</div>
+                    <div className="text-xs text-muted-foreground">{testimonial.role}</div>
                   </div>
                 </div>
               </CardContent>
