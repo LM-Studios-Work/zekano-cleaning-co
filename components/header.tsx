@@ -117,6 +117,7 @@ export function Header() {
             Book Now
           </Link>
         </div>
+      </div>
       </nav>
 
       {/* Mobile menu */}
