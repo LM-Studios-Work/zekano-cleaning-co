@@ -55,8 +55,8 @@ export function Header() {
           {/* Right - Contact Info */}
           <div className={`flex items-center gap-6 transition-colors duration-300 ${scrolled ? "text-gray-700" : "text-white/80"}`}>
             <div className="hidden sm:flex items-center gap-1">
-              <Phone className="h-3 w-3" style={{ color: "#6fbf00" }} />
-              <a href="tel:+27084402" className="hover:text-green-500 transition-colors">084 402</a>
+              <Phone className="h-3 w-3" />
+              <a href="tel:+27844020733" className="hover:text-white transition-colors">0844 020 733</a>
             </div>
           </div>
         </div>
@@ -142,14 +142,13 @@ export function Header() {
                   })}
                 </div>
                 <div className="py-6 space-y-4">
-                  <a href="tel:+27084402" className="flex items-center gap-2 text-sm text-white/70">
-                    <Phone className="h-4 w-4 text-lime-500" />
-                    084 402
+                  <a href="tel:+27844020733" className="flex items-center gap-2 text-sm text-white/70">
+                    <Phone className="h-4 w-4" />
+                    0844 020 733
                   </a>
                   <Link
                     href="/book"
-                    className="block w-full rounded px-5 py-2.5 text-center text-sm font-semibold text-white"
-                    style={{ backgroundColor: "#6fbf00" }}
+                    className="block w-full rounded px-5 py-2.5 text-center text-sm font-semibold text-white bg-gray-700 hover:bg-gray-600"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Book Now
