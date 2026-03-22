@@ -3,7 +3,8 @@
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X, MapPin, Phone } from "lucide-react"
+import { Twitter, Facebook, Instagram, Youtube } from "lucide-react"
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -31,12 +32,46 @@ export function Header() {
         scrolled ? "bg-gray-900/95 backdrop-blur-sm shadow-lg" : "bg-black/55 backdrop-blur-[3px]"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
+      {/* Top bar: social icons + address + phone */}
+      <div className="border-b border-white/10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 lg:px-8">
+          {/* Social icons */}
+          <div className="flex items-center gap-3">
+            <a href="#" aria-label="Twitter" className="text-white/60 hover:text-white transition-colors">
+              <Twitter className="h-3.5 w-3.5" />
+            </a>
+            <a href="#" aria-label="Facebook" className="text-white/60 hover:text-white transition-colors">
+              <Facebook className="h-3.5 w-3.5" />
+            </a>
+            <a href="#" aria-label="Instagram" className="text-white/60 hover:text-white transition-colors">
+              <Instagram className="h-3.5 w-3.5" />
+            </a>
+            <a href="#" aria-label="YouTube" className="text-white/60 hover:text-white transition-colors">
+              <Youtube className="h-3.5 w-3.5" />
+            </a>
+          </div>
+
+          {/* Address + Phone */}
+          <div className="hidden md:flex items-center gap-6 text-xs text-white/70">
+            <span className="flex items-center gap-1.5">
+              <MapPin className="h-3.5 w-3.5 text-lime-500" />
+              123 Clean Street, Nashville, TN 37201
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Phone className="h-3.5 w-3.5 text-lime-500" />
+              (123) 456-7890
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main nav: logo + links */}
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 lg:px-8">
         {/* Logo */}
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
             <span className="text-xl font-extrabold text-white">Zekano</span>
-            <span className="text-xs text-white/70">Cleaning Co</span>
+            <span className="text-xs text-white/60">Cleaning Co</span>
           </Link>
         </div>
 
@@ -61,7 +96,7 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
-                  isActive ? "text-white" : "text-white/80 hover:text-white"
+                  isActive ? "text-white" : "text-white/75 hover:text-white"
                 }`}
               >
                 {item.name}
@@ -73,15 +108,8 @@ export function Header() {
           })}
         </div>
 
-        {/* Phone + CTA */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center lg:gap-x-5">
-          <a
-            href="tel:+1234567890"
-            className="flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white transition-colors"
-          >
-            <Phone className="h-4 w-4" />
-            (123) 456-7890
-          </a>
+        {/* Book Now CTA */}
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
             href="/book"
             className="rounded px-5 py-2 text-sm font-semibold text-white transition-colors"
@@ -102,7 +130,7 @@ export function Header() {
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                 <span className="text-xl font-extrabold text-white">Zekano</span>
-                <span className="text-xs text-white/70 ml-1">Cleaning Co</span>
+                <span className="text-xs text-white/60 ml-1">Cleaning Co</span>
               </Link>
               <button
                 type="button"
@@ -133,8 +161,12 @@ export function Header() {
                   })}
                 </div>
                 <div className="py-6 space-y-4">
-                  <a href="tel:+1234567890" className="flex items-center gap-2 text-base font-medium text-white/80">
-                    <Phone className="h-5 w-5" />
+                  <p className="flex items-center gap-2 text-sm text-white/70">
+                    <MapPin className="h-4 w-4 text-lime-500" />
+                    123 Clean Street, Nashville, TN 37201
+                  </p>
+                  <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-white/70">
+                    <Phone className="h-4 w-4 text-lime-500" />
                     (123) 456-7890
                   </a>
                   <Link
