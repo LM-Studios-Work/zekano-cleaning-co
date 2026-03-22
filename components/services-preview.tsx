@@ -146,7 +146,7 @@ export function ServicesPreview() {
           {/* Professional Image */}
           <div className="relative h-96 lg:h-full min-h-96 rounded-lg overflow-hidden">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-kKqMj8srhV5K7TKn1PYP053uVQENh7.png"
+              src="/cheerful-black-professional-cleaner-woman-600nw-2411115957-removebg-preview.png"
               alt="Professional cleaning service provider"
               fill
               className="object-cover"
