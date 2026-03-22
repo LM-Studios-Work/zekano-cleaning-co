@@ -22,12 +22,12 @@ export function CTASection() {
               <Calendar className="h-5 w-5" />
               Book Online
             </Link>
-            <a 
-              href="tel:+1234567890"
+            <a
+              href="tel:+27084402"
               className="inline-flex items-center justify-center gap-2 rounded px-8 py-3 text-sm font-medium transition-colors duration-200 border border-gray-300 text-foreground hover:bg-gray-50"
             >
               <Phone className="h-5 w-5" />
-              Call (123) 456-7890
+              Call 084 402
             </a>
           </div>
           <p className="mt-6 text-sm text-muted-foreground">

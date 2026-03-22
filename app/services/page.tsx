@@ -175,17 +175,12 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Button asChild>
-                        <Link href="/book">
-                          Book This Service
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                      <Button variant="outline" asChild>
-                        <Link href="/pricing">View Pricing</Link>
-                      </Button>
-                    </div>
+                    <Button asChild>
+                      <Link href="/book">
+                        Book This Service
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               ))}
@@ -209,7 +204,7 @@ export default function ServicesPage() {
                     <Link href="/contact">Get Free Quote</Link>
                   </Button>
                   <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                    <a href="tel:+1234567890">Call Us Now</a>
+                    <a href="tel:+27084402">Call Us Now</a>
                   </Button>
                 </div>
               </CardContent>
