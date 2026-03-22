@@ -1,26 +1,27 @@
 import Image from "next/image"
-import { Shield, Clock, Award, Users, CheckCircle2 } from "lucide-react"
+import { AwardIcon, MoneyHandIcon, EcoIcon, ToolingIcon, ThumbsUpIcon, RocketIcon } from "./custom-icons"
+import { CheckCircle2 } from "lucide-react"
 
 const features = [
   {
-    icon: Shield,
-    title: "Fully Insured & Bonded",
-    description: "Your peace of mind is our priority. All our cleaners are background-checked and insured.",
-  },
-  {
-    icon: Clock,
-    title: "Flexible Scheduling",
-    description: "Book cleaning at your convenience. We work around your schedule, including weekends.",
-  },
-  {
-    icon: Award,
+    icon: AwardIcon,
     title: "Quality Guaranteed",
     description: "Not satisfied? We'll re-clean for free. Our 100% satisfaction guarantee has you covered.",
   },
   {
-    icon: Users,
-    title: "Professional Team",
-    description: "Trained, experienced, and courteous staff dedicated to delivering exceptional service.",
+    icon: MoneyHandIcon,
+    title: "Affordable Pricing",
+    description: "Competitive pricing without compromising quality. Transparent quotes with no hidden fees.",
+  },
+  {
+    icon: EcoIcon,
+    title: "Eco-Friendly Methods",
+    description: "We use environmentally safe products that are tough on dirt but gentle on your family.",
+  },
+  {
+    icon: ToolingIcon,
+    title: "Professional Equipment",
+    description: "State-of-the-art cleaning technology for superior results and faster service.",
   },
 ]
 
@@ -70,17 +71,20 @@ export function WhyChooseUs() {
             </p>
 
             <div className="mt-8 space-y-6">
-              {features.map((feature) => (
-                <div key={feature.title} className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg" style={{ backgroundColor: "rgba(31, 159, 217, 0.1)", color: "#1f9fd9" }}>
-                    <feature.icon className="h-5 w-5" />
+              {features.map((feature) => {
+                const Icon = feature.icon
+                return (
+                  <div key={feature.title} className="flex gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg" style={{ color: "#1f9fd9" }}>
+                      <Icon className="w-8 h-8" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-foreground">{feature.title}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground">{feature.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-foreground">{feature.title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
 
             <div className="mt-8 flex items-start gap-3 p-4 rounded-lg border" style={{ backgroundColor: "rgba(111, 191, 0, 0.05)", borderColor: "rgba(111, 191, 0, 0.2)" }}>

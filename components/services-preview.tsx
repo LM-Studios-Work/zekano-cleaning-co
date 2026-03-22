@@ -84,6 +84,7 @@ export function ServicesPreview() {
           <Link 
             href="/services" 
             className="inline-flex items-center justify-center rounded px-8 py-3 text-sm font-medium text-white transition-colors duration-200"
+            style={{ backgroundColor: "#6fbf00" }}
           >
             View All Services
           </Link>

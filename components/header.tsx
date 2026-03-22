@@ -29,12 +29,11 @@ export function Header() {
   }, [])
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-card/95 backdrop-blur-sm border-b border-border shadow-sm" : "bg-transparent border-b border-transparent"}`}>
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/80 backdrop-blur-md border-b border-gray-200/50" : "bg-black/20 backdrop-blur-sm border-b border-transparent"}`}>
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className={`text-2xl font-bold transition-colors duration-300 ${scrolled ? "text-primary" : "text-white"}`}>Zekano</span>
-            <span className={`text-sm ml-1 transition-colors duration-300 ${scrolled ? "text-muted-foreground" : "text-white/80"}`}>Cleaning Co</span>
+          <Link href="/" className="p-0">
+            <span className={`text-xl font-bold transition-colors duration-300 ${scrolled ? "text-gray-900" : "text-white"}`}>Zekano</span>
           </Link>
         </div>
 
@@ -49,24 +48,24 @@ export function Header() {
           </button>
         </div>
 
-        <div className="hidden lg:flex lg:gap-x-8">
+        <div className="hidden lg:flex lg:gap-x-6">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className={`text-sm font-medium transition-colors duration-300 ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}
+              className={`text-xs font-medium uppercase tracking-wider transition-colors duration-300 ${scrolled ? "text-gray-700 hover:text-gray-900" : "text-white/80 hover:text-white"}`}
             >
               {item.name}
             </Link>
           ))}
         </div>
 
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
-          <a href="tel:+1234567890" className={`flex items-center gap-2 text-sm font-medium transition-colors duration-300 ${scrolled ? "text-foreground hover:text-primary" : "text-white/90 hover:text-white"}`}>
-            <Phone className="h-4 w-4" />
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-6 lg:items-center">
+          <a href="tel:+1234567890" className={`flex items-center gap-2 text-xs font-medium uppercase transition-colors duration-300 ${scrolled ? "text-gray-700 hover:text-gray-900" : "text-white/80 hover:text-white"}`}>
+            <Phone className="h-3 w-3" />
             (123) 456-7890
           </a>
-          <Button asChild variant={scrolled ? "default" : "outline"} className={!scrolled ? "border-white text-white hover:bg-white hover:text-primary" : ""}>
+          <Button asChild variant={scrolled ? "default" : "outline"} className={`text-xs font-medium uppercase tracking-wider ${!scrolled ? "border-white text-white hover:bg-white/20" : ""}`}>
             <Link href="/book">Book Now</Link>
           </Button>
         </div>

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, Phone } from "lucide-react"
 
 const slides = [
   {
@@ -94,6 +94,15 @@ export function HeroSlideshow() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Hotline Information Box */}
+      <div className="absolute bottom-8 right-6 lg:right-8 z-10 bg-blue-500 rounded-xl p-4 shadow-lg max-w-xs">
+        <p className="text-white text-xs uppercase tracking-wider font-medium mb-2">Get Information:</p>
+        <a href="tel:+18005632240" className="flex items-center gap-2 text-white hover:text-blue-100 transition-colors">
+          <Phone className="h-5 w-5 flex-shrink-0" />
+          <span className="text-lg font-bold">8 800 563 2240</span>
+        </a>
       </div>
 
       {/* Slide Indicators */}
