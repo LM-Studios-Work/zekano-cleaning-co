@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react"
+import { Phone, Mail, Clock, Send, MessageCircle } from "lucide-react"
 
 const contactInfo = [
   {
@@ -32,13 +32,6 @@ const contactInfo = [
     details: "info@zekanocleaningco.com",
     action: "mailto:info@zekanocleaningco.com",
     actionText: "Email us",
-  },
-  {
-    icon: MapPin,
-    title: "Address",
-    details: "123 Clean Street, Suite 100, Your City, ST 12345",
-    action: "https://maps.google.com",
-    actionText: "Get directions",
   },
   {
     icon: Clock,
@@ -242,25 +235,8 @@ export default function ContactPage() {
                 </Card>
               </div>
 
-              {/* Map & Quick Contact */}
+              {/* Quick Contact */}
               <div className="space-y-8">
-                {/* Google Maps Embed */}
-                <Card className="overflow-hidden border-border">
-                  <div className="aspect-[4/3] relative bg-muted">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596552044!2d-74.25987368715491!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1635959848281!5m2!1sen!2s"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Zekano Cleaning Co Location"
-                      className="absolute inset-0"
-                    />
-                  </div>
-                </Card>
-
                 {/* Quick Actions */}
                 <Card className="border-border">
                   <CardHeader>

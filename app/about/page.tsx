@@ -57,15 +57,6 @@ const teamMembers = [
   },
 ]
 
-const milestones = [
-  { year: "2014", event: "Zekano Cleaning Co founded with a small team of 3" },
-  { year: "2016", event: "Expanded to commercial cleaning services" },
-  { year: "2018", event: "Reached 1,000 happy customers milestone" },
-  { year: "2020", event: "Introduced eco-friendly cleaning products" },
-  { year: "2022", event: "Launched pest control services" },
-  { year: "2024", event: "Celebrating 10 years and 5,000+ customers served" },
-]
-
 export default function AboutPage() {
   return (
     <>
@@ -176,41 +167,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Timeline */}
-        <section className="py-16 lg:py-24 bg-card">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Our Journey</h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Milestones that shaped who we are today
-              </p>
-            </div>
-            <div className="max-w-3xl mx-auto">
-              <div className="relative">
-                <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-primary/20 md:left-1/2 md:-translate-x-1/2" />
-                <div className="space-y-8">
-                  {milestones.map((milestone, index) => (
-                    <div key={index} className={`relative flex items-center gap-6 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                      <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"} hidden md:block`}>
-                        <div className="bg-background rounded-lg p-4 shadow-sm border border-border inline-block">
-                          <span className="text-lg font-bold text-primary">{milestone.year}</span>
-                          <p className="text-foreground">{milestone.event}</p>
-                        </div>
-                      </div>
-                      <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 h-4 w-4 rounded-full bg-primary border-4 border-background" />
-                      <div className="flex-1 pl-12 md:pl-0">
-                        <div className="md:hidden bg-background rounded-lg p-4 shadow-sm border border-border">
-                          <span className="text-lg font-bold text-primary">{milestone.year}</span>
-                          <p className="text-foreground">{milestone.event}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Why Choose Us */}
         <section className="py-16 lg:py-24 bg-background">

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Phone, Mail, Clock } from "lucide-react"
 
 const services = [
   { name: "Deep Cleaning", href: "/services#deep-cleaning" },
@@ -12,7 +12,6 @@ const services = [
 const quickLinks = [
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Pricing", href: "/pricing" },
   { name: "Book Online", href: "/book" },
   { name: "Contact", href: "/contact" },
 ]
@@ -76,10 +75,6 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 shrink-0 mt-0.5" />
-                <span className="text-sm opacity-80">123 Clean Street, Suite 100, Your City, ST 12345</span>
-              </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0" />
                 <a href="tel:+1234567890" className="text-sm opacity-80 hover:opacity-100 transition-opacity">(123) 456-7890</a>

@@ -3,14 +3,13 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
-import { Menu, X, Phone, MapPin } from "lucide-react"
+import { Menu, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Pricing", href: "/pricing" },
   { name: "Book Online", href: "/book" },
   { name: "Contact", href: "/contact" },
 ]
@@ -55,10 +54,6 @@ export function Header() {
 
           {/* Right - Contact Info */}
           <div className={`flex items-center gap-6 transition-colors duration-300 ${scrolled ? "text-gray-700" : "text-white/80"}`}>
-            <div className="hidden sm:flex items-center gap-1">
-              <MapPin className="h-3 w-3" />
-              <span>Patricia C. Amedee 4401 Waldeck Street</span>
-            </div>
             <div className="hidden sm:flex items-center gap-1">
               <Phone className="h-3 w-3" style={{ color: "#6fbf00" }} />
               <a href="tel:+18008842234" className="hover:text-green-500 transition-colors">8 800 884 2234</a>
@@ -151,10 +146,6 @@ export function Header() {
                   })}
                 </div>
                 <div className="py-6 space-y-4">
-                  <p className="flex items-center gap-2 text-sm text-white/70">
-                    <MapPin className="h-4 w-4 text-lime-500" />
-                    123 Clean Street, Nashville, TN 37201
-                  </p>
                   <a href="tel:+1234567890" className="flex items-center gap-2 text-sm text-white/70">
                     <Phone className="h-4 w-4 text-lime-500" />
                     (123) 456-7890
