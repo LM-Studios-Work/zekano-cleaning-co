@@ -149,3 +149,14 @@
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
   }
 }
+
+/* Green button hover styles */
+a[href="/book"],
+a[href="/services"] {
+  background-color: #6fbf00 !important;
+}
+
+a[href="/book"]:hover,
+a[href="/services"]:hover {
+  background-color: #5ea800 !important;
+}

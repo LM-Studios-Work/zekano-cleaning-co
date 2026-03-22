@@ -17,9 +17,6 @@ export function CTASection() {
             <Link 
               href="/book"
               className="inline-flex items-center justify-center gap-2 rounded px-8 py-3 text-sm font-medium text-white transition-colors duration-200"
-              style={{ backgroundColor: "#6fbf00" }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#5ea800")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#6fbf00")}
             >
               <Calendar className="h-5 w-5" />
               Book Online
