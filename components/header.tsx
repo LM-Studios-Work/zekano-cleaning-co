@@ -70,9 +70,9 @@ export function Header() {
           </div>
 
           {/* Right - Address & Phone */}
-          <div className="hidden md:flex items-center gap-10">
-            {/* Address */}
-            <div className="flex items-center gap-3">
+          <div className="flex items-center gap-10">
+            {/* Address - hidden on mobile */}
+            <div className="hidden md:flex items-center gap-3">
               <span className="flex items-center justify-center h-9 w-9 rounded-full border-2 border-[#6fbf00] text-[#6fbf00]">
                 <i className="fa-solid fa-location-dot text-sm"></i>
               </span>
