@@ -29,7 +29,7 @@
   --chart-3: #c9d0d6;
   --chart-4: #eff1f2;
   --chart-5: #1a3a5c;
-  --radius: 0.625rem;
+  --radius: 0rem;
   --sidebar: #325283;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #ffffff;
@@ -120,8 +120,18 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    border-radius: 0 !important;
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans), 'Poppins', sans-serif;
+  }
+  /* Restore circles explicitly */
+  .rounded-full {
+    border-radius: 9999px !important;
+  }
+  /* Subtle card elevation matching reference style */
+  [data-slot="card"] {
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
   }
 }
