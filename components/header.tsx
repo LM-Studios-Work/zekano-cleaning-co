@@ -28,15 +28,15 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-gray-900/95 backdrop-blur-sm shadow-lg" : "bg-black/40 backdrop-blur-sm"
+        scrolled ? "bg-gray-900/90 backdrop-blur-sm shadow-lg" : "bg-black/20 backdrop-blur-[2px]"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2.5 lg:px-8">
         {/* Logo */}
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
-            <span className="text-2xl font-extrabold text-white">Zekano</span>
-            <span className="text-sm text-white/70">Cleaning Co</span>
+            <span className="text-xl font-extrabold text-white">Zekano</span>
+            <span className="text-xs text-white/70">Cleaning Co</span>
           </Link>
         </div>
 
@@ -101,8 +101,8 @@ export function Header() {
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-                <span className="text-2xl font-extrabold text-white">Zekano</span>
-                <span className="text-sm text-white/70 ml-1">Cleaning Co</span>
+                <span className="text-xl font-extrabold text-white">Zekano</span>
+                <span className="text-xs text-white/70 ml-1">Cleaning Co</span>
               </Link>
               <button
                 type="button"
