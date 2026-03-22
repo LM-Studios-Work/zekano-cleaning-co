@@ -23,6 +23,7 @@
   --border: #c9d0d6;
   --input: #c9d0d6;
   --ring: #325283;
+  --lime: #6fbf00;
   --chart-1: #325283;
   --chart-2: #5a7499;
   --chart-3: #c9d0d6;
@@ -96,6 +97,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-lime: var(--lime);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);

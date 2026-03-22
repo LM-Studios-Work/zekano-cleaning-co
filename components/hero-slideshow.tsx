@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ChevronRight, Sparkles } from "lucide-react"
+import { ChevronRight } from "lucide-react"
 
 const slides = [
   {
@@ -59,33 +58,41 @@ export function HeroSlideshow() {
         </div>
       ))}
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-primary/70" />
+      {/* Light overlay - just enough to make text readable */}
+      <div className="absolute inset-0 bg-black/30" />
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 mb-6">
-              <Sparkles className="h-6 w-6 text-secondary" />
-              <span className="text-secondary font-medium">Professional Cleaning Services</span>
-            </div>
-            <h1 className="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl leading-tight text-balance">
-              A Cleaner Home, A Happier Life
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-white/80">
+              Welcome to Our Site
+            </p>
+            <h1 className="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-tight">
+              The Best Help in<br />Cleaning the House
             </h1>
-            <p className="mt-6 text-lg text-primary-foreground/90 leading-relaxed max-w-xl">
+            <p className="mt-6 text-base text-white/75 leading-relaxed max-w-lg">
               Experience the difference professional cleaning makes. From deep cleaning to regular maintenance, we bring sparkle to every corner of your space.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary" asChild className="text-base">
-                <Link href="/book">
-                  Book Your Cleaning
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="text-base border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link href="/services">Our Services</Link>
-              </Button>
+              {/* White outline button */}
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center rounded px-7 py-3 text-sm font-semibold text-white border border-white/70 hover:bg-white hover:text-gray-900 transition-colors duration-200"
+              >
+                Read More
+              </Link>
+              {/* Lime green solid button */}
+              <Link
+                href="/book"
+                className="inline-flex items-center justify-center gap-2 rounded px-7 py-3 text-sm font-semibold text-white transition-colors duration-200"
+                style={{ backgroundColor: "#6fbf00" }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#5ea800")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#6fbf00")}
+              >
+                Contact Us
+                <ChevronRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>
@@ -98,7 +105,7 @@ export function HeroSlideshow() {
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentSlide ? "w-8 bg-primary-foreground" : "w-2 bg-primary-foreground/50"
+              index === currentSlide ? "w-8 bg-white" : "w-2 bg-white/40"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
