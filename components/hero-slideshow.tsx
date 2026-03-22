@@ -157,22 +157,20 @@ export function HeroSlideshow() {
       {/* Slide Tab Navigation - Bottom of hero like ClenGo, hidden on mobile */}
       <div className="hidden md:block absolute bottom-[5%] left-0 right-0 z-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex">
+          <div className="flex gap-0">
             {slides.map((slide, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`relative flex-1 py-5 text-sm font-medium transition-all duration-300 text-left ${
+                className={`relative pr-16 py-5 text-sm font-medium transition-all duration-300 text-left whitespace-nowrap ${
                   index === currentSlide
                     ? "text-white"
                     : "text-white/50 hover:text-white/70"
                 }`}
               >
                 {slide.label}
-                {/* Active underline */}
-                {index === currentSlide && (
-                  <span className="absolute bottom-0 left-0 right-4 h-0.5 bg-white" />
-                )}
+                {/* Active underline - fixed short width */}
+                <span className={`absolute bottom-0 left-0 w-24 h-0.5 transition-colors duration-300 ${index === currentSlide ? "bg-white" : "bg-white/20"}`} />
               </button>
             ))}
           </div>
@@ -211,7 +209,7 @@ export function HeroSlideshow() {
     </section>
 
     {/* Mobile Hotline Box - Below hero, visible on mobile only */}
-    <div className="md:hidden relative z-20 -mt-6 mx-4">
+    <div className="md:hidden relative z-20 -mt-6 mx-[8%]">
       <div className="rounded-xl p-5 text-center shadow-xl" style={{ backgroundColor: "#1B9FD9" }}>
         <p className="text-white/80 text-xs uppercase tracking-widest font-bold mb-1">Hotline</p>
         <p className="text-white text-base font-bold mb-2">Get Information:</p>
