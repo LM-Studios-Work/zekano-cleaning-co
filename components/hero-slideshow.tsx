@@ -51,7 +51,8 @@ export function HeroSlideshow() {
   }, [])
 
   return (
-    <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
+    <>
+    <section className="relative h-[75vh] md:h-screen min-h-[500px] md:min-h-[600px] w-full overflow-hidden">
       {/* Slideshow Background */}
       {slides.map((slide, index) => (
         <div
@@ -74,7 +75,7 @@ export function HeroSlideshow() {
       <div className="absolute inset-0 bg-black/35" />
 
       {/* Content - Left aligned like ClenGo */}
-      <div className="relative z-10 flex h-full items-center">
+      <div className="relative z-10 flex h-full items-center pt-20 md:pt-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
           <div className="max-w-2xl">
             <p
@@ -144,8 +145,8 @@ export function HeroSlideshow() {
         </div>
       </div>
 
-      {/* Hotline Information Box */}
-      <div className="absolute right-6 lg:right-8 bottom-16 lg:bottom-32 z-30 rounded-lg p-6 shadow-2xl w-72 lg:w-80" style={{ backgroundColor: "#1B9FD9" }}>
+      {/* Hotline Information Box - hidden on mobile, shown on desktop inside hero */}
+      <div className="hidden md:block absolute right-6 lg:right-8 bottom-16 lg:bottom-32 z-30 rounded-lg p-6 shadow-2xl w-72 lg:w-80" style={{ backgroundColor: "#1B9FD9" }}>
         <p className="text-white text-xs uppercase tracking-widest font-bold mb-3">Get Information:</p>
         <a href="tel:+27844020733" className="flex items-center gap-3 text-white hover:text-blue-100 transition-colors">
           <Phone className="h-6 w-6 flex-shrink-0" />
@@ -153,8 +154,8 @@ export function HeroSlideshow() {
         </a>
       </div>
 
-      {/* Slide Tab Navigation - Bottom of hero like ClenGo */}
-      <div className="absolute bottom-0 left-0 right-0 z-20">
+      {/* Slide Tab Navigation - Bottom of hero like ClenGo, hidden on mobile */}
+      <div className="hidden md:block absolute bottom-[5%] left-0 right-0 z-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex">
             {slides.map((slide, index) => (
@@ -208,5 +209,18 @@ export function HeroSlideshow() {
         }
       `}</style>
     </section>
+
+    {/* Mobile Hotline Box - Below hero, visible on mobile only */}
+    <div className="md:hidden relative z-20 -mt-6 mx-4">
+      <div className="rounded-xl p-5 text-center shadow-xl" style={{ backgroundColor: "#1B9FD9" }}>
+        <p className="text-white/80 text-xs uppercase tracking-widest font-bold mb-1">Hotline</p>
+        <p className="text-white text-base font-bold mb-2">Get Information:</p>
+        <a href="tel:+27844020733" className="inline-flex items-center gap-3 text-white">
+          <Phone className="h-7 w-7" />
+          <span className="text-2xl font-bold">084 402 0733</span>
+        </a>
+      </div>
+    </div>
+    </>
   )
 }
