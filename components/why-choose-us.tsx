@@ -38,7 +38,7 @@ export function WhyChooseUs() {
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Image Side */}
-          <div className="relative">
+          <div className="relative order-2 lg:order-1">
             <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80"
@@ -61,7 +61,7 @@ export function WhyChooseUs() {
           </div>
 
           {/* Content Side */}
-          <div className="lg:pl-8">
+          <div className="order-1 lg:order-2 lg:pl-8">
             <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Why Choose Us</span>
             <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">
               The Trusted Choice for Professional <span style={{ color: "#6fbf00" }}>Cleaning</span>

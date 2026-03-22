@@ -4,19 +4,19 @@ import { Card, CardContent } from "@/components/ui/card"
 const testimonials = [
   {
     content: "Zekano Cleaning Co has been cleaning our home for over two years now. They're always on time, thorough, and our house smells amazing after every visit. Highly recommend!",
-    author: "Sarah Johnson",
+    author: "Thandi Dlamini",
     role: "Homeowner",
     rating: 5,
   },
   {
     content: "We hired them for our office cleaning and couldn't be happier. The team is professional, discrete, and our workspace has never looked better. Our employees love coming to work now!",
-    author: "Michael Chen",
+    author: "James van der Merwe",
     role: "Business Owner",
     rating: 5,
   },
   {
     content: "Used their move-out cleaning service and got my full deposit back! They cleaned every corner, including areas I didn't even know existed. Worth every penny.",
-    author: "Emily Rodriguez",
+    author: "Nomsa Khumalo",
     role: "Apartment Renter",
     rating: 5,
   },
