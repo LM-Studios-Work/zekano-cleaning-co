@@ -75,7 +75,7 @@ export function Header() {
       </div>
 
       {/* Bottom Tier - Logo, Navigation, Search/Menu */}
-      <nav className={`transition-colors duration-300 ${scrolled ? "bg-white shadow-sm" : "bg-white/95 backdrop-blur-sm"}`}>
+      <nav className={`transition-colors duration-300 ${scrolled ? "bg-gray-900/95 shadow-lg" : "bg-black/40 backdrop-blur-sm"}`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between h-20">
           {/* Logo - Tall and prominent like ClenGo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
@@ -87,10 +87,10 @@ export function Header() {
               className="h-12 w-12 object-contain"
             />
             <div className="flex flex-col">
-              <span className="text-2xl font-extrabold leading-none tracking-tight" style={{ color: "#1B9FD9" }}>
+              <span className="text-2xl font-extrabold leading-none tracking-tight text-white">
                 Zekano
               </span>
-              <span className="text-xs font-medium text-gray-500 tracking-wide">Cleaning services</span>
+              <span className="text-xs font-medium text-white/60 tracking-wide">Cleaning services</span>
             </div>
           </Link>
 
@@ -98,7 +98,7 @@ export function Header() {
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="text-gray-700 p-2.5"
+              className="text-white p-2.5"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -117,7 +117,7 @@ export function Header() {
                   className={`relative text-base font-medium px-5 py-6 transition-colors duration-200 ${
                     isActive
                       ? "text-[#6fbf00]"
-                      : "text-gray-700 hover:text-[#6fbf00]"
+                      : "text-white/80 hover:text-white"
                   }`}
                 >
                   {item.name}
@@ -131,11 +131,11 @@ export function Header() {
 
           {/* Right side - Search + Hamburger with divider */}
           <div className="hidden lg:flex lg:items-center lg:gap-x-4">
-            <div className="h-6 w-px bg-gray-300" aria-hidden="true" />
-            <button className="text-gray-600 hover:text-[#1B9FD9] transition-colors p-2">
+            <div className="h-6 w-px bg-white/20" aria-hidden="true" />
+            <button className="text-white/70 hover:text-white transition-colors p-2">
               <i className="fa-solid fa-magnifying-glass text-lg"></i>
             </button>
-            <button className="text-gray-600 hover:text-[#1B9FD9] transition-colors p-2">
+            <button className="text-white/70 hover:text-white transition-colors p-2">
               <i className="fa-solid fa-bars text-lg"></i>
             </button>
           </div>
