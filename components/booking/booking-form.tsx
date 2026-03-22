@@ -20,11 +20,11 @@ import {
 import { Sparkles, Home, Truck, Building2, Bug, Wrench, ChevronLeft, ChevronRight, Check } from "lucide-react"
 
 const services = [
-  { id: "deep-cleaning", name: "Deep Cleaning", icon: Sparkles, price: "From $199" },
-  { id: "standard-cleaning", name: "Standard Cleaning", icon: Home, price: "From $99" },
-  { id: "move-cleaning", name: "Move-in/Move-out", icon: Truck, price: "From $249" },
+  { id: "deep-cleaning", name: "Deep Cleaning", icon: Sparkles, price: "From R199" },
+  { id: "standard-house-cleaning", name: "Standard House Cleaning", icon: Home, price: "From R99" },
+  { id: "move-cleaning", name: "Move-in/Move-out", icon: Truck, price: "From R249" },
   { id: "office-cleaning", name: "Office Cleaning", icon: Building2, price: "Custom quote" },
-  { id: "pest-control", name: "Pest Control", icon: Bug, price: "From $150" },
+  { id: "pest-control", name: "Pest Control", icon: Bug, price: "From R150" },
   { id: "custom", name: "Custom Service", icon: Wrench, price: "Custom quote" },
 ]
 
@@ -36,12 +36,12 @@ const frequencies = [
 ]
 
 const extras = [
-  { id: "inside-fridge", name: "Inside Refrigerator", price: "+$35" },
-  { id: "inside-oven", name: "Inside Oven", price: "+$35" },
-  { id: "inside-cabinets", name: "Inside Cabinets", price: "+$50" },
-  { id: "laundry", name: "Laundry (Wash & Fold)", price: "+$25" },
-  { id: "windows", name: "Interior Windows", price: "+$10/window" },
-  { id: "garage", name: "Garage Cleaning", price: "+$75" },
+  { id: "inside-fridge", name: "Inside Refrigerator", price: "+R35" },
+  { id: "inside-oven", name: "Inside Oven", price: "+R35" },
+  { id: "inside-cabinets", name: "Inside Cabinets", price: "+R50" },
+  { id: "laundry", name: "Laundry (Wash & Fold)", price: "+R25" },
+  { id: "windows", name: "Interior Windows", price: "+R10/window" },
+  { id: "garage", name: "Garage Cleaning", price: "+R75" },
 ]
 
 const timeSlots = [

@@ -11,7 +11,7 @@ export function CTASection() {
             Ready for a Spotless Space?
           </h2>
           <p className="mt-4 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-            Book your cleaning today and experience the SparkleClean Pro difference. First-time customers get 15% off their first cleaning!
+            Book your cleaning today and experience the Zekano Cleaning Co difference. First-time customers get 15% off their first cleaning!
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" variant="secondary" asChild className="text-base">

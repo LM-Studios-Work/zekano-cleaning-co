@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react"
 
 const services = [
   { name: "Deep Cleaning", href: "/services#deep-cleaning" },
-  { name: "Standard Cleaning", href: "/services#standard-cleaning" },
+  { name: "Standard House Cleaning", href: "/services#standard-house-cleaning" },
   { name: "Move-in/Move-out", href: "/services#move-cleaning" },
   { name: "Office Cleaning", href: "/services#office-cleaning" },
   { name: "Pest Control", href: "/services#pest-control" },
@@ -25,8 +25,8 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div>
-              <span className="text-2xl font-bold">SparkleClean</span>
-              <span className="text-sm opacity-80 ml-1">Pro</span>
+              <span className="text-2xl font-bold">Zekano</span>
+              <span className="text-sm opacity-80 ml-1">Cleaning Co</span>
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
               Professional cleaning services for homes and businesses. We bring sparkle to every space we touch.
@@ -86,7 +86,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0" />
-                <a href="mailto:info@sparklecleanpro.com" className="text-sm opacity-80 hover:opacity-100 transition-opacity">info@sparklecleanpro.com</a>
+                <a href="mailto:info@zekanocleaningco.com" className="text-sm opacity-80 hover:opacity-100 transition-opacity">info@zekanocleaningco.com</a>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="h-5 w-5 shrink-0 mt-0.5" />
@@ -98,7 +98,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <p className="text-center text-sm opacity-80">
-            &copy; {new Date().getFullYear()} SparkleClean Pro. All rights reserved.
+            &copy; {new Date().getFullYear()} Zekano Cleaning Co. All rights reserved.
           </p>
         </div>
       </div>
