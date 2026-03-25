@@ -139,7 +139,7 @@ export function Header() {
       }`}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0">
+          <Link href="/" className="flex items-center shrink-0">
             <Image
               src="/zenako-cleaning-co-logo.png"
               alt="Zenako Cleaning Co."
@@ -147,16 +147,6 @@ export function Header() {
               height={48}
               className="h-12 w-12 object-contain"
             />
-            <div className="flex flex-col">
-              <span className={`text-2xl font-extrabold leading-none tracking-tight transition-colors duration-300 ${
-                useWhiteStyle ? "text-gray-800" : "text-white"
-              }`}>
-                Zenako
-              </span>
-              <span className={`text-xs font-medium tracking-wide transition-colors duration-300 ${
-                useWhiteStyle ? "text-gray-400" : "text-white/60"
-              }`}>Cleaning Co.</span>
-            </div>
           </Link>
 
           {/* Mobile menu button */}
