@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
-import { XIcon } from "@/components/icons"
+import { XIcon, ArrowRightIcon } from "@/components/icons"
 import Image from "next/image"
 
 const navigation = [
@@ -14,10 +14,54 @@ const navigation = [
   { name: "Contact", href: "/contact" },
 ]
 
+const serviceCategories = [
+  {
+    name: "Residential Cleaning",
+    slug: "residential-cleaning",
+    services: [
+      { name: "Standard House Cleaning", slug: "standard-house-cleaning" },
+      { name: "Deep Cleaning", slug: "deep-cleaning" },
+      { name: "Move-in/Move-out Cleaning", slug: "move-in-move-out-cleaning" },
+    ],
+  },
+  {
+    name: "Commercial Cleaning",
+    slug: "commercial-cleaning",
+    services: [
+      { name: "Office Cleaning", slug: "office-cleaning" },
+      { name: "Small Business Cleaning", slug: "small-business-cleaning" },
+    ],
+  },
+  {
+    name: "Upholstery & Fabric",
+    slug: "upholstery-cleaning",
+    services: [
+      { name: "Sofa Cleaning", slug: "sofa-cleaning" },
+      { name: "Mattress Cleaning", slug: "mattress-cleaning" },
+      { name: "Curtain Cleaning", slug: "curtain-cleaning" },
+      { name: "Carpet Cleaning", slug: "carpet-cleaning" },
+      { name: "Upholstery Cleaning", slug: "upholstery-cleaning" },
+    ],
+  },
+  {
+    name: "Specialised Services",
+    slug: "specialised-cleaning",
+    services: [
+      { name: "Roof Cleaning", slug: "roof-cleaning" },
+      { name: "Drain Cleaning", slug: "drain-cleaning" },
+      { name: "Garden Clean-ups", slug: "garden-clean-ups" },
+      { name: "Pest Control", slug: "pest-control" },
+      { name: "Disinfection Services", slug: "disinfection-services" },
+    ],
+  },
+]
+
 export function Header() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [desktopPanelOpen, setDesktopPanelOpen] = useState(false)
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   const isHomePage = pathname === "/"
@@ -76,10 +120,7 @@ export function Header() {
               <span className="flex items-center justify-center h-9 w-9 rounded-full border-2 border-[#6fbf00] text-[#6fbf00]">
                 <i className="fa-solid fa-location-dot text-sm"></i>
               </span>
-              <div className="text-sm leading-snug">
-                <span className="block font-medium text-white">Zenako Cleaning Co.</span>
-                <span className="block text-xs text-white/70">Johannesburg, South Africa</span>
-              </div>
+              <span className="text-sm text-white/80">Johannesburg, South Africa</span>
             </div>
 
             {/* Phone */}
@@ -138,7 +179,70 @@ export function Header() {
           {/* Desktop Navigation - centered, well-spaced */}
           <div className="hidden lg:flex lg:items-center lg:gap-x-2">
             {navigation.map((item) => {
-              const isActive = pathname === item.href
+              const isActive = pathname === item.href || (item.name === "Services" && pathname.startsWith("/services"))
+              if (item.name === "Services") {
+                return (
+                  <div
+                    key={item.name}
+                    className="relative"
+                    onMouseEnter={() => setDesktopServicesOpen(true)}
+                    onMouseLeave={() => setDesktopServicesOpen(false)}
+                  >
+                    <Link
+                      href={item.href}
+                      className={`relative text-base font-medium px-5 py-6 transition-colors duration-200 flex items-center gap-1 ${
+                        isActive
+                          ? "text-[#6fbf00]"
+                          : useWhiteStyle
+                            ? "text-gray-600 hover:text-gray-900"
+                            : "text-white/80 hover:text-white"
+                      }`}
+                    >
+                      {item.name}
+                      <i className={`fa-solid fa-chevron-down text-[10px] transition-transform duration-200 ${desktopServicesOpen ? "rotate-180" : ""}`}></i>
+                      {isActive && (
+                        <span className="absolute bottom-4 left-5 right-5 h-0.5 bg-[#6fbf00]" aria-hidden="true" />
+                      )}
+                    </Link>
+                    {/* Desktop Services Mega Menu */}
+                    <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-200 ${
+                      desktopServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+                    }`}>
+                      <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-6 w-[640px]">
+                        <div className="grid grid-cols-2 gap-6">
+                          {serviceCategories.map((cat) => (
+                            <div key={cat.slug}>
+                              <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">{cat.name}</h4>
+                              <ul className="space-y-1">
+                                {cat.services.map((svc) => (
+                                  <li key={svc.slug}>
+                                    <Link
+                                      href={`/services/${svc.slug}`}
+                                      className="block text-sm text-gray-600 hover:text-[#6fbf00] py-1 transition-colors"
+                                      onClick={() => setDesktopServicesOpen(false)}
+                                    >
+                                      {svc.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="mt-4 pt-4 border-t border-gray-100">
+                          <Link
+                            href="/services"
+                            className="inline-flex items-center gap-1 text-sm font-medium text-[#1A9AD2] hover:underline"
+                            onClick={() => setDesktopServicesOpen(false)}
+                          >
+                            View All Services <ArrowRightIcon className="h-3.5 w-3.5" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
               return (
                 <Link
                   key={item.name}
@@ -305,7 +409,57 @@ export function Header() {
           {/* Nav links */}
           <div className="px-6 py-4">
             {navigation.map((item) => {
-              const isActive = pathname === item.href
+              const isActive = pathname === item.href || (item.name === "Services" && pathname.startsWith("/services"))
+              if (item.name === "Services") {
+                return (
+                  <div key={item.name}>
+                    <button
+                      type="button"
+                      className={`flex items-center justify-between w-full py-3 text-base font-medium border-b border-gray-50 ${
+                        isActive
+                          ? "text-[#6fbf00]"
+                          : "text-gray-700 hover:text-[#6fbf00]"
+                      }`}
+                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    >
+                      {item.name}
+                      <i className={`fa-solid fa-chevron-down text-xs transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}></i>
+                    </button>
+                    <div className={`overflow-hidden transition-all duration-300 ${
+                      mobileServicesOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+                    }`}>
+                      <div className="py-2 pl-4 space-y-4">
+                        {serviceCategories.map((cat) => (
+                          <div key={cat.slug}>
+                            <span className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">{cat.name}</span>
+                            {cat.services.map((svc) => (
+                              <Link
+                                key={svc.slug}
+                                href={`/services/${svc.slug}`}
+                                className={`block py-1.5 text-sm ${
+                                  pathname === `/services/${svc.slug}`
+                                    ? "text-[#6fbf00] font-medium"
+                                    : "text-gray-600 hover:text-[#6fbf00]"
+                                }`}
+                                onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false) }}
+                              >
+                                {svc.name}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
+                        <Link
+                          href="/services"
+                          className="inline-flex items-center gap-1 text-sm font-medium text-[#1A9AD2] py-1"
+                          onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false) }}
+                        >
+                          View All Services <ArrowRightIcon className="h-3.5 w-3.5" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
               return (
                 <Link
                   key={item.name}
