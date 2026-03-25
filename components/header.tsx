@@ -77,7 +77,7 @@ export function Header() {
                 <i className="fa-solid fa-location-dot text-sm"></i>
               </span>
               <div className="text-sm leading-snug">
-                <span className="block font-medium text-white">Zekano Cleaning Co</span>
+                <span className="block font-medium text-white">Zenako Cleaning Co.</span>
                 <span className="block text-xs text-white/70">Johannesburg, South Africa</span>
               </div>
             </div>
@@ -100,8 +100,8 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <Image
-              src="/placeholder-logo.png"
-              alt="Zekano Cleaning Co"
+              src="/zenako-cleaning-co-logo.png"
+              alt="Zenako Cleaning Co."
               width={48}
               height={48}
               className="h-12 w-12 object-contain"
@@ -110,11 +110,11 @@ export function Header() {
               <span className={`text-2xl font-extrabold leading-none tracking-tight transition-colors duration-300 ${
                 useWhiteStyle ? "text-gray-800" : "text-white"
               }`}>
-                Zekano
+                Zenako
               </span>
               <span className={`text-xs font-medium tracking-wide transition-colors duration-300 ${
                 useWhiteStyle ? "text-gray-400" : "text-white/60"
-              }`}>Cleaning services</span>
+              }`}>Cleaning Co.</span>
             </div>
           </Link>
 
@@ -205,8 +205,8 @@ export function Header() {
             <div className="flex justify-center mb-6">
               <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-gray-100 bg-gray-100">
                 <Image
-                  src="/placeholder-logo.png"
-                  alt="Zekano Cleaning Co"
+                  src="/zenako-cleaning-co-logo.png"
+                  alt="Zenako Cleaning Co."
                   width={128}
                   height={128}
                   className="h-full w-full object-cover"
@@ -216,7 +216,7 @@ export function Header() {
 
             {/* Description */}
             <p className="text-gray-500 text-sm leading-relaxed mb-8">
-              We do great work in our business so that you can always see the quality of our work. Professional cleaning services in Johannesburg.
+              Zenako Cleaning Co. — Professional cleaning services in Johannesburg and surrounding areas. We bring sparkle to every space we touch.
             </p>
 
             {/* Social Icons */}
@@ -264,7 +264,7 @@ export function Header() {
 
           {/* Footer */}
           <div className="px-10 py-6 border-t border-gray-100 text-center">
-            <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} Zekano Cleaning Co. All Rights Reserved.</p>
+            <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} Zenako Cleaning Co. All Rights Reserved.</p>
           </div>
         </div>
       </div>
@@ -285,13 +285,13 @@ export function Header() {
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
               <Image
-                src="/placeholder-logo.png"
-                alt="Zekano"
+                src="/zenako-cleaning-co-logo.png"
+                alt="Zenako Cleaning Co."
                 width={32}
                 height={32}
                 className="h-8 w-8 object-contain"
               />
-              <span className="text-xl font-extrabold text-gray-800">Zekano</span>
+              <span className="text-xl font-extrabold text-gray-800">Zenako</span>
             </Link>
             <button
               type="button"

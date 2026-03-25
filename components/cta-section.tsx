@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Phone, Calendar } from "lucide-react"
+import { Phone, Calendar, MessageSquare } from "lucide-react"
 
 export function CTASection() {
   return (
@@ -10,7 +10,7 @@ export function CTASection() {
             Ready for a <span style={{ color: "#6fbf00" }}>Spotless</span> Space?
           </h2>
           <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Book your cleaning today and experience the Zekano Cleaning Co difference. We bring the right team, the right products, and the attention to detail your space deserves.
+            Book your cleaning today and experience the Zenako Cleaning Co. difference. Professional cleaning services in Johannesburg — we bring the right team, the right products, and the attention to detail your space deserves.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <Link
@@ -21,6 +21,14 @@ export function CTASection() {
               <Calendar className="h-5 w-5" />
               Book Online
             </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded px-8 py-3 text-sm font-medium transition-colors duration-200 text-white"
+              style={{ backgroundColor: "#1A9AD2" }}
+            >
+              <MessageSquare className="h-5 w-5" />
+              Get a Free Quote
+            </Link>
             <a
               href="tel:+27844020733"
               className="inline-flex items-center justify-center gap-2 rounded px-8 py-3 text-sm font-medium transition-colors duration-200 border border-gray-300 text-foreground hover:bg-gray-50"
@@ -30,7 +38,7 @@ export function CTASection() {
             </a>
           </div>
           <p className="mt-6 text-sm text-muted-foreground">
-            Free estimates • No hidden fees • Satisfaction guaranteed
+            Free estimates &bull; No hidden fees &bull; Satisfaction guaranteed &bull; 10% off your first clean
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-// Premium quality SVG icons for Zekano Cleaning Co
+// Premium quality SVG icons for Zenako Cleaning Co.
 import type { ComponentType } from 'react'
 
 interface IconProps {

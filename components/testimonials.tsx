@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const testimonials = [
   {
-    content: "Zekano Cleaning Co has been cleaning our home for over two years now. They're always on time, thorough, and our house smells amazing after every visit. Highly recommend!",
+    content: "Zenako Cleaning Co. has been cleaning our home for over two years now. They're always on time, thorough, and our house smells amazing after every visit. Highly recommend!",
     author: "Thandi Dlamini",
     role: "Homeowner",
     rating: 5,

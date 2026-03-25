@@ -11,9 +11,27 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: 'Zekano Cleaning Co | Professional Cleaning Services',
-  description: 'Professional cleaning services for homes and offices. Deep cleaning, standard house cleaning, move-in/move-out cleaning, office cleaning, and pest control. Book your cleaning today!',
-  keywords: ['cleaning services', 'house cleaning', 'office cleaning', 'deep cleaning', 'pest control', 'professional cleaners'],
+  title: 'Zenako Cleaning Co. | Professional Cleaning Services in Johannesburg',
+  description: 'Zenako Cleaning Co. offers professional cleaning services in Johannesburg and surrounding areas — Sandton, Randburg, Fourways, Midrand, Bryanston. Residential cleaning, commercial cleaning, upholstery cleaning, pest control & more. Book today!',
+  keywords: [
+    'cleaning services Johannesburg',
+    'house cleaning Johannesburg',
+    'office cleaning Johannesburg',
+    'deep cleaning Johannesburg',
+    'carpet cleaning Johannesburg',
+    'upholstery cleaning Johannesburg',
+    'pest control Johannesburg',
+    'professional cleaners Sandton',
+    'cleaning services Randburg',
+    'cleaning services Fourways',
+    'cleaning services Midrand',
+    'cleaning services Bryanston',
+    'move in move out cleaning Johannesburg',
+    'commercial cleaning Johannesburg',
+    'residential cleaning Johannesburg',
+    'eco-friendly cleaning Johannesburg',
+    'Zenako Cleaning Co',
+  ],
   generator: 'v0.app',
   icons: {
     icon: [

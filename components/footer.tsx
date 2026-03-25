@@ -1,12 +1,13 @@
 import Link from "next/link"
-import { Phone, Mail, Clock } from "lucide-react"
+import { Phone, Mail, Clock, MapPin } from "lucide-react"
 
 const services = [
-  { name: "Deep Cleaning", href: "/services#deep-cleaning" },
-  { name: "Standard House Cleaning", href: "/services#standard-house-cleaning" },
-  { name: "Move-in/Move-out", href: "/services#move-cleaning" },
-  { name: "Office Cleaning", href: "/services#office-cleaning" },
-  { name: "Pest Control", href: "/services#pest-control" },
+  { name: "Standard House Cleaning", href: "/services#residential-cleaning" },
+  { name: "Deep Cleaning", href: "/services#residential-cleaning" },
+  { name: "Move-in/Move-out", href: "/services#residential-cleaning" },
+  { name: "Office Cleaning", href: "/services#commercial-cleaning" },
+  { name: "Upholstery & Fabric", href: "/services#upholstery-cleaning" },
+  { name: "Specialised Services", href: "/services#specialised-cleaning" },
 ]
 
 const quickLinks = [
@@ -14,6 +15,7 @@ const quickLinks = [
   { name: "Services", href: "/services" },
   { name: "Book Online", href: "/book" },
   { name: "Contact", href: "/contact" },
+  { name: "Get a Free Quote", href: "/contact" },
 ]
 
 export function Footer() {
@@ -24,11 +26,11 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div>
-              <span className="text-2xl font-bold">Zekano</span>
-              <span className="text-sm opacity-80 ml-1">Cleaning Co</span>
+              <span className="text-2xl font-bold">Zenako</span>
+              <span className="text-sm opacity-80 ml-1">Cleaning Co.</span>
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
-              Professional cleaning services for homes and businesses. We bring sparkle to every space we touch.
+              Professional cleaning services for homes and businesses in Johannesburg and surrounding areas. We bring sparkle to every space we touch.
             </p>
             <div className="flex gap-4">
               <a href="https://facebook.com" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="Facebook">
@@ -72,6 +74,15 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+            <h3 className="text-lg font-semibold mt-6 mb-3">Service Areas</h3>
+            <ul className="space-y-1">
+              {["Sandton", "Randburg", "Fourways", "Midrand", "Bryanston", "Johannesburg North"].map((area) => (
+                <li key={area} className="text-sm opacity-80 flex items-center gap-1.5">
+                  <MapPin className="h-3 w-3 shrink-0" />
+                  {area}
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact Info */}
@@ -96,7 +107,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <p className="text-center text-sm opacity-80">
-            &copy; {new Date().getFullYear()} Zekano Cleaning Co. All rights reserved.
+            &copy; {new Date().getFullYear()} Zenako Cleaning Co. All rights reserved. | Professional cleaning services in Johannesburg, South Africa.
           </p>
         </div>
       </div>

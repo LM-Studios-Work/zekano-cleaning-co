@@ -9,8 +9,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Target, Heart, Users, Award, CheckCircle2 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "About Us | Zekano Cleaning Co",
-  description: "Learn about Zekano Cleaning Co - Johannesburg's trusted professional cleaning service for homes and businesses.",
+  title: "About Us | Zenako Cleaning Co. | Johannesburg",
+  description: "Learn about Zenako Cleaning Co. — Johannesburg's trusted professional cleaning service for homes and businesses. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
 }
 
 const values = [
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Zekano Cleaning Co started right here in Johannesburg. What began as a small operation serving a handful of households in the suburbs has grown steadily through referrals and returning clients who value consistency.
+                    Zenako Cleaning Co. started right here in Johannesburg. What began as a small operation serving a handful of households in the suburbs has grown steadily through referrals and returning clients who value consistency.
                   </p>
                   <p>
                     We saw too many cleaning services that would show up late, cut corners, or send a different person every time. We decided to do things differently — fixed teams, proper training, and the kind of attention to detail that means you notice the difference when you walk through the door.
@@ -80,7 +80,7 @@ export default function AboutPage() {
                 <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
                   <Image
                     src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                    alt="Zekano Cleaning Co team"
+                    alt="Zenako Cleaning Co. team"
                     fill
                     className="object-cover"
                   />
