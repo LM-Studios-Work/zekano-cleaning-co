@@ -80,21 +80,25 @@ const services = [
   {
     icon: DeepCleaningIcon,
     title: "Deep Cleaning",
+    href: "/services/deep-cleaning",
     description: "Thorough top-to-bottom cleaning covering every surface, corner, and hidden spot in your home.",
   },
   {
     icon: StandardCleaningIcon,
     title: "Standard House Cleaning",
+    href: "/services/standard-house-cleaning",
     description: "Regular maintenance cleaning to keep your home fresh, tidy, and comfortable every week.",
   },
   {
     icon: MoveCleaningIcon,
     title: "Move-in / Move-out Cleaning",
+    href: "/services/move-in-move-out-cleaning",
     description: "Complete property cleaning for seamless transitions when moving in or out of your space.",
   },
   {
     icon: PestControlIcon,
     title: "Pest Control",
+    href: "/services/pest-control",
     description: "Safe, eco-friendly pest management solutions to protect your home and family.",
   },
 ]
@@ -122,13 +126,13 @@ export function ServicesPreview() {
               {services.map((service) => {
                 const Icon = service.icon
                 return (
-                  <div key={service.title} className="flex flex-col">
+                  <Link key={service.title} href={service.href} className="flex flex-col group">
                     <div className="mb-6 flex h-16 w-16 items-center justify-center" style={{ color: "#1A9AD2" }}>
                       <Icon />
                     </div>
-                    <h3 className="font-bold text-foreground text-base mb-3">{service.title}</h3>
+                    <h3 className="font-bold text-foreground text-base mb-3 group-hover:text-[#1A9AD2] transition-colors">{service.title}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
-                  </div>
+                  </Link>
                 )
               })}
             </div>

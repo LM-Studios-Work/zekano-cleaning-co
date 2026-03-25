@@ -2,12 +2,12 @@ import Link from "next/link"
 import { Phone, Mail, Clock, MapPin } from "lucide-react"
 
 const services = [
-  { name: "Standard House Cleaning", href: "/services#residential-cleaning" },
-  { name: "Deep Cleaning", href: "/services#residential-cleaning" },
-  { name: "Move-in/Move-out", href: "/services#residential-cleaning" },
-  { name: "Office Cleaning", href: "/services#commercial-cleaning" },
-  { name: "Upholstery & Fabric", href: "/services#upholstery-cleaning" },
-  { name: "Specialised Services", href: "/services#specialised-cleaning" },
+  { name: "Standard House Cleaning", href: "/services/standard-house-cleaning" },
+  { name: "Deep Cleaning", href: "/services/deep-cleaning" },
+  { name: "Move-in/Move-out", href: "/services/move-in-move-out-cleaning" },
+  { name: "Office Cleaning", href: "/services/office-cleaning" },
+  { name: "Carpet Cleaning", href: "/services/carpet-cleaning" },
+  { name: "Pest Control", href: "/services/pest-control" },
 ]
 
 const quickLinks = [
