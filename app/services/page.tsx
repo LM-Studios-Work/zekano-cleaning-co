@@ -5,7 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle2, Home, Building2, Sofa, Wrench, ArrowRight } from "lucide-react"
+import { CheckIcon, HouseIcon, OfficeIcon, CouchIcon, WrenchIcon, ArrowRightIcon } from "@/components/icons"
 import { allServices } from "@/lib/services-data"
 
 export const metadata: Metadata = {
@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   description: "Professional cleaning services in Johannesburg — residential cleaning, commercial cleaning, upholstery & fabric cleaning, and specialised cleaning services. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
 }
 
-const categoryIcons: Record<string, typeof Home> = {
-  "residential-cleaning": Home,
-  "commercial-cleaning": Building2,
-  "upholstery-cleaning": Sofa,
-  "specialised-cleaning": Wrench,
+const categoryIcons: Record<string, typeof HouseIcon> = {
+  "residential-cleaning": HouseIcon,
+  "commercial-cleaning": OfficeIcon,
+  "upholstery-cleaning": CouchIcon,
+  "specialised-cleaning": WrenchIcon,
 }
 
 const categories = [
@@ -121,7 +121,7 @@ export default function ServicesPage() {
                                 {service.description}
                               </p>
                               <span className="mt-3 inline-flex items-center text-sm font-medium" style={{ color: "#6fbf00" }}>
-                                Learn more <ArrowRight className="ml-1 h-4 w-4" />
+                                Learn more <ArrowRightIcon className="ml-1 h-4 w-4" />
                               </span>
                             </CardContent>
                           </Card>

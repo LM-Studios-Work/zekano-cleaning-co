@@ -1,5 +1,3 @@
-import { Home, Building2, Sofa, Wrench, Sparkles, Truck, Bug, Droplets, TreePine, ShieldCheck, Wind } from "lucide-react"
-
 export interface ServiceData {
   slug: string
   title: string

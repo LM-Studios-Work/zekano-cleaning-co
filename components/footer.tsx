@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Phone, Mail, Clock, MapPin } from "lucide-react"
+import { PhoneIcon, MailIcon, ClockIcon, MapPinIcon } from "@/components/icons"
 
 const services = [
   { name: "Standard House Cleaning", href: "/services/standard-house-cleaning" },
@@ -30,7 +30,7 @@ export function Footer() {
               <span className="text-sm opacity-80 ml-1">Cleaning Co.</span>
             </div>
             <p className="text-sm opacity-80 leading-relaxed">
-              Professional cleaning services for homes and businesses in Johannesburg and surrounding areas. We bring sparkle to every space we touch.
+              Homes. Offices. Carpets. Pests. We clean things in Johannesburg. No fluff.
             </p>
             <div className="flex gap-4">
               <a href="https://facebook.com" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="Facebook">
@@ -78,7 +78,7 @@ export function Footer() {
             <ul className="space-y-1">
               {["Sandton", "Randburg", "Fourways", "Midrand", "Bryanston", "Johannesburg North"].map((area) => (
                 <li key={area} className="text-sm opacity-80 flex items-center gap-1.5">
-                  <MapPin className="h-3 w-3 shrink-0" />
+                  <MapPinIcon className="h-3 w-3 shrink-0" />
                   {area}
                 </li>
               ))}
@@ -90,15 +90,15 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 shrink-0" />
+                <PhoneIcon className="h-5 w-5 shrink-0" />
                 <a href="tel:+27844020733" className="text-sm opacity-80 hover:opacity-100 transition-opacity">084 402 0733</a>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 shrink-0" />
+                <MailIcon className="h-5 w-5 shrink-0" />
                 <a href="mailto:info@zekanocleaningco.com" className="text-sm opacity-80 hover:opacity-100 transition-opacity">info@zekanocleaningco.com</a>
               </li>
               <li className="flex items-start gap-3">
-                <Clock className="h-5 w-5 shrink-0 mt-0.5" />
+                <ClockIcon className="h-5 w-5 shrink-0 mt-0.5" />
                 <span className="text-sm opacity-80">Mon-Sat: 7AM - 8PM<br />Sun: 9AM - 5PM</span>
               </li>
             </ul>
@@ -107,7 +107,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <p className="text-center text-sm opacity-80">
-            &copy; {new Date().getFullYear()} Zenako Cleaning Co. All rights reserved. | Professional cleaning services in Johannesburg, South Africa.
+            &copy; {new Date().getFullYear()} Zenako Cleaning Co. Johannesburg, South Africa. &bull; Yes, we actually enjoy cleaning.
           </p>
         </div>
       </div>

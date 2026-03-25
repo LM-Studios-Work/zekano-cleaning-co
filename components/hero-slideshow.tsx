@@ -3,49 +3,43 @@
 import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Phone } from "lucide-react"
+import { PhoneIcon } from "@/components/icons"
 
 const slides = [
   {
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&q=80",
-    alt: "Professional house cleaning",
-    label: "01. Clean House",
-    heading: "Cleaning\nServices",
-    description: "Professional residential cleaning that makes your home sparkle. From deep cleaning to regular upkeep, we handle it all.",
+    alt: "House cleaning in Johannesburg",
+    label: "01. Homes",
+    heading: "We clean houses.\nProperly.",
+    description: "Not a quick wipe-down. A real clean. Every surface, every corner, every time.",
   },
   {
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80",
-    alt: "Professional carpet cleaning",
-    label: "02. Clean Carpet",
-    heading: "Clean Carpet a\nPledge of Comfort",
-    description: "Expert carpet cleaning that removes deep stains, allergens, and odours. Your carpets will look and feel brand new.",
+    alt: "Carpet and upholstery cleaning",
+    label: "02. Carpets",
+    heading: "Your carpet has\nseen things.",
+    description: "Deep extraction cleaning that pulls out what vacuuming can't. Stains, dust mites, the lot.",
   },
   {
     image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1920&q=80",
-    alt: "Professional office cleaning",
-    label: "03. Clean Office",
-    heading: "Spotless Office\nEnvironment",
-    description: "Keep your workplace pristine and professional. We provide thorough commercial cleaning tailored to your schedule.",
+    alt: "Office cleaning Johannesburg",
+    label: "03. Offices",
+    heading: "Clean office.\nHappy staff.",
+    description: "After-hours cleaning so your team walks into a fresh workspace every morning.",
   },
 ]
 
 export function HeroSlideshow() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [isAnimating, setIsAnimating] = useState(false)
 
   const goToSlide = useCallback((index: number) => {
-    if (index === currentSlide || isAnimating) return
-    setIsAnimating(true)
+    if (index === currentSlide) return
     setCurrentSlide(index)
-    setTimeout(() => setIsAnimating(false), 800)
-  }, [currentSlide, isAnimating])
+  }, [currentSlide])
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => {
-        const next = (prev + 1) % slides.length
-        return next
-      })
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 5000)
     return () => clearInterval(interval)
   }, [])
@@ -57,7 +51,7 @@ export function HeroSlideshow() {
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-opacity duration-700 ${
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -71,90 +65,62 @@ export function HeroSlideshow() {
         </div>
       ))}
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/35" />
+      {/* Dark overlay — high contrast */}
+      <div className="absolute inset-0 bg-black/50" />
 
-      {/* Content - Left aligned like ClenGo */}
+      {/* Content — left aligned, no fluff */}
       <div className="relative z-10 flex h-full items-center pt-20 md:pt-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p
-              className={`mb-4 text-sm font-medium uppercase tracking-widest text-white/85 transition-all duration-700 ${
-                true ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-              }`}
-            >
-              Welcome to Our Site
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-white/70">
+              Cleaning services in Johannesburg
             </p>
 
-            {/* Animated heading */}
-            <div className="overflow-hidden">
-              <h1
-                key={currentSlide}
-                className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.1] animate-slideUp"
-              >
-                {slides[currentSlide].heading.split("\n").map((line, i) => (
-                  <span key={i}>
-                    {i === 0 && line.includes("Cleaning") ? (
-                      <>
-                        <span style={{ color: "#6fbf00" }}>Cleaning</span>
-                        {line.replace("Cleaning", "")}
-                      </>
-                    ) : i === 0 && line.includes("Clean") ? (
-                      <>
-                        <span style={{ color: "#6fbf00" }}>Clean</span>
-                        {line.replace("Clean", "")}
-                      </>
-                    ) : i === 0 && line.includes("Spotless") ? (
-                      <>
-                        <span style={{ color: "#6fbf00" }}>Spotless</span>
-                        {line.replace("Spotless", "")}
-                      </>
-                    ) : (
-                      line
-                    )}
-                    {i < slides[currentSlide].heading.split("\n").length - 1 && <br />}
-                  </span>
-                ))}
-              </h1>
-            </div>
-
-            {/* Animated description */}
-            <p
-              key={`desc-${currentSlide}`}
-              className="mt-6 text-base text-white/80 leading-relaxed max-w-lg font-normal animate-fadeIn"
+            <h1
+              key={currentSlide}
+              className="text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.05]"
             >
+              {slides[currentSlide].heading.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < slides[currentSlide].heading.split("\n").length - 1 && <br />}
+                </span>
+              ))}
+            </h1>
+
+            <p className="mt-4 text-sm text-white/75 leading-relaxed max-w-md">
               {slides[currentSlide].description}
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
-                href="/services"
-                className="inline-flex items-center justify-center rounded px-8 py-3.5 text-sm font-semibold text-white border-2 border-white/70 hover:bg-white hover:text-gray-900 transition-colors duration-200"
+                href="/book"
+                className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
+                style={{ backgroundColor: "#6fbf00" }}
               >
-                Read More
+                Book a Clean
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded px-8 py-3.5 text-sm font-semibold text-white transition-colors duration-200"
-                style={{ backgroundColor: "#6fbf00" }}
+                className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200"
               >
-                Contact Us
+                Get a Free Quote
               </Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Hotline Information Box - hidden on mobile, shown on desktop inside hero */}
-      <div className="hidden md:block absolute right-6 lg:right-8 bottom-16 lg:bottom-32 z-30 rounded-lg p-6 shadow-2xl w-72 lg:w-80" style={{ backgroundColor: "#1A9AD2" }}>
-        <p className="text-white text-xs uppercase tracking-widest font-bold mb-3">Get Information:</p>
-        <a href="tel:+27844020733" className="flex items-center gap-3 text-white hover:text-blue-100 transition-colors">
-          <Phone className="h-6 w-6 flex-shrink-0" />
-          <span className="text-2xl font-bold">084 402 0733</span>
+      {/* Hotline — desktop, bottom-right */}
+      <div className="hidden md:block absolute right-6 lg:right-8 bottom-16 lg:bottom-24 z-30 p-5 w-72" style={{ backgroundColor: "#1A9AD2" }}>
+        <p className="text-white text-[10px] uppercase tracking-[0.2em] font-bold mb-2">Call now:</p>
+        <a href="tel:+27844020733" className="flex items-center gap-3 text-white hover:text-white/80 transition-colors">
+          <PhoneIcon className="h-5 w-5 flex-shrink-0" />
+          <span className="text-xl font-black">084 402 0733</span>
         </a>
       </div>
 
-      {/* Slide Tab Navigation - Bottom of hero like ClenGo, hidden on mobile */}
+      {/* Slide tabs — bottom left */}
       <div className="hidden md:block absolute bottom-[5%] left-0 right-0 z-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex gap-0">
@@ -162,60 +128,27 @@ export function HeroSlideshow() {
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`relative pr-16 py-5 text-sm font-medium transition-all duration-300 text-left whitespace-nowrap ${
+                className={`relative pr-16 py-4 text-xs font-bold transition-all duration-200 text-left whitespace-nowrap uppercase tracking-wider ${
                   index === currentSlide
                     ? "text-white"
-                    : "text-white/50 hover:text-white/70"
+                    : "text-white/40 hover:text-white/60"
                 }`}
               >
                 {slide.label}
-                {/* Active underline - fixed short width */}
-                <span className={`absolute bottom-0 left-0 w-24 h-0.5 transition-colors duration-300 ${index === currentSlide ? "bg-white" : "bg-white/20"}`} />
+                <span className={`absolute bottom-0 left-0 w-20 h-0.5 transition-colors duration-200 ${index === currentSlide ? "bg-white" : "bg-white/15"}`} />
               </button>
             ))}
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes slideUp {
-          from {
-            transform: translateY(30px);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-slideUp {
-          animation: slideUp 0.7s ease-out forwards;
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.8s ease-out 0.2s forwards;
-          opacity: 0;
-        }
-      `}</style>
     </section>
 
-    {/* Mobile Hotline Box - Below hero, visible on mobile only */}
+    {/* Mobile hotline — below hero */}
     <div className="md:hidden relative z-20 -mt-6 mx-[8%]">
-      <div className="rounded-xl p-5 text-center shadow-xl" style={{ backgroundColor: "#1A9AD2" }}>
-        <p className="text-white/80 text-xs uppercase tracking-widest font-bold mb-1">Hotline</p>
-        <p className="text-white text-base font-bold mb-2">Get Information:</p>
+      <div className="p-4 text-center" style={{ backgroundColor: "#1A9AD2" }}>
         <a href="tel:+27844020733" className="inline-flex items-center gap-3 text-white">
-          <Phone className="h-7 w-7" />
-          <span className="text-2xl font-bold">084 402 0733</span>
+          <PhoneIcon className="h-5 w-5" />
+          <span className="text-lg font-black">084 402 0733</span>
         </a>
       </div>
     </div>

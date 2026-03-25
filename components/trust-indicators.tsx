@@ -1,43 +1,42 @@
-import { Shield, DollarSign, ThumbsUp, Leaf } from "lucide-react"
+import { ShieldCheckIcon, CoinStackIcon, ThumbsUpIcon, LeafIcon } from "@/components/icons"
 
 const indicators = [
   {
-    icon: Shield,
-    title: "Reliable Team",
-    description: "Vetted, trained, and trusted professionals every time.",
+    icon: ShieldCheckIcon,
+    title: "Vetted Team",
+    description: "Background-checked. Trained. Shows up on time.",
   },
   {
-    icon: DollarSign,
-    title: "Affordable Pricing",
-    description: "Competitive rates with transparent quotes and no hidden fees.",
+    icon: CoinStackIcon,
+    title: "Honest Pricing",
+    description: "No hidden fees. No surprise charges. Ever.",
   },
   {
-    icon: ThumbsUp,
-    title: "Satisfaction Guaranteed",
-    description: "Not happy? We'll come back and make it right — no questions asked.",
+    icon: ThumbsUpIcon,
+    title: "We Fix It Free",
+    description: "Not happy? We come back. No arguments.",
   },
   {
-    icon: Leaf,
-    title: "Eco-Friendly Products",
-    description: "Safe for your family, pets, and the environment.",
+    icon: LeafIcon,
+    title: "Eco Products",
+    description: "Tough on grime. Safe for kids, pets, planet.",
   },
 ]
 
 export function TrustIndicators() {
   return (
-    <section className="py-12 lg:py-16 bg-white">
+    <section className="py-10 lg:py-12 bg-white border-b border-border">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-4 lg:gap-8">
           {indicators.map((item) => (
-            <div key={item.title} className="text-center">
-              <div
-                className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full"
-                style={{ backgroundColor: "rgba(26, 154, 210, 0.1)", color: "#1A9AD2" }}
-              >
-                <item.icon className="h-7 w-7" />
+            <div key={item.title} className="flex items-start gap-3">
+              <div className="shrink-0 mt-0.5" style={{ color: "#1A9AD2" }}>
+                <item.icon className="w-7 h-7" />
               </div>
-              <h3 className="font-bold text-foreground text-sm lg:text-base">{item.title}</h3>
-              <p className="mt-1 text-xs lg:text-sm text-muted-foreground">{item.description}</p>
+              <div>
+                <h3 className="font-bold text-foreground text-sm">{item.title}</h3>
+                <p className="text-xs text-muted-foreground mt-0.5">{item.description}</p>
+              </div>
             </div>
           ))}
         </div>

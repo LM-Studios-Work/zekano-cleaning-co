@@ -1,29 +1,29 @@
-import { FileText, CalendarDays, Sparkles, Smile } from "lucide-react"
+import { ClipboardIcon, CalendarIcon, SparkleIcon, SmileFaceIcon } from "@/components/icons"
 
 const steps = [
   {
-    icon: FileText,
+    icon: ClipboardIcon,
     step: "01",
-    title: "Request a Quote",
-    description: "Tell us about your space and cleaning needs. We'll provide a transparent, no-obligation quote.",
+    title: "Tell Us What You Need",
+    description: "WhatsApp, call, or fill out the form. We quote within hours, not days.",
   },
   {
-    icon: CalendarDays,
+    icon: CalendarIcon,
     step: "02",
-    title: "Schedule Your Cleaning",
-    description: "Pick a date and time that works for you. We offer flexible scheduling including weekends.",
+    title: "Pick a Date",
+    description: "Weekday, weekend, after hours. You choose. We show up.",
   },
   {
-    icon: Sparkles,
+    icon: SparkleIcon,
     step: "03",
-    title: "Professional Cleaning Service",
-    description: "Our trained team arrives on time with all supplies and equipment to get the job done right.",
+    title: "We Clean",
+    description: "Our team arrives with everything. You provide access. That's it.",
   },
   {
-    icon: Smile,
+    icon: SmileFaceIcon,
     step: "04",
-    title: "Enjoy Your Clean Space",
-    description: "Walk into a fresh, spotless space. Satisfaction guaranteed or we'll re-clean for free.",
+    title: "Walk Into Clean",
+    description: "If something's off, say the word. We come back and fix it.",
   },
 ]
 
@@ -31,32 +31,25 @@ export function CleaningProcess() {
   return (
     <section className="py-16 lg:py-24 bg-white">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center mb-12">
-          <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">How It Works</span>
-          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">
-            Our <span style={{ color: "#6fbf00" }}>Cleaning</span> Process
+        {/* Asymmetric header — left-aligned, not centered */}
+        <div className="mb-12 max-w-lg">
+          <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>How It Works</span>
+          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
+            Four steps. No runaround.
           </h2>
-          <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Getting your space professionally cleaned is simple. Here's how it works from start to finish.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
           {steps.map((s, idx) => (
-            <div key={s.title} className="relative text-center">
-              {/* Connector line (hidden on last item and mobile) */}
-              {idx < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-px bg-gray-200" />
-              )}
-              <div
-                className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full relative z-10"
-                style={{ backgroundColor: "rgba(26, 154, 210, 0.1)", color: "#1A9AD2" }}
-              >
-                <s.icon className="h-8 w-8" />
+            <div key={s.title} className={`relative p-6 ${idx < steps.length - 1 ? "lg:border-r border-border" : ""} ${idx < 2 ? "sm:border-b lg:border-b-0 border-border" : ""}`}>
+              <span className="text-5xl font-black text-gray-100 absolute top-4 right-6 select-none">{s.step}</span>
+              <div className="relative z-10">
+                <div className="mb-4" style={{ color: "#1A9AD2" }}>
+                  <s.icon className="w-8 h-8" />
+                </div>
+                <h3 className="font-bold text-foreground text-base">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{s.description}</p>
               </div>
-              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Step {s.step}</span>
-              <h3 className="mt-2 font-bold text-foreground text-lg">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.description}</p>
             </div>
           ))}
         </div>

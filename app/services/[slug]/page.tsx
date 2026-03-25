@@ -6,7 +6,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle2, ArrowRight, ArrowLeft, Phone, MessageSquare } from "lucide-react"
+import { CheckIcon, ArrowRightIcon, ArrowLeftIcon, PhoneIcon, ChatIcon } from "@/components/icons"
 import { allServices, getServiceBySlug, getRelatedServices } from "@/lib/services-data"
 
 export function generateStaticParams() {
@@ -82,10 +82,10 @@ export default async function ServicePage({
                   </Link>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 rounded px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:opacity-90"
+                    className="inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
                     style={{ backgroundColor: "#1A9AD2" }}
                   >
-                    <MessageSquare className="h-4 w-4" />
+                    <ChatIcon className="h-4 w-4" />
                     Get a Free Quote
                   </Link>
                 </div>
@@ -115,7 +115,7 @@ export default async function ServicePage({
                 <ul className="mt-8 space-y-4">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 shrink-0 mt-0.5" style={{ color: "#6fbf00" }} />
+                      <CheckIcon className="h-5 w-5 shrink-0 mt-0.5" style={{ color: "#6fbf00" }} />
                       <span className="text-foreground">{feature}</span>
                     </li>
                   ))}
@@ -129,7 +129,7 @@ export default async function ServicePage({
                 <ul className="mt-8 space-y-4">
                   {service.benefits.map((benefit) => (
                     <li key={benefit} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 shrink-0 mt-0.5" style={{ color: "#1A9AD2" }} />
+                      <CheckIcon className="h-5 w-5 shrink-0 mt-0.5" style={{ color: "#1A9AD2" }} />
                       <span className="text-foreground">{benefit}</span>
                     </li>
                   ))}
@@ -190,7 +190,7 @@ export default async function ServicePage({
                   href="tel:+27844020733"
                   className="inline-flex items-center justify-center gap-2 rounded px-8 py-3 text-sm font-semibold text-white border-2 border-white/70 hover:bg-white hover:text-gray-900 transition-colors duration-200"
                 >
-                  <Phone className="h-4 w-4" />
+                  <PhoneIcon className="h-4 w-4" />
                   Call 084 402 0733
                 </a>
               </div>
@@ -225,7 +225,7 @@ export default async function ServicePage({
                       </h3>
                       <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{related.description}</p>
                       <span className="mt-3 inline-flex items-center text-sm font-medium" style={{ color: "#6fbf00" }}>
-                        Learn more <ArrowRight className="ml-1 h-4 w-4" />
+                        Learn more <ArrowRightIcon className="ml-1 h-4 w-4" />
                       </span>
                     </CardContent>
                   </Card>
@@ -239,7 +239,7 @@ export default async function ServicePage({
                 className="inline-flex items-center gap-2 text-sm font-medium hover:underline"
                 style={{ color: "#1A9AD2" }}
               >
-                <ArrowLeft className="h-4 w-4" />
+                <ArrowLeftIcon className="h-4 w-4" />
                 View All Services
               </Link>
             </div>

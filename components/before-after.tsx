@@ -5,17 +5,17 @@ import { useState } from "react"
 
 const examples = [
   {
-    label: "Kitchen Deep Clean",
+    label: "Kitchen",
     before: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=75",
     after: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=75",
   },
   {
-    label: "Bathroom Restoration",
+    label: "Bathroom",
     before: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=75",
     after: "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=600&q=75",
   },
   {
-    label: "Living Room Refresh",
+    label: "Living Room",
     before: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75",
     after: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=75",
   },
@@ -27,49 +27,49 @@ export function BeforeAfter() {
   return (
     <section className="py-16 lg:py-24 bg-background">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center mb-12">
-          <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Results</span>
-          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">
-            Before &amp; <span style={{ color: "#6fbf00" }}>After</span>
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            See the difference our professional cleaning services make. Real results from real homes in Johannesburg.
-          </p>
+        {/* Asymmetric layout — text left, tabs right */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 gap-4">
+          <div className="max-w-md">
+            <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Proof</span>
+            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
+              Before &amp; After
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Real jobs. Real dirt. Real results. Johannesburg homes, not stock photos.
+            </p>
+          </div>
+          <div className="flex gap-2">
+            {examples.map((ex, idx) => (
+              <button
+                key={ex.label}
+                onClick={() => setActiveIndex(idx)}
+                className={`px-4 py-2 text-sm font-bold transition-colors ${
+                  idx === activeIndex
+                    ? "bg-foreground text-background"
+                    : "bg-transparent text-muted-foreground hover:text-foreground border border-border"
+                }`}
+              >
+                {ex.label}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Tabs */}
-        <div className="flex justify-center gap-3 mb-8">
-          {examples.map((ex, idx) => (
-            <button
-              key={ex.label}
-              onClick={() => setActiveIndex(idx)}
-              className={`px-4 py-2 text-sm font-medium transition-colors duration-200 border-b-2 ${
-                idx === activeIndex
-                  ? "border-[#6fbf00] text-foreground"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {ex.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <div>
-            <p className="text-sm font-semibold text-muted-foreground mb-2 uppercase tracking-wider">Before</p>
-            <div className="aspect-[4/3] relative overflow-hidden shadow-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+          <div className="relative">
+            <span className="absolute top-4 left-4 z-10 bg-black/70 text-white text-xs font-bold uppercase tracking-wider px-3 py-1">Before</span>
+            <div className="aspect-[4/3] relative overflow-hidden">
               <Image
                 src={examples[activeIndex].before}
                 alt={`Before - ${examples[activeIndex].label}`}
                 fill
-                className="object-cover"
+                className="object-cover grayscale contrast-125"
               />
             </div>
           </div>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: "#6fbf00" }}>After</p>
-            <div className="aspect-[4/3] relative overflow-hidden shadow-lg">
+          <div className="relative">
+            <span className="absolute top-4 left-4 z-10 text-white text-xs font-bold uppercase tracking-wider px-3 py-1" style={{ backgroundColor: "#6fbf00" }}>After</span>
+            <div className="aspect-[4/3] relative overflow-hidden">
               <Image
                 src={examples[activeIndex].after}
                 alt={`After - ${examples[activeIndex].label}`}

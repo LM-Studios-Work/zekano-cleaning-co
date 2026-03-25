@@ -1,23 +1,23 @@
-import { Star } from "lucide-react"
+import { StarIcon } from "@/components/icons"
 import { Card, CardContent } from "@/components/ui/card"
 
 const testimonials = [
   {
-    content: "Zenako Cleaning Co. has been cleaning our home for over two years now. They're always on time, thorough, and our house smells amazing after every visit. Highly recommend!",
+    content: "Two years running. Always on time. Our house smells like it should after every visit. No notes.",
     author: "Thandi Dlamini",
-    role: "Homeowner",
+    role: "Sandton homeowner",
     rating: 5,
   },
   {
-    content: "We hired them for our office cleaning and couldn't be happier. The team is professional, discrete, and our workspace has never looked better. Our employees love coming to work now!",
+    content: "Hired them for the office. Staff actually want to come in on Mondays now. That says enough.",
     author: "James van der Merwe",
-    role: "Business Owner",
+    role: "Business owner, Randburg",
     rating: 5,
   },
   {
-    content: "Used their move-out cleaning service and got my full deposit back! They cleaned every corner, including areas I didn't even know existed. Worth every penny.",
+    content: "Move-out clean. Full deposit back. They cleaned spots I didn't know existed. Worth every cent.",
     author: "Nomsa Khumalo",
-    role: "Apartment Renter",
+    role: "Tenant, Fourways",
     rating: 5,
   },
 ]
@@ -26,35 +26,38 @@ export function Testimonials() {
   return (
     <section className="py-16 lg:py-24 bg-background">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center mb-12">
-          <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Testimonials</span>
-          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">What Our <span style={{ color: "#6fbf00" }}>Customers</span> Say</h2>
-          <p className="mt-4 text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Don't just take our word for it. Here's what our satisfied customers have to say about our services.
+        {/* Asymmetric header */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 gap-4">
+          <div className="max-w-md">
+            <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Reviews</span>
+            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
+              Don't take our word for it.
+            </h2>
+          </div>
+          <p className="text-xs text-muted-foreground lg:max-w-xs lg:text-right">
+            Google Reviews coming soon once our profile is verified. These are real clients.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-card border-border">
+            <Card key={index} className="bg-white border-border">
               <CardContent className="p-6">
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-0.5 mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    <StarIcon key={i} className="h-4 w-4 text-yellow-500" />
                   ))}
                 </div>
-                <blockquote className="text-foreground leading-relaxed mb-6 text-sm">
-                  "{testimonial.content}"
+                <blockquote className="text-foreground leading-relaxed text-sm font-medium">
+                  &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
-                <div className="flex items-center gap-3">
-                  <div className="h-12 w-12 rounded-full flex items-center justify-center font-bold text-white" style={{ backgroundColor: "#1A9AD2" }}>
-                    <span className="text-sm">
-                      {testimonial.author.split(' ').map(n => n[0]).join('')}
-                    </span>
+                <div className="mt-4 flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full flex items-center justify-center font-bold text-white text-xs" style={{ backgroundColor: "#1A9AD2" }}>
+                    {testimonial.author.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
-                    <div className="font-bold text-foreground text-sm">{testimonial.author}</div>
-                    <div className="text-xs text-muted-foreground">{testimonial.role}</div>
+                    <div className="font-bold text-foreground text-xs">{testimonial.author}</div>
+                    <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{testimonial.role}</div>
                   </div>
                 </div>
               </CardContent>

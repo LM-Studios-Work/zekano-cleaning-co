@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
-import { X } from "lucide-react"
+import { XIcon } from "@/components/icons"
 import Image from "next/image"
 
 const navigation = [
@@ -197,7 +197,7 @@ export function Header() {
             onClick={() => setDesktopPanelOpen(false)}
             className="absolute top-5 right-5 text-gray-400 hover:text-gray-600 transition-colors"
           >
-            <X className="h-6 w-6" />
+            <XIcon className="h-6 w-6" />
           </button>
 
           <div className="px-10 py-12 text-center">
@@ -298,7 +298,7 @@ export function Header() {
               className="rounded-md p-2 text-gray-500 hover:text-gray-700"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <X className="h-6 w-6" />
+              <XIcon className="h-6 w-6" />
             </button>
           </div>
 
