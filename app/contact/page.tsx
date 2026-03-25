@@ -16,31 +16,33 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Phone, Mail, Clock, Send, MessageCircle } from "lucide-react"
+import { PhoneIcon, MailIcon, ClockIcon, SendIcon, ChatIcon, MapPinIcon } from "@/components/icons"
 
 const contactInfo = [
   {
-    icon: Phone,
+    icon: PhoneIcon,
     title: "Phone",
     details: "084 402 0733",
     action: "tel:+27844020733",
     actionText: "Call us",
   },
   {
-    icon: Mail,
+    icon: MailIcon,
     title: "Email",
     details: "info@zekanocleaningco.com",
     action: "mailto:info@zekanocleaningco.com",
     actionText: "Email us",
   },
   {
-    icon: Clock,
+    icon: ClockIcon,
     title: "Business Hours",
     details: "Mon-Sat: 7AM - 8PM, Sun: 9AM - 5PM",
     action: null,
     actionText: null,
   },
 ]
+
+const serviceAreas = ["Sandton", "Randburg", "Fourways", "Midrand", "Bryanston", "Johannesburg North"]
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -77,7 +79,7 @@ export default function ContactPage() {
     <>
       <Header />
       <main className="pt-24">
-        {/* Page Title - Simple text, no blue wall */}
+        {/* Page Title */}
         <section className="py-12 lg:py-16 bg-background">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#6fbf00" }}>Get In Touch</span>
@@ -85,7 +87,7 @@ export default function ContactPage() {
               Contact <span style={{ color: "#1A9AD2" }}>Us</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-              Have a question or ready to book? Drop us a message, give us a call, or reach out on WhatsApp.
+              Have a question or ready to book? Drop us a message, give us a call, or reach out on WhatsApp. We provide professional cleaning services across Johannesburg and surrounding areas.
             </p>
             <div className="mt-4 h-1 w-24 bg-gray-300"></div>
           </div>
@@ -138,7 +140,7 @@ export default function ContactPage() {
                     {isSubmitted ? (
                       <div className="text-center py-8">
                         <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(111, 191, 0, 0.1)", color: "#6fbf00" }}>
-                          <Send className="h-8 w-8" />
+                          <SendIcon className="h-8 w-8" />
                         </div>
                         <h3 className="text-xl font-semibold text-foreground">Message Sent!</h3>
                         <p className="mt-2 text-muted-foreground">
@@ -207,11 +209,22 @@ export default function ContactPage() {
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="deep-cleaning">Deep Cleaning</SelectItem>
                               <SelectItem value="standard-cleaning">Standard House Cleaning</SelectItem>
+                              <SelectItem value="deep-cleaning">Deep Cleaning</SelectItem>
                               <SelectItem value="move-cleaning">Move-in/Move-out Cleaning</SelectItem>
                               <SelectItem value="office-cleaning">Office Cleaning</SelectItem>
+                              <SelectItem value="small-business">Small Business Cleaning</SelectItem>
+                              <SelectItem value="sofa-cleaning">Sofa Cleaning</SelectItem>
+                              <SelectItem value="mattress-cleaning">Mattress Cleaning</SelectItem>
+                              <SelectItem value="curtain-cleaning">Curtain Cleaning</SelectItem>
+                              <SelectItem value="carpet-cleaning">Carpet Cleaning</SelectItem>
+                              <SelectItem value="upholstery-cleaning">Upholstery Cleaning</SelectItem>
+                              <SelectItem value="roof-cleaning">Roof Cleaning</SelectItem>
+                              <SelectItem value="drain-cleaning">Drain Cleaning</SelectItem>
+                              <SelectItem value="garden-cleanup">Garden Clean-ups</SelectItem>
                               <SelectItem value="pest-control">Pest Control</SelectItem>
+                              <SelectItem value="disinfection">Disinfection Services</SelectItem>
+                              <SelectItem value="custom-package">Custom Cleaning Package</SelectItem>
                               <SelectItem value="other">Other / General Inquiry</SelectItem>
                             </SelectContent>
                           </Select>
@@ -236,7 +249,7 @@ export default function ContactPage() {
                 </Card>
               </div>
 
-              {/* Quick Contact */}
+              {/* Quick Contact & Service Areas */}
               <div className="space-y-8">
                 <Card className="border-border">
                   <CardHeader>
@@ -248,7 +261,7 @@ export default function ContactPage() {
                   <CardContent className="space-y-4">
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <a href="tel:+27844020733">
-                        <Phone className="mr-3 h-5 w-5" style={{ color: "#1A9AD2" }} />
+                        <PhoneIcon className="mr-3 h-5 w-5" style={{ color: "#1A9AD2" }} />
                         Call Us: 084 402 0733
                       </a>
                     </Button>
@@ -258,16 +271,52 @@ export default function ContactPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <MessageCircle className="mr-3 h-5 w-5 text-[#25D366]" />
+                        <ChatIcon className="mr-3 h-5 w-5 text-[#25D366]" />
                         WhatsApp Us
                       </a>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <a href="mailto:info@zekanocleaningco.com">
-                        <Mail className="mr-3 h-5 w-5" style={{ color: "#1A9AD2" }} />
+                        <MailIcon className="mr-3 h-5 w-5" style={{ color: "#1A9AD2" }} />
                         Email: info@zekanocleaningco.com
                       </a>
                     </Button>
+                  </CardContent>
+                </Card>
+
+                {/* Service Areas */}
+                <Card className="border-border">
+                  <CardHeader>
+                    <CardTitle className="text-card-foreground">Service Areas</CardTitle>
+                    <CardDescription>
+                      We provide cleaning services across Johannesburg and surrounding areas:
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-2 gap-3">
+                      {serviceAreas.map((area) => (
+                        <div key={area} className="flex items-center gap-2">
+                          <MapPinIcon className="h-4 w-4 shrink-0" style={{ color: "#1A9AD2" }} />
+                          <span className="text-sm text-foreground">{area}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="mt-4 text-xs text-muted-foreground">
+                      Don't see your area? Contact us — we may still be able to help.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Google Map Placeholder */}
+                <Card className="border-border">
+                  <CardContent className="p-0">
+                    <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center">
+                      <div className="text-center p-6">
+                        <MapPinIcon className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+                        <p className="text-sm text-muted-foreground">Google Map will be displayed here once our Google Business profile is verified.</p>
+                        <p className="text-xs text-muted-foreground mt-1">Johannesburg, South Africa</p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </div>

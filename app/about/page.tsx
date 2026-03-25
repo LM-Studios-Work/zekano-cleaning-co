@@ -6,33 +6,33 @@ import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Target, Heart, Users, Award, CheckCircle2 } from "lucide-react"
+import { ShieldCheckIcon, LeafIcon, GearIcon, TrophyIcon, CheckIcon } from "@/components/icons"
 
 export const metadata: Metadata = {
-  title: "About Us | Zekano Cleaning Co",
-  description: "Learn about Zekano Cleaning Co - Johannesburg's trusted professional cleaning service for homes and businesses.",
+  title: "About Us | Zenako Cleaning Co. | Johannesburg",
+  description: "Learn about Zenako Cleaning Co. — Johannesburg's trusted professional cleaning service for homes and businesses. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
 }
 
 const values = [
   {
-    icon: Target,
-    title: "Our Mission",
-    description: "To deliver reliable, thorough cleaning services across Johannesburg that let our clients focus on what matters most to them.",
+    icon: ShieldCheckIcon,
+    title: "The Mission",
+    description: "Clean spaces across Johannesburg. Do it right. Don't make excuses.",
   },
   {
-    icon: Heart,
-    title: "Our Values",
-    description: "Honesty, consistency, and care define our work. We treat every space with the same respect we'd give our own home.",
+    icon: LeafIcon,
+    title: "The Standards",
+    description: "Honest work, same team every visit, eco-friendly products. No shortcuts.",
   },
   {
-    icon: Users,
-    title: "Our Team",
-    description: "Every cleaner on our team is vetted, trained, and equipped to handle residential and commercial jobs of any size.",
+    icon: GearIcon,
+    title: "The People",
+    description: "Vetted, trained, equipped. Not randoms with a mop.",
   },
   {
-    icon: Award,
-    title: "Our Promise",
-    description: "If you're not satisfied with the job, we'll come back and make it right. No arguments, no hassle.",
+    icon: TrophyIcon,
+    title: "The Guarantee",
+    description: "Not satisfied? We come back. Free. No forms, no arguing.",
   },
 ]
 
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Zekano Cleaning Co started right here in Johannesburg. What began as a small operation serving a handful of households in the suburbs has grown steadily through referrals and returning clients who value consistency.
+                    Zenako Cleaning Co. started right here in Johannesburg. What began as a small operation serving a handful of households in the suburbs has grown steadily through referrals and returning clients who value consistency.
                   </p>
                   <p>
                     We saw too many cleaning services that would show up late, cut corners, or send a different person every time. We decided to do things differently — fixed teams, proper training, and the kind of attention to detail that means you notice the difference when you walk through the door.
@@ -80,7 +80,7 @@ export default function AboutPage() {
                 <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
                   <Image
                     src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                    alt="Zekano Cleaning Co team"
+                    alt="Zenako Cleaning Co. team"
                     fill
                     className="object-cover"
                   />
@@ -135,7 +135,7 @@ export default function AboutPage() {
                     "Easy online and WhatsApp booking",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 shrink-0" style={{ color: "#6fbf00" }} />
+                      <CheckIcon className="h-5 w-5 shrink-0" style={{ color: "#6fbf00" }} />
                       <span className="text-foreground">{item}</span>
                     </li>
                   ))}

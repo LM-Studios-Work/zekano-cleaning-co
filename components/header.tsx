@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useEffect } from "react"
-import { X } from "lucide-react"
+import { XIcon, ArrowRightIcon } from "@/components/icons"
 import Image from "next/image"
 
 const navigation = [
@@ -14,10 +14,54 @@ const navigation = [
   { name: "Contact", href: "/contact" },
 ]
 
+const serviceCategories = [
+  {
+    name: "Residential Cleaning",
+    slug: "residential-cleaning",
+    services: [
+      { name: "Standard House Cleaning", slug: "standard-house-cleaning" },
+      { name: "Deep Cleaning", slug: "deep-cleaning" },
+      { name: "Move-in/Move-out Cleaning", slug: "move-in-move-out-cleaning" },
+    ],
+  },
+  {
+    name: "Commercial Cleaning",
+    slug: "commercial-cleaning",
+    services: [
+      { name: "Office Cleaning", slug: "office-cleaning" },
+      { name: "Small Business Cleaning", slug: "small-business-cleaning" },
+    ],
+  },
+  {
+    name: "Upholstery & Fabric",
+    slug: "upholstery-cleaning",
+    services: [
+      { name: "Sofa Cleaning", slug: "sofa-cleaning" },
+      { name: "Mattress Cleaning", slug: "mattress-cleaning" },
+      { name: "Curtain Cleaning", slug: "curtain-cleaning" },
+      { name: "Carpet Cleaning", slug: "carpet-cleaning" },
+      { name: "Upholstery Cleaning", slug: "upholstery-cleaning" },
+    ],
+  },
+  {
+    name: "Specialised Services",
+    slug: "specialised-cleaning",
+    services: [
+      { name: "Roof Cleaning", slug: "roof-cleaning" },
+      { name: "Drain Cleaning", slug: "drain-cleaning" },
+      { name: "Garden Clean-ups", slug: "garden-clean-ups" },
+      { name: "Pest Control", slug: "pest-control" },
+      { name: "Disinfection Services", slug: "disinfection-services" },
+    ],
+  },
+]
+
 export function Header() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [desktopPanelOpen, setDesktopPanelOpen] = useState(false)
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   const isHomePage = pathname === "/"
@@ -76,10 +120,7 @@ export function Header() {
               <span className="flex items-center justify-center h-9 w-9 rounded-full border-2 border-[#6fbf00] text-[#6fbf00]">
                 <i className="fa-solid fa-location-dot text-sm"></i>
               </span>
-              <div className="text-sm leading-snug">
-                <span className="block font-medium text-white">Zekano Cleaning Co</span>
-                <span className="block text-xs text-white/70">Johannesburg, South Africa</span>
-              </div>
+              <span className="text-sm text-white/80">Johannesburg, South Africa</span>
             </div>
 
             {/* Phone */}
@@ -100,8 +141,8 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0">
             <Image
-              src="/placeholder-logo.png"
-              alt="Zekano Cleaning Co"
+              src="/zenako-cleaning-co-logo.png"
+              alt="Zenako Cleaning Co."
               width={48}
               height={48}
               className="h-12 w-12 object-contain"
@@ -110,11 +151,11 @@ export function Header() {
               <span className={`text-2xl font-extrabold leading-none tracking-tight transition-colors duration-300 ${
                 useWhiteStyle ? "text-gray-800" : "text-white"
               }`}>
-                Zekano
+                Zenako
               </span>
               <span className={`text-xs font-medium tracking-wide transition-colors duration-300 ${
                 useWhiteStyle ? "text-gray-400" : "text-white/60"
-              }`}>Cleaning services</span>
+              }`}>Cleaning Co.</span>
             </div>
           </Link>
 
@@ -138,7 +179,70 @@ export function Header() {
           {/* Desktop Navigation - centered, well-spaced */}
           <div className="hidden lg:flex lg:items-center lg:gap-x-2">
             {navigation.map((item) => {
-              const isActive = pathname === item.href
+              const isActive = pathname === item.href || (item.name === "Services" && pathname.startsWith("/services"))
+              if (item.name === "Services") {
+                return (
+                  <div
+                    key={item.name}
+                    className="relative"
+                    onMouseEnter={() => setDesktopServicesOpen(true)}
+                    onMouseLeave={() => setDesktopServicesOpen(false)}
+                  >
+                    <Link
+                      href={item.href}
+                      className={`relative text-base font-medium px-5 py-6 transition-colors duration-200 flex items-center gap-1 ${
+                        isActive
+                          ? "text-[#6fbf00]"
+                          : useWhiteStyle
+                            ? "text-gray-600 hover:text-gray-900"
+                            : "text-white/80 hover:text-white"
+                      }`}
+                    >
+                      {item.name}
+                      <i className={`fa-solid fa-chevron-down text-[10px] transition-transform duration-200 ${desktopServicesOpen ? "rotate-180" : ""}`}></i>
+                      {isActive && (
+                        <span className="absolute bottom-4 left-5 right-5 h-0.5 bg-[#6fbf00]" aria-hidden="true" />
+                      )}
+                    </Link>
+                    {/* Desktop Services Mega Menu */}
+                    <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-200 ${
+                      desktopServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+                    }`}>
+                      <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-6 w-[640px]">
+                        <div className="grid grid-cols-2 gap-6">
+                          {serviceCategories.map((cat) => (
+                            <div key={cat.slug}>
+                              <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">{cat.name}</h4>
+                              <ul className="space-y-1">
+                                {cat.services.map((svc) => (
+                                  <li key={svc.slug}>
+                                    <Link
+                                      href={`/services/${svc.slug}`}
+                                      className="block text-sm text-gray-600 hover:text-[#6fbf00] py-1 transition-colors"
+                                      onClick={() => setDesktopServicesOpen(false)}
+                                    >
+                                      {svc.name}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="mt-4 pt-4 border-t border-gray-100">
+                          <Link
+                            href="/services"
+                            className="inline-flex items-center gap-1 text-sm font-medium text-[#1A9AD2] hover:underline"
+                            onClick={() => setDesktopServicesOpen(false)}
+                          >
+                            View All Services <ArrowRightIcon className="h-3.5 w-3.5" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
               return (
                 <Link
                   key={item.name}
@@ -197,7 +301,7 @@ export function Header() {
             onClick={() => setDesktopPanelOpen(false)}
             className="absolute top-5 right-5 text-gray-400 hover:text-gray-600 transition-colors"
           >
-            <X className="h-6 w-6" />
+            <XIcon className="h-6 w-6" />
           </button>
 
           <div className="px-10 py-12 text-center">
@@ -205,8 +309,8 @@ export function Header() {
             <div className="flex justify-center mb-6">
               <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-gray-100 bg-gray-100">
                 <Image
-                  src="/placeholder-logo.png"
-                  alt="Zekano Cleaning Co"
+                  src="/zenako-cleaning-co-logo.png"
+                  alt="Zenako Cleaning Co."
                   width={128}
                   height={128}
                   className="h-full w-full object-cover"
@@ -216,7 +320,7 @@ export function Header() {
 
             {/* Description */}
             <p className="text-gray-500 text-sm leading-relaxed mb-8">
-              We do great work in our business so that you can always see the quality of our work. Professional cleaning services in Johannesburg.
+              Zenako Cleaning Co. — Professional cleaning services in Johannesburg and surrounding areas. We bring sparkle to every space we touch.
             </p>
 
             {/* Social Icons */}
@@ -264,7 +368,7 @@ export function Header() {
 
           {/* Footer */}
           <div className="px-10 py-6 border-t border-gray-100 text-center">
-            <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} Zekano Cleaning Co. All Rights Reserved.</p>
+            <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} Zenako Cleaning Co. All Rights Reserved.</p>
           </div>
         </div>
       </div>
@@ -285,27 +389,77 @@ export function Header() {
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
               <Image
-                src="/placeholder-logo.png"
-                alt="Zekano"
+                src="/zenako-cleaning-co-logo.png"
+                alt="Zenako Cleaning Co."
                 width={32}
                 height={32}
                 className="h-8 w-8 object-contain"
               />
-              <span className="text-xl font-extrabold text-gray-800">Zekano</span>
+              <span className="text-xl font-extrabold text-gray-800">Zenako</span>
             </Link>
             <button
               type="button"
               className="rounded-md p-2 text-gray-500 hover:text-gray-700"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <X className="h-6 w-6" />
+              <XIcon className="h-6 w-6" />
             </button>
           </div>
 
           {/* Nav links */}
           <div className="px-6 py-4">
             {navigation.map((item) => {
-              const isActive = pathname === item.href
+              const isActive = pathname === item.href || (item.name === "Services" && pathname.startsWith("/services"))
+              if (item.name === "Services") {
+                return (
+                  <div key={item.name}>
+                    <button
+                      type="button"
+                      className={`flex items-center justify-between w-full py-3 text-base font-medium border-b border-gray-50 ${
+                        isActive
+                          ? "text-[#6fbf00]"
+                          : "text-gray-700 hover:text-[#6fbf00]"
+                      }`}
+                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                    >
+                      {item.name}
+                      <i className={`fa-solid fa-chevron-down text-xs transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}></i>
+                    </button>
+                    <div className={`overflow-hidden transition-all duration-300 ${
+                      mobileServicesOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+                    }`}>
+                      <div className="py-2 pl-4 space-y-4">
+                        {serviceCategories.map((cat) => (
+                          <div key={cat.slug}>
+                            <span className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">{cat.name}</span>
+                            {cat.services.map((svc) => (
+                              <Link
+                                key={svc.slug}
+                                href={`/services/${svc.slug}`}
+                                className={`block py-1.5 text-sm ${
+                                  pathname === `/services/${svc.slug}`
+                                    ? "text-[#6fbf00] font-medium"
+                                    : "text-gray-600 hover:text-[#6fbf00]"
+                                }`}
+                                onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false) }}
+                              >
+                                {svc.name}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
+                        <Link
+                          href="/services"
+                          className="inline-flex items-center gap-1 text-sm font-medium text-[#1A9AD2] py-1"
+                          onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false) }}
+                        >
+                          View All Services <ArrowRightIcon className="h-3.5 w-3.5" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
               return (
                 <Link
                   key={item.name}
