@@ -25,16 +25,16 @@ export function BeforeAfter() {
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <section className="py-16 lg:py-24 bg-background">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+    <section className="py-20 lg:py-24 bg-background">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Asymmetric layout — text left, tabs right */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 gap-4">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-8 lg:mb-10 gap-4">
           <div className="max-w-md">
             <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Proof</span>
             <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
               Before &amp; After
             </h2>
-            <p className="mt-2 text-sm text-muted-foreground">
+            <p className="mt-2 text-base lg:text-sm text-muted-foreground">
               Real jobs. Real dirt. Real results. Johannesburg homes, not stock photos.
             </p>
           </div>
@@ -43,7 +43,7 @@ export function BeforeAfter() {
               <button
                 key={ex.label}
                 onClick={() => setActiveIndex(idx)}
-                className={`px-4 py-2 text-sm font-bold transition-colors ${
+                className={`px-5 py-3 sm:px-4 sm:py-2 text-base sm:text-sm font-bold transition-colors ${
                   idx === activeIndex
                     ? "bg-foreground text-background"
                     : "bg-transparent text-muted-foreground hover:text-foreground border border-border"
@@ -57,7 +57,7 @@ export function BeforeAfter() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
           <div className="relative">
-            <span className="absolute top-4 left-4 z-10 bg-black/70 text-white text-xs font-bold uppercase tracking-wider px-3 py-1">Before</span>
+            <span className="absolute top-4 left-4 z-10 bg-black/70 text-white text-sm sm:text-xs font-bold uppercase tracking-wider px-3 py-1.5 sm:py-1">Before</span>
             <div className="aspect-[4/3] relative overflow-hidden">
               <Image
                 src={examples[activeIndex].before}
@@ -68,7 +68,7 @@ export function BeforeAfter() {
             </div>
           </div>
           <div className="relative">
-            <span className="absolute top-4 left-4 z-10 text-white text-xs font-bold uppercase tracking-wider px-3 py-1" style={{ backgroundColor: "#6fbf00" }}>After</span>
+            <span className="absolute top-4 left-4 z-10 text-white text-sm sm:text-xs font-bold uppercase tracking-wider px-3 py-1.5 sm:py-1" style={{ backgroundColor: "#6fbf00" }}>After</span>
             <div className="aspect-[4/3] relative overflow-hidden">
               <Image
                 src={examples[activeIndex].after}

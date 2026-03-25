@@ -21,27 +21,27 @@ const benefits = [
 
 export function CustomPackages() {
   return (
-    <section className="py-16 lg:py-24 bg-background">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+    <section className="py-20 lg:py-24 bg-background">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Tight header */}
         <div className="mb-10 max-w-lg">
           <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Packages</span>
           <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
             No one-size-fits-all.
           </h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Every space is different. We build cleaning plans that actually match what you need — not what's easiest for us.
+          <p className="mt-3 text-base lg:text-sm text-muted-foreground">
+            Every space is different. We build cleaning plans that actually match what you need.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-border">
           {benefits.map((b, idx) => (
-            <div key={b.title} className={`p-6 bg-white ${idx < benefits.length - 1 ? "md:border-r border-border" : ""} ${idx < 2 ? "border-b md:border-b-0 border-border" : ""}`}>
-              <div className="mb-3" style={{ color: "#6fbf00" }}>
-                <b.icon className="w-7 h-7" />
+            <div key={b.title} className={`p-6 lg:p-6 bg-white ${idx < benefits.length - 1 ? "md:border-r border-border" : ""} ${idx < 2 ? "border-b md:border-b-0 border-border" : ""}`}>
+              <div className="mb-4 lg:mb-3 flex items-center justify-center w-12 h-12 lg:w-auto lg:h-auto rounded-full bg-[#6fbf00]/10 lg:bg-transparent" style={{ color: "#6fbf00" }}>
+                <b.icon className="w-6 h-6 lg:w-7 lg:h-7" />
               </div>
-              <h3 className="font-bold text-foreground text-base">{b.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{b.description}</p>
+              <h3 className="font-bold text-foreground text-lg lg:text-base">{b.title}</h3>
+              <p className="mt-2 text-base lg:text-sm text-muted-foreground">{b.description}</p>
             </div>
           ))}
         </div>
@@ -49,7 +49,7 @@ export function CustomPackages() {
         <div className="mt-8">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center px-8 py-3 text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
+            className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 sm:py-3 text-base sm:text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
             style={{ backgroundColor: "#6fbf00" }}
           >
             Request a Custom Package

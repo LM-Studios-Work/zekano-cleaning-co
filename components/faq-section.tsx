@@ -36,8 +36,8 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section className="py-16 lg:py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+    <section className="py-20 lg:py-24 bg-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Asymmetric — question on left, accordion on right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-4">
@@ -45,18 +45,18 @@ export function FAQSection() {
             <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
               Straight answers.
             </h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              No corporate waffle. If your question isn't here, WhatsApp us.
+            <p className="mt-2 text-base lg:text-sm text-muted-foreground">
+              No corporate waffle. If your question isn&apos;t here, WhatsApp us.
             </p>
           </div>
           <div className="lg:col-span-8">
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, idx) => (
                 <AccordionItem key={idx} value={`item-${idx}`}>
-                  <AccordionTrigger className="text-left font-bold text-foreground text-sm">
+                  <AccordionTrigger className="text-left font-bold text-foreground text-base lg:text-sm py-5 lg:py-4">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-sm leading-relaxed">
+                  <AccordionContent className="text-muted-foreground text-base lg:text-sm leading-relaxed pb-5 lg:pb-4">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
