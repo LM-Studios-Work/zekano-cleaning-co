@@ -72,7 +72,7 @@ export function HeroSlideshow() {
       <div className="relative z-10 flex h-full items-center pt-20 md:pt-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-white/70">
+            <p className="mb-3 text-sm md:text-xs font-bold uppercase tracking-[0.2em] text-white/70">
               Cleaning services in Johannesburg
             </p>
 
@@ -88,21 +88,21 @@ export function HeroSlideshow() {
               ))}
             </h1>
 
-            <p className="mt-4 text-sm text-white/75 leading-relaxed max-w-md">
+            <p className="mt-5 text-base md:text-sm text-white/80 leading-relaxed max-w-md">
               {slides[currentSlide].description}
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
+                className="inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
                 style={{ backgroundColor: "#6fbf00" }}
               >
                 Book a Clean
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200"
               >
                 Get a Free Quote
               </Link>
@@ -144,11 +144,11 @@ export function HeroSlideshow() {
     </section>
 
     {/* Mobile hotline — below hero */}
-    <div className="md:hidden relative z-20 -mt-6 mx-[8%]">
-      <div className="p-4 text-center" style={{ backgroundColor: "#1A9AD2" }}>
+    <div className="md:hidden relative z-20 -mt-6 mx-6">
+      <div className="p-5 text-center" style={{ backgroundColor: "#1A9AD2" }}>
         <a href="tel:+27844020733" className="inline-flex items-center gap-3 text-white">
-          <PhoneIcon className="h-5 w-5" />
-          <span className="text-lg font-black">084 402 0733</span>
+          <PhoneIcon className="h-6 w-6" />
+          <span className="text-xl font-black">084 402 0733</span>
         </a>
       </div>
     </div>
