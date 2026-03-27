@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const categoryIcons: Record<string, typeof HouseIcon> = {
   "residential-cleaning": HouseIcon,
   "commercial-cleaning": OfficeIcon,
-  "upholstery-cleaning": CouchIcon,
+  "upholstery-and-fabric": CouchIcon,
   "specialised-cleaning": WrenchIcon,
 }
 
@@ -34,7 +34,7 @@ const categories = [
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
   },
   {
-    slug: "upholstery-cleaning",
+    slug: "upholstery-and-fabric",
     name: "Upholstery & Fabric Cleaning",
     description: "Refresh your soft furnishings and fabrics with our professional cleaning service. We remove stains, allergens, and odours to extend the life of your furniture.",
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
@@ -72,11 +72,8 @@ export default function ServicesPage() {
             <div className="space-y-24">
               {categories.map((category, catIdx) => {
                 const Icon = categoryIcons[category.slug]
-                const categoryServices = allServices.filter(
-                  (s) => s.categorySlug === category.slug
-                )
                 return (
-                  <div key={category.slug} id={category.slug}>
+                  <div key={category.slug}>
                     {/* Category Header */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
                       <div className={catIdx % 2 === 1 ? "lg:order-2" : ""}>
@@ -90,43 +87,19 @@ export default function ServicesPage() {
                         </div>
                       </div>
                       <div className={catIdx % 2 === 1 ? "lg:order-1" : ""}>
-                        <div className="flex items-center gap-3 mb-4">
+                        <div className="flex items-center gap-3 mb-4 transition-colors hover:text-[#1A9AD2]">
                           <div className="flex h-12 w-12 items-center justify-center rounded-lg" style={{ backgroundColor: "rgba(26, 154, 210, 0.1)", color: "#1A9AD2" }}>
                             <Icon className="h-6 w-6" />
                           </div>
-                          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{category.name}</h2>
+                          <Link href={`/services/${category.slug}`}>
+                            <h2 className="text-2xl font-bold text-foreground sm:text-3xl hover:text-[#1A9AD2] transition-colors">{category.name}</h2>
+                          </Link>
                         </div>
-                        <p className="text-lg text-muted-foreground">{category.description}</p>
-                      </div>
-                    </div>
-
-                    {/* Individual Service Cards with Links */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {categoryServices.map((service) => (
-                        <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                          <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
-                            <div className="aspect-[3/2] relative overflow-hidden">
-                              <Image
-                                src={service.image}
-                                alt={service.title}
-                                fill
-                                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                              />
-                            </div>
-                            <CardContent className="p-6">
-                              <h3 className="font-bold text-foreground text-lg group-hover:text-[#1A9AD2] transition-colors">
-                                {service.title}
-                              </h3>
-                              <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                                {service.description}
-                              </p>
-                              <span className="mt-3 inline-flex items-center text-sm font-medium" style={{ color: "#6fbf00" }}>
-                                Learn more <ArrowRightIcon className="ml-1 h-4 w-4" />
-                              </span>
-                            </CardContent>
-                          </Card>
+                        <p className="text-lg text-muted-foreground mb-6">{category.description}</p>
+                        <Link href={`/services/${category.slug}`} className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors h-11 px-8 py-2 bg-[#6fbf00] text-white hover:bg-[#5da200] mt-2 shadow-sm">
+                          Explore {category.name} <ArrowRightIcon className="ml-2 h-4 w-4" />
                         </Link>
-                      ))}
+                      </div>
                     </div>
                   </div>
                 )

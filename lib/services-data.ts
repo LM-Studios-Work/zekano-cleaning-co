@@ -197,7 +197,7 @@ export const allServices: ServiceData[] = [
     slug: "sofa-cleaning",
     title: "Sofa Cleaning",
     category: "Upholstery & Fabric Cleaning",
-    categorySlug: "upholstery-cleaning",
+    categorySlug: "upholstery-and-fabric",
     description: "Deep cleaning for all types of sofas and couches. We remove stains, dust mites, and odours.",
     longDescription: "Your sofa is one of the most-used pieces of furniture in your home, and it collects dust, allergens, spills, and odours over time. Our professional sofa cleaning service uses safe, effective methods to deep clean all fabric and leather types — removing stains, dust mites, bacteria, and unpleasant smells. Your sofa will look refreshed and feel hygienic. Available across Johannesburg and surrounding areas.",
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80",
@@ -232,7 +232,7 @@ export const allServices: ServiceData[] = [
     slug: "mattress-cleaning",
     title: "Mattress Cleaning",
     category: "Upholstery & Fabric Cleaning",
-    categorySlug: "upholstery-cleaning",
+    categorySlug: "upholstery-and-fabric",
     description: "Professional mattress sanitisation to remove allergens, dust mites, and bacteria.",
     longDescription: "You spend a third of your life on your mattress — so it should be clean and hygienic. Our professional mattress cleaning service removes dust mites, dead skin cells, bacteria, sweat stains, and allergens that build up over time. Using safe, chemical-free methods, we sanitise and freshen your mattress so you can enjoy a healthier night's sleep. Serving homes across Johannesburg.",
     image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80",
@@ -267,7 +267,7 @@ export const allServices: ServiceData[] = [
     slug: "curtain-cleaning",
     title: "Curtain Cleaning",
     category: "Upholstery & Fabric Cleaning",
-    categorySlug: "upholstery-cleaning",
+    categorySlug: "upholstery-and-fabric",
     description: "On-site or off-site curtain cleaning that removes dust, allergens, and stains.",
     longDescription: "Curtains collect dust, allergens, smoke residue, and odours over time. Our curtain cleaning service removes all of this without damaging delicate fabrics. We offer both on-site steam cleaning and off-site professional laundering depending on the fabric type and your preference. Your curtains will look refreshed and smell clean. Available across Johannesburg.",
     image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1200&q=80",
@@ -302,7 +302,7 @@ export const allServices: ServiceData[] = [
     slug: "carpet-cleaning",
     title: "Carpet Cleaning",
     category: "Upholstery & Fabric Cleaning",
-    categorySlug: "upholstery-cleaning",
+    categorySlug: "upholstery-and-fabric",
     description: "Expert carpet cleaning that removes deep stains, allergens, and odours.",
     longDescription: "Carpets trap dirt, dust, allergens, pet dander, and spills deep in their fibres — far beyond what regular vacuuming can reach. Our professional carpet cleaning service uses hot water extraction and eco-friendly solutions to deep clean your carpets, removing stubborn stains and odours while restoring colour and texture. Your carpets will look and feel brand new. Serving homes and offices across Johannesburg.",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
@@ -334,10 +334,10 @@ export const allServices: ServiceData[] = [
     ],
   },
   {
-    slug: "upholstery-cleaning",
+    slug: "upholstery-furniture-cleaning",
     title: "Upholstery Cleaning",
     category: "Upholstery & Fabric Cleaning",
-    categorySlug: "upholstery-cleaning",
+    categorySlug: "upholstery-and-fabric",
     description: "Comprehensive cleaning for chairs, ottomans, cushions, and other upholstered furniture.",
     longDescription: "From dining chairs and ottomans to headboards and cushions, upholstered furniture collects dust, stains, and allergens over time. Our professional upholstery cleaning service is safe for all fabric types and effectively removes embedded dirt, bacteria, and odours. We clean on-site at your home or office, so there's no need to move heavy furniture. Available across Johannesburg and surrounding areas.",
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80",
@@ -564,3 +564,45 @@ export function getRelatedServices(slug: string, limit = 3): ServiceData[] {
   )
   return [...sameCategory, ...others].slice(0, limit)
 }
+
+export const serviceCategories = [
+  {
+    name: "Residential Cleaning",
+    slug: "residential-cleaning",
+    services: [
+      { name: "Standard House Cleaning", slug: "standard-house-cleaning" },
+      { name: "Deep Cleaning", slug: "deep-cleaning" },
+      { name: "Move-in/Move-out Cleaning", slug: "move-in-move-out-cleaning" },
+    ],
+  },
+  {
+    name: "Commercial Cleaning",
+    slug: "commercial-cleaning",
+    services: [
+      { name: "Office Cleaning", slug: "office-cleaning" },
+      { name: "Small Business Cleaning", slug: "small-business-cleaning" },
+    ],
+  },
+  {
+    name: "Upholstery & Fabric",
+    slug: "upholstery-and-fabric",
+    services: [
+      { name: "Sofa Cleaning", slug: "sofa-cleaning" },
+      { name: "Mattress Cleaning", slug: "mattress-cleaning" },
+      { name: "Curtain Cleaning", slug: "curtain-cleaning" },
+      { name: "Carpet Cleaning", slug: "carpet-cleaning" },
+      { name: "Upholstery Cleaning", slug: "upholstery-furniture-cleaning" },
+    ],
+  },
+  {
+    name: "Specialised Services",
+    slug: "specialised-cleaning",
+    services: [
+      { name: "Roof Cleaning", slug: "roof-cleaning" },
+      { name: "Drain Cleaning", slug: "drain-cleaning" },
+      { name: "Garden Clean-ups", slug: "garden-clean-ups" },
+      { name: "Pest Control", slug: "pest-control" },
+      { name: "Disinfection Services", slug: "disinfection-services" },
+    ],
+  },
+]

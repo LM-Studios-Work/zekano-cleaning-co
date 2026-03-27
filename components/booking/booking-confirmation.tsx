@@ -155,7 +155,7 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
                 {bookingData.phone}
               </p>
               <p className="text-muted-foreground">
-                {bookingData.address}, {bookingData.city}, {bookingData.zipCode}
+                {bookingData.address}, {bookingData.city}
               </p>
             </div>
           </div>

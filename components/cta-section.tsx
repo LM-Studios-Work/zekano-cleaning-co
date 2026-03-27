@@ -25,14 +25,7 @@ export function CTASection() {
                 <CalendarIcon className="h-5 w-5" />
                 Book Online
               </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base lg:text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
-                style={{ backgroundColor: "#1A9AD2" }}
-              >
-                <ChatIcon className="h-5 w-5" />
-                Get a Free Quote
-              </Link>
+
               <a
                 href="tel:+27844020733"
                 className="inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base lg:text-sm font-bold transition-colors duration-200 border-2 border-foreground text-foreground hover:bg-foreground hover:text-background"

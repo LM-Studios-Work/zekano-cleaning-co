@@ -29,7 +29,6 @@ export interface BookingData {
   phone: string
   address: string
   city: string
-  zipCode: string
   specialInstructions: string
 }
 

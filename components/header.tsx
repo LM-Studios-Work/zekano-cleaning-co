@@ -14,48 +14,7 @@ const navigation = [
   { name: "Contact", href: "/contact" },
 ]
 
-const serviceCategories = [
-  {
-    name: "Residential Cleaning",
-    slug: "residential-cleaning",
-    services: [
-      { name: "Standard House Cleaning", slug: "standard-house-cleaning" },
-      { name: "Deep Cleaning", slug: "deep-cleaning" },
-      { name: "Move-in/Move-out Cleaning", slug: "move-in-move-out-cleaning" },
-    ],
-  },
-  {
-    name: "Commercial Cleaning",
-    slug: "commercial-cleaning",
-    services: [
-      { name: "Office Cleaning", slug: "office-cleaning" },
-      { name: "Small Business Cleaning", slug: "small-business-cleaning" },
-    ],
-  },
-  {
-    name: "Upholstery & Fabric",
-    slug: "upholstery-cleaning",
-    services: [
-      { name: "Sofa Cleaning", slug: "sofa-cleaning" },
-      { name: "Mattress Cleaning", slug: "mattress-cleaning" },
-      { name: "Curtain Cleaning", slug: "curtain-cleaning" },
-      { name: "Carpet Cleaning", slug: "carpet-cleaning" },
-      { name: "Upholstery Cleaning", slug: "upholstery-cleaning" },
-    ],
-  },
-  {
-    name: "Specialised Services",
-    slug: "specialised-cleaning",
-    services: [
-      { name: "Roof Cleaning", slug: "roof-cleaning" },
-      { name: "Drain Cleaning", slug: "drain-cleaning" },
-      { name: "Garden Clean-ups", slug: "garden-clean-ups" },
-      { name: "Pest Control", slug: "pest-control" },
-      { name: "Disinfection Services", slug: "disinfection-services" },
-    ],
-  },
-]
-
+import { serviceCategories } from "@/lib/services-data"
 export function Header() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -141,11 +100,12 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
-              src="/zenako-cleaning-co-logo.png"
+              src="/logo.png"
               alt="Zenako Cleaning Co."
-              width={48}
-              height={48}
-              className="h-12 w-12 object-contain"
+              width={180}
+              height={50}
+              className="h-14 w-auto object-contain"
+              priority
             />
           </Link>
 
@@ -202,7 +162,9 @@ export function Header() {
                         <div className="grid grid-cols-2 gap-6">
                           {serviceCategories.map((cat) => (
                             <div key={cat.slug}>
-                              <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">{cat.name}</h4>
+                              <Link href={`/services/${cat.slug}`} onClick={() => setDesktopServicesOpen(false)}>
+                                <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2 hover:text-[#1A9AD2] transition-colors">{cat.name}</h4>
+                              </Link>
                               <ul className="space-y-1">
                                 {cat.services.map((svc) => (
                                   <li key={svc.slug}>
@@ -297,13 +259,13 @@ export function Header() {
           <div className="px-10 py-12 text-center">
             {/* Profile / Logo area */}
             <div className="flex justify-center mb-6">
-              <div className="h-32 w-32 rounded-full overflow-hidden border-4 border-gray-100 bg-gray-100">
+              <div className="h-32 w-auto overflow-hidden border-4 border-gray-100 bg-gray-100 rounded-xl">
                 <Image
-                  src="/zenako-cleaning-co-logo.png"
+                  src="/logo.png"
                   alt="Zenako Cleaning Co."
-                  width={128}
+                  width={256}
                   height={128}
-                  className="h-full w-full object-cover"
+                  className="h-full w-auto object-contain p-2"
                 />
               </div>
             </div>
@@ -379,11 +341,11 @@ export function Header() {
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
             <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
               <Image
-                src="/zenako-cleaning-co-logo.png"
+                src="/logo.png"
                 alt="Zenako Cleaning Co."
-                width={32}
-                height={32}
-                className="h-8 w-8 object-contain"
+                width={120}
+                height={40}
+                className="h-10 w-auto object-contain"
               />
               <span className="text-xl font-extrabold text-gray-800">Zenako</span>
             </Link>
@@ -421,7 +383,9 @@ export function Header() {
                       <div className="py-2 pl-4 space-y-4">
                         {serviceCategories.map((cat) => (
                           <div key={cat.slug}>
-                            <span className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">{cat.name}</span>
+                            <Link href={`/services/${cat.slug}`} onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false) }}>
+                              <span className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1 hover:text-[#1A9AD2] transition-colors">{cat.name}</span>
+                            </Link>
                             {cat.services.map((svc) => (
                               <Link
                                 key={svc.slug}
