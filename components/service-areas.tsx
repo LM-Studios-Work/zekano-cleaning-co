@@ -17,10 +17,10 @@ export function ServiceAreas() {
         <div className="mb-8 max-w-md">
           <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Coverage</span>
           <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-            Where we work
+            Service Areas
           </h2>
           <p className="mt-2 text-base lg:text-sm text-muted-foreground">
-            Cleaning services across Johannesburg. If you&apos;re nearby, we&apos;re there.
+            We provide cleaning services across Johannesburg and the surrounding areas.
           </p>
         </div>
 
@@ -37,7 +37,7 @@ export function ServiceAreas() {
         </div>
 
         <p className="mt-5 text-sm lg:text-xs text-muted-foreground">
-          Not listed? <a href="/contact" className="font-bold underline" style={{ color: "#6fbf00" }}>Ask us</a> — we&apos;re expanding.
+          Not listed? <a href="/contact" className="font-bold underline" style={{ color: "#6fbf00" }}>Contact us</a> — we are continually expanding our coverage.
         </p>
       </div>
     </section>

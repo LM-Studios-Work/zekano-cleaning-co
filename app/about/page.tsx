@@ -16,23 +16,23 @@ export const metadata: Metadata = {
 const values = [
   {
     icon: ShieldCheckIcon,
-    title: "The Mission",
-    description: "Clean spaces across Johannesburg. Do it right. Don't make excuses.",
+    title: "Our Mission",
+    description: "To deliver consistently excellent cleaning across Johannesburg — for homes, offices, and commercial spaces.",
   },
   {
     icon: LeafIcon,
-    title: "The Standards",
-    description: "Honest work, same team every visit, eco-friendly products. No shortcuts.",
+    title: "Our Standards",
+    description: "Honest work, consistent teams, and eco-friendly products. We do not cut corners or make exceptions.",
   },
   {
     icon: GearIcon,
-    title: "The People",
-    description: "Vetted, trained, equipped. Not randoms with a mop.",
+    title: "Our Professionals",
+    description: "Every professional we work with is background-checked, trained, and equipped to meet our standard.",
   },
   {
     icon: TrophyIcon,
-    title: "The Guarantee",
-    description: "Not satisfied? We come back. Free. No forms, no arguing.",
+    title: "Our Guarantee",
+    description: "If you are not satisfied, we return and re-clean at no additional cost. No forms, no delays.",
   },
 ]
 
@@ -49,7 +49,7 @@ export default function AboutPage() {
               Who We <span style={{ color: "#1A9AD2" }}>Are</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-              A Johannesburg-based cleaning company built on word-of-mouth referrals and repeat clients who trust us with their spaces.
+              A Johannesburg-based cleaning company built on accountability, consistent standards, and clients who return because the work speaks for itself.
             </p>
             <div className="mt-4 h-1 w-24 bg-gray-300"></div>
           </div>
@@ -62,17 +62,17 @@ export default function AboutPage() {
               <div>
                 <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Our Story</span>
                 <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                  Built from the <span style={{ color: "#6fbf00" }}>Ground Up</span>
+                  Built Out of Frustration with <span style={{ color: "#6fbf00" }}>&ldquo;Good Enough&rdquo;</span>
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Zenako Cleaning Co. started right here in Johannesburg. What began as a small operation serving a handful of households in the suburbs has grown steadily through referrals and returning clients who value consistency.
+                    Zenako Cleaning Co. was started right here in Johannesburg for one simple reason: we were tired of hiring cleaning services that cut corners, arrived late, or sent a different person every week.
                   </p>
                   <p>
-                    We saw too many cleaning services that would show up late, cut corners, or send a different person every time. We decided to do things differently — fixed teams, proper training, and the kind of attention to detail that means you notice the difference when you walk through the door.
+                    Johannesburg did not need another cleaning app or a large corporate agency. It needed an accountable, owner-run service — one where management actually cares about the result, where every professional is rigorously vetted, and where &ldquo;clean&rdquo; genuinely means clean.
                   </p>
                   <p>
-                    Today we serve homes, offices, and commercial properties across Johannesburg and surrounding areas. Our teams handle everything from weekly upkeep to full deep cleans, move-in turnovers, and post-construction cleanups. The work speaks for itself.
+                    We do not set out to be the largest cleaning company in South Africa. Our goal is to be the most reliable one in your area. Today we serve homes, offices, and commercial properties across Johannesburg and surrounding areas, handling everything from weekly maintenance to full deep cleans, move-in and move-out turnovers, and specialised services.
                   </p>
                 </div>
               </div>
@@ -121,17 +121,17 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                  Why Clients <span style={{ color: "#6fbf00" }}>Stick</span> With Us
+                  Why Clients <span style={{ color: "#6fbf00" }}>Return</span> to Us
                 </h2>
                 <ul className="mt-8 space-y-4">
                   {[
-                    "Licensed, bonded, and fully insured",
-                    "Background-checked, trained staff",
+                    "Background-checked, trained professionals",
                     "Eco-friendly cleaning products",
                     "Flexible scheduling — weekdays, weekends, after hours",
                     "Satisfaction guarantee on every job",
-                    "Same team assigned to your property each visit",
+                    "Familiar professionals assigned to your property each visit",
                     "Transparent pricing with no surprises",
+                    "Direct access to management if anything goes wrong",
                     "Easy online and WhatsApp booking",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3">

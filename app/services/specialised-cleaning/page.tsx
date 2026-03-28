@@ -137,7 +137,7 @@ export default function SpecialisedCleaningHub() {
         <section className="py-12 lg:py-16" style={{ backgroundColor: "#1A9AD2" }}>
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Get an expert to tackle the hard jobs.
+              Request Specialised Cleaning Assistance
             </h2>
             <Link
               href="/contact"

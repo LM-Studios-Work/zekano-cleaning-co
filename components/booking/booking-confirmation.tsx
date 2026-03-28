@@ -199,7 +199,7 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">3</span>
-              <span>Our cleaning professionals will arrive at your scheduled time, ready to make your space sparkle!</span>
+              <span>Our cleaning professionals will arrive at your scheduled time with all equipment and supplies required to complete the job.</span>
             </li>
           </ol>
         </CardContent>

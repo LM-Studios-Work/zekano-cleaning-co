@@ -7,25 +7,25 @@ const services = [
     icon: SparkleIcon,
     title: "Deep Cleaning",
     href: "/services/deep-cleaning",
-    description: "Top to bottom. Behind furniture. Inside appliances. The works.",
+    description: "A comprehensive clean covering every surface, appliance interior, and hard-to-reach area throughout your property.",
   },
   {
     icon: HouseIcon,
     title: "Standard House Cleaning",
     href: "/services/standard-house-cleaning",
-    description: "Weekly, fortnightly, monthly. Your home stays fresh without your effort.",
+    description: "Scheduled weekly, fortnightly, or monthly maintenance to keep your home consistently clean and comfortable.",
   },
   {
     icon: TruckIcon,
     title: "Move-in / Move-out",
     href: "/services/move-in-move-out-cleaning",
-    description: "Get your deposit back. Or start fresh. We make properties handover-ready.",
+    description: "Thorough end-of-tenancy or pre-occupancy cleaning to ensure the property is in excellent condition.",
   },
   {
     icon: BugIcon,
     title: "Pest Control",
     href: "/services/pest-control",
-    description: "Ants, cockroaches, rodents. We deal with the source, not just the symptoms.",
+    description: "Targeted pest treatments that address the source of the problem using eco-friendly, low-toxicity products.",
   },
 ]
 
@@ -37,7 +37,7 @@ export function ServicesPreview() {
         <div className="mb-10 lg:mb-14 max-w-md">
           <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Services</span>
           <h2 className="mt-2 text-3xl lg:text-4xl font-bold text-foreground">
-            What we actually do.
+            Our Core Services
           </h2>
           <div className="mt-3 h-1 w-16 bg-foreground"></div>
         </div>

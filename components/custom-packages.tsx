@@ -5,17 +5,17 @@ const benefits = [
   {
     icon: GearIcon,
     title: "Built Around You",
-    description: "Tell us what matters. We build a package that fits your space, your schedule, your budget. Not ours.",
+    description: "We take the time to understand your requirements and put together a service plan that fits your property, schedule, and budget.",
   },
   {
     icon: RepeatIcon,
-    title: "Regular Plans",
-    description: "Weekly, fortnightly, monthly. Same team, same standard. No re-explaining what you need each time.",
+    title: "Consistent Regular Plans",
+    description: "Weekly, fortnightly, or monthly. The same professionals are assigned each visit, maintaining a consistent standard without you needing to re-brief anyone.",
   },
   {
     icon: TrophyIcon,
-    title: "Loyalty Pays",
-    description: "Ongoing clients get priority bookings and better rates. We reward people who stick around.",
+    title: "Loyalty Benefits",
+    description: "Clients on recurring plans receive priority scheduling and preferential rates. We value long-term relationships and reflect that in how we work.",
   },
 ]
 
@@ -27,10 +27,10 @@ export function CustomPackages() {
         <div className="mb-10 max-w-lg">
           <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Packages</span>
           <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-            No one-size-fits-all.
+            Tailored to Your Needs
           </h2>
           <p className="mt-3 text-base lg:text-sm text-muted-foreground">
-            Every space is different. We build cleaning plans that actually match what you need.
+            Every property is different. We build cleaning plans that match your space, schedule, and budget.
           </p>
         </div>
 

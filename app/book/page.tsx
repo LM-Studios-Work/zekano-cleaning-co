@@ -66,8 +66,8 @@ export default function BookPage() {
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
               {isConfirmed
-                ? "Thank you for choosing Zenako Cleaning Co.. We'll see you soon!"
-                : "Pick your service, choose a date, fill in your details — we'll handle the rest."
+                ? "Thank you for choosing Zenako Cleaning Co. We will be in touch to confirm your appointment details."
+                : "Select your service, choose a date and time, and provide your details. We will take care of everything else."
               }
             </p>
             <div className="mt-4 h-1 w-24 bg-gray-300"></div>

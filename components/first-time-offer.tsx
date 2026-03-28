@@ -11,10 +11,10 @@ export function FirstTimeOffer() {
             <div>
               <GiftIcon className="h-10 w-10 text-white mx-auto mb-3 lg:hidden" />
               <p className="text-xl lg:text-xl font-black text-white">
-                First clean? Take 10% off.
+                10% off your first clean.
               </p>
               <p className="text-white/80 text-sm lg:text-xs mt-1">
-                New customers only. No code needed. Just mention it when you book.
+                Available to new customers. No code required — simply mention it when booking.
               </p>
             </div>
           </div>
