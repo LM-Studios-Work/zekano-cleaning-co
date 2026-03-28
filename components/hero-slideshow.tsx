@@ -1,51 +1,57 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ChevronRight, Sparkles } from "lucide-react"
+import { PhoneIcon } from "@/components/icons"
 
 const slides = [
   {
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&q=80",
-    alt: "Professional cleaner wiping kitchen counter",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1920&q=80",
-    alt: "Person mopping hardwood floors",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1920&q=80",
-    alt: "Cleaning supplies and equipment",
+    alt: "House cleaning in Johannesburg",
+    label: "01. Homes",
+    heading: "We clean houses.\nProperly.",
+    description: "Not a quick wipe-down. A real clean. Every surface, every corner, every time.",
   },
   {
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80",
-    alt: "Team of professional cleaners",
+    alt: "Carpet and upholstery cleaning",
+    label: "02. Carpets",
+    heading: "Your carpet has\nseen things.",
+    description: "Deep extraction cleaning that pulls out what vacuuming can't. Stains, dust mites, the lot.",
   },
   {
-    image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=1920&q=80",
-    alt: "Sparkling clean living room",
+    image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1920&q=80",
+    alt: "Office cleaning Johannesburg",
+    label: "03. Offices",
+    heading: "Clean office.\nHappy staff.",
+    description: "After-hours cleaning so your team walks into a fresh workspace every morning.",
   },
 ]
 
 export function HeroSlideshow() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
+  const goToSlide = useCallback((index: number) => {
+    if (index === currentSlide) return
+    setCurrentSlide(index)
+  }, [currentSlide])
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 4000)
+    }, 5000)
     return () => clearInterval(interval)
   }, [])
 
   return (
-    <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
+    <>
+    <section className="relative h-[75vh] md:h-screen min-h-[500px] md:min-h-[600px] w-full overflow-hidden">
       {/* Slideshow Background */}
       {slides.map((slide, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-opacity duration-700 ${
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -59,51 +65,93 @@ export function HeroSlideshow() {
         </div>
       ))}
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-primary/70" />
+      {/* Dark overlay — high contrast */}
+      <div className="absolute inset-0 bg-black/50" />
 
-      {/* Content */}
-      <div className="relative z-10 flex h-full items-center">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+      {/* Content — left aligned, no fluff */}
+      <div className="relative z-10 flex h-full items-center pt-20 md:pt-0">
+        <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-2 mb-6">
-              <Sparkles className="h-6 w-6 text-secondary" />
-              <span className="text-secondary font-medium">Professional Cleaning Services</span>
-            </div>
-            <h1 className="text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl leading-tight text-balance">
-              A Cleaner Home, A Happier Life
-            </h1>
-            <p className="mt-6 text-lg text-primary-foreground/90 leading-relaxed max-w-xl">
-              Experience the difference professional cleaning makes. From deep cleaning to regular maintenance, we bring sparkle to every corner of your space.
+            <p className="mb-3 text-sm md:text-xs font-bold uppercase tracking-[0.2em] text-white/70">
+              Cleaning services in Johannesburg
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary" asChild className="text-base">
-                <Link href="/book">
-                  Book Your Cleaning
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="text-base border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <Link href="/services">Our Services</Link>
-              </Button>
+
+            <h1
+              key={currentSlide}
+              className="text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.05]"
+            >
+              {slides[currentSlide].heading.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < slides[currentSlide].heading.split("\n").length - 1 && <br />}
+                </span>
+              ))}
+            </h1>
+
+            <p className="mt-5 text-base md:text-sm text-white/80 leading-relaxed max-w-md">
+              {slides[currentSlide].description}
+            </p>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/book"
+                className="inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
+                style={{ backgroundColor: "#6fbf00" }}
+              >
+                Book a Clean
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200"
+              >
+                Get a Free Quote
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-2">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentSlide ? "w-8 bg-primary-foreground" : "w-2 bg-primary-foreground/50"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+      {/* Hotline — desktop, bottom-right */}
+      <div className="hidden md:block absolute right-6 lg:right-8 bottom-16 lg:bottom-24 z-30 p-5 w-72" style={{ backgroundColor: "#1A9AD2" }}>
+        <p className="text-white text-[10px] uppercase tracking-[0.2em] font-bold mb-2">Call now:</p>
+        <a href="tel:+27844020733" className="flex items-center gap-3 text-white hover:text-white/80 transition-colors">
+          <PhoneIcon className="h-5 w-5 flex-shrink-0" />
+          <span className="text-xl font-black">084 402 0733</span>
+        </a>
+      </div>
+
+      {/* Slide tabs — bottom left */}
+      <div className="hidden md:block absolute bottom-[5%] left-0 right-0 z-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex gap-0">
+            {slides.map((slide, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`relative pr-16 py-4 text-xs font-bold transition-all duration-200 text-left whitespace-nowrap uppercase tracking-wider ${
+                  index === currentSlide
+                    ? "text-white"
+                    : "text-white/40 hover:text-white/60"
+                }`}
+              >
+                {slide.label}
+                <span className={`absolute bottom-0 left-0 w-20 h-0.5 transition-colors duration-200 ${index === currentSlide ? "bg-white" : "bg-white/15"}`} />
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
+
+    {/* Mobile hotline — below hero */}
+    <div className="md:hidden relative z-20 -mt-6 mx-6">
+      <div className="p-5 text-center" style={{ backgroundColor: "#1A9AD2" }}>
+        <a href="tel:+27844020733" className="inline-flex items-center gap-3 text-white">
+          <PhoneIcon className="h-6 w-6" />
+          <span className="text-xl font-black">084 402 0733</span>
+        </a>
+      </div>
+    </div>
+    </>
   )
 }

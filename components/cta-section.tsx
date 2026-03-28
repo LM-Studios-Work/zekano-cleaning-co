@@ -1,35 +1,43 @@
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Phone, Calendar } from "lucide-react"
+import { PhoneIcon, ChatIcon, CalendarIcon } from "@/components/icons"
 
 export function CTASection() {
   return (
-    <section className="py-16 lg:py-24 bg-primary">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-primary-foreground sm:text-4xl text-balance">
-            Ready for a Spotless Space?
-          </h2>
-          <p className="mt-4 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-            Book your cleaning today and experience the Zekano Cleaning Co difference. First-time customers get 15% off their first cleaning!
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" variant="secondary" asChild className="text-base">
-              <Link href="/book">
-                <Calendar className="mr-2 h-5 w-5" />
+    <section className="py-20 lg:py-24 bg-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Asymmetric layout — heavy left, actions right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-7">
+            <h2 className="text-3xl font-bold text-foreground sm:text-5xl leading-tight">
+              Your space won&apos;t<br />clean itself.
+            </h2>
+            <p className="mt-4 text-lg lg:text-base text-muted-foreground max-w-md">
+              Book online, call, or WhatsApp. First-time customers get 10% off. No pressure — just clean spaces in Johannesburg.
+            </p>
+          </div>
+          <div className="lg:col-span-5">
+            <div className="flex flex-col gap-3">
+              <Link
+                href="/book"
+                className="inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base lg:text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
+                style={{ backgroundColor: "#6fbf00" }}
+              >
+                <CalendarIcon className="h-5 w-5" />
                 Book Online
               </Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="text-base border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              <a href="tel:+1234567890">
-                <Phone className="mr-2 h-5 w-5" />
-                Call (123) 456-7890
+
+              <a
+                href="tel:+27844020733"
+                className="inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base lg:text-sm font-bold transition-colors duration-200 border-2 border-foreground text-foreground hover:bg-foreground hover:text-background"
+              >
+                <PhoneIcon className="h-5 w-5" />
+                Call 084 402 0733
               </a>
-            </Button>
+            </div>
+            <p className="mt-5 text-xs lg:text-[10px] text-muted-foreground uppercase tracking-wider text-center lg:text-left">
+              Free estimates &bull; No hidden fees &bull; No contracts &bull; 10% off first clean
+            </p>
           </div>
-          <p className="mt-6 text-sm text-primary-foreground/70">
-            Free estimates • No hidden fees • Satisfaction guaranteed
-          </p>
         </div>
       </div>
     </section>

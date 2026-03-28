@@ -4,117 +4,46 @@ import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle2, Sparkles, Home, Building2, Truck, Bug, Wrench, ArrowRight } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card"
+import { CheckIcon, HouseIcon, OfficeIcon, CouchIcon, WrenchIcon, ArrowRightIcon } from "@/components/icons"
+import { allServices } from "@/lib/services-data"
 
 export const metadata: Metadata = {
-  title: "Our Services | Zekano Cleaning Co",
-  description: "Explore our professional cleaning services including deep cleaning, standard house cleaning, move-in/move-out cleaning, office cleaning, and pest control.",
+  title: "Our Services | Zenako Cleaning Co.",
+  description: "Professional cleaning services in Johannesburg — residential cleaning, commercial cleaning, upholstery & fabric cleaning, and specialised cleaning services. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
 }
 
-const services = [
+const categoryIcons: Record<string, typeof HouseIcon> = {
+  "residential-cleaning": HouseIcon,
+  "commercial-cleaning": OfficeIcon,
+  "upholstery-and-fabric": CouchIcon,
+  "specialised-cleaning": WrenchIcon,
+}
+
+const categories = [
   {
-    id: "deep-cleaning",
-    icon: Sparkles,
-    title: "Deep Cleaning",
-    description: "Our comprehensive deep cleaning service covers every corner of your home, including hard-to-reach areas that are often overlooked.",
-    image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=800&q=80",
-    features: [
-      "Thorough cleaning of all surfaces",
-      "Inside appliances (oven, refrigerator, microwave)",
-      "Baseboards and crown moldings",
-      "Window sills and tracks",
-      "Light fixtures and ceiling fans",
-      "Behind and under furniture",
-      "Grout cleaning and sanitizing",
-      "Cabinet exteriors and interiors",
-    ],
-  },
-  {
-    id: "standard-house-cleaning",
-    icon: Home,
-    title: "Standard House Cleaning",
-    description: "Regular maintenance cleaning to keep your home looking its best. Perfect for weekly, bi-weekly, or monthly cleaning schedules.",
+    slug: "residential-cleaning",
+    name: "Residential Cleaning",
+    description: "Keep your home spotless with our trusted residential cleaning services. From routine maintenance to thorough deep cleans, we take care of it all.",
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
-    features: [
-      "Dusting all surfaces",
-      "Vacuuming and mopping floors",
-      "Bathroom cleaning and sanitizing",
-      "Kitchen cleaning including countertops",
-      "Making beds and changing linens",
-      "Emptying trash bins",
-      "Glass and mirror cleaning",
-      "General tidying up",
-    ],
   },
   {
-    id: "move-cleaning",
-    icon: Truck,
-    title: "Move-in / Move-out Cleaning",
-    description: "Ensure your new place is spotless before you move in, or leave your old place in perfect condition for the next occupant.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    features: [
-      "Complete property deep clean",
-      "Inside all cabinets and closets",
-      "Appliance cleaning inside and out",
-      "Window cleaning interior",
-      "Light switch and outlet covers",
-      "Door frames and handles",
-      "Garage cleaning (if applicable)",
-      "Final walkthrough inspection",
-    ],
-  },
-  {
-    id: "office-cleaning",
-    icon: Building2,
-    title: "Office Cleaning",
-    description: "Professional cleaning services for offices, retail spaces, and commercial properties. Create a healthy work environment.",
+    slug: "commercial-cleaning",
+    name: "Commercial Cleaning",
+    description: "A clean workspace keeps your team healthy and your clients impressed. We offer reliable commercial cleaning tailored to your business schedule.",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    features: [
-      "Daily or weekly cleaning schedules",
-      "Desk and workstation cleaning",
-      "Common area maintenance",
-      "Restroom sanitization",
-      "Kitchen/break room cleaning",
-      "Floor care and carpet cleaning",
-      "Trash removal and recycling",
-      "Flexible after-hours service",
-    ],
   },
   {
-    id: "pest-control",
-    icon: Bug,
-    title: "Pest Control",
-    description: "Safe and effective pest control solutions to protect your home from unwanted visitors. We use eco-friendly treatments.",
-    image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=800&q=80",
-    features: [
-      "Comprehensive pest inspection",
-      "Ant and roach treatment",
-      "Spider control",
-      "Rodent prevention",
-      "Bed bug treatment",
-      "Mosquito control",
-      "Eco-friendly products",
-      "Preventive maintenance plans",
-    ],
+    slug: "upholstery-and-fabric",
+    name: "Upholstery & Fabric Cleaning",
+    description: "Refresh your soft furnishings and fabrics with our professional cleaning service. We remove stains, allergens, and odours to extend the life of your furniture.",
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
   },
   {
-    id: "custom-services",
-    icon: Wrench,
-    title: "Custom Cleaning Services",
-    description: "Have specific cleaning needs? We offer customized cleaning solutions tailored to your unique requirements.",
+    slug: "specialised-cleaning",
+    name: "Specialised Cleaning Services",
+    description: "Beyond standard cleaning, we offer a range of specialised services to keep your property in top condition inside and out.",
     image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80",
-    features: [
-      "Post-construction cleaning",
-      "Event cleanup services",
-      "Seasonal deep cleaning",
-      "Hoarding cleanup assistance",
-      "Carpet and upholstery cleaning",
-      "Pressure washing",
-      "Window cleaning exterior",
-      "Specialty surface treatment",
-    ],
   },
 ]
 
@@ -122,95 +51,88 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="bg-primary py-16 lg:py-24">
+      <main className="pt-24">
+        {/* Page Title */}
+        <section className="py-12 lg:py-16 bg-background">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-primary-foreground sm:text-5xl text-balance">
-                Our Cleaning Services
-              </h1>
-              <p className="mt-6 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-                From everyday tidying to deep cleaning transformations, we offer a full range of professional cleaning services for homes and businesses.
-              </p>
-            </div>
+            <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#6fbf00" }}>What We Do</span>
+            <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
+              Our <span style={{ color: "#1A9AD2" }}>Services</span>
+            </h1>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
+              From regular house cleans to specialised services, Zenako Cleaning Co. handles the hard work so you don't have to. Professional cleaning services across Johannesburg and surrounding areas.
+            </p>
+            <div className="mt-4 h-1 w-24 bg-gray-300"></div>
           </div>
         </section>
 
-        {/* Services List */}
-        <section className="py-16 lg:py-24 bg-background">
+        {/* Services by Category */}
+        <section className="py-16 lg:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="space-y-24">
-              {services.map((service, index) => (
-                <div
-                  key={service.id}
-                  id={service.id}
-                  className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                  }`}
-                >
-                  <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                    <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                  <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                        <service.icon className="h-6 w-6" />
+              {categories.map((category, catIdx) => {
+                const Icon = categoryIcons[category.slug]
+                return (
+                  <div key={category.slug}>
+                    {/* Category Header */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                      <div className={catIdx % 2 === 1 ? "lg:order-2" : ""}>
+                        <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
+                          <Image
+                            src={category.image}
+                            alt={category.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
                       </div>
-                      <h2 className="text-2xl font-bold text-foreground sm:text-3xl">{service.title}</h2>
-                    </div>
-                    <p className="text-lg text-muted-foreground mb-6">{service.description}</p>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                      {service.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2">
-                          <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                          <span className="text-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <Button asChild>
-                        <Link href="/book">
-                          Book This Service
-                          <ArrowRight className="ml-2 h-4 w-4" />
+                      <div className={catIdx % 2 === 1 ? "lg:order-1" : ""}>
+                        <div className="flex items-center gap-3 mb-4 transition-colors hover:text-[#1A9AD2]">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-lg" style={{ backgroundColor: "rgba(26, 154, 210, 0.1)", color: "#1A9AD2" }}>
+                            <Icon className="h-6 w-6" />
+                          </div>
+                          <Link href={`/services/${category.slug}`}>
+                            <h2 className="text-2xl font-bold text-foreground sm:text-3xl hover:text-[#1A9AD2] transition-colors">{category.name}</h2>
+                          </Link>
+                        </div>
+                        <p className="text-lg text-muted-foreground mb-6">{category.description}</p>
+                        <Link href={`/services/${category.slug}`} className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors h-11 px-8 py-2 bg-[#6fbf00] text-white hover:bg-[#5da200] mt-2 shadow-sm">
+                          Explore {category.name} <ArrowRightIcon className="ml-2 h-4 w-4" />
                         </Link>
-                      </Button>
-                      <Button variant="outline" asChild>
-                        <Link href="/pricing">View Pricing</Link>
-                      </Button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 lg:py-24 bg-card">
+        <section className="py-16 lg:py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <Card className="bg-primary border-0">
+            <Card className="border-0" style={{ backgroundColor: "#1A9AD2" }}>
               <CardContent className="p-8 lg:p-12 text-center">
-                <h2 className="text-3xl font-bold text-primary-foreground sm:text-4xl">
+                <h2 className="text-3xl font-bold text-white sm:text-4xl">
                   Not Sure Which Service You Need?
                 </h2>
-                <p className="mt-4 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-                  Contact us for a free consultation and we'll help you find the perfect cleaning solution for your space.
+                <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
+                  Send us a message or give us a call. We'll walk through your requirements and recommend the right option — or create a custom cleaning package tailored to your needs.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-                  <Button size="lg" variant="secondary" asChild>
-                    <Link href="/contact">Get Free Quote</Link>
-                  </Button>
-                  <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                    <a href="tel:+1234567890">Call Us Now</a>
-                  </Button>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center rounded px-8 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:opacity-90"
+                    style={{ backgroundColor: "#6fbf00" }}
+                  >
+                    Get a Free Quote
+                  </Link>
+                  <a
+                    href="tel:+27844020733"
+                    className="inline-flex items-center justify-center rounded px-8 py-3.5 text-sm font-semibold text-white border-2 border-white/70 hover:bg-white hover:text-gray-900 transition-colors duration-200"
+                  >
+                    Call 084 402 0733
+                  </a>
                 </div>
               </CardContent>
             </Card>

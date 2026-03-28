@@ -155,7 +155,7 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
                 {bookingData.phone}
               </p>
               <p className="text-muted-foreground">
-                {bookingData.address}, {bookingData.city}, {bookingData.zipCode}
+                {bookingData.address}, {bookingData.city}
               </p>
             </div>
           </div>
@@ -206,7 +206,7 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
       {/* Contact Info */}
       <p className="text-center text-sm text-muted-foreground">
         Need to make changes? Contact us at{" "}
-        <a href="tel:+1234567890" className="text-primary hover:underline">(123) 456-7890</a>
+        <a href="tel:+27844020733" className="text-primary hover:underline">084 402 0733</a>
         {" "}or{" "}
         <a href="mailto:info@zekanocleaningco.com" className="text-primary hover:underline">info@zekanocleaningco.com</a>
       </p>

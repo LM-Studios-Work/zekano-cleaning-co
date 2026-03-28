@@ -16,17 +16,12 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
+  SelectGroup,
+  SelectLabel,
 } from "@/components/ui/select"
-import { Sparkles, Home, Truck, Building2, Bug, Wrench, ChevronLeft, ChevronRight, Check } from "lucide-react"
+import { Sparkles, Home, Truck, Building2, Bug, Wrench, ChevronLeft, ChevronRight, Check, Search } from "lucide-react"
 
-const services = [
-  { id: "deep-cleaning", name: "Deep Cleaning", icon: Sparkles, price: "From R199" },
-  { id: "standard-house-cleaning", name: "Standard House Cleaning", icon: Home, price: "From R99" },
-  { id: "move-cleaning", name: "Move-in/Move-out", icon: Truck, price: "From R249" },
-  { id: "office-cleaning", name: "Office Cleaning", icon: Building2, price: "Custom quote" },
-  { id: "pest-control", name: "Pest Control", icon: Bug, price: "From R150" },
-  { id: "custom", name: "Custom Service", icon: Wrench, price: "Custom quote" },
-]
+import { serviceCategories, allServices } from "@/lib/services-data"
 
 const frequencies = [
   { id: "one-time", name: "One-Time", discount: null },
@@ -73,7 +68,6 @@ export function BookingForm({ onComplete }: BookingFormProps) {
     phone: "",
     address: "",
     city: "",
-    zipCode: "",
     specialInstructions: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -108,8 +102,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
           formData.email !== "" &&
           formData.phone !== "" &&
           formData.address !== "" &&
-          formData.city !== "" &&
-          formData.zipCode !== ""
+          formData.city !== ""
         )
       default:
         return false
@@ -180,23 +173,50 @@ export function BookingForm({ onComplete }: BookingFormProps) {
             <CardDescription>Choose the type of cleaning service you need</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {services.map((service) => (
-                <button
-                  key={service.id}
-                  type="button"
-                  onClick={() => updateFormData("service", service.id)}
-                  className={`p-4 rounded-lg border-2 text-left transition-all ${
-                    formData.service === service.id
-                      ? "border-primary bg-primary/5"
-                      : "border-border hover:border-primary/50"
-                  }`}
-                >
-                  <service.icon className={`h-8 w-8 mb-3 ${formData.service === service.id ? "text-primary" : "text-muted-foreground"}`} />
-                  <h3 className="font-semibold text-foreground">{service.name}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{service.price}</p>
-                </button>
-              ))}
+            <div className="w-full">
+              <Select
+                value={formData.service}
+                onValueChange={(value) => updateFormData("service", value)}
+              >
+                <SelectTrigger className="w-full text-left h-14 text-base">
+                  <SelectValue placeholder="Select a service..." />
+                </SelectTrigger>
+                <SelectContent className="max-h-[350px]">
+                  {serviceCategories.map((cat) => (
+                    <SelectGroup key={cat.slug} className="mb-2">
+                      <SelectLabel className="bg-muted/30 py-2 px-3 text-sm font-bold uppercase tracking-wider text-muted-foreground">{cat.name}</SelectLabel>
+                      {cat.services.map((svc) => (
+                        <SelectItem key={svc.slug} value={svc.slug} className="py-2.5 px-4 cursor-pointer">
+                          <div className="flex flex-col">
+                            <span className="font-semibold">{svc.name}</span>
+                          </div>
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  ))}
+                </SelectContent>
+              </Select>
+              
+              {formData.service && (() => {
+                const selectedService = allServices.find((s) => s.slug === formData.service);
+                if (!selectedService) return null;
+                const Icon = selectedService.icon;
+                return (
+                  <div className="mt-6 p-5 rounded-lg bg-primary/5 border border-primary/20 flex flex-col sm:flex-row items-start gap-4 animate-in fade-in slide-in-from-top-4 duration-300">
+                    <div className="rounded-full bg-primary/10 p-3 text-primary shrink-0">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-primary text-lg mb-1">
+                        {selectedService.name}
+                      </h4>
+                      <p className="text-sm text-foreground/80 leading-relaxed">
+                        {selectedService.description}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
 
             <div className="space-y-3">
@@ -440,25 +460,14 @@ export function BookingForm({ onComplete }: BookingFormProps) {
               />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="city">City *</Label>
-                <Input
-                  id="city"
-                  value={formData.city}
-                  onChange={(e) => updateFormData("city", e.target.value)}
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="zipCode">ZIP Code *</Label>
-                <Input
-                  id="zipCode"
-                  value={formData.zipCode}
-                  onChange={(e) => updateFormData("zipCode", e.target.value)}
-                  required
-                />
-              </div>
+            <div className="space-y-2">
+              <Label htmlFor="city">City *</Label>
+              <Input
+                id="city"
+                value={formData.city}
+                onChange={(e) => updateFormData("city", e.target.value)}
+                required
+              />
             </div>
 
             <div className="space-y-2">
@@ -489,7 +498,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
 
         {step < totalSteps ? (
           <Button onClick={handleNext} disabled={!canProceed()} className="gap-2">
-            Next
+            {step === 1 ? "Next: Property" : step === 2 ? "Next: Schedule" : "Next: Details"}
             <ChevronRight className="h-4 w-4" />
           </Button>
         ) : (

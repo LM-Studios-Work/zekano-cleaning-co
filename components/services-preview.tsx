@@ -1,86 +1,82 @@
 import Link from "next/link"
-import { Home, Building2, Truck, Sparkles, Bug, MoreHorizontal } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import { SparkleIcon, HouseIcon, TruckIcon, BugIcon } from "@/components/icons"
 
 const services = [
   {
-    icon: Sparkles,
+    icon: SparkleIcon,
     title: "Deep Cleaning",
-    description: "Thorough top-to-bottom cleaning for homes that need extra attention. Perfect for spring cleaning or special occasions.",
-    href: "/services#deep-cleaning",
+    href: "/services/deep-cleaning",
+    description: "Top to bottom. Behind furniture. Inside appliances. The works.",
   },
   {
-    icon: Home,
+    icon: HouseIcon,
     title: "Standard House Cleaning",
-    description: "Regular cleaning services to keep your home fresh and tidy. Weekly, bi-weekly, or monthly plans available.",
-    href: "/services#standard-cleaning",
+    href: "/services/standard-house-cleaning",
+    description: "Weekly, fortnightly, monthly. Your home stays fresh without your effort.",
   },
   {
-    icon: Truck,
-    title: "Move-in / Move-out Cleaning",
-    description: "Comprehensive cleaning for when you're moving. We ensure your old or new place is spotless.",
-    href: "/services#move-cleaning",
+    icon: TruckIcon,
+    title: "Move-in / Move-out",
+    href: "/services/move-in-move-out-cleaning",
+    description: "Get your deposit back. Or start fresh. We make properties handover-ready.",
   },
   {
-    icon: Building2,
-    title: "Office Cleaning",
-    description: "Professional cleaning for offices and commercial spaces. Create a healthy, productive work environment.",
-    href: "/services#office-cleaning",
-  },
-  {
-    icon: Bug,
+    icon: BugIcon,
     title: "Pest Control",
-    description: "Safe and effective pest control solutions. Protect your home from unwanted visitors.",
-    href: "/services#pest-control",
-  },
-  {
-    icon: MoreHorizontal,
-    title: "Custom Services",
-    description: "Have specific cleaning needs? Contact us for customized cleaning solutions tailored to you.",
-    href: "/contact",
+    href: "/services/pest-control",
+    description: "Ants, cockroaches, rodents. We deal with the source, not just the symptoms.",
   },
 ]
 
 export function ServicesPreview() {
   return (
-    <section className="py-16 lg:py-24 bg-background">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center mb-12">
-          <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">What We Offer</span>
-          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">Our Services</h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            From regular house cleaning to specialized services, we have everything you need for a spotless space.
-          </p>
+    <section className="py-20 lg:py-28 bg-white relative">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Asymmetric header */}
+        <div className="mb-10 lg:mb-14 max-w-md">
+          <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Services</span>
+          <h2 className="mt-2 text-3xl lg:text-4xl font-bold text-foreground">
+            What we actually do.
+          </h2>
+          <div className="mt-3 h-1 w-16 bg-foreground"></div>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <Card key={service.title} className="group hover:shadow-lg transition-shadow duration-300 border-border">
-              <CardHeader>
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                  <service.icon className="h-6 w-6" />
-                </div>
-                <CardTitle className="text-xl text-card-foreground">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base mb-4">{service.description}</CardDescription>
-                <Link 
-                  href={service.href} 
-                  className="text-sm font-medium text-primary hover:underline inline-flex items-center gap-1"
-                >
-                  Learn more
-                  <span aria-hidden="true">&rarr;</span>
+        {/* Content Grid — services left, image right (wider) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 sm:gap-8">
+              {services.map((service) => (
+                <Link key={service.title} href={service.href} className="flex gap-4 group">
+                  <div className="shrink-0 mt-0.5 flex items-center justify-center w-12 h-12 lg:w-auto lg:h-auto rounded-full bg-[#1A9AD2]/10 lg:bg-transparent" style={{ color: "#1A9AD2" }}>
+                    <service.icon className="w-6 h-6 lg:w-7 lg:h-7" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground text-base lg:text-sm group-hover:text-[#1A9AD2] transition-colors">{service.title}</h3>
+                    <p className="text-sm lg:text-xs text-muted-foreground mt-1">{service.description}</p>
+                  </div>
                 </Link>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+              ))}
+            </div>
 
-        <div className="mt-12 text-center">
-          <Button size="lg" asChild>
-            <Link href="/services">View All Services</Link>
-          </Button>
+            <Link
+              href="/services"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 sm:py-3 text-base sm:text-sm font-bold text-white transition-colors duration-200 mt-8 lg:mt-10 hover:opacity-90"
+              style={{ backgroundColor: "#6fbf00" }}
+            >
+              All 15+ Services
+            </Link>
+          </div>
+
+          {/* Professional Image — larger, bleeds */}
+          <div className="hidden lg:block lg:col-span-7 relative h-96 lg:h-[500px] overflow-hidden -mr-4 lg:-mr-8">
+            <Image
+              src="/cheerful-black-professional-cleaner-woman-600nw-2411115957-removebg-preview.png"
+              alt="Zenako cleaning professional"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
         </div>
       </div>
     </section>

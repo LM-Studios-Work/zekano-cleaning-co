@@ -16,38 +16,33 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react"
+import { PhoneIcon, MailIcon, ClockIcon, SendIcon, ChatIcon, MapPinIcon } from "@/components/icons"
 
 const contactInfo = [
   {
-    icon: Phone,
+    icon: PhoneIcon,
     title: "Phone",
-    details: "(123) 456-7890",
-    action: "tel:+1234567890",
+    details: "084 402 0733",
+    action: "tel:+27844020733",
     actionText: "Call us",
   },
   {
-    icon: Mail,
+    icon: MailIcon,
     title: "Email",
     details: "info@zekanocleaningco.com",
     action: "mailto:info@zekanocleaningco.com",
     actionText: "Email us",
   },
   {
-    icon: MapPin,
-    title: "Address",
-    details: "123 Clean Street, Suite 100, Your City, ST 12345",
-    action: "https://maps.google.com",
-    actionText: "Get directions",
-  },
-  {
-    icon: Clock,
+    icon: ClockIcon,
     title: "Business Hours",
     details: "Mon-Sat: 7AM - 8PM, Sun: 9AM - 5PM",
     action: null,
     actionText: null,
   },
 ]
+
+const serviceAreas = ["Sandton", "Randburg", "Fourways", "Midrand", "Bryanston", "Johannesburg North"]
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -64,10 +59,10 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000))
-    
+
     setIsSubmitting(false)
     setIsSubmitted(true)
     setFormState({
@@ -83,29 +78,29 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="bg-primary py-16 lg:py-24">
+      <main className="pt-24">
+        {/* Page Title */}
+        <section className="py-12 lg:py-16 bg-background">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold text-primary-foreground sm:text-5xl text-balance">
-                Contact Us
-              </h1>
-              <p className="mt-6 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-                Have questions or ready to book? We'd love to hear from you. Reach out anytime!
-              </p>
-            </div>
+            <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#6fbf00" }}>Get In Touch</span>
+            <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
+              Contact <span style={{ color: "#1A9AD2" }}>Us</span>
+            </h1>
+            <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
+              Have a question or ready to book? Drop us a message, give us a call, or reach out on WhatsApp. We provide professional cleaning services across Johannesburg and surrounding areas.
+            </p>
+            <div className="mt-4 h-1 w-24 bg-gray-300"></div>
           </div>
         </section>
 
         {/* Contact Info Cards */}
-        <section className="py-16 bg-background">
+        <section className="py-16 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {contactInfo.map((info) => (
                 <Card key={info.title} className="text-center border-border">
                   <CardContent className="pt-6">
-                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(26, 154, 210, 0.1)", color: "#1A9AD2" }}>
                       <info.icon className="h-6 w-6" />
                     </div>
                     <h3 className="font-semibold text-card-foreground">{info.title}</h3>
@@ -113,7 +108,8 @@ export default function ContactPage() {
                     {info.action && (
                       <a
                         href={info.action}
-                        className="mt-3 inline-block text-sm font-medium text-primary hover:underline"
+                        className="mt-3 inline-block text-sm font-medium hover:underline"
+                        style={{ color: "#6fbf00" }}
                         target={info.action.startsWith("http") ? "_blank" : undefined}
                         rel={info.action.startsWith("http") ? "noopener noreferrer" : undefined}
                       >
@@ -127,8 +123,8 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Contact Form & Map */}
-        <section className="py-16 lg:py-24 bg-card">
+        {/* Contact Form & Quick Contact */}
+        <section className="py-16 lg:py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
@@ -143,15 +139,15 @@ export default function ContactPage() {
                   <CardContent>
                     {isSubmitted ? (
                       <div className="text-center py-8">
-                        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-green-600">
-                          <Send className="h-8 w-8" />
+                        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(111, 191, 0, 0.1)", color: "#6fbf00" }}>
+                          <SendIcon className="h-8 w-8" />
                         </div>
                         <h3 className="text-xl font-semibold text-foreground">Message Sent!</h3>
                         <p className="mt-2 text-muted-foreground">
                           Thank you for reaching out. We'll get back to you soon.
                         </p>
-                        <Button 
-                          className="mt-6" 
+                        <Button
+                          className="mt-6"
                           variant="outline"
                           onClick={() => setIsSubmitted(false)}
                         >
@@ -198,14 +194,14 @@ export default function ContactPage() {
                           <Input
                             id="phone"
                             type="tel"
-                            placeholder="(123) 456-7890"
+                            placeholder="084 XXX XXXX"
                             value={formState.phone}
                             onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                           />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="service">Service Interested In</Label>
-                          <Select 
+                          <Select
                             value={formState.service}
                             onValueChange={(value) => setFormState({ ...formState, service: value })}
                           >
@@ -213,11 +209,22 @@ export default function ContactPage() {
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="deep-cleaning">Deep Cleaning</SelectItem>
                               <SelectItem value="standard-cleaning">Standard House Cleaning</SelectItem>
+                              <SelectItem value="deep-cleaning">Deep Cleaning</SelectItem>
                               <SelectItem value="move-cleaning">Move-in/Move-out Cleaning</SelectItem>
                               <SelectItem value="office-cleaning">Office Cleaning</SelectItem>
+                              <SelectItem value="small-business">Small Business Cleaning</SelectItem>
+                              <SelectItem value="sofa-cleaning">Sofa Cleaning</SelectItem>
+                              <SelectItem value="mattress-cleaning">Mattress Cleaning</SelectItem>
+                              <SelectItem value="curtain-cleaning">Curtain Cleaning</SelectItem>
+                              <SelectItem value="carpet-cleaning">Carpet Cleaning</SelectItem>
+                              <SelectItem value="upholstery-cleaning">Upholstery Cleaning</SelectItem>
+                              <SelectItem value="roof-cleaning">Roof Cleaning</SelectItem>
+                              <SelectItem value="drain-cleaning">Drain Cleaning</SelectItem>
+                              <SelectItem value="garden-cleanup">Garden Clean-ups</SelectItem>
                               <SelectItem value="pest-control">Pest Control</SelectItem>
+                              <SelectItem value="disinfection">Disinfection Services</SelectItem>
+                              <SelectItem value="custom-package">Custom Cleaning Package</SelectItem>
                               <SelectItem value="other">Other / General Inquiry</SelectItem>
                             </SelectContent>
                           </Select>
@@ -242,26 +249,8 @@ export default function ContactPage() {
                 </Card>
               </div>
 
-              {/* Map & Quick Contact */}
+              {/* Quick Contact & Service Areas */}
               <div className="space-y-8">
-                {/* Google Maps Embed */}
-                <Card className="overflow-hidden border-border">
-                  <div className="aspect-[4/3] relative bg-muted">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596552044!2d-74.25987368715491!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1635959848281!5m2!1sen!2s"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Zekano Cleaning Co Location"
-                      className="absolute inset-0"
-                    />
-                  </div>
-                </Card>
-
-                {/* Quick Actions */}
                 <Card className="border-border">
                   <CardHeader>
                     <CardTitle className="text-card-foreground">Quick Contact</CardTitle>
@@ -271,27 +260,63 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <Button variant="outline" className="w-full justify-start" asChild>
-                      <a href="tel:+1234567890">
-                        <Phone className="mr-3 h-5 w-5 text-primary" />
-                        Call Us: (123) 456-7890
+                      <a href="tel:+27844020733">
+                        <PhoneIcon className="mr-3 h-5 w-5" style={{ color: "#1A9AD2" }} />
+                        Call Us: 084 402 0733
                       </a>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
-                      <a 
-                        href="https://wa.me/1234567890" 
-                        target="_blank" 
+                      <a
+                        href="https://wa.me/27844020733"
+                        target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <MessageCircle className="mr-3 h-5 w-5 text-[#25D366]" />
+                        <ChatIcon className="mr-3 h-5 w-5 text-[#25D366]" />
                         WhatsApp Us
                       </a>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <a href="mailto:info@zekanocleaningco.com">
-                        <Mail className="mr-3 h-5 w-5 text-primary" />
+                        <MailIcon className="mr-3 h-5 w-5" style={{ color: "#1A9AD2" }} />
                         Email: info@zekanocleaningco.com
                       </a>
                     </Button>
+                  </CardContent>
+                </Card>
+
+                {/* Service Areas */}
+                <Card className="border-border">
+                  <CardHeader>
+                    <CardTitle className="text-card-foreground">Service Areas</CardTitle>
+                    <CardDescription>
+                      We provide cleaning services across Johannesburg and surrounding areas:
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-2 gap-3">
+                      {serviceAreas.map((area) => (
+                        <div key={area} className="flex items-center gap-2">
+                          <MapPinIcon className="h-4 w-4 shrink-0" style={{ color: "#1A9AD2" }} />
+                          <span className="text-sm text-foreground">{area}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="mt-4 text-xs text-muted-foreground">
+                      Don't see your area? Contact us — we may still be able to help.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Google Map Placeholder */}
+                <Card className="border-border">
+                  <CardContent className="p-0">
+                    <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center">
+                      <div className="text-center p-6">
+                        <MapPinIcon className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
+                        <p className="text-sm text-muted-foreground">Google Map will be displayed here once our Google Business profile is verified.</p>
+                        <p className="text-xs text-muted-foreground mt-1">Johannesburg, South Africa</p>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
