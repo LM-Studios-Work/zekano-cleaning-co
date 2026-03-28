@@ -2,7 +2,7 @@ import { BookingData } from "@/app/book/page"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { CheckCircle2, Calendar, Clock, MapPin, Phone, Mail, Home, Sparkles } from "lucide-react"
+import { CheckCircle2, Calendar, MapPin, Phone, Mail, Home, Sparkles } from "lucide-react"
 import { format } from "date-fns"
 import Link from "next/link"
 
@@ -29,6 +29,14 @@ const extraNames: Record<string, string> = {
   "laundry": "Laundry (Wash & Fold)",
   "windows": "Interior Windows",
   "garage": "Garage Cleaning",
+  "deep-carpet": "Deep Carpet Cleaning",
+  "windows-exterior": "Exterior Windows",
+  "after-hours": "After Hours Service",
+  "deodorizer": "Deodorizer Treatment",
+  "stain-protect": "Stain Protection",
+  "pet-odour": "Pet Odour Treatment",
+  "emergency": "Emergency Callout",
+  "priority": "Priority Scheduling",
 }
 
 interface BookingConfirmationProps {
@@ -93,14 +101,18 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
                 <span className="text-sm text-muted-foreground">Property Type</span>
                 <p className="font-medium text-foreground capitalize">{bookingData.propertyType}</p>
               </div>
-              <div>
-                <span className="text-sm text-muted-foreground">Bedrooms</span>
-                <p className="font-medium text-foreground">{bookingData.bedrooms}</p>
-              </div>
-              <div>
-                <span className="text-sm text-muted-foreground">Bathrooms</span>
-                <p className="font-medium text-foreground">{bookingData.bathrooms}</p>
-              </div>
+              {bookingData.bedrooms && (
+                <div>
+                  <span className="text-sm text-muted-foreground">Bedrooms</span>
+                  <p className="font-medium text-foreground">{bookingData.bedrooms}</p>
+                </div>
+              )}
+              {bookingData.bathrooms && (
+                <div>
+                  <span className="text-sm text-muted-foreground">Bathrooms</span>
+                  <p className="font-medium text-foreground">{bookingData.bathrooms}</p>
+                </div>
+              )}
             </div>
             {bookingData.extras.length > 0 && (
               <div className="pl-7">
@@ -155,7 +167,7 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
                 {bookingData.phone}
               </p>
               <p className="text-muted-foreground">
-                {bookingData.address}, {bookingData.city}
+                {bookingData.address}, {bookingData.city} {bookingData.postalCode}
               </p>
             </div>
           </div>
