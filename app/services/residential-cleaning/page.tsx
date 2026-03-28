@@ -134,7 +134,7 @@ export default function ResidentialCleaningHub() {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm border border-border">
                 <h3 className="text-lg font-bold text-foreground mb-2">Are your cleaners background-checked?</h3>
-                <p className="text-muted-foreground text-sm">Absolutely. Every member of our team undergoes a strict background check and rigorous training before ever stepping foot in your home.</p>
+                <p className="text-muted-foreground text-sm">Yes. Every professional we deploy is background-checked and completes thorough training before working in any client property.</p>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function ResidentialCleaningHub() {
         <section className="py-12 lg:py-16" style={{ backgroundColor: "#1A9AD2" }}>
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Ready to transform your home?
+              Book Your Residential Clean Today
             </h2>
             <Link
               href="/book"

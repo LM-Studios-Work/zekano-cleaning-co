@@ -87,7 +87,7 @@ export default function ContactPage() {
               Contact <span style={{ color: "#1A9AD2" }}>Us</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-              Have a question or ready to book? Drop us a message, give us a call, or reach out on WhatsApp. We provide professional cleaning services across Johannesburg and surrounding areas.
+              We are available by phone, email, or WhatsApp. Send us a message and we will respond promptly. Professional cleaning services across Johannesburg and surrounding areas.
             </p>
             <div className="mt-4 h-1 w-24 bg-gray-300"></div>
           </div>
@@ -142,9 +142,9 @@ export default function ContactPage() {
                         <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(111, 191, 0, 0.1)", color: "#6fbf00" }}>
                           <SendIcon className="h-8 w-8" />
                         </div>
-                        <h3 className="text-xl font-semibold text-foreground">Message Sent!</h3>
+                        <h3 className="text-xl font-semibold text-foreground">Message Received</h3>
                         <p className="mt-2 text-muted-foreground">
-                          Thank you for reaching out. We'll get back to you soon.
+                          Thank you for contacting us. We will be in touch within 24 hours.
                         </p>
                         <Button
                           className="mt-6"
@@ -302,7 +302,7 @@ export default function ContactPage() {
                       ))}
                     </div>
                     <p className="mt-4 text-xs text-muted-foreground">
-                      Don't see your area? Contact us — we may still be able to help.
+                      Not listed? Contact us directly — we may be able to accommodate your area.
                     </p>
                   </CardContent>
                 </Card>

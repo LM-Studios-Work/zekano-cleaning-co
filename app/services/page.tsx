@@ -60,7 +60,7 @@ export default function ServicesPage() {
               Our <span style={{ color: "#1A9AD2" }}>Services</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-              From regular house cleans to specialised services, Zenako Cleaning Co. handles the hard work so you don't have to. Professional cleaning services across Johannesburg and surrounding areas.
+              From routine residential maintenance to specialised property services, Zenako Cleaning Co. provides professional cleaning across Johannesburg and surrounding areas.
             </p>
             <div className="mt-4 h-1 w-24 bg-gray-300"></div>
           </div>

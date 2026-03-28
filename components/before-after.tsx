@@ -30,12 +30,12 @@ export function BeforeAfter() {
         {/* Asymmetric layout — text left, tabs right */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-8 lg:mb-10 gap-4">
           <div className="max-w-md">
-            <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Proof</span>
+            <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Our Standard</span>
             <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-              Before &amp; After
+              The Zenako Standard
             </h2>
             <p className="mt-2 text-base lg:text-sm text-muted-foreground">
-              Real jobs. Real dirt. Real results. Johannesburg homes, not stock photos.
+              We don&apos;t just wipe surfaces; we restore them. Here is the level of detail you can expect from every visit.
             </p>
           </div>
           <div className="flex gap-2">

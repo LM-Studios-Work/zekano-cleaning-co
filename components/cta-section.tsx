@@ -9,10 +9,10 @@ export function CTASection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7">
             <h2 className="text-3xl font-bold text-foreground sm:text-5xl leading-tight">
-              Your space won&apos;t<br />clean itself.
+              Ready for a<br />cleaner space?
             </h2>
             <p className="mt-4 text-lg lg:text-base text-muted-foreground max-w-md">
-              Book online, call, or WhatsApp. First-time customers get 10% off. No pressure — just clean spaces in Johannesburg.
+              Book online, call, or send us a WhatsApp message. First-time customers receive 10% off their initial clean.
             </p>
           </div>
           <div className="lg:col-span-5">
@@ -35,7 +35,7 @@ export function CTASection() {
               </a>
             </div>
             <p className="mt-5 text-xs lg:text-[10px] text-muted-foreground uppercase tracking-wider text-center lg:text-left">
-              Free estimates &bull; No hidden fees &bull; No contracts &bull; 10% off first clean
+              Free estimates &bull; Transparent pricing &bull; No lock-in contracts &bull; 10% off first clean
             </p>
           </div>
         </div>

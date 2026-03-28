@@ -9,28 +9,28 @@ import {
 
 const faqs = [
   {
-    question: "How much does it cost?",
-    answer: "Depends on size, service type, and how often. We don't do vague estimates — request a quote and we'll give you a real number within hours. No obligation.",
+    question: "How much does a clean cost?",
+    answer: "Pricing depends on the size of your property, the type of service, and frequency. Request a quote and we will provide a clear, itemised figure within hours — no vague estimates and no obligation to proceed.",
   },
   {
-    question: "Do you bring supplies?",
-    answer: "Everything. Products, equipment, the lot. You open the door, we handle the rest. All our products are eco-friendly and safe for kids and pets.",
+    question: "Do you provide your own supplies and equipment?",
+    answer: "Yes. We bring all cleaning products and equipment to every job. Our products are eco-friendly and safe for children and pets. You do not need to provide anything.",
   },
   {
-    question: "What areas do you cover?",
-    answer: "Sandton, Randburg, Fourways, Midrand, Bryanston, Johannesburg North, and surrounding areas. Not sure? Ask — we'll tell you straight.",
+    question: "Which areas do you service?",
+    answer: "We service Sandton, Randburg, Fourways, Midrand, Bryanston, Johannesburg North, and surrounding areas. If you are unsure whether we cover your area, contact us directly and we will confirm.",
   },
   {
-    question: "Can I book a regular schedule?",
-    answer: "Weekly, fortnightly, or monthly. Same team each time. Clients on regular plans get priority scheduling and loyalty discounts.",
+    question: "Can I arrange a regular cleaning schedule?",
+    answer: "Yes. We offer weekly, fortnightly, and monthly plans. Clients on recurring schedules receive priority booking and loyalty pricing. The same professionals are assigned to your property wherever possible.",
   },
   {
-    question: "What if I need to cancel?",
-    answer: "24 hours notice. No penalty, no fee. We're not here to trap anyone into bookings.",
+    question: "What is your cancellation policy?",
+    answer: "We ask for 24 hours' notice for cancellations. There is no penalty and no cancellation fee. We do not hold clients to rigid commitments.",
   },
   {
-    question: "Are you insured?",
-    answer: "Yes. Licensed, insured, and every team member is background-checked. We don't cut corners on trust.",
+    question: "What happens if something is damaged during a clean?",
+    answer: "We take full responsibility for our work. If something is damaged, you contact us directly — not a call centre. Issues are handled personally by our management, promptly and fairly.",
   },
 ]
 
@@ -43,10 +43,10 @@ export function FAQSection() {
           <div className="lg:col-span-4">
             <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>FAQ</span>
             <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-              Straight answers.
+              Frequently Asked Questions
             </h2>
             <p className="mt-2 text-base lg:text-sm text-muted-foreground">
-              No corporate waffle. If your question isn&apos;t here, WhatsApp us.
+              If your question is not listed here, contact us directly and we will respond promptly.
             </p>
           </div>
           <div className="lg:col-span-8">
