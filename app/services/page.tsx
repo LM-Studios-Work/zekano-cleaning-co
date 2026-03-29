@@ -10,7 +10,7 @@ import { allServices } from "@/lib/services-data"
 
 export const metadata: Metadata = {
   title: "Our Services | Zenako Cleaning Co.",
-  description: "Professional cleaning services in Johannesburg — residential cleaning, commercial cleaning, upholstery & fabric cleaning, and specialised cleaning services. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
+  description: "Professional cleaning services in Johannesburg: residential cleaning, commercial cleaning, upholstery and fabric cleaning, and specialised cleaning services. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
 }
 
 const categoryIcons: Record<string, typeof HouseIcon> = {
@@ -117,7 +117,7 @@ export default function ServicesPage() {
                   Not Sure Which Service You Need?
                 </h2>
                 <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
-                  Send us a message or give us a call. We'll walk through your requirements and recommend the right option — or create a custom cleaning package tailored to your needs.
+                  Send us a message or give us a call. We will walk through your requirements and recommend the right option, or create a custom cleaning package tailored to your needs.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                   <Link

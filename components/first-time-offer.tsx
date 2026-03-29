@@ -14,7 +14,7 @@ export function FirstTimeOffer() {
                 10% off your first clean.
               </p>
               <p className="text-white/80 text-sm lg:text-xs mt-1">
-                Available to new customers. No code required — simply mention it when booking.
+                Available to new customers. No code required. Simply mention it when booking.
               </p>
             </div>
           </div>

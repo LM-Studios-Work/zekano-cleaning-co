@@ -11,7 +11,7 @@ const slides = [
     alt: "House cleaning in Johannesburg",
     label: "01. Homes",
     heading: "Professional Home\nCleaning.",
-    description: "Every surface, every corner, every room — done to a consistent standard your household can rely on.",
+    description: "Every surface, every corner, every room, maintained to a consistent standard your household can rely on.",
   },
   {
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80",
