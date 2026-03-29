@@ -10,14 +10,14 @@ import { ShieldCheckIcon, LeafIcon, GearIcon, TrophyIcon, CheckIcon } from "@/co
 
 export const metadata: Metadata = {
   title: "About Us | Zenako Cleaning Co. | Johannesburg",
-  description: "Learn about Zenako Cleaning Co. — Johannesburg's trusted professional cleaning service for homes and businesses. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
+  description: "Learn about Zenako Cleaning Co., Johannesburg's trusted professional cleaning service for homes and businesses. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
 }
 
 const values = [
   {
     icon: ShieldCheckIcon,
     title: "Our Mission",
-    description: "To deliver consistently excellent cleaning across Johannesburg — for homes, offices, and commercial spaces.",
+    description: "To deliver consistently excellent cleaning across Johannesburg, covering homes, offices, and commercial spaces.",
   },
   {
     icon: LeafIcon,
@@ -69,7 +69,7 @@ export default function AboutPage() {
                     Zenako Cleaning Co. was started right here in Johannesburg for one simple reason: we were tired of hiring cleaning services that cut corners, arrived late, or sent a different person every week.
                   </p>
                   <p>
-                    Johannesburg did not need another cleaning app or a large corporate agency. It needed an accountable, owner-run service — one where management actually cares about the result, where every professional is rigorously vetted, and where &ldquo;clean&rdquo; genuinely means clean.
+                    Johannesburg did not need another cleaning app or a large corporate agency. It needed an accountable, owner-run service where management actually cares about the result, where every professional is rigorously vetted, and where &ldquo;clean&rdquo; genuinely means clean.
                   </p>
                   <p>
                     We do not set out to be the largest cleaning company in South Africa. Our goal is to be the most reliable one in your area. Today we serve homes, offices, and commercial properties across Johannesburg and surrounding areas, handling everything from weekly maintenance to full deep cleans, move-in and move-out turnovers, and specialised services.
@@ -127,7 +127,7 @@ export default function AboutPage() {
                   {[
                     "Background-checked, trained professionals",
                     "Eco-friendly cleaning products",
-                    "Flexible scheduling — weekdays, weekends, after hours",
+                    "Flexible scheduling: weekdays, weekends, and after hours",
                     "Satisfaction guarantee on every job",
                     "Familiar professionals assigned to your property each visit",
                     "Transparent pricing with no surprises",

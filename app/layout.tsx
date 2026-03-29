@@ -12,7 +12,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: 'Zenako Cleaning Co. | Professional Cleaning Services in Johannesburg',
-  description: 'Zenako Cleaning Co. offers professional cleaning services in Johannesburg and surrounding areas — Sandton, Randburg, Fourways, Midrand, Bryanston. Residential cleaning, commercial cleaning, upholstery cleaning, pest control & more. Book today!',
+  description: 'Zenako Cleaning Co. offers professional cleaning services in Johannesburg and surrounding areas, including Sandton, Randburg, Fourways, Midrand, and Bryanston. Residential cleaning, commercial cleaning, upholstery cleaning, pest control and more. Book today.',
   keywords: [
     'cleaning services Johannesburg',
     'house cleaning Johannesburg',

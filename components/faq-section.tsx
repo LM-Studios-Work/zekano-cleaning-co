@@ -10,7 +10,7 @@ import {
 const faqs = [
   {
     question: "How much does a clean cost?",
-    answer: "Pricing depends on the size of your property, the type of service, and frequency. Request a quote and we will provide a clear, itemised figure within hours — no vague estimates and no obligation to proceed.",
+    answer: "Pricing depends on the size of your property, the type of service, and frequency. Request a quote and we will provide a clear, itemised figure within hours. There is no obligation to proceed.",
   },
   {
     question: "Do you provide your own supplies and equipment?",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "What happens if something is damaged during a clean?",
-    answer: "We take full responsibility for our work. If something is damaged, you contact us directly — not a call centre. Issues are handled personally by our management, promptly and fairly.",
+    answer: "We take full responsibility for our work. If something is damaged, you contact us directly, not a call centre. Issues are handled personally by our management, promptly and fairly.",
   },
 ]
 

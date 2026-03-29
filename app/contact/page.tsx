@@ -302,7 +302,7 @@ export default function ContactPage() {
                       ))}
                     </div>
                     <p className="mt-4 text-xs text-muted-foreground">
-                      Not listed? Contact us directly — we may be able to accommodate your area.
+                      Not listed? Contact us directly. We may be able to accommodate your area.
                     </p>
                   </CardContent>
                 </Card>

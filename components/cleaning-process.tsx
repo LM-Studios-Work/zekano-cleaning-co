@@ -11,7 +11,7 @@ const steps = [
     icon: CalendarIcon,
     step: "02",
     title: "Choose a Date",
-    description: "Select a time that suits you — weekdays, weekends, or after hours. We work around your schedule.",
+    description: "Select a time that suits you: weekdays, weekends, or after hours. We work around your schedule.",
   },
   {
     icon: SparkleIcon,

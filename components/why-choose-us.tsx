@@ -5,7 +5,7 @@ const features = [
   {
     icon: AwardStarIcon,
     title: "Satisfaction Guarantee",
-    description: "If our work does not meet your standards, we return and re-clean at no additional cost — promptly and without dispute.",
+    description: "If our work does not meet your standards, we return and re-clean at no additional cost, promptly and without dispute.",
   },
   {
     icon: MoneyBagIcon,

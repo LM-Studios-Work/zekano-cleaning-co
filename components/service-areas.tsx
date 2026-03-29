@@ -37,7 +37,7 @@ export function ServiceAreas() {
         </div>
 
         <p className="mt-5 text-sm lg:text-xs text-muted-foreground">
-          Not listed? <a href="/contact" className="font-bold underline" style={{ color: "#6fbf00" }}>Contact us</a> — we are continually expanding our coverage.
+          Not listed? <a href="/contact" className="font-bold underline" style={{ color: "#6fbf00" }}>Contact us</a>. We are continually expanding our coverage.
         </p>
       </div>
     </section>

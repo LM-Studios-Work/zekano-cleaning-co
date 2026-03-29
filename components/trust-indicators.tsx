@@ -9,7 +9,7 @@ const indicators = [
   {
     icon: CoinStackIcon,
     title: "Transparent Pricing",
-    description: "All quotes are provided upfront. The price you receive is the price you pay — no hidden charges.",
+    description: "All quotes are provided upfront. The price you receive is the price you pay. No hidden charges.",
   },
   {
     icon: ThumbsUpIcon,

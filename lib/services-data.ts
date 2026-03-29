@@ -20,7 +20,7 @@ export const allServices: ServiceData[] = [
     category: "Residential Cleaning",
     categorySlug: "residential-cleaning",
     description: "Scheduled weekly, fortnightly, or monthly cleaning to keep your home consistently maintained without disrupting your routine.",
-    longDescription: "Our standard house cleaning service is designed to maintain a consistently clean and comfortable home. Whether you need us weekly, fortnightly, or monthly, our trained team handles all the essentials — dusting, vacuuming, mopping, bathroom sanitisation, and kitchen cleaning. We use eco-friendly products that are safe for your family and pets while delivering a thorough, professional result every time. Serving homes across Johannesburg including Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
+    longDescription: "Our standard house cleaning service is designed to maintain a consistently clean and comfortable home. Whether you need us weekly, fortnightly, or monthly, our trained team handles all the essentials: dusting, vacuuming, mopping, bathroom sanitisation, and kitchen cleaning. We use eco-friendly products that are safe for your family and pets while delivering a thorough, professional result every time. Serving homes across Johannesburg including Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200&q=80",
     icon: "Home",
     features: [
@@ -34,7 +34,7 @@ export const allServices: ServiceData[] = [
       "General tidying of living areas",
     ],
     benefits: [
-      "Flexible scheduling — weekly, fortnightly, or monthly",
+      "Flexible scheduling: weekly, fortnightly, or monthly",
       "Familiar professionals assigned to your home each visit",
       "Eco-friendly cleaning products used",
       "No lock-in contracts",
@@ -44,7 +44,7 @@ export const allServices: ServiceData[] = [
       "We start with a walkthrough to understand your priorities.",
       "Common areas are dusted, vacuumed, and mopped.",
       "Bathrooms are scrubbed, disinfected, and polished.",
-      "The kitchen is cleaned — counters, sink, stovetop, and appliance exteriors.",
+      "The kitchen is cleaned: counters, sink, stovetop, and appliance exteriors.",
       "Bedrooms are tidied, beds made, and floors cleaned.",
       "A final check ensures nothing is missed before we leave.",
     ],
@@ -54,8 +54,8 @@ export const allServices: ServiceData[] = [
     title: "Deep Cleaning",
     category: "Residential Cleaning",
     categorySlug: "residential-cleaning",
-    description: "A comprehensive clean covering every surface, appliance interior, and hard-to-reach area — well beyond the scope of a standard clean.",
-    longDescription: "Our deep cleaning service goes far beyond a standard clean. We tackle built-up grime, hidden dirt, and neglected areas that regular cleaning misses. From inside ovens and fridges to baseboards, light fixtures, and behind furniture — every corner of your home gets thorough attention. Ideal for seasonal refreshes, pre-event preparation, or when your home just needs that extra level of clean. Available across Johannesburg and surrounding areas.",
+    description: "A comprehensive clean covering every surface, appliance interior, and hard-to-reach area, well beyond the scope of a standard clean.",
+    longDescription: "Our deep cleaning service goes far beyond a standard clean. We tackle built-up grime, hidden dirt, and neglected areas that regular cleaning misses. From inside ovens and fridges to baseboards, light fixtures, and behind furniture, every corner of your home receives thorough attention. Ideal for seasonal refreshes, pre-event preparation, or when your home requires a higher level of clean. Available across Johannesburg and surrounding areas.",
     image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1200&q=80",
     icon: "Sparkles",
     features: [
@@ -77,7 +77,7 @@ export const allServices: ServiceData[] = [
     ],
     process: [
       "We assess your home and identify high-priority areas.",
-      "All surfaces are scrubbed top to bottom — walls, ceilings, and baseboards.",
+      "All surfaces are scrubbed top to bottom: walls, ceilings, and baseboards.",
       "Appliance interiors (oven, fridge, microwave) are thoroughly cleaned.",
       "Bathrooms receive intensive descaling and grout cleaning.",
       "Floors are deep-cleaned including under and behind furniture.",
@@ -90,7 +90,7 @@ export const allServices: ServiceData[] = [
     category: "Residential Cleaning",
     categorySlug: "residential-cleaning",
     description: "Whether handing back keys or moving into a new property, we ensure every room and surface meets a thorough handover standard.",
-    longDescription: "Moving is stressful enough without worrying about cleaning. Our move-in/move-out cleaning service ensures the property is spotless from floor to ceiling — whether you're preparing to hand back keys or want to start fresh in your new home. We clean every cupboard, appliance, and surface so you can focus on the move itself. Trusted by tenants, landlords, and estate agents across Johannesburg.",
+    longDescription: "Moving is demanding enough without the added pressure of cleaning. Our move-in/move-out cleaning service ensures the property is spotless from floor to ceiling, whether you are preparing to hand back keys or want to start fresh in your new home. We clean every cupboard, appliance, and surface so you can focus on the move itself. Trusted by tenants, landlords, and estate agents across Johannesburg.",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
     icon: "Truck",
     features: [
@@ -112,7 +112,7 @@ export const allServices: ServiceData[] = [
     ],
     process: [
       "We do a full property assessment on arrival.",
-      "Every room is cleaned top to bottom — cupboards, walls, floors.",
+      "Every room is cleaned top to bottom: cupboards, walls, and floors.",
       "Kitchen appliances are deep cleaned inside and out.",
       "Bathrooms are fully descaled and sanitised.",
       "Windows, light switches, and door handles are wiped down.",
@@ -127,7 +127,7 @@ export const allServices: ServiceData[] = [
     category: "Commercial Cleaning",
     categorySlug: "commercial-cleaning",
     description: "Professional cleaning for offices of all sizes. A clean workspace keeps your team healthy and clients impressed.",
-    longDescription: "A clean office environment boosts productivity, reduces sick days, and leaves a lasting impression on clients. Our office cleaning service covers everything from desks and workstations to restrooms, kitchens, and reception areas. We offer daily, weekly, or custom schedules — including after-hours service to avoid disrupting your team. Serving offices across Johannesburg, Sandton, Randburg, and Midrand.",
+    longDescription: "A clean office environment boosts productivity, reduces sick days, and leaves a lasting impression on clients. Our office cleaning service covers everything from desks and workstations to restrooms, kitchens, and reception areas. We offer daily, weekly, or custom schedules, including after-hours service to avoid disrupting your team. Serving offices across Johannesburg, Sandton, Randburg, and Midrand.",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
     icon: "Building2",
     features: [
@@ -162,7 +162,7 @@ export const allServices: ServiceData[] = [
     category: "Commercial Cleaning",
     categorySlug: "commercial-cleaning",
     description: "Affordable cleaning solutions for small businesses, retail shops, and commercial spaces.",
-    longDescription: "Small businesses deserve the same level of professional cleaning as large corporations — without the corporate price tag. Our small business cleaning service is tailored to shops, salons, clinics, studios, and other small commercial spaces. We work around your schedule to keep your business looking its best for customers and staff alike. Affordable packages available across Johannesburg.",
+    longDescription: "Small businesses deserve the same level of professional cleaning as large corporations, without the premium price. Our small business cleaning service is tailored to shops, salons, clinics, studios, and other small commercial spaces. We work around your schedule to keep your business looking its best for customers and staff. Affordable packages available across Johannesburg.",
     image: "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=1200&q=80",
     icon: "Building2",
     features: [
@@ -199,7 +199,7 @@ export const allServices: ServiceData[] = [
     category: "Upholstery & Fabric Cleaning",
     categorySlug: "upholstery-and-fabric",
     description: "Deep cleaning for all types of sofas and couches. We remove stains, dust mites, and odours.",
-    longDescription: "Your sofa is one of the most-used pieces of furniture in your home, and it collects dust, allergens, spills, and odours over time. Our professional sofa cleaning service uses safe, effective methods to deep clean all fabric and leather types — removing stains, dust mites, bacteria, and unpleasant smells. Your sofa will look refreshed and feel hygienic. Available across Johannesburg and surrounding areas.",
+    longDescription: "Your sofa is one of the most-used pieces of furniture in your home, and it collects dust, allergens, spills, and odours over time. Our professional sofa cleaning service uses safe, effective methods to deep clean all fabric and leather types, removing stains, dust mites, bacteria, and unpleasant smells. Your sofa will look refreshed and feel hygienic. Available across Johannesburg and surrounding areas.",
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80",
     icon: "Sofa",
     features: [
@@ -234,7 +234,7 @@ export const allServices: ServiceData[] = [
     category: "Upholstery & Fabric Cleaning",
     categorySlug: "upholstery-and-fabric",
     description: "Professional mattress sanitisation to remove allergens, dust mites, and bacteria.",
-    longDescription: "You spend a third of your life on your mattress — so it should be clean and hygienic. Our professional mattress cleaning service removes dust mites, dead skin cells, bacteria, sweat stains, and allergens that build up over time. Using safe, chemical-free methods, we sanitise and freshen your mattress so you can enjoy a healthier night's sleep. Serving homes across Johannesburg.",
+    longDescription: "You spend a third of your life on your mattress, so it should be clean and hygienic. Our professional mattress cleaning service removes dust mites, dead skin cells, bacteria, sweat stains, and allergens that build up over time. Using safe, chemical-free methods, we sanitise and freshen your mattress for a healthier night's sleep. Serving homes across Johannesburg.",
     image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80",
     icon: "Sofa",
     features: [
@@ -252,7 +252,7 @@ export const allServices: ServiceData[] = [
       "Reduces allergy and asthma triggers",
       "Extends mattress lifespan",
       "Chemical-free and family safe",
-      "Quick drying — sleep on it the same night",
+      "Quick-dry results, ready to use the same night",
     ],
     process: [
       "The mattress is inspected for stains and problem areas.",
@@ -304,7 +304,7 @@ export const allServices: ServiceData[] = [
     category: "Upholstery & Fabric Cleaning",
     categorySlug: "upholstery-and-fabric",
     description: "Expert carpet cleaning that removes deep stains, allergens, and odours.",
-    longDescription: "Carpets trap dirt, dust, allergens, pet dander, and spills deep in their fibres — far beyond what regular vacuuming can reach. Our professional carpet cleaning service uses hot water extraction and eco-friendly solutions to deep clean your carpets, removing stubborn stains and odours while restoring colour and texture. Your carpets will look and feel brand new. Serving homes and offices across Johannesburg.",
+    longDescription: "Carpets trap dirt, dust, allergens, pet dander, and spills deep in their fibres, well beyond what regular vacuuming can reach. Our professional carpet cleaning service uses hot water extraction and eco-friendly solutions to deep clean your carpets, removing stubborn stains and odours while restoring colour and texture. Serving homes and offices across Johannesburg.",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
     icon: "Sparkles",
     features: [
@@ -446,7 +446,7 @@ export const allServices: ServiceData[] = [
     category: "Specialised Cleaning Services",
     categorySlug: "specialised-cleaning",
     description: "Tidy up your outdoor spaces with clearing, trimming, and general maintenance.",
-    longDescription: "An overgrown or untidy garden can significantly affect the appearance of your property. Our garden clean-up service covers everything from clearing debris and trimming overgrowth to general tidying and waste removal — whether for a one-time restoration or regular ongoing maintenance. Available across Johannesburg and surrounding areas.",
+    longDescription: "An overgrown or untidy garden can significantly affect the appearance of your property. Our garden clean-up service covers everything from clearing debris and trimming overgrowth to general tidying and waste removal, whether for a one-time restoration or regular ongoing maintenance. Available across Johannesburg and surrounding areas.",
     image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80",
     icon: "TreePine",
     features: [
@@ -481,7 +481,7 @@ export const allServices: ServiceData[] = [
     category: "Specialised Cleaning Services",
     categorySlug: "specialised-cleaning",
     description: "Targeted pest treatments using eco-friendly products safe for your family and pets.",
-    longDescription: "Pests can cause health risks, property damage, and general discomfort. Our pest control service uses targeted, eco-friendly treatments to eliminate pests at the source — not just the symptoms. We deal with ants, cockroaches, rodents, spiders, bed bugs, mosquitoes, and more. All products are safe for families and pets. We also offer ongoing prevention plans to keep your home pest-free. Serving Johannesburg and surrounding areas.",
+    longDescription: "Pests can cause health risks, property damage, and general discomfort. Our pest control service uses targeted, eco-friendly treatments to eliminate pests at the source, addressing the root cause rather than the surface. We treat ants, cockroaches, rodents, spiders, bed bugs, mosquitoes, and more. All products are safe for families and pets. We also offer ongoing prevention plans to keep your home pest-free. Serving Johannesburg and surrounding areas.",
     image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=1200&q=80",
     icon: "Bug",
     features: [
