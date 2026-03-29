@@ -7,7 +7,7 @@ import { PhoneIcon } from "@/components/icons"
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&q=80",
+    image: "/cleaning lady.webp",
     alt: "House cleaning in Johannesburg",
     label: "01. Homes",
     heading: "Professional Home\nCleaning.",

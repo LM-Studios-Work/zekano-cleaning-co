@@ -34,7 +34,7 @@ export function Testimonials() {
               What Our Clients Say
             </h2>
           </div>
-          <p className="text-sm lg:text-xs text-muted-foreground lg:max-w-xs lg:text-right">
+          <p className="text-base leading-relaxed text-muted-foreground lg:max-w-xs lg:text-right">
             Verified Google Reviews coming soon. These testimonials are from real Zenako clients.
           </p>
         </div>
@@ -48,7 +48,7 @@ export function Testimonials() {
                     <StarIcon key={i} className="h-5 w-5 lg:h-4 lg:w-4 text-yellow-500" />
                   ))}
                 </div>
-                <blockquote className="text-foreground leading-relaxed text-base lg:text-sm font-medium">
+                <blockquote className="text-foreground leading-relaxed text-base font-medium">
                   &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
                 <div className="mt-5 lg:mt-4 flex items-center gap-3">

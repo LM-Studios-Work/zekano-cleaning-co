@@ -34,8 +34,8 @@ export function TrustIndicators() {
                 <item.icon className="w-6 h-6 lg:w-5 lg:h-5" />
               </div>
               <div>
-                <h3 className="font-bold text-foreground text-base lg:text-sm">{item.title}</h3>
-                <p className="text-sm lg:text-xs text-muted-foreground mt-0.5">{item.description}</p>
+                <h3 className="font-medium text-foreground text-base">{item.title}</h3>
+                <p className="text-base leading-relaxed text-muted-foreground mt-0.5">{item.description}</p>
               </div>
             </div>
           ))}

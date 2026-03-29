@@ -25,7 +25,7 @@ const categories = [
     slug: "residential-cleaning",
     name: "Residential Cleaning",
     description: "Keep your home spotless with our trusted residential cleaning services. From routine maintenance to thorough deep cleans, we take care of it all.",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+    image: "/cleaning lady.webp",
   },
   {
     slug: "commercial-cleaning",

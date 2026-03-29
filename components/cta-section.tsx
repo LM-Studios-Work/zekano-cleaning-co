@@ -11,7 +11,7 @@ export function CTASection() {
             <h2 className="text-3xl font-bold text-foreground sm:text-5xl leading-tight">
               Ready for a<br />cleaner space?
             </h2>
-            <p className="mt-4 text-lg lg:text-base text-muted-foreground max-w-md">
+            <p className="mt-4 text-base lg:text-lg leading-relaxed text-muted-foreground max-w-md">
               Book online, call, or send us a WhatsApp message. First-time customers receive 10% off their initial clean.
             </p>
           </div>
@@ -19,7 +19,7 @@ export function CTASection() {
             <div className="flex flex-col gap-3">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base lg:text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
+                className="inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base font-bold text-white transition-colors duration-200 hover:opacity-90"
                 style={{ backgroundColor: "#6fbf00" }}
               >
                 <CalendarIcon className="h-5 w-5" />
@@ -28,13 +28,13 @@ export function CTASection() {
 
               <a
                 href="tel:+27844020733"
-                className="inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base lg:text-sm font-bold transition-colors duration-200 border-2 border-foreground text-foreground hover:bg-foreground hover:text-background"
+                className="inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base font-bold transition-colors duration-200 border-2 border-foreground text-foreground hover:bg-foreground hover:text-background"
               >
                 <PhoneIcon className="h-5 w-5" />
                 Call 084 402 0733
               </a>
             </div>
-            <p className="mt-5 text-xs lg:text-[10px] text-muted-foreground uppercase tracking-wider text-center lg:text-left">
+            <p className="mt-5 text-base tracking-wider text-center lg:text-left text-muted-foreground">
               Free estimates &bull; Transparent pricing &bull; No lock-in contracts &bull; 10% off first clean
             </p>
           </div>

@@ -10,10 +10,10 @@ export function FirstTimeOffer() {
             <GiftIcon className="h-12 w-12 lg:h-10 lg:w-10 text-white shrink-0 hidden lg:block" />
             <div>
               <GiftIcon className="h-10 w-10 text-white mx-auto mb-3 lg:hidden" />
-              <p className="text-xl lg:text-xl font-black text-white">
+              <p className="text-xl lg:text-2xl font-black text-white">
                 10% off your first clean.
               </p>
-              <p className="text-white/80 text-sm lg:text-xs mt-1">
+              <p className="text-white/80 text-base leading-relaxed mt-1">
                 Available to new customers. No code required. Simply mention it when booking.
               </p>
             </div>
@@ -21,14 +21,14 @@ export function FirstTimeOffer() {
           <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full sm:w-auto">
             <Link
               href="/book"
-              className="px-8 py-4 sm:py-3 text-base sm:text-sm font-bold text-white hover:opacity-90 transition-colors text-center"
+              className="px-8 py-4 text-base font-bold text-white hover:opacity-90 transition-colors text-center rounded"
               style={{ backgroundColor: "#6fbf00" }}
             >
               Book Now
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-4 sm:py-3 text-base sm:text-sm font-bold text-white border-2 border-white/70 hover:bg-white hover:text-gray-900 transition-colors text-center"
+              className="px-8 py-4 text-base font-bold text-white border-2 border-white/70 hover:bg-white hover:text-gray-900 transition-colors text-center rounded"
             >
               Get a Quote
             </Link>

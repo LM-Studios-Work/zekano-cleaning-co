@@ -77,12 +77,12 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
+                <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl bg-gradient-to-tr from-[#1A9AD2]/20 to-[#6fbf00]/20">
                   <Image
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                    alt="Zenako Cleaning Co. team"
+                    src="/cheerful-black-professional-cleaner-woman-600nw-2411115957-removebg-preview.png"
+                    alt="Professional Zenako Cleaner"
                     fill
-                    className="object-cover"
+                    className="object-contain object-bottom"
                   />
                 </div>
               </div>
@@ -151,7 +151,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80"
+                    src="/cleaning lady.webp"
                     alt="Professional cleaning in action"
                     fill
                     className="object-cover"

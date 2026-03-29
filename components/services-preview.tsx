@@ -47,13 +47,13 @@ export function ServicesPreview() {
           <div className="lg:col-span-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 sm:gap-8">
               {services.map((service) => (
-                <Link key={service.title} href={service.href} className="flex gap-4 group">
+                <Link key={service.title} href={service.href} className="flex gap-6 group hover:bg-gray-50/50 rounded-lg transition-colors p-2 -m-2">
                   <div className="shrink-0 mt-0.5 flex items-center justify-center w-12 h-12 lg:w-auto lg:h-auto rounded-full bg-[#1A9AD2]/10 lg:bg-transparent" style={{ color: "#1A9AD2" }}>
                     <service.icon className="w-6 h-6 lg:w-7 lg:h-7" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-foreground text-base lg:text-sm group-hover:text-[#1A9AD2] transition-colors">{service.title}</h3>
-                    <p className="text-sm lg:text-xs text-muted-foreground mt-1">{service.description}</p>
+                    <h3 className="font-medium text-foreground text-base lg:text-lg group-hover:text-[#1A9AD2] transition-colors">{service.title}</h3>
+                    <p className="text-base leading-relaxed text-muted-foreground mt-1">{service.description}</p>
                   </div>
                 </Link>
               ))}
@@ -61,7 +61,7 @@ export function ServicesPreview() {
 
             <Link
               href="/services"
-              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 sm:py-3 text-base sm:text-sm font-bold text-white transition-colors duration-200 mt-8 lg:mt-10 hover:opacity-90"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-bold text-white transition-colors duration-200 mt-8 lg:mt-10 hover:opacity-90"
               style={{ backgroundColor: "#6fbf00" }}
             >
               All 15+ Services
