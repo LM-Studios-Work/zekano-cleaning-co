@@ -151,7 +151,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
                   <Image
-                    src="/cleaning lady.webp"
+                    src="/cleaning images/zenako-cleaning-team.webp"
                     alt="Professional cleaning in action"
                     fill
                     className="object-cover"

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const categorySlug = "upholstery-and-fabric"
 const categoryName = "Upholstery & Fabric Cleaning"
 const categoryDesc = "Refresh your soft furnishings and fabrics with our professional cleaning service. We remove stains, allergens, and odours to extend the life of your furniture."
-const categoryImage = "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80"
+const categoryImage = "/cleaning images/Deep Carpet cleaning image 1.webp"
 
 export default function UpholsteryFabricHub() {
   const categoryServices = allServices.filter((s) => s.categorySlug === categorySlug)

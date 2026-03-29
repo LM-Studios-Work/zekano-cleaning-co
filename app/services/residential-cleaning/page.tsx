@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const categorySlug = "residential-cleaning"
 const categoryName = "Residential Cleaning"
 const categoryDesc = "Keep your home spotless with our trusted residential cleaning services. From routine maintenance to thorough deep cleans, we take care of it all."
-const categoryImage = "/cleaning lady.webp"
+const categoryImage = "/cleaning images/zenako-house-cleaning-johannesburg.webp"
 
 export default function ResidentialCleaningHub() {
   const categoryServices = allServices.filter((s) => s.categorySlug === categorySlug)
