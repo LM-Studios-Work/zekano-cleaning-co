@@ -71,10 +71,10 @@ export function ServicesPreview() {
           {/* Professional Image — larger, bleeds */}
           <div className="hidden lg:block lg:col-span-7 relative h-96 lg:h-[500px] overflow-hidden -mr-4 lg:-mr-8">
             <Image
-              src="/cheerful-black-professional-cleaner-woman-600nw-2411115957-removebg-preview.png"
+              src="/cleaning images/zenako-house-cleaning-johannesburg.webp"
               alt="Zenako cleaning professional"
               fill
-              className="object-cover object-top"
+              className="object-cover transition-transform hover:scale-105 duration-500"
             />
           </div>
         </div>

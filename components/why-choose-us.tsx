@@ -40,10 +40,10 @@ export function WhyChooseUs() {
           <div className="relative lg:col-span-5 order-2 lg:order-1 hidden lg:block">
             <div className="aspect-[3/4] relative overflow-hidden bg-gradient-to-t from-[#1A9AD2]/20 to-[#6fbf00]/10">
               <Image
-                src="/cheerful-black-professional-cleaner-woman-600nw-2411115957-removebg-preview.png"
-                alt="Professional cleaner woman"
+                src="/cleaning images/zenako-cleaning-team-walking.webp"
+                alt="Professional cleaner team"
                 fill
-                className="object-contain object-bottom drop-shadow-lg transition-transform hover:scale-105 duration-500"
+                className="object-cover transition-transform hover:scale-105 duration-500"
               />
             </div>
             {/* Trust Badges bar — bleeds over image */}

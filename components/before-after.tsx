@@ -6,18 +6,18 @@ import { useState } from "react"
 const examples = [
   {
     label: "Kitchen",
-    before: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=75",
-    after: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=75",
+    before: "/cleaning images/zenako-kitchen-cleaning-before-after.webp",
+    after: "/cleaning images/zenako-kitchen-cleaning.webp",
   },
   {
     label: "Bathroom",
-    before: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=75",
-    after: "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=600&q=75",
+    before: "/cleaning images/zenako-deep-cleaning.webp",
+    after: "/cleaning images/zenako-house-cleaning-johannesburg.webp",
   },
   {
     label: "Living Room",
-    before: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75",
-    after: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=75",
+    before: "/cleaning images/zenako-post-construction-cleaning-johannesburg.webp",
+    after: "/cleaning images/zenako-airbnb-cleaning-johannesburg.webp",
   },
 ]
 
