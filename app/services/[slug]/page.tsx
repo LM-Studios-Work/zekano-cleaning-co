@@ -26,7 +26,7 @@ export async function generateMetadata({
 
   return {
     title: `${service.title} | Zenako Cleaning Co. | Johannesburg`,
-    description: `${service.description} Professional ${service.title.toLowerCase()} in Johannesburg — Sandton, Randburg, Fourways, Midrand, Bryanston. Book with Zenako Cleaning Co. today.`,
+    description: `${service.description} Professional ${service.title.toLowerCase()} in Johannesburg, including Sandton, Randburg, Fourways, Midrand, and Bryanston. Book with Zenako Cleaning Co. today.`,
   }
 }
 

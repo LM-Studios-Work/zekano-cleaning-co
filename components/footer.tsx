@@ -30,7 +30,7 @@ export function Footer() {
               <span className="text-sm opacity-80 ml-1">Cleaning Co.</span>
             </div>
             <p className="text-base lg:text-sm opacity-80 leading-relaxed">
-              Homes. Offices. Carpets. Pests. We clean things in Johannesburg. No fluff.
+              Professional cleaning services for homes, offices, and commercial properties across Johannesburg.
             </p>
             <div className="flex gap-5">
               <a href="https://facebook.com" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="Facebook">

@@ -17,10 +17,10 @@ export function ServiceAreas() {
         <div className="mb-8 max-w-md">
           <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Coverage</span>
           <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-            Where we work
+            Service Areas
           </h2>
-          <p className="mt-2 text-base lg:text-sm text-muted-foreground">
-            Cleaning services across Johannesburg. If you&apos;re nearby, we&apos;re there.
+          <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+            We provide cleaning services across Johannesburg and the surrounding areas.
           </p>
         </div>
 
@@ -31,13 +31,13 @@ export function ServiceAreas() {
               className={`flex items-center gap-3 p-5 lg:p-4 bg-white ${idx < areas.length - 1 ? "sm:border-r lg:border-r border-border border-b lg:border-b-0" : ""}`}
             >
               <MapPinIcon className="h-5 w-5 lg:h-4 lg:w-4 shrink-0" style={{ color: "#1A9AD2" }} />
-              <span className="font-bold text-foreground text-base lg:text-sm">{area}</span>
+              <span className="font-medium text-foreground text-base">{area}</span>
             </div>
           ))}
         </div>
 
-        <p className="mt-5 text-sm lg:text-xs text-muted-foreground">
-          Not listed? <a href="/contact" className="font-bold underline" style={{ color: "#6fbf00" }}>Ask us</a> — we&apos;re expanding.
+        <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+          Not listed? <a href="/contact" className="font-bold underline" style={{ color: "#6fbf00" }}>Contact us</a>. We are continually expanding our coverage.
         </p>
       </div>
     </section>

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const categorySlug = "upholstery-and-fabric"
 const categoryName = "Upholstery & Fabric Cleaning"
 const categoryDesc = "Refresh your soft furnishings and fabrics with our professional cleaning service. We remove stains, allergens, and odours to extend the life of your furniture."
-const categoryImage = "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80"
+const categoryImage = "/cleaning images/Deep Carpet cleaning image 1.webp"
 
 export default function UpholsteryFabricHub() {
   const categoryServices = allServices.filter((s) => s.categorySlug === categorySlug)
@@ -44,7 +44,7 @@ export default function UpholsteryFabricHub() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#6fbf00" }}>
-                  Refresh & Revitalise
+                  Professional Fabric Care
                 </span>
                 <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
                   {categoryName} <span style={{ color: "#1A9AD2" }}>Services</span>
@@ -127,7 +127,7 @@ export default function UpholsteryFabricHub() {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm border border-border">
                 <h3 className="text-lg font-bold text-foreground mb-2">Are your cleaning chemicals safe for pets and babies?</h3>
-                <p className="text-muted-foreground text-sm">Absolutely. We use highly effective, eco-friendly, non-toxic cleaning solvents that are perfectly safe for the whole family.</p>
+                <p className="text-muted-foreground text-sm">Yes. We use eco-friendly, non-toxic cleaning solutions that are safe for children, pets, and all members of your household.</p>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function UpholsteryFabricHub() {
         <section className="py-12 lg:py-16" style={{ backgroundColor: "#1A9AD2" }}>
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Restore the beauty of your fabrics.
+              Book an Upholstery or Fabric Clean
             </h2>
             <Link
               href="/book"

@@ -3,23 +3,23 @@ import { ShieldCheckIcon, CoinStackIcon, ThumbsUpIcon, LeafIcon } from "@/compon
 const indicators = [
   {
     icon: ShieldCheckIcon,
-    title: "Vetted Team",
-    description: "Background-checked. Trained. Shows up on time.",
+    title: "100% Vetted Professionals",
+    description: "Every professional we dispatch is background-checked, trained, and held to a consistent standard.",
   },
   {
     icon: CoinStackIcon,
-    title: "Honest Pricing",
-    description: "No hidden fees. No surprise charges. Ever.",
+    title: "Transparent Pricing",
+    description: "All quotes are provided upfront. The price you receive is the price you pay. No hidden charges.",
   },
   {
     icon: ThumbsUpIcon,
-    title: "We Fix It Free",
-    description: "Not happy? We come back. No arguments.",
+    title: "Satisfaction Guaranteed",
+    description: "If the result does not meet your expectations, we return and re-clean at no additional cost.",
   },
   {
     icon: LeafIcon,
-    title: "Eco Products",
-    description: "Tough on grime. Safe for kids, pets, planet.",
+    title: "Eco-Friendly Products",
+    description: "We use effective, non-toxic cleaning solutions that are safe for children, pets, and the environment.",
   },
 ]
 
@@ -34,8 +34,8 @@ export function TrustIndicators() {
                 <item.icon className="w-6 h-6 lg:w-5 lg:h-5" />
               </div>
               <div>
-                <h3 className="font-bold text-foreground text-base lg:text-sm">{item.title}</h3>
-                <p className="text-sm lg:text-xs text-muted-foreground mt-0.5">{item.description}</p>
+                <h3 className="font-medium text-foreground text-base">{item.title}</h3>
+                <p className="text-base leading-relaxed text-muted-foreground mt-0.5">{item.description}</p>
               </div>
             </div>
           ))}

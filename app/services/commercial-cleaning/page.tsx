@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const categorySlug = "commercial-cleaning"
 const categoryName = "Commercial Cleaning"
 const categoryDesc = "A clean workspace keeps your team healthy and your clients impressed. We offer reliable commercial cleaning tailored to your business schedule."
-const categoryImage = "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80"
+const categoryImage = "/cleaning images/zenako-office-cleaning-johannesburg.webp"
 
 export default function CommercialCleaningHub() {
   const categoryServices = allServices.filter((s) => s.categorySlug === categorySlug)
@@ -130,7 +130,7 @@ export default function CommercialCleaningHub() {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-sm border border-border">
                 <h3 className="text-lg font-bold text-foreground mb-2">Do you lock businesses into long-term contracts?</h3>
-                <p className="text-muted-foreground text-sm">No. We focus on earning your business every month with outstanding service, rather than trapping you in strict long-term contracts.</p>
+                <p className="text-muted-foreground text-sm">No. We do not use long-term contracts. We focus on delivering a service worth returning to, and let the quality of our work be the reason clients stay.</p>
               </div>
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function CommercialCleaningHub() {
         <section className="py-12 lg:py-16" style={{ backgroundColor: "#1A9AD2" }}>
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Elevate your workspace today.
+              Request a Commercial Cleaning Quote
             </h2>
             <Link
               href="/contact"

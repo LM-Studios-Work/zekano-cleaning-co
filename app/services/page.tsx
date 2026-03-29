@@ -10,7 +10,7 @@ import { allServices } from "@/lib/services-data"
 
 export const metadata: Metadata = {
   title: "Our Services | Zenako Cleaning Co.",
-  description: "Professional cleaning services in Johannesburg — residential cleaning, commercial cleaning, upholstery & fabric cleaning, and specialised cleaning services. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
+  description: "Professional cleaning services in Johannesburg: residential cleaning, commercial cleaning, upholstery and fabric cleaning, and specialised cleaning services. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
 }
 
 const categoryIcons: Record<string, typeof HouseIcon> = {
@@ -25,25 +25,25 @@ const categories = [
     slug: "residential-cleaning",
     name: "Residential Cleaning",
     description: "Keep your home spotless with our trusted residential cleaning services. From routine maintenance to thorough deep cleans, we take care of it all.",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80",
+    image: "/cleaning images/zenako-house-cleaning-johannesburg.webp",
   },
   {
     slug: "commercial-cleaning",
     name: "Commercial Cleaning",
     description: "A clean workspace keeps your team healthy and your clients impressed. We offer reliable commercial cleaning tailored to your business schedule.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    image: "/cleaning images/zenako-office-cleaning-johannesburg.webp",
   },
   {
     slug: "upholstery-and-fabric",
     name: "Upholstery & Fabric Cleaning",
     description: "Refresh your soft furnishings and fabrics with our professional cleaning service. We remove stains, allergens, and odours to extend the life of your furniture.",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+    image: "/cleaning images/Deep Carpet cleaning image 1.webp",
   },
   {
     slug: "specialised-cleaning",
     name: "Specialised Cleaning Services",
     description: "Beyond standard cleaning, we offer a range of specialised services to keep your property in top condition inside and out.",
-    image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=800&q=80",
+    image: "/cleaning images/zenako-roof-cleaning.webp",
   },
 ]
 
@@ -60,7 +60,7 @@ export default function ServicesPage() {
               Our <span style={{ color: "#1A9AD2" }}>Services</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-              From regular house cleans to specialised services, Zenako Cleaning Co. handles the hard work so you don't have to. Professional cleaning services across Johannesburg and surrounding areas.
+              From routine residential maintenance to specialised property services, Zenako Cleaning Co. provides professional cleaning across Johannesburg and surrounding areas.
             </p>
             <div className="mt-4 h-1 w-24 bg-gray-300"></div>
           </div>
@@ -117,7 +117,7 @@ export default function ServicesPage() {
                   Not Sure Which Service You Need?
                 </h2>
                 <p className="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
-                  Send us a message or give us a call. We'll walk through your requirements and recommend the right option — or create a custom cleaning package tailored to your needs.
+                  Send us a message or give us a call. We will walk through your requirements and recommend the right option, or create a custom cleaning package tailored to your needs.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                   <Link

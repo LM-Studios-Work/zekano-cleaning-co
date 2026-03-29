@@ -5,25 +5,25 @@ const steps = [
     icon: ClipboardIcon,
     step: "01",
     title: "Tell Us What You Need",
-    description: "WhatsApp, call, or fill out the form. We quote within hours, not days.",
+    description: "Contact us by WhatsApp, phone, or the online form. We respond with a quote within hours.",
   },
   {
     icon: CalendarIcon,
     step: "02",
-    title: "Pick a Date",
-    description: "Weekday, weekend, after hours. You choose. We show up.",
+    title: "Choose a Date",
+    description: "Select a time that suits you: weekdays, weekends, or after hours. We work around your schedule.",
   },
   {
     icon: SparkleIcon,
     step: "03",
-    title: "We Clean",
-    description: "Our team arrives with everything. You provide access. That's it.",
+    title: "We Arrive and Clean",
+    description: "Our professionals arrive with all equipment and supplies. You provide access; we handle the rest.",
   },
   {
     icon: SmileFaceIcon,
     step: "04",
-    title: "Walk Into Clean",
-    description: "If something's off, say the word. We come back and fix it.",
+    title: "Inspect and Follow Up",
+    description: "If anything does not meet your expectations, contact us. We will return and address it at no additional cost.",
   },
 ]
 
@@ -35,7 +35,7 @@ export function CleaningProcess() {
         <div className="mb-10 lg:mb-12 max-w-lg">
           <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>How It Works</span>
           <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-            Four steps. No runaround.
+            A straightforward process.
           </h2>
         </div>
 

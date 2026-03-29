@@ -282,7 +282,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
               {showServiceError && (
                 <p className="text-sm text-red-500 mt-2">Please select a service</p>
               )}
-              
+
               {formData.service && (() => {
                 const selectedService = allServices.find((s) => s.slug === formData.service);
                 if (!selectedService) return null;

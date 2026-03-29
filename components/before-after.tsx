@@ -6,18 +6,18 @@ import { useState } from "react"
 const examples = [
   {
     label: "Kitchen",
-    before: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=75",
-    after: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=600&q=75",
+    before: "/cleaning images/zenako-kitchen-cleaning-before-after.webp",
+    after: "/cleaning images/zenako-kitchen-cleaning.webp",
   },
   {
     label: "Bathroom",
-    before: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=75",
-    after: "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=600&q=75",
+    before: "/cleaning images/zenako-deep-cleaning.webp",
+    after: "/cleaning images/zenako-house-cleaning-johannesburg.webp",
   },
   {
     label: "Living Room",
-    before: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75",
-    after: "https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=75",
+    before: "/cleaning images/zenako-post-construction-cleaning-johannesburg.webp",
+    after: "/cleaning images/zenako-airbnb-cleaning-johannesburg.webp",
   },
 ]
 
@@ -30,12 +30,12 @@ export function BeforeAfter() {
         {/* Asymmetric layout — text left, tabs right */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-8 lg:mb-10 gap-4">
           <div className="max-w-md">
-            <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Proof</span>
+            <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Our Standard</span>
             <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-              Before &amp; After
+              The Zenako Standard
             </h2>
             <p className="mt-2 text-base lg:text-sm text-muted-foreground">
-              Real jobs. Real dirt. Real results. Johannesburg homes, not stock photos.
+              We don&apos;t just wipe surfaces; we restore them. Here is the level of detail you can expect from every visit.
             </p>
           </div>
           <div className="flex gap-2">

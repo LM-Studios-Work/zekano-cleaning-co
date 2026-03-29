@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const categorySlug = "specialised-cleaning"
 const categoryName = "Specialised Cleaning Services"
 const categoryDesc = "Beyond standard cleaning, we offer a range of specialised services to keep your property in top condition inside and out."
-const categoryImage = "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1200&q=80"
+const categoryImage = "/cleaning images/zenako-garden-cleaning.webp"
 
 export default function SpecialisedCleaningHub() {
   const categoryServices = allServices.filter((s) => s.categorySlug === categorySlug)
@@ -137,7 +137,7 @@ export default function SpecialisedCleaningHub() {
         <section className="py-12 lg:py-16" style={{ backgroundColor: "#1A9AD2" }}>
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Get an expert to tackle the hard jobs.
+              Request Specialised Cleaning Assistance
             </h2>
             <Link
               href="/contact"

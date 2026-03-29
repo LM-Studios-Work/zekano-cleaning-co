@@ -272,7 +272,7 @@ export function Header() {
 
             {/* Description */}
             <p className="text-gray-500 text-sm leading-relaxed mb-8">
-              Zenako Cleaning Co. — Professional cleaning services in Johannesburg and surrounding areas. We bring sparkle to every space we touch.
+              Zenako Cleaning Co. Professional cleaning services for homes and businesses in Johannesburg and surrounding areas.
             </p>
 
             {/* Social Icons */}

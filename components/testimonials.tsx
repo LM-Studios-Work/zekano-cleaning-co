@@ -29,13 +29,13 @@ export function Testimonials() {
         {/* Asymmetric header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-10 gap-4">
           <div className="max-w-md">
-            <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Reviews</span>
+            <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Client Feedback</span>
             <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-              Don&apos;t take our word for it.
+              What Our Clients Say
             </h2>
           </div>
-          <p className="text-sm lg:text-xs text-muted-foreground lg:max-w-xs lg:text-right">
-            Google Reviews coming soon once our profile is verified. These are real clients.
+          <p className="text-base leading-relaxed text-muted-foreground lg:max-w-xs lg:text-right">
+            Verified Google Reviews coming soon. These testimonials are from real Zenako clients.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export function Testimonials() {
                     <StarIcon key={i} className="h-5 w-5 lg:h-4 lg:w-4 text-yellow-500" />
                   ))}
                 </div>
-                <blockquote className="text-foreground leading-relaxed text-base lg:text-sm font-medium">
+                <blockquote className="text-foreground leading-relaxed text-base font-medium">
                   &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
                 <div className="mt-5 lg:mt-4 flex items-center gap-3">
