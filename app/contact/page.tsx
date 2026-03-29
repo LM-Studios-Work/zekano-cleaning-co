@@ -308,17 +308,17 @@ export default function ContactPage() {
                 </Card>
 
                 {/* Google Map Placeholder */}
-                <Card className="border-border">
-                  <CardContent className="p-0">
-                    <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center">
-                      <div className="text-center p-6">
-                        <MapPinIcon className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
-                        <p className="text-sm text-muted-foreground">Google Map will be displayed here once our Google Business profile is verified.</p>
-                        <p className="text-xs text-muted-foreground mt-1">Johannesburg, South Africa</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                {/*<Card className="border-border">*/}
+                {/*  <CardContent className="p-0">*/}
+                {/*    <div className="aspect-[4/3] bg-gray-100 flex items-center justify-center">*/}
+                {/*      <div className="text-center p-6">*/}
+                {/*        <MapPinIcon className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />*/}
+                {/*        <p className="text-sm text-muted-foreground">Google Map will be displayed here once our Google Business profile is verified.</p>*/}
+                {/*        <p className="text-xs text-muted-foreground mt-1">Johannesburg, South Africa</p>*/}
+                {/*      </div>*/}
+                {/*    </div>*/}
+                {/*  </CardContent>*/}
+                {/*</Card>*/}
               </div>
             </div>
           </div>

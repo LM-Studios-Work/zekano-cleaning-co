@@ -219,11 +219,11 @@ export function Header() {
           {/* Right side - Search + Hamburger with divider */}
           <div className="hidden lg:flex lg:items-center lg:gap-x-4">
             <div className={`h-6 w-px ${useWhiteStyle ? "bg-gray-200" : "bg-white/20"}`} aria-hidden="true" />
-            <button className={`transition-colors p-2 ${
-              useWhiteStyle ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"
-            }`}>
-              <i className="fa-solid fa-magnifying-glass text-lg"></i>
-            </button>
+            {/*<button className={`transition-colors p-2 ${*/}
+            {/*  useWhiteStyle ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"*/}
+            {/*}`}>*/}
+            {/*  <i className="fa-solid fa-magnifying-glass text-lg"></i>*/}
+            {/*</button>*/}
             <button
               className={`transition-colors p-2 ${
                 useWhiteStyle ? "text-gray-500 hover:text-gray-800" : "text-white/70 hover:text-white"
