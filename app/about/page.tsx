@@ -79,10 +79,10 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl bg-gradient-to-tr from-[#1A9AD2]/20 to-[#6fbf00]/20">
                   <Image
-                    src="/cheerful-black-professional-cleaner-woman-600nw-2411115957-removebg-preview.png"
+                    src="/cleaning images/zenako-deep-cleaning.webp"
                     alt="Professional Zenako Cleaner"
                     fill
-                    className="object-contain object-bottom"
+                    className="object-cover"
                   />
                 </div>
               </div>
