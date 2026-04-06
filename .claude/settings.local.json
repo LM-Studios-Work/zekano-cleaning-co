@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(mkdir -p C:/Personal/Code/zekano-cleaning-co/app/\\\\\\(payload\\\\\\)/admin/\\\\[\\\\[...segments\\\\]\\\\])",
+      "Bash(mkdir -p C:/Personal/Code/zekano-cleaning-co/app/\\\\\\(payload\\\\\\)/api/\\\\[...slug\\\\])",
+      "Bash(npx next:*)",
+      "Bash(node:*)",
+      "Bash(npx payload:*)",
+      "Bash(mkdir -p \"/c/Personal/Code/zekano-cleaning-co/app/\\(payload\\)/admin/[[...segments]]\")",
+      "Bash(mkdir -p \"/c/Personal/Code/zekano-cleaning-co/app/\\(payload\\)/api/[...slug]\")",
+      "Bash(xargs grep:*)",
+      "Bash(grep \"\\\\.js$\")",
+      "Bash(git mv:*)",
+      "Bash(ls:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}
