@@ -11,6 +11,8 @@ import { FirstTimeOffer } from "@/components/first-time-offer"
 import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
 
+export const revalidate = 60
+
 export default function HomePage() {
   return (
     <>
