@@ -29,8 +29,8 @@ const contactInfo = [
   {
     icon: MailIcon,
     title: "Email",
-    details: "info@zekanocleaningco.com",
-    action: "mailto:info@zekanocleaningco.com",
+    details: "info@zenakocleaning.co.za",
+    action: "mailto:info@zenakocleaning.co.za",
     actionText: "Email us",
   },
   {
@@ -276,9 +276,9 @@ export default function ContactPage() {
                       </a>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
-                      <a href="mailto:info@zekanocleaningco.com">
+                      <a href="mailto:info@zenakocleaning.co.za">
                         <MailIcon className="mr-3 h-5 w-5" style={{ color: "#1A9AD2" }} />
-                        Email: info@zekanocleaningco.com
+                        Email: info@zenakocleaning.co.za
                       </a>
                     </Button>
                   </CardContent>

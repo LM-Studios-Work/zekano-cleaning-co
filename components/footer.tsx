@@ -22,7 +22,7 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Company Info */}
           <div className="space-y-4">
             <div>
@@ -74,7 +74,11 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <h3 className="text-lg font-semibold mt-6 mb-3">Service Areas</h3>
+          </div>
+
+          {/* Service Areas */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
             <ul className="space-y-2 lg:space-y-1">
               {["Sandton", "Randburg", "Fourways", "Midrand", "Bryanston", "Johannesburg North"].map((area) => (
                 <li key={area} className="text-base lg:text-sm opacity-80 flex items-center gap-2 lg:gap-1.5">
@@ -95,7 +99,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <MailIcon className="h-5 w-5 shrink-0" />
-                <a href="mailto:info@zekanocleaningco.com" className="text-base lg:text-sm opacity-80 hover:opacity-100 transition-opacity">info@zekanocleaningco.com</a>
+                <a href="mailto:info@zenakocleaning.co.za" className="text-base lg:text-sm opacity-80 hover:opacity-100 transition-opacity">info@zenakocleaning.co.za</a>
               </li>
               <li className="flex items-start gap-3">
                 <ClockIcon className="h-5 w-5 shrink-0 mt-0.5" />

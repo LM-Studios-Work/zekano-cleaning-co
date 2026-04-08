@@ -43,7 +43,7 @@ const localBusinessSchema = {
   description: 'Professional cleaning services in Johannesburg for homes, offices, and commercial properties.',
   url: SITE_URL,
   telephone: '+27844020733',
-  email: 'info@zekanocleaningco.com',
+  email: 'info@zenakocleaning.co.za',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Johannesburg',
