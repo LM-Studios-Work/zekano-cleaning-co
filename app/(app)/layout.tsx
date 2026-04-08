@@ -36,10 +36,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/logo.png',
+        url: '/favicon zenako.png',
       },
     ],
-    apple: '/logo.png',
+    apple: '/favicon zenako.png',
   },
 }
 
