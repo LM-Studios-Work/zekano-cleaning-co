@@ -59,7 +59,7 @@ export default async function ServicePage({
 
   const relatedServices = getRelatedServices(slug)
 
-  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zekanocleaningco.com'
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zenakocleaning.co.za'
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',

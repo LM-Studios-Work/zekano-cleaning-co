@@ -15,7 +15,7 @@ import { allServices } from "@/lib/services-data"
 
 export const revalidate = 60
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zekanocleaningco.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zenakocleaning.co.za'
 
 export const metadata: Metadata = {
   title: 'Professional Cleaning Services in Johannesburg',

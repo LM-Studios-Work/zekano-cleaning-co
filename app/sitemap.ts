@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { allServices, serviceCategories } from '@/lib/services-data'
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zekanocleaningco.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zenakocleaning.co.za'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
