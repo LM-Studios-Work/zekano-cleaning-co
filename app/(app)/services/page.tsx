@@ -9,8 +9,26 @@ import { CheckIcon, HouseIcon, OfficeIcon, CouchIcon, WrenchIcon, ArrowRightIcon
 import { allServices } from "@/lib/services-data"
 
 export const metadata: Metadata = {
-  title: "Our Services | Zenako Cleaning Co.",
+  title: "Cleaning Services in Johannesburg",
   description: "Professional cleaning services in Johannesburg: residential cleaning, commercial cleaning, upholstery and fabric cleaning, and specialised cleaning services. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
+  alternates: {
+    canonical: '/services',
+  },
+  openGraph: {
+    title: "Cleaning Services in Johannesburg | Zenako Cleaning Co.",
+    description: "Residential, commercial, upholstery, and specialised cleaning services across Johannesburg and surrounding areas.",
+    url: '/services',
+    images: [
+      {
+        url: '/cleaning images/zenako-office-cleaning-johannesburg.webp',
+        alt: 'Professional office cleaning in Johannesburg by Zenako Cleaning Co.',
+      },
+    ],
+  },
+  twitter: {
+    title: "Cleaning Services in Johannesburg | Zenako Cleaning Co.",
+    description: "Residential, commercial, upholstery, and specialised cleaning services across Johannesburg and surrounding areas.",
+  },
 }
 
 const categoryIcons: Record<string, typeof HouseIcon> = {

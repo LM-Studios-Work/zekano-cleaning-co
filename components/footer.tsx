@@ -99,7 +99,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <ClockIcon className="h-5 w-5 shrink-0 mt-0.5" />
-                <span className="text-base lg:text-sm opacity-80">Mon-Sat: 7AM - 8PM<br />Sun: 9AM - 5PM</span>
+                <span className="text-base lg:text-sm opacity-80">Mon-Fri: 08:00 am – 05:00 pm<br />Sat: 09:00 am – 02:00 pm</span>
               </li>
             </ul>
           </div>

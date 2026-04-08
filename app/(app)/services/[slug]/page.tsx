@@ -25,8 +25,26 @@ export async function generateMetadata({
   if (!service) return { title: "Service Not Found" }
 
   return {
-    title: `${service.title} | Zenako Cleaning Co. | Johannesburg`,
+    title: `${service.title} in Johannesburg`,
     description: `${service.description} Professional ${service.title.toLowerCase()} in Johannesburg, including Sandton, Randburg, Fourways, Midrand, and Bryanston. Book with Zenako Cleaning Co. today.`,
+    alternates: {
+      canonical: `/services/${slug}`,
+    },
+    openGraph: {
+      title: `${service.title} in Johannesburg | Zenako Cleaning Co.`,
+      description: service.description,
+      url: `/services/${slug}`,
+      images: [
+        {
+          url: service.image,
+          alt: `${service.title} in Johannesburg by Zenako Cleaning Co.`,
+        },
+      ],
+    },
+    twitter: {
+      title: `${service.title} in Johannesburg | Zenako Cleaning Co.`,
+      description: service.description,
+    },
   }
 }
 
@@ -41,8 +59,36 @@ export default async function ServicePage({
 
   const relatedServices = getRelatedServices(slug)
 
+  const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zenakocleaning.co.za'
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.longDescription,
+    url: `${SITE_URL}/services/${service.slug}`,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Zenako Cleaning Co.',
+      telephone: '+27844020733',
+      url: SITE_URL,
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Johannesburg' },
+      { '@type': 'City', name: 'Sandton' },
+      { '@type': 'City', name: 'Randburg' },
+      { '@type': 'City', name: 'Fourways' },
+      { '@type': 'City', name: 'Midrand' },
+      { '@type': 'City', name: 'Bryanston' },
+    ],
+    serviceType: service.category,
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <Header />
       <main className="pt-24">
         {/* Breadcrumb */}

@@ -36,7 +36,7 @@ const contactInfo = [
   {
     icon: ClockIcon,
     title: "Business Hours",
-    details: "Mon-Sat: 7AM - 8PM, Sun: 9AM - 5PM",
+    details: "Mon-Fri: 08:00 am – 05:00 pm, Sat: 09:00 am – 02:00 pm",
     action: null,
     actionText: null,
   },
