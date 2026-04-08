@@ -10,7 +10,29 @@ export async function FAQSection() {
     limit: 100,
   })
 
+  const faqSchema = docs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: docs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      }
+    : null
+
   return (
+    <>
+    {faqSchema && (
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+    )}
     <section className="py-20 lg:py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -29,5 +51,6 @@ export async function FAQSection() {
         </div>
       </div>
     </section>
+    </>
   )
 }

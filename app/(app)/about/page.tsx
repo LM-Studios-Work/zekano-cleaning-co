@@ -9,8 +9,26 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ShieldCheckIcon, LeafIcon, GearIcon, TrophyIcon, CheckIcon } from "@/components/icons"
 
 export const metadata: Metadata = {
-  title: "About Us | Zenako Cleaning Co. | Johannesburg",
+  title: "About Zenako Cleaning Co. | Johannesburg",
   description: "Learn about Zenako Cleaning Co., Johannesburg's trusted professional cleaning service for homes and businesses. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: "About Zenako Cleaning Co. | Johannesburg",
+    description: "Johannesburg-based cleaning company serving homes, offices, and commercial properties across Sandton, Randburg, Fourways, Midrand, and Bryanston.",
+    url: '/about',
+    images: [
+      {
+        url: '/cleaning images/zenako-cleaning-team.webp',
+        alt: 'Zenako Cleaning Co. professional cleaning team, Johannesburg',
+      },
+    ],
+  },
+  twitter: {
+    title: "About Zenako Cleaning Co. | Johannesburg",
+    description: "Johannesburg-based cleaning company serving homes, offices, and commercial properties across Sandton, Randburg, Fourways, Midrand, and Bryanston.",
+  },
 }
 
 const values = [
