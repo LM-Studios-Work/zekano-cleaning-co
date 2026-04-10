@@ -1,28 +1,20 @@
 import Image from "next/image"
-import { AwardStarIcon, MoneyBagIcon, RecycleIcon, GearIcon, CheckIcon } from "@/components/icons"
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+import {
+  AwardStarIcon, MoneyBagIcon, RecycleIcon, GearIcon, CheckIcon,
+  ShieldCheckIcon, LeafIcon, TrophyIcon,
+} from "@/components/icons"
 
-const features = [
-  {
-    icon: AwardStarIcon,
-    title: "Satisfaction Guarantee",
-    description: "If our work does not meet your standards, we return and re-clean at no additional cost, promptly and without dispute.",
-  },
-  {
-    icon: MoneyBagIcon,
-    title: "Transparent Pricing",
-    description: "We provide a clear quote before any work begins. The figure you agree to is the figure you pay.",
-  },
-  {
-    icon: RecycleIcon,
-    title: "Eco-Friendly Products",
-    description: "We use effective, non-toxic cleaning solutions that are safe for your family, pets, and the environment.",
-  },
-  {
-    icon: GearIcon,
-    title: "Professional Equipment",
-    description: "We bring commercial-grade equipment to every job, ensuring a thorough and consistent result each visit.",
-  },
-]
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  ShieldCheckIcon,
+  LeafIcon,
+  GearIcon,
+  TrophyIcon,
+  AwardStarIcon,
+  MoneyBagIcon,
+  RecycleIcon,
+}
 
 const trustBadges = [
   { value: "100%", label: "Vetted Professionals" },
@@ -30,7 +22,15 @@ const trustBadges = [
   { value: "Full", label: "Accountability" },
 ]
 
-export function WhyChooseUs() {
+export async function WhyChooseUs() {
+  const payload = await getPayload({ config: configPromise })
+  const { docs: features } = await payload.find({
+    collection: 'company-values',
+    where: { section: { equals: 'why-choose-us' } },
+    sort: 'order',
+    limit: 20,
+  })
+
   return (
     <section className="py-20 lg:py-24 bg-card">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -80,17 +80,20 @@ export function WhyChooseUs() {
             </h2>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {features.map((feature) => (
-                <div key={feature.title} className="flex gap-6 hover:bg-gray-50/50 rounded-lg transition-colors p-2 -m-2">
-                  <div className="shrink-0 flex items-center justify-center w-11 h-11 lg:w-auto lg:h-auto rounded-full bg-[#1A9AD2]/10 lg:bg-transparent mt-0.5" style={{ color: "#1A9AD2" }}>
-                    <feature.icon className="w-5 h-5 lg:w-6 lg:h-6" />
+              {features.map((feature: any) => {
+                const Icon = iconMap[feature.icon] || GearIcon
+                return (
+                  <div key={feature.id} className="flex gap-6 hover:bg-gray-50/50 rounded-lg transition-colors p-2 -m-2">
+                    <div className="shrink-0 flex items-center justify-center w-11 h-11 lg:w-auto lg:h-auto rounded-full bg-[#1A9AD2]/10 lg:bg-transparent mt-0.5" style={{ color: "#1A9AD2" }}>
+                      <Icon className="w-5 h-5 lg:w-6 lg:h-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-foreground text-base lg:text-lg">{feature.title}</h3>
+                      <p className="mt-1 text-base leading-relaxed text-muted-foreground">{feature.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-medium text-foreground text-base lg:text-lg">{feature.title}</h3>
-                    <p className="mt-1 text-base leading-relaxed text-muted-foreground">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
 
             {/* Owner-Backed Accountability */}

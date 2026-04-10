@@ -6,7 +6,6 @@ import { ServicesPreview } from "@/components/services-preview"
 import { BeforeAfter } from "@/components/before-after"
 import { WhyChooseUs } from "@/components/why-choose-us"
 import { ServiceAreas } from "@/components/service-areas"
-import { Testimonials } from "@/components/testimonials"
 import { FirstTimeOffer } from "@/components/first-time-offer"
 import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
@@ -23,7 +22,6 @@ export default function HomePage() {
         <BeforeAfter />
         <WhyChooseUs />
         <ServiceAreas />
-        <Testimonials />
         <FirstTimeOffer />
         <FAQSection />
         <CTASection />
