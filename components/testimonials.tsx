@@ -1,26 +1,7 @@
 import { StarIcon } from "@/components/icons"
 import { Card, CardContent } from "@/components/ui/card"
 
-const testimonials = [
-  {
-    content: "Two years running. Always on time. Our house smells like it should after every visit. No notes.",
-    author: "Thandi Dlamini",
-    role: "Sandton homeowner",
-    rating: 5,
-  },
-  {
-    content: "Hired them for the office. Staff actually want to come in on Mondays now. That says enough.",
-    author: "James van der Merwe",
-    role: "Business owner, Randburg",
-    rating: 5,
-  },
-  {
-    content: "Move-out clean. Full deposit back. They cleaned spots I didn't know existed. Worth every cent.",
-    author: "Nomsa Khumalo",
-    role: "Tenant, Fourways",
-    rating: 5,
-  },
-]
+const testimonials: Array<{content: string; author: string; role: string; rating: number}> = []
 
 export function Testimonials() {
   return (
@@ -40,29 +21,35 @@ export function Testimonials() {
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-white border-border">
-              <CardContent className="p-6">
-                <div className="flex gap-1 mb-4 lg:mb-3">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <StarIcon key={i} className="h-5 w-5 lg:h-4 lg:w-4 text-yellow-500" />
-                  ))}
-                </div>
-                <blockquote className="text-foreground leading-relaxed text-base font-medium">
-                  &ldquo;{testimonial.content}&rdquo;
-                </blockquote>
-                <div className="mt-5 lg:mt-4 flex items-center gap-3">
-                  <div className="h-11 w-11 lg:h-10 lg:w-10 rounded-full flex items-center justify-center font-bold text-white text-sm lg:text-xs" style={{ backgroundColor: "#1A9AD2" }}>
-                    {testimonial.author.split(' ').map(n => n[0]).join('')}
+          {testimonials.length > 0 ? (
+            testimonials.map((testimonial, index) => (
+              <Card key={index} className="bg-white border-border">
+                <CardContent className="p-6">
+                  <div className="flex gap-1 mb-4 lg:mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <StarIcon key={i} className="h-5 w-5 lg:h-4 lg:w-4 text-yellow-500" />
+                    ))}
                   </div>
-                  <div>
-                    <div className="font-bold text-foreground text-sm lg:text-xs">{testimonial.author}</div>
-                    <div className="text-xs lg:text-[10px] text-muted-foreground uppercase tracking-wider">{testimonial.role}</div>
+                  <blockquote className="text-foreground leading-relaxed text-base font-medium">
+                    &ldquo;{testimonial.content}&rdquo;
+                  </blockquote>
+                  <div className="mt-5 lg:mt-4 flex items-center gap-3">
+                    <div className="h-11 w-11 lg:h-10 lg:w-10 rounded-full flex items-center justify-center font-bold text-white text-sm lg:text-xs" style={{ backgroundColor: "#1A9AD2" }}>
+                      {testimonial.author.split(' ').map(n => n[0]).join('')}
+                    </div>
+                    <div>
+                      <div className="font-bold text-foreground text-sm lg:text-xs">{testimonial.author}</div>
+                      <div className="text-xs lg:text-[10px] text-muted-foreground uppercase tracking-wider">{testimonial.role}</div>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            ))
+          ) : (
+            <div className="md:col-span-3 py-12 text-center">
+              <p className="text-muted-foreground text-lg">More reviews coming soon</p>
+            </div>
+          )}
         </div>
       </div>
     </section>

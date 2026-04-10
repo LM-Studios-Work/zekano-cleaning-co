@@ -220,7 +220,7 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
         Need to make changes? Contact us at{" "}
         <a href="tel:+27844020733" className="text-primary hover:underline">084 402 0733</a>
         {" "}or{" "}
-        <a href="mailto:info@zekanocleaningco.com" className="text-primary hover:underline">info@zekanocleaningco.com</a>
+        <a href="mailto:info@zenakocleaning.co.za" className="text-primary hover:underline">info@zenakocleaning.co.za</a>
       </p>
     </div>
   )
