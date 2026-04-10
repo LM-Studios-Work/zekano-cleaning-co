@@ -6,7 +6,6 @@ import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckIcon, HouseIcon, OfficeIcon, CouchIcon, WrenchIcon, ArrowRightIcon } from "@/components/icons"
-import { allServices } from "@/lib/services-data"
 
 export const metadata: Metadata = {
   title: "Cleaning Services in Johannesburg",

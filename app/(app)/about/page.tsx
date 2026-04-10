@@ -1,12 +1,18 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ShieldCheckIcon, LeafIcon, GearIcon, TrophyIcon, CheckIcon } from "@/components/icons"
+import {
+  ShieldCheckIcon, LeafIcon, GearIcon, TrophyIcon, CheckIcon,
+  AwardStarIcon, MoneyBagIcon, RecycleIcon,
+} from "@/components/icons"
+
+export const revalidate = 60
 
 export const metadata: Metadata = {
   title: "About Zenako Cleaning Co. | Johannesburg",
@@ -31,30 +37,25 @@ export const metadata: Metadata = {
   },
 }
 
-const values = [
-  {
-    icon: ShieldCheckIcon,
-    title: "Our Mission",
-    description: "To deliver consistently excellent cleaning across Johannesburg, covering homes, offices, and commercial spaces.",
-  },
-  {
-    icon: LeafIcon,
-    title: "Our Standards",
-    description: "Honest work, consistent teams, and eco-friendly products. We do not cut corners or make exceptions.",
-  },
-  {
-    icon: GearIcon,
-    title: "Our Professionals",
-    description: "Every professional we work with is background-checked, trained, and equipped to meet our standard.",
-  },
-  {
-    icon: TrophyIcon,
-    title: "Our Guarantee",
-    description: "If you are not satisfied, we return and re-clean at no additional cost. No forms, no delays.",
-  },
-]
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  ShieldCheckIcon,
+  LeafIcon,
+  GearIcon,
+  TrophyIcon,
+  AwardStarIcon,
+  MoneyBagIcon,
+  RecycleIcon,
+}
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const payload = await getPayload({ config: configPromise })
+  const { docs: values } = await payload.find({
+    collection: 'company-values',
+    where: { section: { equals: 'about' } },
+    sort: 'order',
+    limit: 20,
+  })
+
   return (
     <>
       <Header />
@@ -118,17 +119,20 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {values.map((value) => (
-                <Card key={value.title} className="text-center border-border">
-                  <CardContent className="pt-8 pb-6">
-                    <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(26, 154, 210, 0.1)", color: "#1A9AD2" }}>
-                      <value.icon className="h-7 w-7" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-card-foreground mb-2">{value.title}</h3>
-                    <p className="text-muted-foreground">{value.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+              {values.map((value: any) => {
+                const Icon = iconMap[value.icon] || ShieldCheckIcon
+                return (
+                  <Card key={value.id} className="text-center border-border">
+                    <CardContent className="pt-8 pb-6">
+                      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(26, 154, 210, 0.1)", color: "#1A9AD2" }}>
+                        <Icon className="h-7 w-7" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-card-foreground mb-2">{value.title}</h3>
+                      <p className="text-muted-foreground">{value.description}</p>
+                    </CardContent>
+                  </Card>
+                )
+              })}
             </div>
           </div>
         </section>

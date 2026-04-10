@@ -1,19 +1,18 @@
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
 import { MapPinIcon } from "@/components/icons"
 
-const areas = [
-  "Sandton",
-  "Randburg",
-  "Fourways",
-  "Midrand",
-  "Bryanston",
-  "Johannesburg North",
-]
+export async function ServiceAreas() {
+  const payload = await getPayload({ config: configPromise })
+  const { docs: areas } = await payload.find({
+    collection: 'service-areas',
+    sort: 'order',
+    limit: 50,
+  })
 
-export function ServiceAreas() {
   return (
     <section className="py-20 lg:py-20 bg-card">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Tight, left-aligned header */}
         <div className="mb-8 max-w-md">
           <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Coverage</span>
           <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
@@ -27,11 +26,11 @@ export function ServiceAreas() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-0 border border-border">
           {areas.map((area, idx) => (
             <div
-              key={area}
+              key={area.id}
               className={`flex items-center gap-3 p-5 lg:p-4 bg-white ${idx < areas.length - 1 ? "sm:border-r lg:border-r border-border border-b lg:border-b-0" : ""}`}
             >
               <MapPinIcon className="h-5 w-5 lg:h-4 lg:w-4 shrink-0" style={{ color: "#1A9AD2" }} />
-              <span className="font-medium text-foreground text-base">{area}</span>
+              <span className="font-medium text-foreground text-base">{area.name as string}</span>
             </div>
           ))}
         </div>

@@ -2,17 +2,23 @@ import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckIcon, ArrowRightIcon, ArrowLeftIcon, PhoneIcon, ChatIcon } from "@/components/icons"
-import { allServices, getServiceBySlug, getRelatedServices } from "@/lib/services-data"
 
-export function generateStaticParams() {
-  return allServices.map((service) => ({
-    slug: service.slug,
-  }))
+export const revalidate = 60
+
+export async function generateStaticParams() {
+  const payload = await getPayload({ config: configPromise })
+  const { docs } = await payload.find({
+    collection: 'services',
+    limit: 100,
+  })
+  return docs.map((service: any) => ({ slug: service.slug as string }))
 }
 
 export async function generateMetadata({
@@ -21,12 +27,18 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const service = getServiceBySlug(slug)
+  const payload = await getPayload({ config: configPromise })
+  const { docs } = await payload.find({
+    collection: 'services',
+    where: { slug: { equals: slug } },
+    limit: 1,
+  })
+  const service = docs[0] as any
   if (!service) return { title: "Service Not Found" }
 
   return {
-    title: `${service.title} in Johannesburg`,
-    description: `${service.description} Professional ${service.title.toLowerCase()} in Johannesburg, including Sandton, Randburg, Fourways, Midrand, and Bryanston. Book with Zenako Cleaning Co. today.`,
+    title: `${service.title} | Zenako Cleaning Co. | Johannesburg`,
+    description: `${service.description} Professional ${(service.title as string).toLowerCase()} in Johannesburg, including Sandton, Randburg, Fourways, Midrand, and Bryanston. Book with Zenako Cleaning Co. today.`,
     alternates: {
       canonical: `/services/${slug}`,
     },
@@ -54,10 +66,26 @@ export default async function ServicePage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const service = getServiceBySlug(slug)
+  const payload = await getPayload({ config: configPromise })
+
+  const { docs } = await payload.find({
+    collection: 'services',
+    where: { slug: { equals: slug } },
+    limit: 1,
+  })
+  const service = docs[0] as any
   if (!service) notFound()
 
-  const relatedServices = getRelatedServices(slug)
+  const { docs: relatedServices } = await payload.find({
+    collection: 'services',
+    where: {
+      and: [
+        { categorySlug: { equals: service.categorySlug } },
+        { slug: { not_equals: slug } },
+      ],
+    },
+    limit: 3,
+  })
 
   const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zenakocleaning.co.za'
   const serviceSchema = {
@@ -136,15 +164,17 @@ export default async function ServicePage({
                   </Link>
                 </div>
               </div>
-              <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+              {service.image && (
+                <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
+                  <Image
+                    src={service.image as string}
+                    alt={service.title as string}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -159,10 +189,10 @@ export default async function ServicePage({
                   Everything Covered in This <span style={{ color: "#6fbf00" }}>Service</span>
                 </h2>
                 <ul className="mt-8 space-y-4">
-                  {service.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
+                  {(service.features ?? []).map((feature: any) => (
+                    <li key={feature.id} className="flex items-start gap-3">
                       <CheckIcon className="h-5 w-5 shrink-0 mt-0.5" style={{ color: "#6fbf00" }} />
-                      <span className="text-foreground">{feature}</span>
+                      <span className="text-foreground">{feature.item}</span>
                     </li>
                   ))}
                 </ul>
@@ -173,10 +203,10 @@ export default async function ServicePage({
                   Why Choose This <span style={{ color: "#1A9AD2" }}>Service</span>
                 </h2>
                 <ul className="mt-8 space-y-4">
-                  {service.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-start gap-3">
+                  {(service.benefits ?? []).map((benefit: any) => (
+                    <li key={benefit.id} className="flex items-start gap-3">
                       <CheckIcon className="h-5 w-5 shrink-0 mt-0.5" style={{ color: "#1A9AD2" }} />
-                      <span className="text-foreground">{benefit}</span>
+                      <span className="text-foreground">{benefit.item}</span>
                     </li>
                   ))}
                 </ul>
@@ -195,8 +225,8 @@ export default async function ServicePage({
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {service.process.map((step, idx) => (
-                <Card key={idx} className="border-border">
+              {(service.process ?? []).map((step: any, idx: number) => (
+                <Card key={step.id} className="border-border">
                   <CardContent className="p-6">
                     <div
                       className="flex h-10 w-10 items-center justify-center rounded-full text-white text-sm font-bold mb-4"
@@ -204,7 +234,7 @@ export default async function ServicePage({
                     >
                       {idx + 1}
                     </div>
-                    <p className="text-foreground text-sm leading-relaxed">{step}</p>
+                    <p className="text-foreground text-sm leading-relaxed">{step.item}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -253,17 +283,19 @@ export default async function ServicePage({
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {relatedServices.map((related) => (
+              {relatedServices.map((related: any) => (
                 <Link key={related.slug} href={`/services/${related.slug}`} className="group">
                   <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
-                    <div className="aspect-[3/2] relative overflow-hidden">
-                      <Image
-                        src={related.image}
-                        alt={related.title}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
+                    {related.image && (
+                      <div className="aspect-[3/2] relative overflow-hidden">
+                        <Image
+                          src={related.image as string}
+                          alt={related.title as string}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
                     <CardContent className="p-6">
                       <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{related.category}</span>
                       <h3 className="mt-1 font-bold text-foreground text-lg group-hover:text-[#1A9AD2] transition-colors">
