@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import { SparkleIcon, HouseIcon, TruckIcon, BugIcon } from "@/components/icons"
 
 const services = [
@@ -31,52 +30,44 @@ const services = [
 
 export function ServicesPreview() {
   return (
-    <section className="py-20 lg:py-28 bg-white relative">
+    <section className="py-20 lg:py-28 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Asymmetric header */}
-        <div className="mb-10 lg:mb-14 max-w-md">
+        {/* Header */}
+        <div className="mb-12 lg:mb-16 text-center">
           <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Services</span>
-          <h2 className="mt-2 text-3xl lg:text-4xl font-bold text-foreground">
+          <h2 className="mt-3 text-3xl lg:text-4xl font-bold text-foreground">
             Our Core Services
           </h2>
-          <div className="mt-3 h-1 w-16 bg-foreground"></div>
         </div>
 
-        {/* Content Grid — services left, image right (wider) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6 sm:gap-8">
-              {services.map((service) => (
-                <Link key={service.title} href={service.href} className="flex gap-6 group hover:bg-gray-50/50 rounded-lg transition-colors p-2 -m-2">
-                  <div className="shrink-0 mt-0.5 flex items-center justify-center w-12 h-12 lg:w-auto lg:h-auto rounded-full bg-[#1A9AD2]/10 lg:bg-transparent" style={{ color: "#1A9AD2" }}>
-                    <service.icon className="w-6 h-6 lg:w-7 lg:h-7" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-foreground text-base lg:text-lg group-hover:text-[#1A9AD2] transition-colors">{service.title}</h3>
-                    <p className="text-base leading-relaxed text-muted-foreground mt-1">{service.description}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
+        {/* 4-Card Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {services.map((service) => (
             <Link
-              href="/services"
-              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-bold text-white transition-colors duration-200 mt-8 lg:mt-10 hover:opacity-90"
-              style={{ backgroundColor: "#6fbf00" }}
+              key={service.title}
+              href={service.href}
+              className="flex flex-col gap-4 p-6 lg:p-8 bg-white border border-border rounded-lg hover:shadow-lg hover:border-[#1A9AD2]/30 transition-all duration-300 group"
             >
-              All 15+ Services
+              <div className="flex items-center justify-center w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#1A9AD2]/10 group-hover:bg-[#1A9AD2]/20 transition-colors" style={{ color: "#1A9AD2" }}>
+                <service.icon className="w-7 h-7 lg:w-8 lg:h-8" />
+              </div>
+              <div>
+                <h3 className="font-bold text-foreground text-lg lg:text-xl group-hover:text-[#1A9AD2] transition-colors">{service.title}</h3>
+                <p className="mt-2 text-sm lg:text-base leading-relaxed text-muted-foreground">{service.description}</p>
+              </div>
             </Link>
-          </div>
+          ))}
+        </div>
 
-          {/* Professional Image — larger, bleeds */}
-          <div className="hidden lg:block lg:col-span-7 relative h-96 lg:h-[500px] overflow-hidden -mr-4 lg:-mr-8">
-            <Image
-              src="/cleaning images/zenako-house-cleaning-johannesburg.webp"
-              alt="Zenako cleaning professional"
-              fill
-              className="object-cover transition-transform hover:scale-105 duration-500"
-            />
-          </div>
+        {/* CTA Button */}
+        <div className="flex justify-center mt-12 lg:mt-16">
+          <Link
+            href="https://www.zenakocleaning.co.za/services"
+            className="inline-flex items-center justify-center px-8 py-3 lg:py-4 text-base lg:text-lg font-bold text-white rounded-lg transition-opacity duration-200 hover:opacity-90"
+            style={{ backgroundColor: "#6fbf00" }}
+          >
+            See All 15+ Services
+          </Link>
         </div>
       </div>
     </section>
