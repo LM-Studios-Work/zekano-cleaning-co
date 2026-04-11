@@ -8,7 +8,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckIcon, ArrowRightIcon, PhoneIcon, ChevronDownIcon } from "@/components/icons"
+import { CheckIcon, ArrowRightIcon, PhoneIcon } from "@/components/icons"
 
 export default function MoveInMoveOutCleaning() {
   const [expandedFaq, setExpandedFaq] = useState<string | null>(null)
@@ -348,10 +348,12 @@ export default function MoveInMoveOutCleaning() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="font-bold text-foreground text-lg">{faq.question}</h3>
-                    <ChevronDownIcon 
-                      className={`h-5 w-5 shrink-0 mt-0.5 transition-transform ${expandedFaq === faq.id ? 'rotate-180' : ''}`}
+                    <span 
+                      className="text-2xl font-light mt-0.5 shrink-0 transition-transform"
                       style={{ color: "#1A9AD2" }}
-                    />
+                    >
+                      {expandedFaq === faq.id ? '−' : '+'}
+                    </span>
                   </div>
                   {expandedFaq === faq.id && (
                     <p className="mt-4 text-muted-foreground leading-relaxed">{faq.answer}</p>
