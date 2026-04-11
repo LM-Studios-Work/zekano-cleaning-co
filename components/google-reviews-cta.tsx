@@ -13,16 +13,16 @@ export function GoogleReviewsCTA() {
         >
           <div className="relative h-48 lg:h-64 w-full">
             <Image
-              src="/cleaning images/zenako-house-cleaning-johannesburg.webp"
-              alt="Google Reviews - Read our 5-star customer reviews"
+              src="/google-reviews-1-.png"
+              alt="Google Reviews - Zenako Cleaning Co."
               fill
               className="object-cover"
             />
             {/* Overlay with call-to-action */}
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center hover:bg-black/50 transition-colors duration-300">
-              <div className="text-center text-white">
-                <p className="text-lg lg:text-xl font-bold">⭐ Read Our Google Reviews</p>
-                <p className="text-sm lg:text-base mt-2 opacity-90">See what our customers are saying</p>
+              <div className="text-center text-white p-4">
+                <p className="text-xl lg:text-2xl font-bold">⭐ Read Our Google Reviews</p>
+                <p className="text-base lg:text-lg mt-2 opacity-90 font-medium tracking-wide">Click to see why our clients love Zenako</p>
               </div>
             </div>
           </div>

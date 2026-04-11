@@ -7,21 +7,21 @@ import { PhoneIcon } from "@/components/icons"
 
 const slides = [
   {
-    image: "/cleaning images/zenako-house-cleaning-johannesburg.webp",
+    image: "/home_page_heros/homes_hero.webp",
     alt: "House cleaning in Johannesburg",
     label: "01. Homes",
     heading: "Professional Home\nCleaning.",
     description: "Every surface, every corner, every room, maintained to a consistent standard your household can rely on.",
   },
   {
-    image: "/cleaning images/Deep Carpet cleaning image 1.webp",
-    alt: "Carpet and upholstery cleaning",
-    label: "02. Carpets",
-    heading: "Deep Extraction\nCarpet Cleaning.",
-    description: "Specialist equipment removes embedded dirt, stains, and allergens that regular vacuuming cannot reach.",
+    image: "/home_page_heros/specialized services hero.webp",
+    alt: "Specialized cleaning services",
+    label: "02. Specialized Services",
+    heading: "Specialized\nCleaning Services.",
+    description: "From post-construction to high-pressure cleaning, we provide professional solutions for your most demanding cleaning needs.",
   },
   {
-    image: "/cleaning images/zenako-office-cleaning-johannesburg.webp",
+    image: "/home_page_heros/office.webp",
     alt: "Office cleaning Johannesburg",
     label: "03. Offices",
     heading: "Reliable Commercial\nCleaning.",
