@@ -3,10 +3,11 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { HeroSlideshow } from "@/components/hero-slideshow"
+import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
+import { ServiceAreas } from "@/components/service-areas"
 import { ServicesPreview } from "@/components/services-preview"
 import { BeforeAfter } from "@/components/before-after"
 import { WhyChooseUs } from "@/components/why-choose-us"
-import { ServiceAreas } from "@/components/service-areas"
 import { FirstTimeOffer } from "@/components/first-time-offer"
 import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
@@ -103,10 +104,11 @@ export default function HomePage() {
       <Header />
       <main className="relative">
         <HeroSlideshow />
+        <GoogleReviewsCTA />
+        <ServiceAreas />
         <ServicesPreview />
         <BeforeAfter />
         <WhyChooseUs />
-        <ServiceAreas />
         <FirstTimeOffer />
         <FAQSection />
         <CTASection />
