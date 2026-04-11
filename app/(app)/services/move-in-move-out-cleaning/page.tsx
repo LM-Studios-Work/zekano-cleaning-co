@@ -16,7 +16,7 @@ export default function MoveInMoveOutCleaning() {
   const inspectionItems = [
     {
       title: "Kitchen",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-11%20150119-SODlqK4HNsNaVJQsRseAIxzXdv4HJQ.png",
+      image: "/move in move out/kitchen.webp",
       items: [
         "Clean cupboards and drawers (inside and outside)",
         "Deep oven clean (inside and out)",
@@ -27,7 +27,7 @@ export default function MoveInMoveOutCleaning() {
     },
     {
       title: "Bathrooms",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-11%20150119-SODlqK4HNsNaVJQsRseAIxzXdv4HJQ.png",
+      image: "/move in move out/bathroom.webp",
       items: [
         "Deep descaling of tiles and grout",
         "Toilet sanitisation (inside, outside, and cistern)",
@@ -38,7 +38,7 @@ export default function MoveInMoveOutCleaning() {
     },
     {
       title: "Living & Bedrooms",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-11%20150119-SODlqK4HNsNaVJQsRseAIxzXdv4HJQ.png",
+      image: "/move in move out/bedrooms.webp",
       items: [
         "Skirting boards wiped clean",
         "Light switches and power points sanitised",
@@ -48,8 +48,9 @@ export default function MoveInMoveOutCleaning() {
       ],
     },
     {
+      number: "04",
       title: "Floors",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-04-11%20150119-SODlqK4HNsNaVJQsRseAIxzXdv4HJQ.png",
+      image: "/move in move out/floors.webp",
       items: [
         "Professional-grade vacuuming of all areas",
         "Deep mopping of hard surfaces",
@@ -169,7 +170,7 @@ export default function MoveInMoveOutCleaning() {
               </div>
               <div className="aspect-[4/3] relative overflow-hidden">
                 <Image 
-                  src="/cleaning images/zenako-office-move-out-cleaning-johannesburg.webp" 
+                  src="/move in move out/move in move out hero.webp" 
                   alt="Professional move-out cleaning in Johannesburg" 
                   fill 
                   className="object-cover" 
@@ -283,7 +284,7 @@ export default function MoveInMoveOutCleaning() {
               </div>
               <div className="aspect-[3/2] relative lg:sticky lg:top-24">
                 <Image 
-                  src="/cleaning images/zenako-office-move-out-cleaning-johannesburg.webp" 
+                  src="/move in move out/move in move out hero.webp" 
                   alt="Move-out cleaning process" 
                   fill 
                   className="object-cover" 

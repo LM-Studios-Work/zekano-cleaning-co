@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const includedSections = [
   {
     title: "Kitchen",
-    image: "/cleaning images/zenako-kitchen-cleaning.webp",
+    image: "/deep cleaning/cleaning-kitchen-sink-drain.webp",
     points: [
       "Outside of all appliances wiped down",
       "Wet-wipe fridge and oven exterior",
@@ -33,7 +33,7 @@ const includedSections = [
   },
   {
     title: "Bathrooms",
-    image: "/cleaning images/zenako-house-cleaning-johannesburg.webp",
+    image: "/deep cleaning/bathroom.webp",
     points: [
       "Toilets scrubbed and sanitised",
       "Bathtub and shower thoroughly cleaned",
@@ -45,7 +45,7 @@ const includedSections = [
   },
   {
     title: "Common Areas & Bedrooms",
-    image: "/cleaning images/zenako-deep-cleaning.webp",
+    image: "/deep cleaning/bedrooms.webp",
     points: [
       "Window frames and ledges wiped",
       "Skirting boards cleaned throughout",
@@ -164,7 +164,7 @@ export default function DeepCleaningPage() {
               </div>
               <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
-                  src="/cleaning images/zenako-deep-cleaning.webp"
+                  src="/deep cleaning/deep clean.webp"
                   alt="Professional deep cleaning service in Johannesburg by Zenako"
                   fill
                   className="object-cover"
@@ -306,7 +306,7 @@ export default function DeepCleaningPage() {
               </div>
               <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
-                  src="/cleaning images/zenako-kitchen-cleaning.webp"
+                   src="/deep cleaning/deep clean.webp"
                   alt="Deep cleaning add-on services in Johannesburg"
                   fill
                   className="object-cover"

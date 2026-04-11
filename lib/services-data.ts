@@ -21,7 +21,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "residential-cleaning",
     description: "Scheduled weekly, fortnightly, or monthly cleaning to keep your home consistently maintained without disrupting your routine.",
     longDescription: "Our standard house cleaning service is designed to maintain a consistently clean and comfortable home. Whether you need us weekly, fortnightly, or monthly, our trained team handles all the essentials: dusting, vacuuming, mopping, bathroom sanitisation, and kitchen cleaning. We use eco-friendly products that are safe for your family and pets while delivering a thorough, professional result every time. Serving homes across Johannesburg including Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
-    image: "/cleaning images/zenako-house-cleaning-johannesburg.webp",
+    image: "/house cleaning/house hero.webp",
     icon: "Home",
     features: [
       "Dusting all reachable surfaces",
@@ -56,7 +56,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "residential-cleaning",
     description: "A comprehensive clean covering every surface, appliance interior, and hard-to-reach area, well beyond the scope of a standard clean.",
     longDescription: "Our deep cleaning service goes far beyond a standard clean. We tackle built-up grime, hidden dirt, and neglected areas that regular cleaning misses. From inside ovens and fridges to baseboards, light fixtures, and behind furniture, every corner of your home receives thorough attention. Ideal for seasonal refreshes, pre-event preparation, or when your home requires a higher level of clean. Available across Johannesburg and surrounding areas.",
-    image: "/cleaning images/zenako-deep-cleaning.webp",
+    image: "/deep cleaning/deep clean.webp",
     icon: "Sparkles",
     features: [
       "All surfaces scrubbed and sanitised",
@@ -91,7 +91,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "residential-cleaning",
     description: "Whether handing back keys or moving into a new property, we ensure every room and surface meets a thorough handover standard.",
     longDescription: "Moving is demanding enough without the added pressure of cleaning. Our move-in/move-out cleaning service ensures the property is spotless from floor to ceiling, whether you are preparing to hand back keys or want to start fresh in your new home. We clean every cupboard, appliance, and surface so you can focus on the move itself. Trusted by tenants, landlords, and estate agents across Johannesburg.",
-    image: "/cleaning images/zenako-office-move-out-cleaning-johannesburg.webp",
+    image: "/move in move out/move in move out hero.webp",
     icon: "Truck",
     features: [
       "Full property deep clean",
