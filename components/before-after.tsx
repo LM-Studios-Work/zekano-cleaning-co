@@ -11,13 +11,13 @@ const examples = [
   },
   {
     label: "Bathroom",
-    before: "/cleaning images/zenako-deep-cleaning.webp",
-    after: "/cleaning images/zenako-house-cleaning-johannesburg.webp",
+    before: "/home page before and after/bathroom left.jpg",
+    after: "/home page before and after/bathroom right.jpg",
   },
   {
     label: "Living Room",
-    before: "/cleaning images/zenako-post-construction-cleaning-johannesburg.webp",
-    after: "/cleaning images/zenako-airbnb-cleaning-johannesburg.webp",
+    before: "/home page before and after/living room before.webp",
+    after: "/home page before and after/living room after.webp",
   },
 ]
 

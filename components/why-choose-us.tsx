@@ -46,14 +46,14 @@ export async function WhyChooseUs() {
           </p>
         </div>
 
-        {/* Main Features Grid - 3-4 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+        {/* Main Features Grid - 4 columns, scrollable on mobile */}
+        <div className="flex overflow-x-auto pb-4 lg:pb-0 lg:grid lg:grid-cols-4 gap-6 lg:gap-8 mb-12 scrollbar-hide -mx-6 px-6 lg:mx-0 lg:px-0 snap-x snap-mandatory">
           {features.map((feature: any) => {
             const Icon = iconMap[feature.icon] || GearIcon
             return (
               <div
                 key={feature.id}
-                className="flex flex-col gap-4 p-6 lg:p-8 bg-white rounded-lg border border-border hover:shadow-lg hover:border-[#1A9AD2]/30 transition-all duration-300"
+                className="flex-none w-[280px] sm:w-[320px] lg:w-auto flex flex-col gap-4 p-6 lg:p-8 bg-white rounded-lg border border-border hover:shadow-xl hover:border-[#1A9AD2]/30 transition-all duration-300 snap-start"
               >
                 <div className="flex items-center justify-center w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#1A9AD2]/10 hover:bg-[#1A9AD2]/20 transition-colors" style={{ color: "#1A9AD2" }}>
                   <Icon className="w-7 h-7 lg:w-8 lg:h-8" />

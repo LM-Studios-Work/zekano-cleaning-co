@@ -42,25 +42,25 @@ const categories = [
     slug: "residential-cleaning",
     name: "Residential Cleaning",
     description: "Keep your home spotless with our trusted residential cleaning services. From routine maintenance to thorough deep cleans, we take care of it all.",
-    image: "/cleaning images/zenako-house-cleaning-johannesburg.webp",
+    image: "/our services click/residential.jpg",
   },
   {
     slug: "commercial-cleaning",
     name: "Commercial Cleaning",
     description: "A clean workspace keeps your team healthy and your clients impressed. We offer reliable commercial cleaning tailored to your business schedule.",
-    image: "/cleaning images/zenako-office-cleaning-johannesburg.webp",
+    image: "/our services click/commercial.jpg",
   },
   {
     slug: "upholstery-and-fabric",
     name: "Upholstery & Fabric Cleaning",
     description: "Refresh your soft furnishings and fabrics with our professional cleaning service. We remove stains, allergens, and odours to extend the life of your furniture.",
-    image: "/cleaning images/Deep Carpet cleaning image 1.webp",
+    image: "/our services click/upholstery.webp",
   },
   {
     slug: "specialised-cleaning",
     name: "Specialised Cleaning Services",
     description: "Beyond standard cleaning, we offer a range of specialised services to keep your property in top condition inside and out.",
-    image: "/cleaning images/zenako-roof-cleaning.webp",
+    image: "/our services click/specialised.webp",
   },
 ]
 

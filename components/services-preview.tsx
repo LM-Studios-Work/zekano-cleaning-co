@@ -1,29 +1,29 @@
+import Image from "next/image"
 import Link from "next/link"
-import { SparkleIcon, HouseIcon, TruckIcon, BugIcon } from "@/components/icons"
 
 const services = [
   {
-    icon: SparkleIcon,
     title: "Deep Cleaning",
     href: "/services/deep-cleaning",
+    image: "/home_page services_block images/deep clean.webp",
     description: "A comprehensive clean covering every surface, appliance interior, and hard-to-reach area throughout your property.",
   },
   {
-    icon: HouseIcon,
     title: "Standard House Cleaning",
     href: "/services/standard-house-cleaning",
+    image: "/home_page services_block images/house cleaning.webp",
     description: "Scheduled weekly, fortnightly, or monthly maintenance to keep your home consistently clean and comfortable.",
   },
   {
-    icon: TruckIcon,
     title: "Move-in / Move-out",
     href: "/services/move-in-move-out-cleaning",
+    image: "/home_page services_block images/move in move out.webp",
     description: "Thorough end-of-tenancy or pre-occupancy cleaning to ensure the property is in excellent condition.",
   },
   {
-    icon: BugIcon,
     title: "Pest Control",
     href: "/services/pest-control",
+    image: "/home_page services_block images/pest control.webp",
     description: "Targeted pest treatments that address the source of the problem using eco-friendly, low-toxicity products.",
   },
 ]
@@ -46,12 +46,17 @@ export function ServicesPreview() {
             <Link
               key={service.title}
               href={service.href}
-              className="flex flex-col gap-4 p-6 lg:p-8 bg-white border border-border rounded-lg hover:shadow-lg hover:border-[#1A9AD2]/30 transition-all duration-300 group"
+              className="flex flex-col bg-white border border-border rounded-lg overflow-hidden hover:shadow-xl hover:border-[#1A9AD2]/30 transition-all duration-300 group"
             >
-              <div className="flex items-center justify-center w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#1A9AD2]/10 group-hover:bg-[#1A9AD2]/20 transition-colors" style={{ color: "#1A9AD2" }}>
-                <service.icon className="w-7 h-7 lg:w-8 lg:h-8" />
+              <div className="aspect-square relative overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
-              <div>
+              <div className="p-6 lg:p-8">
                 <h3 className="font-bold text-foreground text-lg lg:text-xl group-hover:text-[#1A9AD2] transition-colors">{service.title}</h3>
                 <p className="mt-2 text-sm lg:text-base leading-relaxed text-muted-foreground">{service.description}</p>
               </div>
