@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const checklistSections = [
   {
     title: "Kitchen & Living",
-    image: "/cleaning images/zenako-kitchen-cleaning.webp",
+    image: "/house cleaning/kitchen.jpg",
     points: [
       "Dusting all surfaces and shelving",
       "Wiping appliance exteriors",
@@ -27,7 +27,7 @@ const checklistSections = [
   },
   {
     title: "Bathrooms",
-    image: "/cleaning images/zenako-house-cleaning-johannesburg.webp",
+    image: "/house cleaning/bathroom.webp",
     points: [
       "Sanitising toilets thoroughly",
       "Cleaning showers and bathtubs",
@@ -39,7 +39,7 @@ const checklistSections = [
   },
   {
     title: "Bedrooms",
-    image: "/cleaning images/zenako-deep-cleaning.webp",
+    image: "/house cleaning/bedroom.webp",
     points: [
       "Dusting all furniture surfaces",
       "Making beds (upon request)",
@@ -177,7 +177,7 @@ export default function StandardHouseCleaningPage() {
               </div>
               <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
-                  src="/cleaning images/zenako-house-cleaning-johannesburg.webp"
+                  src="/house cleaning/house hero.webp"
                   alt="Regular house cleaning service in Johannesburg by Zenako"
                   fill
                   className="object-cover"
@@ -375,7 +375,7 @@ export default function StandardHouseCleaningPage() {
               </div>
               <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
-                  src="/cleaning images/zenako-cleaning-team-walking.webp"
+                  src="/house cleaning/oven add on.webp"
                   alt="Zenako cleaning team ready for a regular house clean in Johannesburg"
                   fill
                   className="object-cover"
