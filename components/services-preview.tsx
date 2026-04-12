@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { ArrowRightIcon } from "@/components/icons"
 
 const services = [
   {
@@ -56,9 +57,12 @@ export function ServicesPreview() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-6 lg:p-8">
+              <div className="p-6 lg:p-8 flex flex-col">
                 <h3 className="font-bold text-foreground text-lg lg:text-xl group-hover:text-[#1A9AD2] transition-colors">{service.title}</h3>
                 <p className="mt-2 text-sm lg:text-base leading-relaxed text-muted-foreground">{service.description}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold transition-colors duration-200 group-hover:text-[#1A9AD2]" style={{ color: "#6fbf00" }}>
+                  Learn more <ArrowRightIcon className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </span>
               </div>
             </Link>
           ))}
