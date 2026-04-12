@@ -7,7 +7,7 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { CheckIcon, PhoneIcon, ShieldCheckIcon } from "@/components/icons"
 
 export const metadata: Metadata = {
-  title: "Weekly & Fortnightly House Cleaning in Johannesburg | Zenako",
+  title: "Regular House Cleaning in Johannesburg | Zenako",
   description:
     "Reliable, owner-supervised regular house cleaning for Johannesburg households. No lock-in contracts. Same cleaner every visit. Serving Sandton, Randburg, Fourways, Midrand, and Bryanston.",
 }
@@ -150,7 +150,7 @@ export default function StandardHouseCleaningPage() {
                   Regular House Cleaning Johannesburg
                 </span>
                 <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
-                  Weekly &amp; Fortnightly House Cleaning{" "}
+                  Regular House Cleaning{" "}
                   <span style={{ color: "#1A9AD2" }}>in Johannesburg</span>
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
