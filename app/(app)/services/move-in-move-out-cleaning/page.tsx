@@ -200,28 +200,30 @@ export default function MoveInMoveOutCleaning() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {whyUsPoints.map((point, idx) => (
-                <div
-                  key={idx}
-                  className={`p-6 lg:p-8 border transition-all duration-300 hover:shadow-md group ${
-                    idx === 0
-                      ? "bg-blue-50 border-[#1A9AD2]"
-                      : "bg-background border-border hover:border-[#6fbf00]"
-                  }`}
-                >
-                  <div className="flex items-center justify-center w-12 h-12 mb-4" style={{ backgroundColor: "#6fbf00" }}>
-                    <CheckIcon className="w-6 h-6 text-white" />
+              <div className="space-y-6 lg:col-span-1">
+                {whyUsPoints.map((point, idx) => (
+                  <div
+                    key={idx}
+                    className={`p-6 lg:p-8 border transition-all duration-300 hover:shadow-md group ${
+                      idx === 0
+                        ? "bg-blue-50 border-[#1A9AD2]"
+                        : "bg-background border-border hover:border-[#6fbf00]"
+                    }`}
+                  >
+                    <div className="flex items-center justify-center w-12 h-12 mb-4" style={{ backgroundColor: "#6fbf00" }}>
+                      <CheckIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="font-bold text-foreground text-lg mb-2">{point.title}</h3>
+                    <p className="text-sm lg:text-base text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{point.description}</p>
                   </div>
-                  <h3 className="font-bold text-foreground text-lg mb-2">{point.title}</h3>
-                  <p className="text-sm lg:text-base text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{point.description}</p>
-                </div>
-                <div className="mt-12 pt-8 border-t border-white/10">
+                ))}
+                <div className="mt-12 pt-8 border-t border-white/10 bg-[#1A9AD2] p-6 rounded-lg text-center">
                   <div className="text-5xl font-black text-white">72h</div>
                   <div className="text-sm text-white/50 mt-1 uppercase tracking-widest">Deposit Back Guarantee</div>
                 </div>
               </div>
               {/* Right card grid */}
-              <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2">
+              <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {whyUsPoints.map((point, idx) => (
                   <div
                     key={idx}
