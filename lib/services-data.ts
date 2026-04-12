@@ -128,7 +128,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "commercial-cleaning",
     description: "Professional office cleaning for businesses of all sizes. A clean, well-maintained workplace keeps your team healthy and clients impressed.",
     longDescription: "Professional Office Cleaning Services in Johannesburg. A clean, well-maintained office not only creates a positive first impression for clients but also boosts team morale and supports a healthier work environment. Serving businesses across Johannesburg, Sandton, Randburg, Fourways, Midrand, and Bryanston with owner-supervised, vetted teams and no lock-in contracts.",
-    image: "/office/office cleaning hero.webp",
+    image: "/cleaning images/zenako-office-cleaning-johannesburg.webp",
     icon: "Building2",
     features: [
       "Daily or weekly cleaning schedules",

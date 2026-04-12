@@ -10,6 +10,8 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckIcon, ArrowRightIcon, ArrowLeftIcon, PhoneIcon, ChatIcon } from "@/components/icons"
 
+import { allServices, getServiceBySlug } from "@/lib/services-data"
+
 export const revalidate = 60
 
 export async function generateStaticParams() {
@@ -18,7 +20,13 @@ export async function generateStaticParams() {
     collection: 'services',
     limit: 100,
   })
-  return docs.map((service: any) => ({ slug: service.slug as string }))
+  
+  const payloadParams = docs.map((service: any) => ({ slug: service.slug as string }))
+  const staticParams = allServices.map((service) => ({ slug: service.slug }))
+  
+  // Merge and deduplicate
+  const allSlugs = Array.from(new Set([...payloadParams.map(p => p.slug), ...staticParams.map(p => p.slug)]))
+  return allSlugs.map(slug => ({ slug }))
 }
 
 export async function generateMetadata({
@@ -33,7 +41,22 @@ export async function generateMetadata({
     where: { slug: { equals: slug } },
     limit: 1,
   })
-  const service = docs[0] as any
+  
+  let service = docs[0] as any
+  
+  if (!service) {
+    const staticService = getServiceBySlug(slug)
+    if (staticService) {
+      service = {
+        title: staticService.title,
+        description: staticService.description,
+        longDescription: staticService.longDescription,
+        image: staticService.image,
+        category: staticService.category,
+      }
+    }
+  }
+
   if (!service) return { title: "Service Not Found" }
 
   return {
@@ -73,10 +96,25 @@ export default async function ServicePage({
     where: { slug: { equals: slug } },
     limit: 1,
   })
-  const service = docs[0] as any
-  if (!service) notFound()
+  
+  let service = docs[0] as any
+  let isStatic = false
 
-  const { docs: relatedServices } = await payload.find({
+  if (!service) {
+    const staticService = getServiceBySlug(slug)
+    if (!staticService) notFound()
+    
+    // Map static service to the expected format
+    service = {
+      ...staticService,
+      features: staticService.features.map((f, i) => ({ id: `f-${i}`, item: f })),
+      benefits: staticService.benefits.map((b, i) => ({ id: `b-${i}`, item: b })),
+      process: staticService.process.map((p, i) => ({ id: `p-${i}`, item: p })),
+    }
+    isStatic = true
+  }
+
+  const { docs: relatedDocs } = await payload.find({
     collection: 'services',
     where: {
       and: [
@@ -86,6 +124,16 @@ export default async function ServicePage({
     },
     limit: 3,
   })
+  
+  let relatedServices = relatedDocs as any[]
+  
+  if (relatedServices.length < 3) {
+    const staticRelated = allServices
+      .filter(s => s.categorySlug === service.categorySlug && s.slug !== slug)
+      .slice(0, 3 - relatedServices.length)
+    
+    relatedServices = [...relatedServices, ...staticRelated]
+  }
 
   const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zenakocleaning.co.za'
   const serviceSchema = {
