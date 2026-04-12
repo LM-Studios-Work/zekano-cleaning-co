@@ -85,7 +85,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${roboto.variable} font-sans antialiased`}>
+      <body className={`${roboto.variable} ${roboto.className} antialiased`}>
         {children}
         <Analytics />
       </body>
