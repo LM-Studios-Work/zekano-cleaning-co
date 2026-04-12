@@ -181,26 +181,29 @@ export default function DeepCleaningPage() {
         {/* Why Choose Us */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="text-center mb-12 lg:mb-16">
-              <span
-                className="text-sm font-bold uppercase tracking-widest"
-                style={{ color: "#6fbf00" }}
-              >
-                Why Zenako
-              </span>
-              <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                A Deep Clean You Can{" "}
-                <span style={{ color: "#1A9AD2" }}>Trust</span>
-              </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                Owner-supervised, professional teams delivering a guaranteed result every time.
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mb-12">
+              <div className="lg:col-span-1">
+                <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>
+                  Why Zenako
+                </span>
+                <h2 className="mt-3 text-3xl font-bold text-foreground text-balance">
+                  A Deep Clean You Can{" "}
+                  <span style={{ color: "#1A9AD2" }}>Trust</span>
+                </h2>
+              </div>
+              <p className="lg:col-span-2 text-lg text-muted-foreground leading-relaxed">
+                Owner-supervised, professional teams delivering a guaranteed result every time. We bring the expertise, tools, and accountability so you can relax and enjoy a genuinely clean home.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {whyUsPoints.map((point, idx) => (
                 <div
                   key={idx}
-                  className="p-6 lg:p-8 bg-background border border-border"
+                  className={`p-6 lg:p-8 border transition-all duration-300 hover:shadow-md group ${
+                    idx === 0
+                      ? "bg-blue-50 border-[#1A9AD2]"
+                      : "bg-background border-border hover:border-[#6fbf00]"
+                  }`}
                 >
                   <div
                     className="flex items-center justify-center w-12 h-12 mb-4"
@@ -209,7 +212,7 @@ export default function DeepCleaningPage() {
                     <CheckIcon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="font-bold text-foreground text-lg mb-2">{point.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
                     {point.description}
                   </p>
                 </div>
