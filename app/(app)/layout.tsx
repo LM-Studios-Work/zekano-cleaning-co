@@ -1,14 +1,6 @@
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '500', '700', '900'],
-  variable: '--font-sans',
-  display: 'swap',
-});
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zenakocleaning.co.za'
 
@@ -85,7 +77,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${roboto.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         {children}
         <Analytics />
       </body>
