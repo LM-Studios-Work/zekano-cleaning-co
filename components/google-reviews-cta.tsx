@@ -4,7 +4,7 @@ import Image from "next/image"
 export function GoogleReviewsCTA() {
   return (
     <section className="py-6 lg:py-10 bg-white">
-      <div className="mx-auto max-w-4xl px-6">
+      <div className="mx-auto max-w-xl px-6">
         <Link 
           href="https://share.google/jLQESscLkIi9xGnXp" 
           target="_blank"
