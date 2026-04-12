@@ -6,8 +6,7 @@ import { HeroSlideshow } from "@/components/hero-slideshow"
 import { ServiceAreas } from "@/components/service-areas"
 import { ServicesPreview } from "@/components/services-preview"
 import { BeforeAfter } from "@/components/before-after"
-import { WhyChooseUs } from "@/components/why-choose-us"
-import { MobileReviewsSection } from "@/components/mobile-reviews-section"
+import { ReviewsSection } from "@/components/reviews-section"
 import { FirstTimeOffer } from "@/components/first-time-offer"
 import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
@@ -104,19 +103,11 @@ export default function HomePage() {
       <Header />
       <main className="relative">
         <HeroSlideshow />
-        {/* Hide under-hero Google Reviews badge on mobile — it appears further down instead */}
-        <div className="hidden lg:block">
-          <GoogleReviewsCTA />
-        </div>
         <ServiceAreas />
         <ServicesPreview />
         <BeforeAfter />
-        {/* Mobile: Google Reviews image + link + review cards (replaces WhyChooseUs on mobile) */}
-        <MobileReviewsSection />
-        {/* Desktop: Commitment to Quality section */}
-        <div className="hidden lg:block">
-          <WhyChooseUs />
-        </div>
+        {/* Google reviews — replaces WhyChooseUs on all screen sizes */}
+        <ReviewsSection />
         <FirstTimeOffer />
         <FAQSection />
         <CTASection />
