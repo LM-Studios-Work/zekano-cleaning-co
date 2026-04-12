@@ -128,7 +128,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "commercial-cleaning",
     description: "Professional office cleaning for businesses of all sizes. A clean, well-maintained workplace keeps your team healthy and clients impressed.",
     longDescription: "Professional Office Cleaning Services in Johannesburg. A clean, well-maintained office not only creates a positive first impression for clients but also boosts team morale and supports a healthier work environment. Serving businesses across Johannesburg, Sandton, Randburg, Fourways, Midrand, and Bryanston with owner-supervised, vetted teams and no lock-in contracts.",
-    image: "/cleaning images/zenako-office-cleaning-johannesburg.webp",
+    image: "/office/office hero.webp",
     icon: "Building2",
     features: [
       "Daily or weekly cleaning schedules",
@@ -192,41 +192,7 @@ export const allServices: ServiceData[] = [
   },
 
   // Upholstery & Fabric Cleaning
-  {
-    slug: "sofa-cleaning",
-    title: "Sofa Cleaning",
-    category: "Upholstery & Fabric Cleaning",
-    categorySlug: "upholstery-and-fabric",
-    description: "Deep cleaning for all types of sofas and couches. We remove stains, dust mites, and odours.",
-    longDescription: "Your sofa is one of the most-used pieces of furniture in your home, and it collects dust, allergens, spills, and odours over time. Our professional sofa cleaning service uses safe, effective methods to deep clean all fabric and leather types, removing stains, dust mites, bacteria, and unpleasant smells. Your sofa will look refreshed and feel hygienic. Available across Johannesburg and surrounding areas.",
-    image: "/cleaning images/zenako-cleaning-team-walking.webp",
-    icon: "Sofa",
-    features: [
-      "Deep extraction cleaning for all fabric types",
-      "Stain and spot treatment",
-      "Dust mite and allergen removal",
-      "Odour elimination",
-      "Leather sofa conditioning",
-      "Quick-dry techniques",
-      "Safe for pets and children",
-      "On-site service at your home",
-    ],
-    benefits: [
-      "Extends the lifespan of your sofa",
-      "Removes hidden allergens and bacteria",
-      "Restores colour and freshness",
-      "No need to transport furniture",
-      "Eco-friendly cleaning solutions",
-    ],
-    process: [
-      "We inspect the fabric type and identify any stains or damage.",
-      "Pre-treatment is applied to tough stains and high-traffic areas.",
-      "Deep extraction cleaning removes dirt, dust mites, and allergens.",
-      "Odour neutralising treatment is applied.",
-      "The sofa is left to dry with quick-dry techniques.",
-      "A final inspection ensures the result meets our standards.",
-    ],
-  },
+
   {
     slug: "mattress-cleaning",
     title: "Mattress Cleaning",
@@ -234,7 +200,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "upholstery-and-fabric",
     description: "Professional mattress sanitisation to remove allergens, dust mites, and bacteria.",
     longDescription: "You spend a third of your life on your mattress, so it should be clean and hygienic. Our professional mattress cleaning service removes dust mites, dead skin cells, bacteria, sweat stains, and allergens that build up over time. Using safe, chemical-free methods, we sanitise and freshen your mattress for a healthier night's sleep. Serving homes across Johannesburg.",
-    image: "/cleaning images/zenako-cleaning-team-walking.webp",
+    image: "/matress/mattress-cleaning-services.webp",
     icon: "Sofa",
     features: [
       "Deep dust mite extraction",
@@ -303,7 +269,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "upholstery-and-fabric",
     description: "Expert carpet cleaning that removes deep stains, allergens, and odours.",
     longDescription: "Carpets trap dirt, dust, allergens, pet dander, and spills deep in their fibres, well beyond what regular vacuuming can reach. Our professional carpet cleaning service uses hot water extraction and eco-friendly solutions to deep clean your carpets, removing stubborn stains and odours while restoring colour and texture. Serving homes and offices across Johannesburg.",
-    image: "/cleaning images/Deep Carpet cleaning image 1.webp",
+    image: "/carpet/carpet hero.webp",
     icon: "Sparkles",
     features: [
       "Hot water extraction deep cleaning",
@@ -338,7 +304,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "upholstery-and-fabric",
     description: "Comprehensive cleaning for chairs, ottomans, cushions, and other upholstered furniture.",
     longDescription: "From dining chairs and ottomans to headboards and cushions, upholstered furniture collects dust, stains, and allergens over time. Our professional upholstery cleaning service is safe for all fabric types and effectively removes embedded dirt, bacteria, and odours. We clean on-site at your home or office, so there's no need to move heavy furniture. Available across Johannesburg and surrounding areas.",
-    image: "/cleaning images/zenako-cleaning-team.webp",
+    image: "/couch/couch hero.png",
     icon: "Sofa",
     features: [
       "All upholstered furniture types",
@@ -409,7 +375,7 @@ export const allServices: ServiceData[] = [
     category: "Specialised Cleaning Services",
     categorySlug: "specialised-cleaning",
     description: "Fast, reliable drain cleaning and unblocking in Johannesburg. We resolve blocked toilets, overflowing sinks, and sewer line backups with owner-supervised, vetted teams.",
-    longDescription: "Professional Drain Cleaning & Unblocking in Johannesburg. If your drains are slow, smells are emerging, or your bathroom and kitchen fixtures are overflowing, professional cleaning is required. Zenako Cleaning Co. specialises in clearing blocked toilets and main sewer lines, slow-draining showers, baths, and basins, kitchen sink blockages and grease build-up, and sewer backups and septic tank issues. We use professional-grade electro-mechanical cleaning, high-pressure water jetting, and CCTV camera inspections to deliver long-lasting results across Johannesburg and surrounding areas.",
+    longDescription: "Professional Drain Cleaning & Unblocking in Johannesburg. If your drains are slow, smells are emerging, or your bathroom and kitchen fixtures are overflowing, professional cleaning is required. Zenako Cleaning Co. specialises in clearing blocked toilets and main sewer lines, slow-draining showers, baths, and basins, kitchen sink blockages and grease build-up, and sewer backups and septic tank issues. We use professional-grade electro-mechanical cleaning and high-pressure water jetting to deliver long-lasting results across Johannesburg and surrounding areas.",
     image: "/cleaning-kitchen-sink-drain.webp",
     icon: "Droplets",
     features: [
@@ -419,7 +385,6 @@ export const allServices: ServiceData[] = [
       "Sewer backups and septic tank issues",
       "Electro-mechanical cleaning for stubborn blockages",
       "High-pressure water jetting to remove grease and scale",
-      "CCTV camera inspections for broken or recurring issues",
       "On-site quote before any work begins",
     ],
     benefits: [
@@ -583,7 +548,7 @@ export const serviceCategories = [
     name: "Upholstery & Fabric",
     slug: "upholstery-and-fabric",
     services: [
-      { name: "Sofa Cleaning", slug: "sofa-cleaning" },
+
       { name: "Mattress Cleaning", slug: "mattress-cleaning" },
       { name: "Curtain Cleaning", slug: "curtain-cleaning" },
       { name: "Carpet Cleaning", slug: "carpet-cleaning" },

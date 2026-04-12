@@ -41,8 +41,8 @@ export function ServicesPreview() {
           </h2>
         </div>
 
-        {/* 4-Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        {/* 4-Card Grid - Now 2x2 for better width and premium feel */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 max-w-6xl mx-auto">
           {services.map((service) => (
             <Link
               key={service.title}

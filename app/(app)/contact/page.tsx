@@ -214,7 +214,7 @@ export default function ContactPage() {
                               <SelectItem value="move-cleaning">Move-in/Move-out Cleaning</SelectItem>
                               <SelectItem value="office-cleaning">Office Cleaning</SelectItem>
                               <SelectItem value="small-business">Small Business Cleaning</SelectItem>
-                              <SelectItem value="sofa-cleaning">Sofa Cleaning</SelectItem>
+
                               <SelectItem value="mattress-cleaning">Mattress Cleaning</SelectItem>
                               <SelectItem value="curtain-cleaning">Curtain Cleaning</SelectItem>
                               <SelectItem value="carpet-cleaning">Carpet Cleaning</SelectItem>

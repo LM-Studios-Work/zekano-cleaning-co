@@ -191,48 +191,44 @@ export default function StandardHouseCleaningPage() {
           </div>
         </section>
 
-        {/* Why Choose Zenako */}
-        <section className="py-16 lg:py-24 bg-white">
+        {/* REDESIGNED: Why Choose Zenako */}
+        <section className="py-20 lg:py-28 bg-gray-50/40">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mb-12">
-              <div className="lg:col-span-1">
-                <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>
-                  Why Zenako
-                </span>
-                <h2 className="mt-3 text-3xl font-bold text-foreground text-balance">
-                  Why Choose Zenako for{" "}
-                  <span style={{ color: "#1A9AD2" }}>Regular Cleaning</span>
-                </h2>
-              </div>
-              <p className="lg:col-span-2 text-lg text-muted-foreground leading-relaxed">
-                Consistent home upkeep with the accountability and familiarity that makes the difference. Our owner-backed service means you get the same trusted professional every visit, with direct access to management if you ever need it.
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-sm font-bold uppercase tracking-[0.2em]" style={{ color: "#6fbf00" }}>
+                Why Zenako
+              </span>
+              <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-4xl text-balance">
+                Why Choose Zenako for <span style={{ color: "#1A9AD2" }}>Regular Cleaning</span>
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                Consistent home upkeep with the accountability and familiarity that makes the difference. Get the same trusted professional every visit, with direct access to management.
               </p>
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {whyUsPoints.map((point, idx) => (
                 <div
                   key={idx}
-                  className={`p-6 lg:p-8 border transition-all duration-300 hover:shadow-md group ${
-                    idx === 0
-                      ? "bg-blue-50 border-[#1A9AD2]"
-                      : "bg-background border-border hover:border-[#6fbf00]"
-                  }`}
+                  className="relative p-8 bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-all duration-300 group overflow-hidden flex flex-col"
                 >
+                  {/* Subtle animated top border on hover */}
                   <div
-                    key={idx}
-                    className="p-8 lg:p-10 border-b border-r border-border group hover:bg-background transition-colors duration-200"
-                  >
-                    <div
-                      className="w-1 h-8 mb-6"
-                      style={{ backgroundColor: "#6fbf00" }}
-                    />
-                    <h3 className="font-bold text-foreground text-base mb-3">{point.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {point.description}
-                    </p>
+                    className="absolute top-0 left-0 w-full h-1 transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100"
+                    style={{ backgroundColor: idx % 2 === 0 ? "#1A9AD2" : "#6fbf00" }}
+                  />
+                  
+                  {/* Clean Number Badge */}
+                  <div className="mb-6 flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 group-hover:bg-blue-50/50 transition-colors">
+                    <span className="text-xl font-black" style={{ color: idx % 2 === 0 ? "#1A9AD2" : "#6fbf00" }}>
+                      0{idx + 1}
+                    </span>
                   </div>
-                  <h3 className="font-bold text-foreground text-lg mb-2">{point.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
+                  
+                  <h3 className="font-bold text-foreground text-lg mb-3">
+                    {point.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-grow">
                     {point.description}
                   </p>
                 </div>
@@ -241,41 +237,43 @@ export default function StandardHouseCleaningPage() {
           </div>
         </section>
 
-        {/* How It Works */}
-        <section className="py-16 lg:py-24 bg-background">
+        {/* REDESIGNED: How It Works */}
+        <section className="py-20 lg:py-28 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mb-12">
-              <div className="lg:col-span-1">
-                <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>
-                  Process
-                </span>
-                <h2 className="mt-3 text-3xl font-bold text-foreground">
-                  How It Works
-                </h2>
-              </div>
-              <p className="lg:col-span-2 text-lg text-muted-foreground leading-relaxed">
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <span className="text-sm font-bold uppercase tracking-[0.2em]" style={{ color: "#1A9AD2" }}>
+                Process
+              </span>
+              <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-4xl text-balance">
+                How It Works
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 Getting started with a regular clean is simple and straightforward. From your first conversation to ongoing maintenance, we keep the process transparent and stress-free.
               </p>
             </div>
+
             <div className="relative">
-              {/* Timeline line — desktop only */}
-              <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 bg-gradient-to-r from-[#6fbf00] to-[#1A9AD2]" />
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {/* Connecting line for desktop timeline */}
+              <div className="hidden lg:block absolute top-[1.5rem] left-[12%] right-[12%] h-[2px] bg-gray-100" />
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
                 {steps.map((step, idx) => (
-                  <div key={idx} className="relative">
-                    {/* Step dot — desktop only */}
-                    <div className="hidden lg:flex absolute -top-4 left-0 w-8 h-8 bg-white border-2 border-[#6fbf00] rounded-full items-center justify-center z-10 font-bold text-xs text-[#6fbf00]">
-                      {idx + 1}
-                    </div>
+                  <div key={idx} className="relative flex flex-col items-center text-center group">
                     
-                    <div className="pt-8">
-                      <span className="text-4xl font-black text-muted-foreground/20">{step.number}</span>
-                      <h3 className="font-bold text-foreground text-base mt-2">{step.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mt-2">
-                        {step.description}
-                      </p>
+                    {/* Centered Step Node */}
+                    <div
+                      className="relative z-10 flex items-center justify-center w-12 h-12 rounded-full bg-white border-4 shadow-sm transition-transform duration-300 group-hover:scale-110 mb-6"
+                      style={{ borderColor: "#6fbf00" }}
+                    >
+                      <span className="font-bold text-sm" style={{ color: "#6fbf00" }}>
+                        {idx + 1}
+                      </span>
                     </div>
+
+                    <h3 className="font-bold text-foreground text-lg mb-3">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed px-2">
+                      {step.description}
+                    </p>
                   </div>
                 ))}
               </div>
