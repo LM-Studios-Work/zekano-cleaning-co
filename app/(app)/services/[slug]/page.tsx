@@ -131,10 +131,10 @@ export default async function ServicePage({
   let relatedServices = relatedDocs as any[]
   
   if (relatedServices.length < 3) {
+    const existingSlugs = new Set(relatedServices.map((d: any) => d.slug))
     const staticRelated = allServices
-      .filter(s => s.categorySlug === service.categorySlug && s.slug !== slug)
+      .filter(s => s.categorySlug === service.categorySlug && s.slug !== slug && !existingSlugs.has(s.slug))
       .slice(0, 3 - relatedServices.length)
-    
     relatedServices = [...relatedServices, ...staticRelated]
   }
 
@@ -326,6 +326,7 @@ export default async function ServicePage({
         </section>
 
         {/* Related Services */}
+        {relatedServices.length > 0 && (
         <section className="py-16 lg:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12">
@@ -374,6 +375,7 @@ export default async function ServicePage({
             </div>
           </div>
         </section>
+        )}
       </main>
       <Footer />
       <WhatsAppButton />
