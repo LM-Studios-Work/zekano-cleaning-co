@@ -194,42 +194,43 @@ export default function StandardHouseCleaningPage() {
         {/* Why Choose Zenako */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mb-12">
-              <div className="lg:col-span-1">
-                <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>
-                  Why Zenako
-                </span>
-                <h2 className="mt-3 text-3xl font-bold text-foreground text-balance">
-                  Why Choose Zenako for{" "}
-                  <span style={{ color: "#1A9AD2" }}>Regular Cleaning</span>
-                </h2>
-              </div>
-              <p className="lg:col-span-2 text-lg text-muted-foreground leading-relaxed">
-                Consistent home upkeep with the accountability and familiarity that makes the difference. Our owner-backed service means you get the same trusted professional every visit, with direct access to management if you ever need it.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {whyUsPoints.map((point, idx) => (
-                <div
-                  key={idx}
-                  className={`p-6 lg:p-8 border transition-all duration-300 hover:shadow-md group ${
-                    idx === 0
-                      ? "bg-blue-50 border-[#1A9AD2]"
-                      : "bg-background border-border hover:border-[#6fbf00]"
-                  }`}
-                >
-                  <div
-                    className="flex items-center justify-center w-12 h-12 mb-4"
-                    style={{ backgroundColor: "#6fbf00" }}
-                  >
-                    <CheckIcon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="font-bold text-foreground text-lg mb-2">{point.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">
-                    {point.description}
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
+              {/* Left dark panel */}
+              <div className="lg:col-span-2 p-10 lg:p-14 flex flex-col justify-between" style={{ backgroundColor: "#1a1a1a" }}>
+                <div>
+                  <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>
+                    Why Zenako
+                  </span>
+                  <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-white leading-tight text-balance">
+                    Why Choose Zenako for Regular Cleaning
+                  </h2>
+                  <p className="mt-6 text-white/60 leading-relaxed">
+                    Consistent upkeep with the accountability and familiarity that actually makes a difference.
                   </p>
                 </div>
-              ))}
+                <div className="mt-12 pt-8 border-t border-white/10">
+                  <div className="text-5xl font-black text-white">100%</div>
+                  <div className="text-sm text-white/50 mt-1 uppercase tracking-widest">Satisfaction Guarantee</div>
+                </div>
+              </div>
+              {/* Right card grid */}
+              <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2">
+                {whyUsPoints.map((point, idx) => (
+                  <div
+                    key={idx}
+                    className="p-8 lg:p-10 border-b border-r border-border group hover:bg-background transition-colors duration-200"
+                  >
+                    <div
+                      className="w-1 h-8 mb-6"
+                      style={{ backgroundColor: "#6fbf00" }}
+                    />
+                    <h3 className="font-bold text-foreground text-base mb-3">{point.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {point.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -237,41 +238,38 @@ export default function StandardHouseCleaningPage() {
         {/* How It Works */}
         <section className="py-16 lg:py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start mb-12">
-              <div className="lg:col-span-1">
-                <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>
-                  Process
-                </span>
-                <h2 className="mt-3 text-3xl font-bold text-foreground">
+            <div className="mb-14">
+              <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>
+                Process
+              </span>
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mt-3">
+                <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
                   How It Works
                 </h2>
+                <p className="text-muted-foreground max-w-md leading-relaxed">
+                  From your first conversation to ongoing maintenance — simple, transparent, no surprises.
+                </p>
               </div>
-              <p className="lg:col-span-2 text-lg text-muted-foreground leading-relaxed">
-                Getting started with a regular clean is simple and straightforward. From your first conversation to ongoing maintenance, we keep the process transparent and stress-free.
-              </p>
             </div>
-            <div className="relative">
-              {/* Timeline line — desktop only */}
-              <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 bg-gradient-to-r from-[#6fbf00] to-[#1A9AD2]" />
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {steps.map((step, idx) => (
-                  <div key={idx} className="relative">
-                    {/* Step dot — desktop only */}
-                    <div className="hidden lg:flex absolute -top-4 left-0 w-8 h-8 bg-white border-2 border-[#6fbf00] rounded-full items-center justify-center z-10 font-bold text-xs text-[#6fbf00]">
-                      {idx + 1}
-                    </div>
-                    
-                    <div className="pt-8">
-                      <span className="text-4xl font-black text-muted-foreground/20">{step.number}</span>
-                      <h3 className="font-bold text-foreground text-base mt-2">{step.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mt-2">
-                        {step.description}
-                      </p>
-                    </div>
+            <div className="divide-y divide-border">
+              {steps.map((step, idx) => (
+                <div key={idx} className="py-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-start">
+                  <div className="lg:col-span-2 flex items-start gap-4 lg:block">
+                    <span
+                      className="text-6xl lg:text-7xl font-black leading-none"
+                      style={{ color: "#6fbf00", opacity: 0.25 }}
+                    >
+                      {step.number}
+                    </span>
                   </div>
-                ))}
-              </div>
+                  <div className="lg:col-span-4">
+                    <h3 className="text-xl font-bold text-foreground">{step.title}</h3>
+                  </div>
+                  <div className="lg:col-span-6">
+                    <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
