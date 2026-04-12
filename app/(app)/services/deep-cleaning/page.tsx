@@ -206,10 +206,14 @@ export default function DeepCleaningPage() {
                   }`}
                 >
                   <div
-                    className="flex items-center justify-center w-12 h-12 mb-4"
-                    style={{ backgroundColor: "#6fbf00" }}
+                    key={idx}
+                    className="p-8 lg:p-10 border-b border-r border-border group hover:bg-background transition-colors duration-200"
                   >
-                    <CheckIcon className="w-6 h-6 text-white" />
+                    <div className="w-1 h-8 mb-6" style={{ backgroundColor: "#6fbf00" }} />
+                    <h3 className="font-bold text-foreground text-base mb-3">{point.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {point.description}
+                    </p>
                   </div>
                   <h3 className="font-bold text-foreground text-lg mb-2">{point.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">

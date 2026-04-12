@@ -215,7 +215,24 @@ export default function MoveInMoveOutCleaning() {
                   <h3 className="font-bold text-foreground text-lg mb-2">{point.title}</h3>
                   <p className="text-sm lg:text-base text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors">{point.description}</p>
                 </div>
-              ))}
+                <div className="mt-12 pt-8 border-t border-white/10">
+                  <div className="text-5xl font-black text-white">72h</div>
+                  <div className="text-sm text-white/50 mt-1 uppercase tracking-widest">Deposit Back Guarantee</div>
+                </div>
+              </div>
+              {/* Right card grid */}
+              <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2">
+                {whyUsPoints.map((point, idx) => (
+                  <div
+                    key={idx}
+                    className="p-8 lg:p-10 border-b border-r border-border group hover:bg-background transition-colors duration-200"
+                  >
+                    <div className="w-1 h-8 mb-6" style={{ backgroundColor: "#6fbf00" }} />
+                    <h3 className="font-bold text-foreground text-base mb-3">{point.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{point.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
