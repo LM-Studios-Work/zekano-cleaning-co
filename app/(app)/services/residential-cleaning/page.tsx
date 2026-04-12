@@ -5,7 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckIcon, ArrowRightIcon, PhoneIcon } from "@/components/icons"
+import { CheckIcon, ArrowRightIcon, ArrowLeftIcon, PhoneIcon } from "@/components/icons"
 import { allServices } from "@/lib/services-data"
 
 export const metadata: Metadata = {
@@ -20,6 +20,7 @@ const categoryImage = "/cleaning images/zenako-house-cleaning-johannesburg.webp"
 
 export default function ResidentialCleaningHub() {
   const categoryServices = allServices.filter((s) => s.categorySlug === categorySlug)
+  const otherServices = allServices.filter((s) => s.categorySlug !== categorySlug).slice(0, 3)
 
   return (
     <>
@@ -155,6 +156,53 @@ export default function ResidentialCleaningHub() {
             </Link>
           </div>
         </section>
+
+        {/* Other Services You May Need */}
+        {otherServices.length > 0 && (
+          <section className="py-16 lg:py-24 bg-white">
+            <div className="mx-auto max-w-7xl px-4 lg:px-8">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-foreground sm:text-4xl text-balance">
+                  Other <span style={{ color: "#6fbf00" }}>Services</span> You May Need
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {otherServices.map((related) => (
+                  <Link key={related.slug} href={`/services/${related.slug}`} className="group">
+                    <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
+                      <div className="aspect-[3/2] relative overflow-hidden">
+                        <Image
+                          src={related.image}
+                          alt={related.title}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                      <CardContent className="p-6">
+                        <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{related.category}</span>
+                        <h3 className="mt-1 font-bold text-foreground text-lg group-hover:text-[#1A9AD2] transition-colors">{related.title}</h3>
+                        <p className="mt-2 text-sm text-muted-foreground line-clamp-2">{related.description}</p>
+                        <span className="mt-3 inline-flex items-center text-sm font-medium" style={{ color: "#6fbf00" }}>
+                          Learn more <ArrowRightIcon className="ml-1 h-4 w-4" />
+                        </span>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-12 text-center">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 text-sm font-medium hover:underline"
+                  style={{ color: "#1A9AD2" }}
+                >
+                  <ArrowLeftIcon className="h-4 w-4" />
+                  View All Services
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
       <WhatsAppButton />
