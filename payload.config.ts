@@ -104,7 +104,7 @@ export default buildConfig({
           type: 'select',
           required: true,
           options: [
-            { label: 'About Page — What Drives Us', value: 'about' },
+            { label: 'About Page - What Drives Us', value: 'about' },
             { label: 'Why Choose Us Section', value: 'why-choose-us' },
           ],
         },

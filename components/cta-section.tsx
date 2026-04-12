@@ -5,7 +5,7 @@ export function CTASection() {
   return (
     <section className="py-20 lg:py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Asymmetric layout — heavy left, actions right */}
+        {/* Asymmetric layout - heavy left, actions right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-7">
             <h2 className="text-3xl font-bold text-foreground sm:text-5xl leading-tight">

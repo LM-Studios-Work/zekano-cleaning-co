@@ -65,10 +65,10 @@ export function HeroSlideshow() {
         </div>
       ))}
 
-      {/* Dark overlay — high contrast */}
+      {/* Dark overlay - high contrast */}
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* Content — left aligned, no fluff */}
+      {/* Content - left aligned, no fluff */}
       <div className="relative z-10 flex h-full items-center pt-20 md:pt-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
           <div className="max-w-2xl">
@@ -111,7 +111,7 @@ export function HeroSlideshow() {
         </div>
       </div>
 
-      {/* Hotline — desktop, bottom-right */}
+      {/* Hotline - desktop, bottom-right */}
       <div className="hidden md:block absolute right-6 lg:right-8 bottom-16 lg:bottom-24 z-30 p-5 w-72" style={{ backgroundColor: "#1A9AD2" }}>
         <p className="text-white text-[10px] uppercase tracking-[0.2em] font-bold mb-2">Call now:</p>
         <a href="tel:+27844020733" className="flex items-center gap-3 text-white hover:text-white/80 transition-colors">
@@ -120,7 +120,7 @@ export function HeroSlideshow() {
         </a>
       </div>
 
-      {/* Slide tabs — bottom left */}
+      {/* Slide tabs - bottom left */}
       <div className="hidden md:block absolute bottom-[5%] left-0 right-0 z-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex gap-0">
@@ -143,7 +143,7 @@ export function HeroSlideshow() {
       </div>
     </section>
 
-    {/* Mobile hotline — below hero */}
+    {/* Mobile hotline - below hero */}
     <div className="md:hidden relative z-20 -mt-6 mx-6">
       <div className="p-5 text-center" style={{ backgroundColor: "#1A9AD2" }}>
         <a href="tel:+27844020733" className="inline-flex items-center gap-3 text-white">

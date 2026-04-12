@@ -86,7 +86,7 @@ const whyUsPoints = [
   {
     title: "Owner-Supervised Service",
     description:
-      "Every deep clean is overseen by our management. You deal directly with the owner — no call centres, no middlemen.",
+      "Every deep clean is overseen by our management. You deal directly with the owner with no call centres, no middlemen.",
   },
   {
     title: "Professional Trained Team",
@@ -224,7 +224,7 @@ export default function DeepCleaningPage() {
           </div>
         </section>
 
-        {/* What's Included — 3-Column with images on top */}
+        {/* What's Included - 3-Column with images on top */}
         <section className="py-16 lg:py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12 lg:mb-16">
@@ -325,7 +325,7 @@ export default function DeepCleaningPage() {
           </div>
         </section>
 
-        {/* What's NOT Included — Accordion */}
+        {/* What's NOT Included - Accordion */}
         <section className="py-16 lg:py-24 bg-background">
           <div className="mx-auto max-w-3xl px-4 lg:px-8">
             <div className="text-center mb-10">
@@ -358,7 +358,7 @@ export default function DeepCleaningPage() {
                               className="text-base font-bold shrink-0 mt-0.5"
                               style={{ color: "#1A9AD2" }}
                             >
-                              —
+                              -
                             </span>
                             <span className="text-sm text-muted-foreground leading-relaxed">
                               {exclusion}
@@ -393,7 +393,7 @@ export default function DeepCleaningPage() {
                   If any item on our deep cleaning checklist is missed or not completed to your
                   satisfaction, we will return to your property within{" "}
                   <strong className="text-white">24 hours</strong> at absolutely no extra cost. We
-                  stand behind our work — every single clean, every single time.
+                  stand behind our work - every single clean, every single time.
                 </p>
               </div>
               <div className="shrink-0">

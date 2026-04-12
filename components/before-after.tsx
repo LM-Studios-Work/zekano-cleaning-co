@@ -27,7 +27,7 @@ export function BeforeAfter() {
   return (
     <section className="py-20 lg:py-24 bg-background">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Asymmetric layout — text left, tabs right */}
+        {/* Asymmetric layout - text left, tabs right */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-8 lg:mb-10 gap-4">
           <div className="max-w-md">
             <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Our Standard</span>

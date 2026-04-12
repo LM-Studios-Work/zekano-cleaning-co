@@ -32,7 +32,7 @@ const services = [
 export function ServicesPreview() {
   return (
     <section className="py-20 lg:py-28 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12 lg:mb-16 text-center">
           <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Services</span>
@@ -41,15 +41,15 @@ export function ServicesPreview() {
           </h2>
         </div>
 
-        {/* 4-Card Grid - Now 2x2 for better width and premium feel */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 max-w-6xl mx-auto">
+        {/* 4-Card Grid - Restored to 4-cols inline, expanded container to prevent squishing */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mx-auto">
           {services.map((service) => (
             <Link
               key={service.title}
               href={service.href}
               className="flex flex-col bg-white border border-border rounded-lg overflow-hidden hover:shadow-xl hover:border-[#1A9AD2]/30 transition-all duration-300 group"
             >
-              <div className="aspect-square relative overflow-hidden">
+              <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.title}

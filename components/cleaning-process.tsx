@@ -17,7 +17,7 @@ const steps = [
     icon: SparkleIcon,
     step: "03",
     title: "Maintenance Rotation",
-    description: "We follow a consistent checklist and rotate deeper tasks — like skirting boards or inside windows — each visit.",
+    description: "We follow a consistent checklist and rotate deeper tasks like skirting boards or inside windows each visit.",
   },
   {
     icon: SmileFaceIcon,
@@ -32,7 +32,7 @@ export function CleaningProcess() {
     <section className="py-20 lg:py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-        {/* Header — two-column editorial */}
+        {/* Header - two-column editorial */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-end gap-6 mb-16 pb-10 border-b border-border">
           <div>
             <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#6fbf00" }}>Process</span>
@@ -42,13 +42,13 @@ export function CleaningProcess() {
             </h2>
           </div>
           <p className="lg:max-w-xs text-base text-muted-foreground leading-relaxed">
-            Getting started with a regular clean is straightforward and stays that way — no paperwork, no lock-ins.
+            Getting started with a regular clean is straightforward and stays that way with no paperwork, no lock-ins.
           </p>
         </div>
 
-        {/* Steps — horizontal timeline on desktop */}
+        {/* Steps - horizontal timeline on desktop */}
         <div className="relative">
-          {/* Connecting line — desktop only */}
+          {/* Connecting line - desktop only */}
           <div
             className="hidden lg:block absolute top-[2.75rem] left-0 right-0 h-px"
             style={{ backgroundColor: "#e0e0e0" }}
@@ -82,7 +82,7 @@ export function CleaningProcess() {
                     <s.icon className="w-6 h-6" />
                   </div>
 
-                  {/* Step number — large muted */}
+                  {/* Step number - large muted */}
                   <span
                     className="text-5xl lg:text-6xl font-black leading-none select-none lg:hidden"
                     style={{ color: "rgba(26,154,210,0.12)" }}
@@ -110,7 +110,7 @@ export function CleaningProcess() {
                   </p>
                 </div>
 
-                {/* Accent bottom bar on desktop — highlights current step progression */}
+                {/* Accent bottom bar on desktop - highlights current step progression */}
                 <div
                   className="hidden lg:block absolute bottom-0 left-0 h-[3px]"
                   style={{

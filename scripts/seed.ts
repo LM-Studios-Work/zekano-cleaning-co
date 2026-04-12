@@ -9,7 +9,7 @@ try {
     if (match) process.env[match[1].trim()] = match[2].trim()
   }
 } catch {
-  // .env.local not found — rely on existing env vars
+  // .env.local not found - rely on existing env vars
 }
 
 const faqs = [
@@ -61,7 +61,7 @@ const serviceAreas = [
 ]
 
 const companyValues = [
-  // About page — What Drives Us
+  // About page - What Drives Us
   {
     title: 'Our Mission',
     description: 'To deliver consistently excellent cleaning across Johannesburg, covering homes, offices, and commercial spaces.',

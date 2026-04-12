@@ -76,7 +76,7 @@ export default function MoveInMoveOutCleaning() {
     },
     {
       title: "Deep Oven Cleaning Included",
-      description: "Standard move-out cleaning includes full interior and exterior oven cleaning—a critical item on landlord and agent inspection checklists.",
+      description: "Standard move-out cleaning includes full interior and exterior oven cleaning, which is a critical item on landlord and agent inspection checklists.",
       icon: "CheckIcon",
     },
     {
@@ -194,7 +194,7 @@ export default function MoveInMoveOutCleaning() {
                 Why Choose Zenako for <span style={{ color: "#1A9AD2" }}>Your Move-Out Clean</span>
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                Professional, accountable, and guaranteed to help you get your full deposit back. Our owner-supervised service and estate agent–aligned checklist give you peace of mind.
+                Professional, accountable, and guaranteed to help you get your full deposit back. Our owner-supervised service and estate agent approved checklist give you peace of mind.
               </p>
             </div>
 

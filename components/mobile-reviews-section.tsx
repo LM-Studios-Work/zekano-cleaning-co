@@ -132,7 +132,7 @@ export function MobileReviewsSection() {
         >
           <Image
             src="/google-reviews-1-.png"
-            alt="Google Reviews – Zenako Cleaning Co."
+            alt="Google Reviews for Zenako Cleaning Co."
             width={1200}
             height={300}
             className="w-full h-auto"

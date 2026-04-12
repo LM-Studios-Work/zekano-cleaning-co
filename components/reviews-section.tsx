@@ -123,7 +123,7 @@ export function ReviewsSection() {
   return (
     <section className="py-10 lg:py-16 bg-[#f8f9fa]">
       <div className="mx-auto max-w-6xl px-5">
-        {/* Google Reviews badge — small and centred */}
+        {/* Google Reviews badge - small and centred */}
         <div className="flex justify-center">
           <Link
             href="https://share.google/jLQESscLkIi9xGnXp"
@@ -133,7 +133,7 @@ export function ReviewsSection() {
           >
             <Image
               src="/google-reviews-1-.png"
-              alt="Google Reviews – Zenako Cleaning Co."
+              alt="Google Reviews for Zenako Cleaning Co."
               width={1200}
               height={300}
               className="w-full h-auto"
@@ -154,7 +154,7 @@ export function ReviewsSection() {
           </Link>
         </div>
 
-        {/* Review cards — stacked on mobile, 3-col on desktop */}
+        {/* Review cards - stacked on mobile, 3-col on desktop */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {reviews.map((review) => (
             <ReviewCard key={review.id} review={review} />

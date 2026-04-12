@@ -238,7 +238,7 @@ export const allServices: ServiceData[] = [
     image: "/Curtain-Cleaning.jpg",
     icon: "Wind",
     features: [
-      "On-site cleaning — no removal or re-hanging needed",
+      "On-site cleaning with no removal or re-hanging needed",
       "Steam extraction to lift dust and grime from fibres",
       "Sanitisation targeting dust mites and household odours",
       "Fabric integrity care to prevent shrinkage",
@@ -248,9 +248,9 @@ export const allServices: ServiceData[] = [
       "Targeted treatment for Roman blinds and fabric vertical blinds",
     ],
     benefits: [
-      "Direct owner supervision — no call centres, direct access to management",
+      "Direct owner supervision with no call centres, direct access to management",
       "100% vetted professionals trained in fabric care",
-      "No hidden costs — clear quotes with no price changes after quoting",
+      "No hidden costs and clear quotes with no price changes after quoting",
       "Gauteng expertise with techniques suited to sun-damaged fabrics",
       "Improves indoor air quality by removing dust, pollen, and allergens",
     ],
@@ -388,9 +388,9 @@ export const allServices: ServiceData[] = [
       "On-site quote before any work begins",
     ],
     benefits: [
-      "Direct owner supervision — no call centres, direct access to management",
+      "Direct owner supervision with no call centres, direct access to management",
       "Vetted professionals background-checked and trained for complex drainage repairs",
-      "No price changes — the quoted price is the price you pay",
+      "No price changes, meaning the quoted price is the price you pay",
       "7-day service for urgent overflows and blockages",
       "Fast, clean, and reliable resolution, often on the same day",
     ],

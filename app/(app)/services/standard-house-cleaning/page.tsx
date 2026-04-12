@@ -65,12 +65,12 @@ const whyUsPoints = [
   {
     title: "Same Professional Each Visit",
     description:
-      "Build trust and familiarity with a cleaner who knows your home and priorities — no strangers each time.",
+      "Build trust and familiarity with a cleaner who knows your home and priorities. We send no strangers each time.",
   },
   {
     title: "Flexible Scheduling",
     description:
-      "Choose weekly or fortnightly visits that fit your routine. No lock-in contracts — pause or reschedule as life changes.",
+      "Choose weekly or fortnightly visits that fit your routine. No lock-in contracts so you can pause or reschedule as life changes.",
   },
   {
     title: "Tailored Priorities",
@@ -80,7 +80,7 @@ const whyUsPoints = [
   {
     title: "Owner-Backed Accountability",
     description:
-      "Direct access to management for any issue. No call centres, no middlemen — just honest, personal service.",
+      "Direct access to management for any issue. No call centres, no middlemen, giving you honest, personal service.",
   },
 ]
 
@@ -101,7 +101,7 @@ const steps = [
     number: "03",
     title: "Maintenance Rotation",
     description:
-      "We follow a consistent checklist and rotate deeper tasks — like skirting boards or inside windows — each visit.",
+      "We follow a consistent checklist and rotate deeper tasks like skirting boards or inside windows each visit.",
   },
   {
     number: "04",
@@ -158,7 +158,7 @@ export default function StandardHouseCleaningPage() {
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                   Reliable, owner-supervised home upkeep for busy households. Keep your home
-                  consistently clean with vetted professionals you can trust — serving Sandton,
+                  consistently clean with vetted professionals you can trust, serving Sandton,
                   Randburg, Fourways, Midrand, and Bryanston.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -281,7 +281,7 @@ export default function StandardHouseCleaningPage() {
           </div>
         </section>
 
-        {/* Standard Checklist — 3-Column with images on top */}
+        {/* Standard Checklist - 3-Column with images on top */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12 lg:mb-16">
@@ -296,7 +296,7 @@ export default function StandardHouseCleaningPage() {
               </h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
                 Every regular visit follows a consistent room-by-room checklist so nothing is
-                overlooked — and we rotate deeper tasks each session.
+                overlooked, and we rotate deeper tasks each session.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -414,7 +414,7 @@ export default function StandardHouseCleaningPage() {
                   If any item on our cleaning checklist is missed or not completed to your
                   satisfaction, we return within{" "}
                   <strong className="text-white">24 hours</strong> at no extra cost. No lock-in
-                  contracts. No call centres. Just honest, accountable service — every single visit.
+                  contracts. No call centres. Just honest, accountable service every single visit.
                 </p>
               </div>
               <div className="shrink-0">

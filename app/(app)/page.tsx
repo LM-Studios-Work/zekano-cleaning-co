@@ -106,7 +106,7 @@ export default function HomePage() {
         <ServiceAreas />
         <ServicesPreview />
         <BeforeAfter />
-        {/* Google reviews — replaces WhyChooseUs on all screen sizes */}
+        {/* Google reviews - replaces WhyChooseUs on all screen sizes */}
         <ReviewsSection />
         <FirstTimeOffer />
         <FAQSection />

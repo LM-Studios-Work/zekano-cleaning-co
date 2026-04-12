@@ -115,7 +115,7 @@ export default function MattressCleaningPage() {
                   <span style={{ color: "#1A9AD2" }}>in Johannesburg</span>
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                  While bedding is washed regularly, mattresses often accumulate sweat, skin cells, and allergens that affect sleep quality and hygiene. Zenako Cleaning Co. provides specialized deep cleaning for all mattress sizes and types—including memory foam and spring—to restore a healthy sleeping environment.
+                  While bedding is washed regularly, mattresses often accumulate sweat, skin cells, and allergens that affect sleep quality and hygiene. Zenako Cleaning Co. provides specialized deep cleaning for all mattress sizes and types, including memory foam and spring, to restore a healthy sleeping environment.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <Link

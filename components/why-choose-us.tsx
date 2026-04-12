@@ -36,7 +36,7 @@ export async function WhyChooseUs() {
     <section className="py-20 lg:py-28 bg-card overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-        {/* Header — editorial left-right split */}
+        {/* Header - editorial left-right split */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16 lg:mb-20 border-b border-border pb-10">
           <div className="max-w-xl">
             <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#6fbf00" }}>Why Zenako</span>
@@ -46,11 +46,11 @@ export async function WhyChooseUs() {
             </h2>
           </div>
           <p className="lg:max-w-sm text-base lg:text-lg leading-relaxed text-muted-foreground lg:text-right">
-            Every visit, without exception — we prioritise your satisfaction and build lasting relationships with our clients.
+            Every visit, without exception, we prioritise your satisfaction and build lasting relationships with our clients.
           </p>
         </div>
 
-        {/* Feature cards — asymmetric two-column stagger */}
+        {/* Feature cards - asymmetric two-column stagger */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border mb-px">
           {features.map((feature: any, idx: number) => {
             const Icon = iconMap[feature.icon] || GearIcon
@@ -106,7 +106,7 @@ export async function WhyChooseUs() {
           })}
         </div>
 
-        {/* Owner-Backed Guarantee — full-width dark band */}
+        {/* Owner-Backed Guarantee - full-width dark band */}
         <div className="mt-px bg-foreground text-background p-8 lg:p-12">
           <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-16">
             <div className="lg:w-1/2">
