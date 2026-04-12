@@ -35,26 +35,26 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const payload = await getPayload({ config: configPromise })
-  const { docs } = await payload.find({
-    collection: 'services',
-    where: { slug: { equals: slug } },
-    limit: 1,
-  })
   
-  let service = docs[0] as any
+  let service: any = null
   
-  if (!service) {
-    const staticService = getServiceBySlug(slug)
-    if (staticService) {
-      service = {
-        title: staticService.title,
-        description: staticService.description,
-        longDescription: staticService.longDescription,
-        image: staticService.image,
-        category: staticService.category,
-      }
+  const staticService = getServiceBySlug(slug)
+  if (staticService) {
+    service = {
+      title: staticService.title,
+      description: staticService.description,
+      longDescription: staticService.longDescription,
+      image: staticService.image,
+      category: staticService.category,
     }
+  } else {
+    const payload = await getPayload({ config: configPromise })
+    const { docs } = await payload.find({
+      collection: 'services',
+      where: { slug: { equals: slug } },
+      limit: 1,
+    })
+    service = docs[0] as any
   }
 
   if (!service) return { title: "Service Not Found" }
@@ -89,21 +89,13 @@ export default async function ServicePage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const payload = await getPayload({ config: configPromise })
 
-  const { docs } = await payload.find({
-    collection: 'services',
-    where: { slug: { equals: slug } },
-    limit: 1,
-  })
-  
-  let service = docs[0] as any
+  let service: any = null
   let isStatic = false
 
-  if (!service) {
-    const staticService = getServiceBySlug(slug)
-    if (!staticService) notFound()
-    
+  const staticService = getServiceBySlug(slug)
+  
+  if (staticService) {
     // Map static service to the expected format
     service = {
       ...staticService,
@@ -112,8 +104,19 @@ export default async function ServicePage({
       process: staticService.process.map((p, i) => ({ id: `p-${i}`, item: p })),
     }
     isStatic = true
+  } else {
+    const payload = await getPayload({ config: configPromise })
+    const { docs } = await payload.find({
+      collection: 'services',
+      where: { slug: { equals: slug } },
+      limit: 1,
+    })
+    service = docs[0] as any
   }
 
+  if (!service) notFound()
+
+  const payload = await getPayload({ config: configPromise })
   const { docs: relatedDocs } = await payload.find({
     collection: 'services',
     where: {
