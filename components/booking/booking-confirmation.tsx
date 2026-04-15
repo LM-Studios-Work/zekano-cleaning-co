@@ -56,10 +56,10 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
         </div>
         <h2 className="text-2xl font-bold text-foreground">Booking Confirmed!</h2>
         <p className="mt-2 text-muted-foreground">
-          Your booking number is: <span className="font-semibold text-primary">{bookingNumber}</span>
+          Your booking details have been sent to WhatsApp
         </p>
         <p className="mt-1 text-sm text-muted-foreground">
-          A confirmation email has been sent to {bookingData.email}
+          Reference: <span className="font-semibold text-primary">{bookingNumber}</span>
         </p>
       </div>
 
@@ -191,11 +191,11 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
           <ol className="space-y-3 text-muted-foreground">
             <li className="flex items-start gap-3">
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">1</span>
-              <span>You'll receive a confirmation email with your booking details and receipt.</span>
+              <span>Your booking details have been sent to our WhatsApp. We'll review your request and confirm availability.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">2</span>
-              <span>Our team will contact you 24 hours before your appointment to confirm.</span>
+              <span>We'll contact you via WhatsApp or call to confirm your appointment and provide an accurate quote.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-medium">3</span>

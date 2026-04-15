@@ -1,28 +1,34 @@
 import Link from "next/link"
 import { PhoneIcon, MailIcon, ClockIcon, MapPinIcon } from "@/components/icons"
 
-const services = [
+const residentialServices = [
   { name: "Standard House Cleaning", href: "/services/standard-house-cleaning" },
   { name: "Deep Cleaning", href: "/services/deep-cleaning" },
   { name: "Move-in/Move-out", href: "/services/move-in-move-out-cleaning" },
-  { name: "Office Cleaning", href: "/services/office-cleaning" },
-  { name: "Carpet Cleaning", href: "/services/carpet-cleaning" },
-  { name: "Pest Control", href: "/services/pest-control" },
 ]
 
-const quickLinks = [
-  { name: "About Us", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Book Online", href: "/book" },
-  { name: "Contact", href: "/contact" },
-  { name: "Get a Free Quote", href: "/contact" },
+const commercialServices = [
+  { name: "Office Cleaning", href: "/services/office-cleaning" },
+  { name: "Small Business Cleaning", href: "/services/small-business-cleaning" },
 ]
+
+const specializedServices = [
+  { name: "Carpet Cleaning", href: "/services/carpet-cleaning" },
+  { name: "Upholstery Cleaning", href: "/services/upholstery-furniture-cleaning" },
+  { name: "Mattress Cleaning", href: "/services/mattress-cleaning" },
+  { name: "Curtain Cleaning", href: "/services/curtain-cleaning" },
+  { name: "Roof Cleaning", href: "/services/roof-cleaning" },
+  { name: "Drain Cleaning", href: "/services/drain-cleaning" },
+  { name: "Pest Control", href: "/services/pest-control" },
+  { name: "Disinfection Services", href: "/services/disinfection-services" },
+]
+
 
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Info */}
           <div className="space-y-4">
             <div>
@@ -48,64 +54,87 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Services - Organized by Category */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-3 lg:space-y-2">
-              {services.map((service) => (
+            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <div className="space-y-4">
+              {/* Residential */}
+              <div>
+                <h4 className="text-xs uppercase font-semibold opacity-70 mb-2">Residential</h4>
+                <ul className="space-y-1 lg:space-y-1">
+                  {residentialServices.map((service) => (
+                    <li key={service.name}>
+                      <Link href={service.href} className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+                        {service.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Commercial */}
+              <div>
+                <h4 className="text-xs uppercase font-semibold opacity-70 mb-2">Commercial</h4>
+                <ul className="space-y-1 lg:space-y-1">
+                  {commercialServices.map((service) => (
+                    <li key={service.name}>
+                      <Link href={service.href} className="text-sm opacity-80 hover:opacity-100 transition-opacity">
+                        {service.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Specialized Services + Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">More Services</h3>
+            <ul className="space-y-1 lg:space-y-1 mb-6">
+              {specializedServices.slice(0, 5).map((service) => (
                 <li key={service.name}>
-                  <Link href={service.href} className="text-base lg:text-sm opacity-80 hover:opacity-100 transition-opacity">
+                  <Link href={service.href} className="text-sm opacity-80 hover:opacity-100 transition-opacity">
                     {service.name}
                   </Link>
                 </li>
               ))}
             </ul>
+            <Link href="/services" className="text-sm font-semibold opacity-90 hover:opacity-100 transition-opacity">
+              View all services →
+            </Link>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-3 lg:space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-base lg:text-sm opacity-80 hover:opacity-100 transition-opacity">
-                    {link.name}
-                  </Link>
+          {/* Service Areas + Contact */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
+              <ul className="space-y-1 lg:space-y-1">
+                {["Sandton", "Randburg", "Fourways", "Midrand", "Bryanston", "Johannesburg North"].map((area) => (
+                  <li key={area} className="text-sm opacity-80 flex items-center gap-2">
+                    <MapPinIcon className="h-3 w-3 lg:h-3 lg:w-3 shrink-0" />
+                    {area}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+              <ul className="space-y-2 lg:space-y-2">
+                <li className="flex items-center gap-2">
+                  <PhoneIcon className="h-4 w-4 shrink-0" />
+                  <a href="tel:+27844020733" className="text-sm opacity-80 hover:opacity-100 transition-opacity">084 402 0733</a>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Service Areas */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
-            <ul className="space-y-2 lg:space-y-1">
-              {["Sandton", "Randburg", "Fourways", "Midrand", "Bryanston", "Johannesburg North"].map((area) => (
-                <li key={area} className="text-base lg:text-sm opacity-80 flex items-center gap-2 lg:gap-1.5">
-                  <MapPinIcon className="h-4 w-4 lg:h-3 lg:w-3 shrink-0" />
-                  {area}
+                <li className="flex items-center gap-2">
+                  <MailIcon className="h-4 w-4 shrink-0" />
+                  <a href="mailto:info@zenakocleaning.co.za" className="text-sm opacity-80 hover:opacity-100 transition-opacity">info@zenakocleaning.co.za</a>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-4 lg:space-y-3">
-              <li className="flex items-center gap-3">
-                <PhoneIcon className="h-5 w-5 shrink-0" />
-                <a href="tel:+27844020733" className="text-base lg:text-sm opacity-80 hover:opacity-100 transition-opacity">084 402 0733</a>
-              </li>
-              <li className="flex items-center gap-3">
-                <MailIcon className="h-5 w-5 shrink-0" />
-                <a href="mailto:info@zenakocleaning.co.za" className="text-base lg:text-sm opacity-80 hover:opacity-100 transition-opacity">info@zenakocleaning.co.za</a>
-              </li>
-              <li className="flex items-start gap-3">
-                <ClockIcon className="h-5 w-5 shrink-0 mt-0.5" />
-                <span className="text-base lg:text-sm opacity-80">Mon-Fri: 08:00 am to 05:00 pm<br />Sat: 09:00 am to 02:00 pm</span>
-              </li>
-            </ul>
+                <li className="flex items-start gap-2">
+                  <ClockIcon className="h-4 w-4 shrink-0 mt-0.5" />
+                  <span className="text-sm opacity-80">Mon-Fri: 8am-5pm<br />Sat: 9am-2pm</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 

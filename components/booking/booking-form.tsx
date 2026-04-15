@@ -205,9 +205,55 @@ export function BookingForm({ onComplete }: BookingFormProps) {
 
   const handleSubmit = async () => {
     setIsSubmitting(true)
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+
+    // Format booking details for WhatsApp
+    const selectedService = allServices.find(s => s.slug === formData.service)
+    const selectedFreq = frequencies.find(f => f.id === formData.frequency)
+
+    const bookingMessage = `
+*New Cleaning Booking Request*
+
+*Service Details*
+📍 Service: ${selectedService?.title}
+⏱️ Frequency: ${selectedFreq?.name}
+💰 Discount: ${selectedFreq?.discount}
+
+*Property Details*
+🏠 Property Type: ${formData.propertyType}
+${formData.bedrooms ? `🛏️ Bedrooms: ${formData.bedrooms}` : ''}
+${formData.bathrooms ? `🚿 Bathrooms: ${formData.bathrooms}` : ''}
+${formData.extras.length > 0 ? `✨ Add-ons: ${formData.extras.map(e => {
+  const extra = currentConfig.extras.find(ex => ex.id === e)
+  return extra?.name || e
+}).join(', ')}` : ''}
+
+*Schedule*
+📅 Date: ${formData.date ? formData.date.toLocaleDateString('en-ZA') : 'Not selected'}
+🕐 Time: ${formData.timeSlot}
+
+*Customer Details*
+👤 Name: ${formData.firstName} ${formData.lastName}
+📧 Email: ${formData.email}
+📱 Phone: ${formData.phone}
+
+*Address*
+📍 ${formData.address}, ${formData.city} ${formData.postalCode}
+
+${formData.specialInstructions ? `*Special Instructions*\n${formData.specialInstructions}` : ''}
+    `.trim()
+
+    // Send to WhatsApp
+    const phoneNumber = "27844020733"
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(bookingMessage)}`
+
+    // Simulate API call before opening WhatsApp
+    await new Promise((resolve) => setTimeout(resolve, 800))
     setIsSubmitting(false)
+
+    // Open WhatsApp in new window
+    window.open(whatsappUrl, '_blank')
+
+    // Still call onComplete to show confirmation
     onComplete(formData)
   }
 
@@ -605,7 +651,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
           </Button>
         ) : (
           <Button onClick={handleSubmit} disabled={!canProceed() || isSubmitting} className="gap-2">
-            {isSubmitting ? "Booking..." : "Confirm Booking"}
+            {isSubmitting ? "Sending..." : "Send via WhatsApp"}
             <Check className="h-4 w-4" />
           </Button>
         )}
