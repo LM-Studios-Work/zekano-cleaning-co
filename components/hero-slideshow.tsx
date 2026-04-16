@@ -71,15 +71,12 @@ export function HeroSlideshow() {
       {/* Content - left aligned, no fluff */}
       <div className="relative z-10 flex h-full items-center pt-20 md:pt-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
-          <div className="max-w-2xl">
+          <div key={currentSlide} className="max-w-2xl animate-in fade-in slide-in-from-left-8 duration-700">
             <p className="mb-3 text-sm md:text-xs font-bold uppercase tracking-[0.2em] text-white/70">
               Cleaning services in Johannesburg
             </p>
 
-            <h1
-              key={currentSlide}
-              className="text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.05]"
-            >
+            <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.05]">
               {slides[currentSlide].heading.split("\n").map((line, i) => (
                 <span key={i}>
                   {line}
@@ -95,14 +92,14 @@ export function HeroSlideshow() {
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
+                className="btn-lift btn-green-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white"
                 style={{ backgroundColor: "#6fbf00" }}
               >
                 Book a Clean
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200"
+                className="btn-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200"
               >
                 Get a Free Quote
               </Link>

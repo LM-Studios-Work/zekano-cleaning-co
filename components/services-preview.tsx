@@ -71,8 +71,8 @@ export function ServicesPreview() {
         {/* CTA Button */}
         <div className="flex justify-center mt-12 lg:mt-16">
           <Link
-            href="https://www.zenakocleaning.co.za/services"
-            className="inline-flex items-center justify-center px-8 py-3 lg:py-4 text-base lg:text-lg font-bold text-white rounded-lg transition-opacity duration-200 hover:opacity-90"
+            href="/services"
+            className="btn-lift btn-green-lift inline-flex items-center justify-center px-8 py-3 lg:py-4 text-base lg:text-lg font-bold text-white"
             style={{ backgroundColor: "#6fbf00" }}
           >
             See All 15+ Services
