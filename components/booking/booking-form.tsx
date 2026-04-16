@@ -30,13 +30,23 @@ const frequencies = [
   { id: "monthly", name: "Monthly", discount: "5% off" },
 ]
 
-const timeSlots = [
-  "8:00 AM - 10:00 AM",
-  "10:00 AM - 12:00 PM",
-  "12:00 PM - 2:00 PM",
-  "2:00 PM - 4:00 PM",
-  "4:00 PM - 6:00 PM",
+// Mon–Fri 08:00–17:00 · Sat 09:00–14:00 · Sun closed
+const weekdaySlots = [
+  "8:00 AM – 10:00 AM",
+  "10:00 AM – 12:00 PM",
+  "12:00 PM – 2:00 PM",
+  "2:00 PM – 4:00 PM",
 ]
+
+const saturdaySlots = [
+  "9:00 AM – 11:00 AM",
+  "11:00 AM – 1:00 PM",
+]
+
+const getTimeSlots = (date?: Date) => {
+  if (!date) return weekdaySlots
+  return date.getDay() === 6 ? saturdaySlots : weekdaySlots
+}
 
 const getCategoryConfig = (serviceSlug: string) => {
   const service = allServices.find(s => s.slug === serviceSlug);
@@ -249,7 +259,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
 
       {/* Step 1: Service Selection */}
       {step === 1 && (
-        <Card className="border-border">
+        <Card className="border-border animate-in fade-in slide-in-from-bottom-4 duration-300">
           <CardHeader>
             <CardTitle className="text-card-foreground">Select Your Service</CardTitle>
             <CardDescription>Choose the type of cleaning service you need</CardDescription>
@@ -338,7 +348,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
 
       {/* Step 2: Property Details */}
       {step === 2 && (
-        <Card className="border-border">
+        <Card className="border-border animate-in fade-in slide-in-from-bottom-4 duration-300">
           <CardHeader>
             <CardTitle className="text-card-foreground">Property Details</CardTitle>
             <CardDescription>Tell us about your property so we can provide an accurate quote</CardDescription>
@@ -446,7 +456,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
 
       {/* Step 3: Date & Time */}
       {step === 3 && (
-        <Card className="border-border">
+        <Card className="border-border animate-in fade-in slide-in-from-bottom-4 duration-300">
           <CardHeader>
             <CardTitle className="text-card-foreground">Select Date & Time</CardTitle>
             <CardDescription>Choose your preferred cleaning date and time slot</CardDescription>
@@ -458,20 +468,28 @@ export function BookingForm({ onComplete }: BookingFormProps) {
                 <Calendar
                   mode="single"
                   selected={formData.date}
-                  onSelect={(date) => updateFormData("date", date)}
+                  onSelect={(date) => {
+                    updateFormData("date", date)
+                    updateFormData("timeSlot", "")
+                  }}
                   disabled={(date) => date < new Date() || date.getDay() === 0}
                   className="rounded-md border border-border"
                 />
               </div>
               <div className="flex-1">
                 <Label className="text-foreground mb-3 block">Select Time Slot</Label>
+                <p className="text-xs text-muted-foreground mb-3">
+                  {formData.date?.getDay() === 6
+                    ? "Saturday hours: 09:00 am – 02:00 pm"
+                    : "Mon–Fri hours: 08:00 am – 05:00 pm"}
+                </p>
                 <div className="space-y-3">
-                  {timeSlots.map((slot) => (
+                  {getTimeSlots(formData.date).map((slot) => (
                     <button
                       key={slot}
                       type="button"
                       onClick={() => updateFormData("timeSlot", slot)}
-                      className={`w-full p-3 rounded-lg border-2 text-center transition-all ${
+                      className={`slot-btn w-full p-3 rounded-lg border-2 text-center ${
                         formData.timeSlot === slot
                           ? "border-primary bg-primary/5 text-foreground"
                           : "border-border hover:border-primary/50 text-foreground"
@@ -489,7 +507,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
 
       {/* Step 4: Contact Details */}
       {step === 4 && (
-        <Card className="border-border">
+        <Card className="border-border animate-in fade-in slide-in-from-bottom-4 duration-300">
           <CardHeader>
             <CardTitle className="text-card-foreground">Your Details</CardTitle>
             <CardDescription>Please provide your contact information and address</CardDescription>

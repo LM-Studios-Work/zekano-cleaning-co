@@ -115,10 +115,10 @@ export default function OfficeCleaningPage() {
                   </Link>
                   <a
                     href="tel:+27844020733"
-                    className="inline-flex items-center justify-center gap-2 rounded-none px-8 py-3 text-sm font-bold text-foreground border border-input transition-colors duration-200"
+                    className="btn-lift inline-flex items-center justify-center gap-2 rounded-none px-8 py-3 text-sm font-bold text-foreground border-2 border-foreground hover:bg-foreground hover:text-white transition-colors duration-200"
                   >
                     <PhoneIcon className="h-4 w-4" />
-                    Contact Us: +27 84 402 0733
+                    Call Us Today
                   </a>
                 </div>
               </div>

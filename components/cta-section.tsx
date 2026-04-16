@@ -19,7 +19,7 @@ export function CTASection() {
             <div className="flex flex-col gap-3">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base font-bold text-white transition-colors duration-200 hover:opacity-90"
+                className="btn-lift btn-green-lift inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base font-bold text-white"
                 style={{ backgroundColor: "#6fbf00" }}
               >
                 <CalendarIcon className="h-5 w-5" />
@@ -28,7 +28,7 @@ export function CTASection() {
 
               <a
                 href="tel:+27844020733"
-                className="inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base font-bold transition-colors duration-200 border-2 border-foreground text-foreground hover:bg-foreground hover:text-background"
+                className="btn-lift inline-flex items-center justify-center gap-3 px-8 py-5 lg:py-4 text-base font-bold transition-colors duration-200 border-2 border-foreground text-foreground hover:bg-foreground hover:text-white"
               >
                 <PhoneIcon className="h-5 w-5" />
                 Call 084 402 0733
