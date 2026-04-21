@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { HeroSlideshow } from "@/components/hero-slideshow"
+import { HeroSlideshow, type HeroSlide } from "@/components/hero-slideshow"
 import { ServiceAreas } from "@/components/service-areas"
 import { ServicesPreview } from "@/components/services-preview"
 import { BeforeAfter } from "@/components/before-after"
@@ -93,7 +93,29 @@ const localBusinessSchema = {
   priceRange: '$$',
 }
 
-export default function HomePage() {
+async function getHeroSlides(): Promise<HeroSlide[]> {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/api/hero-images?where[page][equals]=homepage&sort=order&limit=10`,
+      { next: { revalidate: 60 } }
+    )
+    if (!res.ok) return []
+    const data = await res.json()
+    return (data.docs ?? []).map((doc: Record<string, unknown>) => ({
+      image: (doc.url as string) ?? '',
+      alt: (doc.alt as string) ?? '',
+      label: (doc.label as string) ?? '',
+      heading: (doc.heading as string) ?? '',
+      description: (doc.description as string) ?? '',
+    }))
+  } catch {
+    return []
+  }
+}
+
+export default async function HomePage() {
+  const heroSlides = await getHeroSlides()
+
   return (
     <>
       <script
@@ -102,7 +124,7 @@ export default function HomePage() {
       />
       <Header />
       <main className="relative">
-        <HeroSlideshow />
+        <HeroSlideshow slides={heroSlides} />
         <ServiceAreas />
         <ServicesPreview />
         <BeforeAfter />

@@ -5,7 +5,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { PhoneIcon } from "@/components/icons"
 
-const slides = [
+export type HeroSlide = {
+  image: string
+  alt: string
+  label: string
+  heading: string
+  description: string
+}
+
+const FALLBACK_SLIDES: HeroSlide[] = [
   {
     image: "/home_page_heros/homes_hero.webp",
     alt: "House cleaning in Johannesburg",
@@ -29,7 +37,8 @@ const slides = [
   },
 ]
 
-export function HeroSlideshow() {
+export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
+  const activeSlides = slides && slides.length > 0 ? slides : FALLBACK_SLIDES
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const goToSlide = useCallback((index: number) => {
@@ -39,16 +48,16 @@ export function HeroSlideshow() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
+      setCurrentSlide((prev) => (prev + 1) % activeSlides.length)
     }, 5000)
     return () => clearInterval(interval)
-  }, [])
+  }, [activeSlides.length])
 
   return (
     <>
     <section className="relative h-[75vh] md:h-screen min-h-[500px] md:min-h-[600px] w-full overflow-hidden">
       {/* Slideshow Background */}
-      {slides.map((slide, index) => (
+      {activeSlides.map((slide, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-700 ${
@@ -77,16 +86,16 @@ export function HeroSlideshow() {
             </p>
 
             <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.05]">
-              {slides[currentSlide].heading.split("\n").map((line, i) => (
+              {activeSlides[currentSlide].heading.split("\n").map((line, i) => (
                 <span key={i}>
                   {line}
-                  {i < slides[currentSlide].heading.split("\n").length - 1 && <br />}
+                  {i < activeSlides[currentSlide].heading.split("\n").length - 1 && <br />}
                 </span>
               ))}
             </h1>
 
             <p className="mt-5 text-base md:text-sm text-white/80 leading-relaxed max-w-md">
-              {slides[currentSlide].description}
+              {activeSlides[currentSlide].description}
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
@@ -121,7 +130,7 @@ export function HeroSlideshow() {
       <div className="hidden md:block absolute bottom-[5%] left-0 right-0 z-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex gap-0">
-            {slides.map((slide, index) => (
+            {activeSlides.map((slide, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
