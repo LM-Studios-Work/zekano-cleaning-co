@@ -109,10 +109,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20">
-          <p className="text-center text-sm opacity-80">
+        <div className="mt-12 pt-8 border-t border-primary-foreground/20 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-sm opacity-80">
             &copy; {new Date().getFullYear()} Zenako Cleaning Co. Johannesburg, South Africa.
           </p>
+          <div className="flex items-center gap-4 text-sm opacity-80">
+            <Link href="/privacy" className="hover:opacity-100 transition-opacity">
+              Privacy Policy
+            </Link>
+            <span className="opacity-40">|</span>
+            <Link href="/terms" className="hover:opacity-100 transition-opacity">
+              Terms &amp; Conditions
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
