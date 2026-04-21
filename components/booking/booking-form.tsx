@@ -124,8 +124,6 @@ export function BookingForm({ onComplete }: BookingFormProps) {
     postalCode: "",
     specialInstructions: "",
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
   const totalSteps = 4
   const currentConfig = getCategoryConfig(formData.service)
 
@@ -213,12 +211,49 @@ export function BookingForm({ onComplete }: BookingFormProps) {
     }
   }
 
-  const handleSubmit = async () => {
-    setIsSubmitting(true)
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    onComplete(formData)
+  const handleSubmit = () => {
+    const selectedService = allServices.find(s => s.slug === formData.service)
+    const selectedFrequency = frequencies.find(f => f.id === formData.frequency)
+    const config = getCategoryConfig(formData.service)
+    const selectedExtras = formData.extras
+      .map(id => config.extras.find(e => e.id === id)?.name)
+      .filter(Boolean)
+      .join(', ') || 'None'
+    const formattedDate = formData.date
+      ? formData.date.toLocaleDateString('en-ZA', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+      : 'Not selected'
+
+    const lines = [
+      'Hi Zenako Cleaning! I would like to book a cleaning service.',
+      '',
+      `*Service:* ${selectedService?.name ?? formData.service}`,
+      `*Frequency:* ${selectedFrequency?.name ?? formData.frequency}`,
+      `*Property Type:* ${formData.propertyType}`,
+    ]
+
+    if (config.showBedBath) {
+      lines.push(`*Bedrooms:* ${formData.bedrooms}`)
+      lines.push(`*Bathrooms:* ${formData.bathrooms}`)
+    }
+
+    lines.push(
+      `*Extras:* ${selectedExtras}`,
+      `*Date:* ${formattedDate}`,
+      `*Time:* ${formData.timeSlot}`,
+      '',
+      '*Contact Details:*',
+      `Name: ${formData.firstName} ${formData.lastName}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
+      `Address: ${formData.address}, ${formData.city}, ${formData.postalCode}`,
+    )
+
+    if (formData.specialInstructions) {
+      lines.push(`Special Instructions: ${formData.specialInstructions}`)
+    }
+
+    const encodedMessage = encodeURIComponent(lines.join('\n'))
+    window.open('https://wa.me/27844020733?text=' + encodedMessage, '_blank')
   }
 
   return (
@@ -622,8 +657,8 @@ export function BookingForm({ onComplete }: BookingFormProps) {
             <ChevronRight className="h-4 w-4" />
           </Button>
         ) : (
-          <Button onClick={handleSubmit} disabled={!canProceed() || isSubmitting} className="gap-2">
-            {isSubmitting ? "Booking..." : "Confirm Booking"}
+          <Button onClick={handleSubmit} disabled={!canProceed()} className="gap-2">
+            Confirm Booking
             <Check className="h-4 w-4" />
           </Button>
         )}
