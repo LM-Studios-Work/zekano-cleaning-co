@@ -114,7 +114,7 @@ export default function OfficeCleaningPage() {
                     Request a Quote
                   </Link>
                   <a
-                    href="tel:+27844020733"
+                    href="tel:+27657018482"
                     className="btn-lift inline-flex items-center justify-center gap-2 rounded-none px-8 py-3 text-sm font-bold text-foreground border-2 border-foreground hover:bg-foreground hover:text-white transition-colors duration-200"
                   >
                     <PhoneIcon className="h-4 w-4" />
@@ -281,7 +281,7 @@ export default function OfficeCleaningPage() {
                 </h2>
                 <div className="mt-4 flex flex-col gap-2 text-white/90">
                     <div><strong>Email:</strong> info@zenakocleaning.co.za</div>
-                    <div><strong>Phone:</strong> +27 84 402 0733</div>
+                    <div><strong>Phone:</strong> +27 65 701 8482</div>
                     <div><strong>Address:</strong> Johannesburg, Gauteng, ZA</div>
                 </div>
               </div>

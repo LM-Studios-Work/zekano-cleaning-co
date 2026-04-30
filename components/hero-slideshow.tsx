@@ -120,9 +120,9 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
       {/* Hotline - desktop, bottom-right */}
       <div className="hidden md:block absolute right-6 lg:right-8 bottom-16 lg:bottom-24 z-30 p-5 w-72" style={{ backgroundColor: "#1A9AD2" }}>
         <p className="text-white text-[10px] uppercase tracking-[0.2em] font-bold mb-2">Call now:</p>
-        <a href="tel:+27844020733" className="flex items-center gap-3 text-white hover:text-white/80 transition-colors">
+        <a href="tel:+27657018482" className="flex items-center gap-3 text-white hover:text-white/80 transition-colors">
           <PhoneIcon className="h-5 w-5 flex-shrink-0" />
-          <span className="text-xl font-black">084 402 0733</span>
+          <span className="text-xl font-black">065 701 8482</span>
         </a>
       </div>
 
@@ -152,9 +152,9 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
     {/* Mobile hotline - below hero */}
     <div className="md:hidden relative z-20 -mt-6 mx-6">
       <div className="p-5 text-center" style={{ backgroundColor: "#1A9AD2" }}>
-        <a href="tel:+27844020733" className="inline-flex items-center gap-3 text-white">
+        <a href="tel:+27657018482" className="inline-flex items-center gap-3 text-white">
           <PhoneIcon className="h-6 w-6" />
-          <span className="text-xl font-black">084 402 0733</span>
+          <span className="text-xl font-black">065 701 8482</span>
         </a>
       </div>
     </div>

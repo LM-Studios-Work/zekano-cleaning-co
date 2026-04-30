@@ -148,7 +148,7 @@ export default async function ServicePage({
     provider: {
       '@type': 'LocalBusiness',
       name: 'Zenako Cleaning Co.',
-      telephone: '+27844020733',
+      telephone: '+27657018482',
       url: SITE_URL,
     },
     areaServed: [
@@ -314,11 +314,11 @@ export default async function ServicePage({
                   Book Now
                 </Link>
                 <a
-                  href="tel:+27844020733"
+                  href="tel:+27657018482"
                   className="inline-flex items-center justify-center gap-2 rounded px-8 py-3 text-sm font-semibold text-white border-2 border-white/70 hover:bg-white hover:text-gray-900 transition-colors duration-200"
                 >
                   <PhoneIcon className="h-4 w-4" />
-                  Call 084 402 0733
+                  Call 065 701 8482
                 </a>
               </div>
             </div>

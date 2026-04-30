@@ -22,8 +22,8 @@ const contactInfo = [
   {
     icon: PhoneIcon,
     title: "Phone",
-    details: "084 402 0733",
-    action: "tel:+27844020733",
+    details: "065 701 8482",
+    action: "tel:+27657018482",
     actionText: "Call us",
   },
   {
@@ -66,7 +66,7 @@ export default function ContactPage() {
       `*Message:* ${formState.message}`,
     ].join('\n'))
 
-    window.open('https://wa.me/27844020733?text=' + encodedMessage, '_blank')
+    window.open('https://wa.me/27657018482?text=' + encodedMessage, '_blank')
   }
 
   return (
@@ -234,14 +234,14 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <Button variant="outline" className="w-full justify-start" asChild>
-                      <a href="tel:+27844020733">
+                      <a href="tel:+27657018482">
                         <PhoneIcon className="mr-3 h-5 w-5" style={{ color: "#1A9AD2" }} />
-                        Call Us: 084 402 0733
+                        Call Us: 065 701 8482
                       </a>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <a
-                        href="https://wa.me/27844020733"
+                        href="https://wa.me/27657018482"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

@@ -98,8 +98,8 @@ export default function PrivacyPage() {
                   </li>
                   <li>
                     <span className="font-medium text-foreground">Phone / WhatsApp:</span>{" "}
-                    <a href="tel:+27844020733" className="hover:underline" style={{ color: "#1A9AD2" }}>
-                      084 402 0733
+                    <a href="tel:+27657018482" className="hover:underline" style={{ color: "#1A9AD2" }}>
+                      065 701 8482
                     </a>
                   </li>
                 </ul>

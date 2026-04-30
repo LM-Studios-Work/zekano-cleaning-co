@@ -253,7 +253,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
     }
 
     const encodedMessage = encodeURIComponent(lines.join('\n'))
-    window.open('https://wa.me/27844020733?text=' + encodedMessage, '_blank')
+    window.open('https://wa.me/27657018482?text=' + encodedMessage, '_blank')
   }
 
   return (

@@ -218,7 +218,7 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
       {/* Contact Info */}
       <p className="text-center text-sm text-muted-foreground">
         Need to make changes? Contact us at{" "}
-        <a href="tel:+27844020733" className="text-primary hover:underline">084 402 0733</a>
+        <a href="tel:+27657018482" className="text-primary hover:underline">065 701 8482</a>
         {" "}or{" "}
         <a href="mailto:info@zenakocleaning.co.za" className="text-primary hover:underline">info@zenakocleaning.co.za</a>
       </p>

@@ -41,7 +41,7 @@ const localBusinessSchema = {
   name: 'Zenako Cleaning Co.',
   description: 'Professional cleaning services in Johannesburg for homes, offices, and commercial properties.',
   url: SITE_URL,
-  telephone: '+27844020733',
+  telephone: '+27657018482',
   email: 'info@zenakocleaning.co.za',
   address: {
     '@type': 'PostalAddress',
