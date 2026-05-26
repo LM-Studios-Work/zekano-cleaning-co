@@ -11,6 +11,9 @@ import { allServices } from "@/lib/services-data"
 export const metadata: Metadata = {
   title: "Specialised Cleaning Services in Johannesburg | Zenako",
   description: "Beyond standard cleaning. Roof cleaning, drain clearing, garden clean-ups, pest control, and disinfection services in Johannesburg.",
+  alternates: {
+    canonical: "/services/specialised-cleaning",
+  },
 }
 
 const categorySlug = "specialised-cleaning"

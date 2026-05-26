@@ -11,6 +11,9 @@ import { allServices } from "@/lib/services-data"
 export const metadata: Metadata = {
   title: "Professional Commercial Cleaning Services in Johannesburg | Zenako",
   description: "Reliable commercial and office cleaning services across Johannesburg. Keep your workspace healthy and clients impressed. Get a free custom quote today.",
+  alternates: {
+    canonical: "/services/commercial-cleaning",
+  },
 }
 
 const categorySlug = "commercial-cleaning"

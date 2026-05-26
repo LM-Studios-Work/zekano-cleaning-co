@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Professional Mattress Cleaning in Johannesburg | Zenako",
   description:
     "Zenako Cleaning Co. provides specialized deep cleaning for all mattress sizes and types to restore a healthy sleeping environment in Johannesburg.",
+  alternates: {
+    canonical: "/services/mattress-cleaning",
+  },
 }
 
 const whyUsPoints = [
