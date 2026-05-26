@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Regular House Cleaning in Johannesburg | Zenako",
   description:
     "Reliable, owner-supervised regular house cleaning for Johannesburg households. No lock-in contracts. Same cleaner every visit. Serving Sandton, Randburg, Fourways, Midrand, and Bryanston.",
+  alternates: {
+    canonical: "/services/standard-house-cleaning",
+  },
 }
 
 const checklistSections = [

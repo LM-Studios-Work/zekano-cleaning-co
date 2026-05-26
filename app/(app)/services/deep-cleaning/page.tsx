@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Professional Deep Cleaning Services in Johannesburg | Zenako",
   description:
     "Detail-focused deep cleaning for a fresh, hygienic home. Owner-supervised teams serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg. 100% Satisfaction Guarantee.",
+  alternates: {
+    canonical: "/services/deep-cleaning",
+  },
 }
 
 const includedSections = [

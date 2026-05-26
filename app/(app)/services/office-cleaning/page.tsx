@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Professional Office Cleaning Services in Johannesburg | Zenako",
   description:
     "Your workplace says a lot about your business. A clean, well-maintained office creates a positive first impression. Serving Sandton, Randburg, Fourways, Midrand, and Bryanston.",
+  alternates: {
+    canonical: "/services/office-cleaning",
+  },
 }
 
 const whyUsPoints = [

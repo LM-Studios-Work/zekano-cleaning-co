@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Professional Upholstery Cleaning Services in Johannesburg | Zenako",
   description:
     "Zenako Cleaning Co. provides safe and gentle professional cleaning services for all upholstered lounge suites and leather furnishings in Johannesburg.",
+  alternates: {
+    canonical: "/services/upholstery-furniture-cleaning",
+  },
 }
 
 const importancePoints = [

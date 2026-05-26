@@ -11,6 +11,9 @@ import { allServices } from "@/lib/services-data"
 export const metadata: Metadata = {
   title: "Upholstery & Fabric Cleaning Services in Johannesburg | Zenako",
   description: "Professional upholstery and fabric cleaning in Johannesburg. Sofa, mattress, curtain, and carpet deep cleaning. Safe, effective, and reliable.",
+  alternates: {
+    canonical: "/services/upholstery-and-fabric",
+  },
 }
 
 const categorySlug = "upholstery-and-fabric"

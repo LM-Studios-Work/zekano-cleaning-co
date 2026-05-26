@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Professional Carpet Steam Cleaning in Johannesburg | Zenako",
   description:
     "Zenako Cleaning Co. provides professional carpet steam cleaning using Hot Water Extraction. Serving Sandton, Randburg, Fourways, Midrand, and Bryanston.",
+  alternates: {
+    canonical: "/services/carpet-cleaning",
+  },
 }
 
 const whyUsPoints = [

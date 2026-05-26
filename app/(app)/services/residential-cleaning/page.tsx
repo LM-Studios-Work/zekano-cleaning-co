@@ -11,6 +11,9 @@ import { allServices } from "@/lib/services-data"
 export const metadata: Metadata = {
   title: "Top-Rated Residential Cleaning Services in Johannesburg | Zenako",
   description: "Expert residential cleaning services in Johannesburg. From standard maid service to deep cleans and move-in/move-out cleaning. Trusted by hundreds of families.",
+  alternates: {
+    canonical: "/services/residential-cleaning",
+  },
 }
 
 const categorySlug = "residential-cleaning"
