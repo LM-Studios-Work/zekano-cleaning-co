@@ -92,23 +92,7 @@ export function HeroSlideshow() {
               {slides[currentSlide].description}
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-              <Link
-                href="/book"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-colors duration-200 hover:opacity-90 w-full sm:w-auto text-center"
-                style={{ backgroundColor: "#6fbf00" }}
-              >
-                Book a Clean
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200 w-full sm:w-auto text-center"
-              >
-                Get Instant Quote
-              </Link>
-            </div>
-            
-            <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-white/90">
+            <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-white/90 mb-6">
               <div className="flex items-center gap-2">
                 <div className="flex text-[#6fbf00]">
                   {[...Array(5)].map((_, i) => (
@@ -124,6 +108,22 @@ export function HeroSlideshow() {
                 <div className="w-2 h-2 rounded-full bg-[#6fbf00] animate-pulse"></div>
                 <span className="text-sm font-bold">Replies within 15 minutes</span>
               </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+              <Link
+                href="/book"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-colors duration-200 hover:opacity-90 w-full sm:w-auto text-center"
+                style={{ backgroundColor: "#6fbf00" }}
+              >
+                Book a Clean
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200 w-full sm:w-auto text-center"
+              >
+                Get Instant Quote
+              </Link>
             </div>
           </div>
         </div>

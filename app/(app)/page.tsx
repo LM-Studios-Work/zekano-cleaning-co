@@ -10,7 +10,6 @@ import { ReviewsSection } from "@/components/reviews-section"
 import { FirstTimeOffer } from "@/components/first-time-offer"
 import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
-import { AboutUsSection } from "@/components/about-us-section"
 import { allServices } from "@/lib/services-data"
 
 export const revalidate = 60
@@ -105,7 +104,6 @@ export default function HomePage() {
       <main className="relative">
         <HeroSlideshow />
         <ServiceAreas />
-        <AboutUsSection />
         <ServicesPreview />
         <BeforeAfter />
         {/* Google reviews */}
