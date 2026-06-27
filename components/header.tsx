@@ -83,8 +83,8 @@ export function Header() {
             </div>
 
             {/* Phone */}
-            <a href="tel:+27844020733" className="text-sm md:text-base font-semibold hover:text-[#6fbf00] transition-colors text-white">
-              084 402 0733
+            <a href="tel:+27657018482" className="text-sm md:text-base font-semibold hover:text-[#6fbf00] transition-colors text-white">
+              065 701 8482
             </a>
           </div>
         </div>
@@ -298,9 +298,9 @@ export function Header() {
             <div className="text-left">
               <h4 className="font-bold text-gray-800 text-base mb-5">Contact Us:</h4>
 
-              <a href="tel:+27844020733" className="flex items-center gap-3 mb-4 text-gray-600 hover:text-[#6fbf00] transition-colors">
+              <a href="tel:+27657018482" className="flex items-center gap-3 mb-4 text-gray-600 hover:text-[#6fbf00] transition-colors">
                 <i className="fa-solid fa-phone text-[#6fbf00]"></i>
-                <span className="font-semibold">084 402 0733</span>
+                <span className="font-semibold">065 701 8482</span>
               </a>
 
               <div className="flex items-start gap-3 mb-4 text-gray-500 text-sm">
@@ -433,11 +433,11 @@ export function Header() {
 
           {/* Contact & CTA */}
           <div className="px-6 py-4 border-t border-gray-100 space-y-3">
-            <a href="tel:+27844020733" className="flex items-center gap-3 text-gray-700 font-medium">
+            <a href="tel:+27657018482" className="flex items-center gap-3 text-gray-700 font-medium">
               <span className="flex items-center justify-center h-8 w-8 rounded-full border-2 border-[#6fbf00] text-[#6fbf00]">
                 <i className="fa-solid fa-phone text-xs"></i>
               </span>
-              084 402 0733
+              065 701 8482
             </a>
             <Link
               href="/book"

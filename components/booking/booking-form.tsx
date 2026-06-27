@@ -30,13 +30,23 @@ const frequencies = [
   { id: "monthly", name: "Monthly", discount: "5% off" },
 ]
 
-const timeSlots = [
-  "8:00 AM - 10:00 AM",
-  "10:00 AM - 12:00 PM",
-  "12:00 PM - 2:00 PM",
-  "2:00 PM - 4:00 PM",
-  "4:00 PM - 6:00 PM",
+// Mon–Fri 08:00–17:00 · Sat 09:00–14:00 · Sun closed
+const weekdaySlots = [
+  "8:00 AM – 10:00 AM",
+  "10:00 AM – 12:00 PM",
+  "12:00 PM – 2:00 PM",
+  "2:00 PM – 4:00 PM",
 ]
+
+const saturdaySlots = [
+  "9:00 AM – 11:00 AM",
+  "11:00 AM – 1:00 PM",
+]
+
+const getTimeSlots = (date?: Date) => {
+  if (!date) return weekdaySlots
+  return date.getDay() === 6 ? saturdaySlots : weekdaySlots
+}
 
 const getCategoryConfig = (serviceSlug: string) => {
   const service = allServices.find(s => s.slug === serviceSlug);
@@ -114,8 +124,6 @@ export function BookingForm({ onComplete }: BookingFormProps) {
     postalCode: "",
     specialInstructions: "",
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
   const totalSteps = 4
   const currentConfig = getCategoryConfig(formData.service)
 
@@ -203,12 +211,49 @@ export function BookingForm({ onComplete }: BookingFormProps) {
     }
   }
 
-  const handleSubmit = async () => {
-    setIsSubmitting(true)
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    onComplete(formData)
+  const handleSubmit = () => {
+    const selectedService = allServices.find(s => s.slug === formData.service)
+    const selectedFrequency = frequencies.find(f => f.id === formData.frequency)
+    const config = getCategoryConfig(formData.service)
+    const selectedExtras = formData.extras
+      .map(id => config.extras.find(e => e.id === id)?.name)
+      .filter(Boolean)
+      .join(', ') || 'None'
+    const formattedDate = formData.date
+      ? formData.date.toLocaleDateString('en-ZA', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+      : 'Not selected'
+
+    const lines = [
+      'Hi Zenako Cleaning! I would like to book a cleaning service.',
+      '',
+      `*Service:* ${selectedService?.name ?? formData.service}`,
+      `*Frequency:* ${selectedFrequency?.name ?? formData.frequency}`,
+      `*Property Type:* ${formData.propertyType}`,
+    ]
+
+    if (config.showBedBath) {
+      lines.push(`*Bedrooms:* ${formData.bedrooms}`)
+      lines.push(`*Bathrooms:* ${formData.bathrooms}`)
+    }
+
+    lines.push(
+      `*Extras:* ${selectedExtras}`,
+      `*Date:* ${formattedDate}`,
+      `*Time:* ${formData.timeSlot}`,
+      '',
+      '*Contact Details:*',
+      `Name: ${formData.firstName} ${formData.lastName}`,
+      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
+      `Address: ${formData.address}, ${formData.city}, ${formData.postalCode}`,
+    )
+
+    if (formData.specialInstructions) {
+      lines.push(`Special Instructions: ${formData.specialInstructions}`)
+    }
+
+    const encodedMessage = encodeURIComponent(lines.join('\n'))
+    window.open('https://wa.me/27657018482?text=' + encodedMessage, '_blank')
   }
 
   return (
@@ -249,7 +294,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
 
       {/* Step 1: Service Selection */}
       {step === 1 && (
-        <Card className="border-border">
+        <Card className="border-border animate-in fade-in slide-in-from-bottom-4 duration-300">
           <CardHeader>
             <CardTitle className="text-card-foreground">Select Your Service</CardTitle>
             <CardDescription>Choose the type of cleaning service you need</CardDescription>
@@ -338,7 +383,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
 
       {/* Step 2: Property Details */}
       {step === 2 && (
-        <Card className="border-border">
+        <Card className="border-border animate-in fade-in slide-in-from-bottom-4 duration-300">
           <CardHeader>
             <CardTitle className="text-card-foreground">Property Details</CardTitle>
             <CardDescription>Tell us about your property so we can provide an accurate quote</CardDescription>
@@ -446,7 +491,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
 
       {/* Step 3: Date & Time */}
       {step === 3 && (
-        <Card className="border-border">
+        <Card className="border-border animate-in fade-in slide-in-from-bottom-4 duration-300">
           <CardHeader>
             <CardTitle className="text-card-foreground">Select Date & Time</CardTitle>
             <CardDescription>Choose your preferred cleaning date and time slot</CardDescription>
@@ -458,20 +503,28 @@ export function BookingForm({ onComplete }: BookingFormProps) {
                 <Calendar
                   mode="single"
                   selected={formData.date}
-                  onSelect={(date) => updateFormData("date", date)}
+                  onSelect={(date) => {
+                    updateFormData("date", date)
+                    updateFormData("timeSlot", "")
+                  }}
                   disabled={(date) => date < new Date() || date.getDay() === 0}
                   className="rounded-md border border-border"
                 />
               </div>
               <div className="flex-1">
                 <Label className="text-foreground mb-3 block">Select Time Slot</Label>
+                <p className="text-xs text-muted-foreground mb-3">
+                  {formData.date?.getDay() === 6
+                    ? "Saturday hours: 09:00 am – 02:00 pm"
+                    : "Mon–Fri hours: 08:00 am – 05:00 pm"}
+                </p>
                 <div className="space-y-3">
-                  {timeSlots.map((slot) => (
+                  {getTimeSlots(formData.date).map((slot) => (
                     <button
                       key={slot}
                       type="button"
                       onClick={() => updateFormData("timeSlot", slot)}
-                      className={`w-full p-3 rounded-lg border-2 text-center transition-all ${
+                      className={`slot-btn w-full p-3 rounded-lg border-2 text-center ${
                         formData.timeSlot === slot
                           ? "border-primary bg-primary/5 text-foreground"
                           : "border-border hover:border-primary/50 text-foreground"
@@ -489,7 +542,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
 
       {/* Step 4: Contact Details */}
       {step === 4 && (
-        <Card className="border-border">
+        <Card className="border-border animate-in fade-in slide-in-from-bottom-4 duration-300">
           <CardHeader>
             <CardTitle className="text-card-foreground">Your Details</CardTitle>
             <CardDescription>Please provide your contact information and address</CardDescription>
@@ -604,8 +657,8 @@ export function BookingForm({ onComplete }: BookingFormProps) {
             <ChevronRight className="h-4 w-4" />
           </Button>
         ) : (
-          <Button onClick={handleSubmit} disabled={!canProceed() || isSubmitting} className="gap-2">
-            {isSubmitting ? "Booking..." : "Confirm Booking"}
+          <Button onClick={handleSubmit} disabled={!canProceed()} className="gap-2">
+            Confirm Booking
             <Check className="h-4 w-4" />
           </Button>
         )}

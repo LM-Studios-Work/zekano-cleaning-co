@@ -5,7 +5,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { PhoneIcon } from "@/components/icons"
 
-const slides = [
+export type HeroSlide = {
+  image: string
+  alt: string
+  label: string
+  heading: string
+  description: string
+}
+
+const FALLBACK_SLIDES: HeroSlide[] = [
   {
     image: "/home_page_heros/homes_hero.webp",
     alt: "House cleaning in Johannesburg",
@@ -29,7 +37,8 @@ const slides = [
   },
 ]
 
-export function HeroSlideshow() {
+export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
+  const activeSlides = slides && slides.length > 0 ? slides : FALLBACK_SLIDES
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const goToSlide = useCallback((index: number) => {
@@ -39,16 +48,16 @@ export function HeroSlideshow() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
+      setCurrentSlide((prev) => (prev + 1) % activeSlides.length)
     }, 5000)
     return () => clearInterval(interval)
-  }, [])
+  }, [activeSlides.length])
 
   return (
     <>
     <section className="relative h-[75vh] md:h-screen min-h-[500px] md:min-h-[600px] w-full overflow-hidden">
       {/* Slideshow Background */}
-      {slides.map((slide, index) => (
+      {activeSlides.map((slide, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-700 ${
@@ -71,38 +80,35 @@ export function HeroSlideshow() {
       {/* Content - left aligned, no fluff */}
       <div className="relative z-10 flex h-full items-center pt-20 md:pt-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="mb-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/90">
-              Servicing Sandton, Bryanston, Fourways, Midrand, Randburg & Johannesburg
+          <div key={currentSlide} className="max-w-2xl animate-in fade-in slide-in-from-left-8 duration-700">
+            <p className="mb-3 text-sm md:text-xs font-bold uppercase tracking-[0.2em] text-white/70">
+              Cleaning services in Johannesburg
             </p>
 
-            <h1
-              key={currentSlide}
-              className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.1]"
-            >
-              {slides[currentSlide].heading.split("\n").map((line, i) => (
+            <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.05]">
+              {activeSlides[currentSlide].heading.split("\n").map((line, i) => (
                 <span key={i}>
                   {line}
-                  {i < slides[currentSlide].heading.split("\n").length - 1 && <br />}
+                  {i < activeSlides[currentSlide].heading.split("\n").length - 1 && <br />}
                 </span>
               ))}
             </h1>
 
-            <p className="mt-5 text-base md:text-lg text-white/90 leading-relaxed max-w-lg font-medium">
-              {slides[currentSlide].description}
+            <p className="mt-5 text-base md:text-sm text-white/80 leading-relaxed max-w-md">
+              {activeSlides[currentSlide].description}
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-colors duration-200 hover:opacity-90 w-full sm:w-auto text-center"
+                className="btn-lift btn-green-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white"
                 style={{ backgroundColor: "#6fbf00" }}
               >
                 Book a Clean
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200 w-full sm:w-auto text-center"
+                className="btn-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200"
               >
                 Get Instant Quote
               </Link>
@@ -132,9 +138,9 @@ export function HeroSlideshow() {
       {/* Hotline - desktop, bottom-right */}
       <div className="hidden md:block absolute right-6 lg:right-8 bottom-16 lg:bottom-24 z-30 p-5 w-72" style={{ backgroundColor: "#1A9AD2" }}>
         <p className="text-white text-[10px] uppercase tracking-[0.2em] font-bold mb-2">Call now:</p>
-        <a href="tel:+27844020733" className="flex items-center gap-3 text-white hover:text-white/80 transition-colors">
+        <a href="tel:+27657018482" className="flex items-center gap-3 text-white hover:text-white/80 transition-colors">
           <PhoneIcon className="h-5 w-5 flex-shrink-0" />
-          <span className="text-xl font-black">084 402 0733</span>
+          <span className="text-xl font-black">065 701 8482</span>
         </a>
       </div>
 
@@ -142,7 +148,7 @@ export function HeroSlideshow() {
       <div className="hidden md:block absolute bottom-[5%] left-0 right-0 z-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex gap-0">
-            {slides.map((slide, index) => (
+            {activeSlides.map((slide, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
@@ -164,9 +170,9 @@ export function HeroSlideshow() {
     {/* Mobile hotline - below hero */}
     <div className="md:hidden relative z-20 -mt-6 mx-6">
       <div className="p-5 text-center" style={{ backgroundColor: "#1A9AD2" }}>
-        <a href="tel:+27844020733" className="inline-flex items-center gap-3 text-white">
+        <a href="tel:+27657018482" className="inline-flex items-center gap-3 text-white">
           <PhoneIcon className="h-6 w-6" />
-          <span className="text-xl font-black">084 402 0733</span>
+          <span className="text-xl font-black">065 701 8482</span>
         </a>
       </div>
     </div>
