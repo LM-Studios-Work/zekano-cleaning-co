@@ -10,7 +10,7 @@ const slides = [
     image: "/home_page_heros/homes_hero.webp",
     alt: "House cleaning in Johannesburg",
     label: "01. Homes",
-    heading: "Professional Home\nCleaning.",
+    heading: "Premium Cleaning Services\nfor Homes & Businesses.",
     description: "Every surface, every corner, every room, maintained to a consistent standard your household can rely on.",
   },
   {
@@ -66,19 +66,19 @@ export function HeroSlideshow() {
       ))}
 
       {/* Dark overlay - high contrast */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Content - left aligned, no fluff */}
       <div className="relative z-10 flex h-full items-center pt-20 md:pt-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="mb-3 text-sm md:text-xs font-bold uppercase tracking-[0.2em] text-white/70">
-              Cleaning services in Johannesburg
+            <p className="mb-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/90">
+              Servicing Sandton, Bryanston, Fourways, Midrand, Randburg & Johannesburg
             </p>
 
             <h1
               key={currentSlide}
-              className="text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.05]"
+              className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.1]"
             >
               {slides[currentSlide].heading.split("\n").map((line, i) => (
                 <span key={i}>
@@ -88,24 +88,42 @@ export function HeroSlideshow() {
               ))}
             </h1>
 
-            <p className="mt-5 text-base md:text-sm text-white/80 leading-relaxed max-w-md">
+            <p className="mt-5 text-base md:text-lg text-white/90 leading-relaxed max-w-lg font-medium">
               {slides[currentSlide].description}
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white transition-colors duration-200 hover:opacity-90"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-colors duration-200 hover:opacity-90 w-full sm:w-auto text-center"
                 style={{ backgroundColor: "#6fbf00" }}
               >
                 Book a Clean
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200 w-full sm:w-auto text-center"
               >
-                Get a Free Quote
+                Get Instant Quote
               </Link>
+            </div>
+            
+            <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-white/90">
+              <div className="flex items-center gap-2">
+                <div className="flex text-[#6fbf00]">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <span className="text-sm font-bold">Top Rated Cleaners</span>
+              </div>
+              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-white/30"></div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[#6fbf00] animate-pulse"></div>
+                <span className="text-sm font-bold">Replies within 15 minutes</span>
+              </div>
             </div>
           </div>
         </div>
