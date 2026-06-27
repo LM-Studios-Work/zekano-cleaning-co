@@ -78,7 +78,6 @@ export default async function AboutPage() {
         <section className="py-16 lg:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
                 <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Our Story</span>
                 <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">
                   Delivering <span style={{ color: "#6fbf00" }}>Peace of Mind</span> Through Uncompromising Standards
