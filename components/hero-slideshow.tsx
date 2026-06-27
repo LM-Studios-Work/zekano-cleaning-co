@@ -78,7 +78,7 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
       <div className="absolute inset-0 bg-black/60" />
 
       {/* Content - left aligned, no fluff */}
-      <div className="relative z-10 flex h-full items-center pt-20 pb-24 lg:pb-32 md:pt-0">
+      <div className="relative z-10 flex h-full items-center pt-28 pb-24 lg:pt-32 lg:pb-32">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
           <div key={currentSlide} className="max-w-2xl animate-in fade-in slide-in-from-left-8 duration-700">
             <p className="mb-3 text-sm md:text-xs font-bold uppercase tracking-[0.2em] text-white/70">
