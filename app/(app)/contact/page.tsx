@@ -16,14 +16,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { PhoneIcon, MailIcon, ClockIcon, SendIcon, ChatIcon, MapPinIcon } from "@/components/icons"
+import { PhoneIcon, MailIcon, ClockIcon, ChatIcon, MapPinIcon } from "@/components/icons"
 
 const contactInfo = [
   {
     icon: PhoneIcon,
     title: "Phone",
-    details: "084 402 0733",
-    action: "tel:+27844020733",
+    details: "065 701 8482",
+    action: "tel:+27657018482",
     actionText: "Call us",
   },
   {
@@ -53,26 +53,20 @@ export default function ContactPage() {
     service: "",
     message: "",
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    const encodedMessage = encodeURIComponent([
+      'Hi Zenako Cleaning! I would like to get in touch.',
+      '',
+      `*Name:* ${formState.firstName} ${formState.lastName}`,
+      `*Email:* ${formState.email}`,
+      `*Phone:* ${formState.phone || 'Not provided'}`,
+      `*Service:* ${formState.service || 'Not specified'}`,
+      `*Message:* ${formState.message}`,
+    ].join('\n'))
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-    })
+    window.open('https://wa.me/27657018482?text=' + encodedMessage, '_blank')
   }
 
   return (
@@ -137,114 +131,94 @@ export default function ContactPage() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    {isSubmitted ? (
-                      <div className="text-center py-8">
-                        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(111, 191, 0, 0.1)", color: "#6fbf00" }}>
-                          <SendIcon className="h-8 w-8" />
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                        <div className="space-y-2">
+                          <Label htmlFor="firstName">First Name</Label>
+                          <Input
+                            id="firstName"
+                            placeholder="John"
+                            value={formState.firstName}
+                            onChange={(e) => setFormState({ ...formState, firstName: e.target.value })}
+                            required
+                          />
                         </div>
-                        <h3 className="text-xl font-semibold text-foreground">Message Received</h3>
-                        <p className="mt-2 text-muted-foreground">
-                          Thank you for contacting us. We will be in touch within 24 hours.
-                        </p>
-                        <Button
-                          className="mt-6"
-                          variant="outline"
-                          onClick={() => setIsSubmitted(false)}
-                        >
-                          Send Another Message
-                        </Button>
+                        <div className="space-y-2">
+                          <Label htmlFor="lastName">Last Name</Label>
+                          <Input
+                            id="lastName"
+                            placeholder="Doe"
+                            value={formState.lastName}
+                            onChange={(e) => setFormState({ ...formState, lastName: e.target.value })}
+                            required
+                          />
+                        </div>
                       </div>
-                    ) : (
-                      <form onSubmit={handleSubmit} className="space-y-6">
-                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                          <div className="space-y-2">
-                            <Label htmlFor="firstName">First Name</Label>
-                            <Input
-                              id="firstName"
-                              placeholder="John"
-                              value={formState.firstName}
-                              onChange={(e) => setFormState({ ...formState, firstName: e.target.value })}
-                              required
-                            />
-                          </div>
-                          <div className="space-y-2">
-                            <Label htmlFor="lastName">Last Name</Label>
-                            <Input
-                              id="lastName"
-                              placeholder="Doe"
-                              value={formState.lastName}
-                              onChange={(e) => setFormState({ ...formState, lastName: e.target.value })}
-                              required
-                            />
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="email">Email</Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            placeholder="john@example.com"
-                            value={formState.email}
-                            onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                            required
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="phone">Phone Number</Label>
-                          <Input
-                            id="phone"
-                            type="tel"
-                            placeholder="084 XXX XXXX"
-                            value={formState.phone}
-                            onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="service">Service Interested In</Label>
-                          <Select
-                            value={formState.service}
-                            onValueChange={(value) => setFormState({ ...formState, service: value })}
-                          >
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select a service" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="standard-cleaning">Standard House Cleaning</SelectItem>
-                              <SelectItem value="deep-cleaning">Deep Cleaning</SelectItem>
-                              <SelectItem value="move-cleaning">Move-in/Move-out Cleaning</SelectItem>
-                              <SelectItem value="office-cleaning">Office Cleaning</SelectItem>
-                              <SelectItem value="small-business">Small Business Cleaning</SelectItem>
-
-                              <SelectItem value="mattress-cleaning">Mattress Cleaning</SelectItem>
-                              <SelectItem value="curtain-cleaning">Curtain Cleaning</SelectItem>
-                              <SelectItem value="carpet-cleaning">Carpet Cleaning</SelectItem>
-                              <SelectItem value="upholstery-cleaning">Upholstery Cleaning</SelectItem>
-                              <SelectItem value="roof-cleaning">Roof Cleaning</SelectItem>
-                              <SelectItem value="drain-cleaning">Drain Cleaning</SelectItem>
-                              <SelectItem value="garden-cleanup">Garden Clean-ups</SelectItem>
-                              <SelectItem value="pest-control">Pest Control</SelectItem>
-                              <SelectItem value="disinfection">Disinfection Services</SelectItem>
-                              <SelectItem value="custom-package">Custom Cleaning Package</SelectItem>
-                              <SelectItem value="other">Other / General Inquiry</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="message">Message</Label>
-                          <Textarea
-                            id="message"
-                            placeholder="Tell us about your cleaning needs..."
-                            rows={4}
-                            value={formState.message}
-                            onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                            required
-                          />
-                        </div>
-                        <Button type="submit" className="w-full" disabled={isSubmitting}>
-                          {isSubmitting ? "Sending..." : "Send Message"}
-                        </Button>
-                      </form>
-                    )}
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email</Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="john@example.com"
+                          value={formState.email}
+                          onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                          required
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="phone">Phone Number</Label>
+                        <Input
+                          id="phone"
+                          type="tel"
+                          placeholder="084 XXX XXXX"
+                          value={formState.phone}
+                          onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="service">Service Interested In</Label>
+                        <Select
+                          value={formState.service}
+                          onValueChange={(value) => setFormState({ ...formState, service: value })}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select a service" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="standard-cleaning">Standard House Cleaning</SelectItem>
+                            <SelectItem value="deep-cleaning">Deep Cleaning</SelectItem>
+                            <SelectItem value="move-cleaning">Move-in/Move-out Cleaning</SelectItem>
+                            <SelectItem value="office-cleaning">Office Cleaning</SelectItem>
+                            <SelectItem value="small-business">Small Business Cleaning</SelectItem>
+                            <SelectItem value="mattress-cleaning">Mattress Cleaning</SelectItem>
+                            <SelectItem value="curtain-cleaning">Curtain Cleaning</SelectItem>
+                            <SelectItem value="carpet-cleaning">Carpet Cleaning</SelectItem>
+                            <SelectItem value="upholstery-cleaning">Upholstery Cleaning</SelectItem>
+                            <SelectItem value="roof-cleaning">Roof Cleaning</SelectItem>
+                            <SelectItem value="drain-cleaning">Drain Cleaning</SelectItem>
+                            <SelectItem value="garden-cleanup">Garden Clean-ups</SelectItem>
+                            <SelectItem value="pest-control">Pest Control</SelectItem>
+                            <SelectItem value="disinfection">Disinfection Services</SelectItem>
+                            <SelectItem value="custom-package">Custom Cleaning Package</SelectItem>
+                            <SelectItem value="other">Other / General Inquiry</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="message">Message</Label>
+                        <Textarea
+                          id="message"
+                          placeholder="Tell us about your cleaning needs..."
+                          rows={4}
+                          value={formState.message}
+                          onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                          required
+                        />
+                      </div>
+                      <Button type="submit" className="w-full">
+                        Send Message via WhatsApp
+                      </Button>
+                    </form>
                   </CardContent>
                 </Card>
               </div>
@@ -260,14 +234,14 @@ export default function ContactPage() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <Button variant="outline" className="w-full justify-start" asChild>
-                      <a href="tel:+27844020733">
+                      <a href="tel:+27657018482">
                         <PhoneIcon className="mr-3 h-5 w-5" style={{ color: "#1A9AD2" }} />
-                        Call Us: 084 402 0733
+                        Call Us: 065 701 8482
                       </a>
                     </Button>
                     <Button variant="outline" className="w-full justify-start" asChild>
                       <a
-                        href="https://wa.me/27844020733"
+                        href="https://wa.me/27657018482"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

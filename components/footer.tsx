@@ -95,7 +95,7 @@ export function Footer() {
             <ul className="space-y-4 lg:space-y-3">
               <li className="flex items-center gap-3">
                 <PhoneIcon className="h-5 w-5 shrink-0" />
-                <a href="tel:+27844020733" className="text-base lg:text-sm opacity-80 hover:opacity-100 transition-opacity">084 402 0733</a>
+                <a href="tel:+27657018482" className="text-base lg:text-sm opacity-80 hover:opacity-100 transition-opacity">065 701 8482</a>
               </li>
               <li className="flex items-center gap-3">
                 <MailIcon className="h-5 w-5 shrink-0" />
@@ -109,10 +109,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20">
-          <p className="text-center text-sm opacity-80">
+        <div className="mt-12 pt-8 border-t border-primary-foreground/20 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-sm opacity-80">
             &copy; {new Date().getFullYear()} Zenako Cleaning Co. Johannesburg, South Africa.
           </p>
+          <div className="flex items-center gap-4 text-sm opacity-80">
+            <Link href="/privacy" className="hover:opacity-100 transition-opacity">
+              Privacy Policy
+            </Link>
+            <span className="opacity-40">|</span>
+            <Link href="/terms" className="hover:opacity-100 transition-opacity">
+              Terms &amp; Conditions
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
