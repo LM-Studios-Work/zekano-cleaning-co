@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { BookingData } from "@/app/book/page"
+import { BookingData } from "@/app/(app)/book/page"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -128,7 +128,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
   const currentConfig = getCategoryConfig(formData.service)
 
   const updateFormData = (field: keyof BookingData, value: BookingData[keyof BookingData]) => {
-    setFormData((prev) => {
+    setFormData((prev: BookingData) => {
       const newData = { ...prev, [field]: value }
       
       if (field === "service") {
@@ -160,10 +160,10 @@ export function BookingForm({ onComplete }: BookingFormProps) {
   }
 
   const toggleExtra = (extraId: string) => {
-    setFormData((prev) => ({
+    setFormData((prev: BookingData) => ({
       ...prev,
       extras: prev.extras.includes(extraId)
-        ? prev.extras.filter((e) => e !== extraId)
+        ? prev.extras.filter((e: string) => e !== extraId)
         : [...prev.extras, extraId],
     }))
   }
@@ -216,7 +216,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
     const selectedFrequency = frequencies.find(f => f.id === formData.frequency)
     const config = getCategoryConfig(formData.service)
     const selectedExtras = formData.extras
-      .map(id => config.extras.find(e => e.id === id)?.name)
+      .map((id: string) => config.extras.find(e => e.id === id)?.name)
       .filter(Boolean)
       .join(', ') || 'None'
     const formattedDate = formData.date
@@ -226,7 +226,7 @@ export function BookingForm({ onComplete }: BookingFormProps) {
     const lines = [
       'Hi Zenako Cleaning! I would like to book a cleaning service.',
       '',
-      `*Service:* ${selectedService?.name ?? formData.service}`,
+      `*Service:* ${selectedService?.title ?? formData.service}`,
       `*Frequency:* ${selectedFrequency?.name ?? formData.frequency}`,
       `*Property Type:* ${formData.propertyType}`,
     ]

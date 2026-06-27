@@ -4,7 +4,7 @@ import { importMap } from '../../admin/importMap'
 
 export const POST = async (request: Request) => {
   return handleServerFunctions({
-    args: await request.json(),
+    ...(await request.json()),
     config,
     importMap,
   })
