@@ -18,7 +18,7 @@ const FALLBACK_SLIDES: HeroSlide[] = [
     image: "/home_page_heros/homes_hero.webp",
     alt: "House cleaning in Johannesburg",
     label: "01. Homes",
-    heading: "Professional Home\nCleaning.",
+    heading: "Premium Cleaning Services\nfor Homes & Businesses.",
     description: "Every surface, every corner, every room, maintained to a consistent standard your household can rely on.",
   },
   {
@@ -75,7 +75,7 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
       ))}
 
       {/* Dark overlay - high contrast */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/60" />
 
       {/* Content - left aligned, no fluff */}
       <div className="relative z-10 flex h-full items-center pt-20 md:pt-0">
@@ -98,7 +98,7 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
               {activeSlides[currentSlide].description}
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <Link
                 href="/book"
                 className="btn-lift btn-green-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white"
@@ -110,8 +110,26 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
                 href="/contact"
                 className="btn-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200"
               >
-                Get a Free Quote
+                Get Instant Quote
               </Link>
+            </div>
+            
+            <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-white/90">
+              <div className="flex items-center gap-2">
+                <div className="flex text-[#6fbf00]">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <span className="text-sm font-bold">Top Rated Cleaners</span>
+              </div>
+              <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-white/30"></div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-[#6fbf00] animate-pulse"></div>
+                <span className="text-sm font-bold">Replies within 15 minutes</span>
+              </div>
             </div>
           </div>
         </div>
