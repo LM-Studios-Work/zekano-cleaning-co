@@ -1,4 +1,4 @@
-import { BookingData } from "@/app/book/page"
+import { BookingData } from "@/app/(app)/book/page"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
@@ -118,7 +118,7 @@ export function BookingConfirmation({ bookingData, onNewBooking }: BookingConfir
               <div className="pl-7">
                 <span className="text-sm text-muted-foreground">Add-On Services</span>
                 <p className="font-medium text-foreground">
-                  {bookingData.extras.map(e => extraNames[e] || e).join(", ")}
+                  {bookingData.extras.map((e: string) => extraNames[e] || e).join(", ")}
                 </p>
               </div>
             )}

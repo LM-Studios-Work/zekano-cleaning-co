@@ -131,6 +131,7 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
                 <span className="text-sm font-bold">Replies within 15 minutes</span>
               </div>
             </div>
+
           </div>
         </div>
       </div>

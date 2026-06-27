@@ -46,7 +46,7 @@ export async function FAQSection() {
             </p>
           </div>
           <div className="lg:col-span-8">
-            <FAQAccordion faqs={docs} />
+            <FAQAccordion faqs={docs as any} />
           </div>
         </div>
       </div>

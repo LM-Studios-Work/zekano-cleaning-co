@@ -9,7 +9,7 @@ type Args = {
 }
 
 export const generateMetadata = async (args: Args): Promise<Metadata> => {
-  return generatePageMetadata({ ...args, config, importMap })
+  return generatePageMetadata({ ...args, config })
 }
 
 export default async function Page(args: Args) {
