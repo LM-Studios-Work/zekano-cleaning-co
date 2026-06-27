@@ -101,14 +101,14 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
             <div className="mt-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <Link
                 href="/book"
-                className="btn-lift btn-green-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white"
+                className="btn-lift btn-green-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white w-full sm:w-auto text-center"
                 style={{ backgroundColor: "#6fbf00" }}
               >
                 Book a Clean
               </Link>
               <Link
                 href="/contact"
-                className="btn-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200"
+                className="btn-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200 w-full sm:w-auto text-center"
               >
                 Get Instant Quote
               </Link>

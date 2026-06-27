@@ -78,20 +78,19 @@ export default async function AboutPage() {
         <section className="py-16 lg:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
                 <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Our Story</span>
                 <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                  Built Out of Frustration with <span style={{ color: "#6fbf00" }}>&ldquo;Good Enough&rdquo;</span>
+                  Delivering <span style={{ color: "#6fbf00" }}>Peace of Mind</span> Through Uncompromising Standards
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Zenako Cleaning Co. was started right here in Johannesburg for one simple reason: we were tired of hiring cleaning services that cut corners, arrived late, or sent a different person every week.
+                    At Zenako Cleaning Co., we believe your space should be a source of calm, not another task on your list. We provide professional residential and commercial cleaning services across Johannesburg designed to help busy homeowners, families, and professionals maintain beautifully clean, healthy, and welcoming environments.
                   </p>
                   <p>
-                    Johannesburg did not need another cleaning app or a large corporate agency. It needed an accountable, owner-run service where management actually cares about the result, where every professional is rigorously vetted, and where &ldquo;clean&rdquo; genuinely means clean.
+                    We didn't set out to be the largest cleaning agency in South Africa. Instead, we set out to be the most reliable. Proudly servicing Sandton, Bryanston, Fourways, Midrand, and Randburg, our team is committed to delivering detail-focused cleaning with a deeply personal touch.
                   </p>
                   <p>
-                    We do not set out to be the largest cleaning company in South Africa. Our goal is to be the most reliable one in your area. Today we serve homes, offices, and commercial properties across Johannesburg and surrounding areas, handling everything from weekly maintenance to full deep cleans, move-in and move-out turnovers, and specialised services.
+                    We understand that inviting a cleaning company into your home or workspace requires absolute trust. That is why we reject the industry standard of &ldquo;good enough.&rdquo; Instead, we focus on consistency, rigorous professionalism, and clear communication on every single project we take on.
                   </p>
                 </div>
               </div>
@@ -147,18 +146,20 @@ export default async function AboutPage() {
                 </h2>
                 <ul className="mt-8 space-y-4">
                   {[
-                    "Background-checked, trained professionals",
-                    "Eco-friendly cleaning products",
-                    "Flexible scheduling: weekdays, weekends, and after hours",
-                    "Satisfaction guarantee on every job",
-                    "Familiar professionals assigned to your property each visit",
-                    "Transparent pricing with no surprises",
-                    "Direct access to management if anything goes wrong",
-                    "Easy online and WhatsApp booking",
+                    { title: "Professional & Reliable Service", desc: "We arrive on time and deliver exactly what was promised." },
+                    { title: "Uncompromising Attention to Detail", desc: "We don't cut corners; we clean them." },
+                    { title: "Trusted Cleaning Teams", desc: "Vetted, familiar professionals assigned to your property." },
+                    { title: "Flexible Cleaning Solutions", desc: "Tailored schedules for homes, offices, and commercial spaces." },
+                    { title: "Premium Equipment & Eco-Friendly Products", desc: "Safe for your family, pets, and the environment." },
+                    { title: "Responsive Communication", desc: "No call centres. Direct access to management." },
+                    { title: "Commitment to Satisfaction", desc: "If it's not done right, we return and fix it without dispute." },
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <CheckIcon className="h-5 w-5 shrink-0" style={{ color: "#6fbf00" }} />
-                      <span className="text-foreground">{item}</span>
+                    <li key={item.title} className="flex items-start gap-3">
+                      <CheckIcon className="h-5 w-5 mt-0.5 shrink-0" style={{ color: "#6fbf00" }} />
+                      <div>
+                        <span className="font-bold text-foreground">{item.title}</span>
+                        <p className="text-muted-foreground text-sm mt-0.5">{item.desc}</p>
+                      </div>
                     </li>
                   ))}
                 </ul>
