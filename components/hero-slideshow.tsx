@@ -78,14 +78,17 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
       <div className="absolute inset-0 bg-black/60" />
 
       {/* Content - left aligned, no fluff */}
-      <div className="relative z-10 flex h-full items-center pt-28 pb-24 lg:pt-32 lg:pb-32">
+      <div className="relative z-10 flex h-full items-center pt-20 md:pt-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
-          <div key={currentSlide} className="max-w-2xl animate-in fade-in slide-in-from-left-8 duration-700">
-            <p className="mb-3 text-sm md:text-xs font-bold uppercase tracking-[0.2em] text-white/70">
-              Cleaning services in Johannesburg
+          <div className="max-w-2xl">
+            <p className="mb-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/90">
+              Servicing Sandton, Bryanston, Fourways, Midrand, Randburg & Johannesburg
             </p>
 
-            <h1 className="text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.05]">
+            <h1
+              key={currentSlide}
+              className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.1]"
+            >
               {activeSlides[currentSlide].heading.split("\n").map((line, i) => (
                 <span key={i}>
                   {line}
@@ -94,11 +97,11 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
               ))}
             </h1>
 
-            <p className="mt-5 text-base md:text-sm text-white/80 leading-relaxed max-w-md">
+            <p className="mt-5 text-base md:text-lg text-white/90 leading-relaxed max-w-lg font-medium">
               {activeSlides[currentSlide].description}
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-white/90">
+            <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-white/90 mb-6">
               <div className="flex items-center gap-2">
                 <div className="flex text-[#6fbf00]">
                   {[...Array(5)].map((_, i) => (
@@ -116,22 +119,21 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
               </div>
             </div>
 
-            <div className="mt-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+            <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <Link
                 href="/book"
-                className="btn-lift btn-green-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white w-full sm:w-auto text-center"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-colors duration-200 hover:opacity-90 w-full sm:w-auto text-center"
                 style={{ backgroundColor: "#6fbf00" }}
               >
                 Book a Clean
               </Link>
               <Link
                 href="/contact"
-                className="btn-lift inline-flex items-center justify-center px-8 py-4 sm:py-3.5 text-base sm:text-sm font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200 w-full sm:w-auto text-center"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200 w-full sm:w-auto text-center"
               >
                 Get Instant Quote
               </Link>
             </div>
-
           </div>
         </div>
       </div>
