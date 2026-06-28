@@ -151,7 +151,7 @@ export default function CarpetCleaningPage() {
               </div>
               <div className="aspect-[4/3] relative overflow-hidden shadow-lg">
                 <Image 
-                  src="/carpet/carpet hero.webp" 
+                  src="/authentic/Carpet before and after.webp" 
                   alt="Professional carpet steam cleaning in Johannesburg" 
                   fill 
                   className="object-cover" 

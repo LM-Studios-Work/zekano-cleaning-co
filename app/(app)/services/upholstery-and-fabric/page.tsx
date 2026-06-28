@@ -80,6 +80,28 @@ export default function UpholsteryFabricHub() {
           </div>
         </section>
 
+        {/* Before and After Gallery Section */}
+        <section className="py-16 bg-gray-50/40">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-sm font-bold uppercase tracking-[0.2em]" style={{ color: "#6fbf00" }}>
+                Our Work
+              </span>
+              <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-4xl text-balance">
+                See the <span style={{ color: "#1A9AD2" }}>Difference</span>
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-lg border border-border">
+                <Image src="/authentic/Brown couch before and after.webp" alt="Brown couch before and after cleaning" fill className="object-cover" />
+              </div>
+              <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-lg border border-border">
+                <Image src="/authentic/Cream couch before and after.webp" alt="Cream couch before and after cleaning" fill className="object-cover" />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Services Grid */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
