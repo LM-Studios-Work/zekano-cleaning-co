@@ -81,10 +81,6 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
       <div className="relative z-10 w-full pt-28 pb-24 md:py-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
           <div className="max-w-2xl">
-            <p className="mb-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/90">
-              Servicing Sandton, Bryanston, Fourways, Midrand, Randburg & Johannesburg
-            </p>
-
             <h1
               key={currentSlide}
               className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.1]"
