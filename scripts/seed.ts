@@ -28,7 +28,7 @@ const faqs = [
   {
     question: 'Which areas do you service?',
     answer:
-      'We service Sandton, Randburg, Fourways, Midrand, Bryanston, Johannesburg North, and surrounding areas. If you are unsure whether we cover your area, contact us directly and we will confirm.',
+      'We service Sandton, Randburg, Fourways, Midrand, Bryanston, Johannesburg, and surrounding areas. If you are unsure whether we cover your area, contact us directly and we will confirm.',
     order: 3,
   },
   {
@@ -57,7 +57,7 @@ const serviceAreas = [
   { name: 'Fourways', order: 3 },
   { name: 'Midrand', order: 4 },
   { name: 'Bryanston', order: 5 },
-  { name: 'Johannesburg North', order: 6 },
+  { name: 'Johannesburg', order: 6 },
 ]
 
 const companyValues = [

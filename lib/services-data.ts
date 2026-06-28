@@ -20,7 +20,7 @@ export const allServices: ServiceData[] = [
     category: "Residential Cleaning",
     categorySlug: "residential-cleaning",
     description: "Scheduled weekly, fortnightly, or monthly cleaning to keep your home consistently maintained without disrupting your routine.",
-    longDescription: "Our standard house cleaning service is designed to maintain a consistently clean and comfortable home. Whether you need us weekly, fortnightly, or monthly, our trained team handles all the essentials: dusting, vacuuming, mopping, bathroom sanitisation, and kitchen cleaning. We use eco-friendly products that are safe for your family and pets while delivering a thorough, professional result every time. Serving homes across Johannesburg including Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
+    longDescription: "Our standard house cleaning service is designed to maintain a consistently clean and comfortable home. Whether you need us weekly, fortnightly, or monthly, our trained team handles all the essentials: dusting, vacuuming, mopping, bathroom sanitisation, and kitchen cleaning. We use eco-friendly products that are safe for your family and pets while delivering a thorough, professional result every time. Serving homes across Johannesburg including Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg.",
     image: "/house cleaning/house hero.webp",
     icon: "Home",
     features: [

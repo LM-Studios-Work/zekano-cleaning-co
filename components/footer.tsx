@@ -86,7 +86,7 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Service Areas</h3>
             <ul className="space-y-2 lg:space-y-1">
-              {["Sandton", "Randburg", "Fourways", "Midrand", "Bryanston", "Johannesburg North"].map((area) => (
+              {["Sandton", "Randburg", "Fourways", "Midrand", "Bryanston", "Johannesburg"].map((area) => (
                 <li key={area} className="text-base lg:text-sm opacity-80 flex items-center gap-2 lg:gap-1.5">
                   <MapPinIcon className="h-4 w-4 lg:h-3 lg:w-3 shrink-0" />
                   {area}

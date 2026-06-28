@@ -9,7 +9,7 @@ import { CheckIcon, HouseIcon, OfficeIcon, CouchIcon, WrenchIcon, ArrowRightIcon
 
 export const metadata: Metadata = {
   title: "Cleaning Services in Johannesburg",
-  description: "Professional cleaning services in Johannesburg: residential cleaning, commercial cleaning, upholstery and fabric cleaning, and specialised cleaning services. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
+  description: "Professional cleaning services in Johannesburg: residential cleaning, commercial cleaning, upholstery and fabric cleaning, and specialised cleaning services. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg.",
   alternates: {
     canonical: '/services',
   },

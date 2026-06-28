@@ -42,7 +42,7 @@ const contactInfo = [
   },
 ]
 
-const serviceAreas = ["Sandton", "Randburg", "Fourways", "Midrand", "Bryanston", "Johannesburg North"]
+const serviceAreas = ["Sandton", "Randburg", "Fourways", "Midrand", "Bryanston", "Johannesburg"]
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({

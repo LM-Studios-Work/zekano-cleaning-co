@@ -55,7 +55,7 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
 
   return (
     <>
-    <section className="relative h-[75vh] md:h-screen min-h-[500px] md:min-h-[600px] w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden flex flex-col justify-center min-h-[100svh] md:min-h-screen">
       {/* Slideshow Background */}
       {activeSlides.map((slide, index) => (
         <div
@@ -78,7 +78,7 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
       <div className="absolute inset-0 bg-black/60" />
 
       {/* Content - left aligned, no fluff */}
-      <div className="relative z-10 flex h-full items-center pt-20 md:pt-0">
+      <div className="relative z-10 w-full pt-28 pb-24 md:py-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
           <div className="max-w-2xl">
             <p className="mb-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/90">

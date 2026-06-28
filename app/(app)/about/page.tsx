@@ -16,7 +16,7 @@ export const revalidate = 60
 
 export const metadata: Metadata = {
   title: "About Zenako Cleaning Co. | Johannesburg",
-  description: "Learn about Zenako Cleaning Co., Johannesburg's trusted professional cleaning service for homes and businesses. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg North.",
+  description: "Learn about Zenako Cleaning Co., Johannesburg's trusted professional cleaning service for homes and businesses. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg.",
   alternates: {
     canonical: '/about',
   },

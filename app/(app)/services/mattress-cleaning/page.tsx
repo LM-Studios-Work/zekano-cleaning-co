@@ -203,11 +203,11 @@ export default function MattressCleaningPage() {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-lg border border-border">
-                <Image src="/authentic/Before and after Mattress cleaning.webp" alt="Mattress before and after cleaning" fill className="object-cover" />
+              <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg border border-border bg-gray-100">
+                <Image src="/authentic/Before and after Mattress cleaning.webp" alt="Mattress before and after cleaning" fill className="object-contain" />
               </div>
-              <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-lg border border-border">
-                <Image src="/authentic/Very dirty mattress before and after.webp" alt="Very dirty mattress before and after cleaning" fill className="object-cover" />
+              <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg border border-border bg-gray-100">
+                <Image src="/authentic/Very dirty mattress before and after.webp" alt="Very dirty mattress before and after cleaning" fill className="object-contain" />
               </div>
             </div>
           </div>
