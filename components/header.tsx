@@ -333,13 +333,14 @@ export function Header() {
       >
         <div className="fixed inset-0 bg-black/50" onClick={() => setMobileMenuOpen(false)} />
         <div
-          className={`fixed top-0 right-0 left-0 z-[61] bg-white shadow-2xl transform transition-transform duration-300 ${
+          className={`fixed top-0 right-0 left-0 z-[61] bg-white shadow-2xl transform transition-transform duration-300 flex flex-col ${
             mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
+          style={{ maxHeight: "100dvh" }}
         >
           {/* Header row */}
           <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
-            <Link href="/" className="flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
               <Image
                 src="/logo.png"
                 alt="Zenako Cleaning Co."
@@ -347,7 +348,6 @@ export function Header() {
                 height={40}
                 className="h-10 w-auto object-contain"
               />
-              <span className="text-xl font-extrabold text-gray-800">Zenako</span>
             </Link>
             <button
               type="button"
@@ -359,7 +359,7 @@ export function Header() {
           </div>
 
           {/* Nav links */}
-          <div className="px-6 py-4">
+          <div className="px-6 py-4 overflow-y-auto flex-1">
             {navigation.map((item) => {
               const isActive = pathname === item.href || (item.name === "Services" && pathname.startsWith("/services"))
               if (item.name === "Services") {
@@ -378,13 +378,13 @@ export function Header() {
                       <i className={`fa-solid fa-chevron-down text-xs transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`}></i>
                     </button>
                     <div className={`overflow-hidden transition-all duration-300 ${
-                      mobileServicesOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+                      mobileServicesOpen ? "max-h-[9999px] opacity-100" : "max-h-0 opacity-0"
                     }`}>
                       <div className="py-2 pl-4 space-y-4">
                         {serviceCategories.map((cat) => (
                           <div key={cat.slug}>
                             <Link href={`/services/${cat.slug}`} onClick={() => { setMobileMenuOpen(false); setMobileServicesOpen(false) }}>
-                              <span className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-1 hover:text-[#1A9AD2] transition-colors">{cat.name}</span>
+                              <span className="block text-xs font-bold uppercase tracking-wider text-[#6fbf00] mb-1 hover:text-[#1A9AD2] transition-colors">{cat.name}</span>
                             </Link>
                             {cat.services.map((svc) => (
                               <Link

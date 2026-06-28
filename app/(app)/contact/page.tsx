@@ -122,7 +122,7 @@ export default function ContactPage() {
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
-              <div>
+              <div id="contact-form">
                 <Card className="border-border">
                   <CardHeader>
                     <CardTitle className="text-2xl text-card-foreground">Send Us a Message</CardTitle>

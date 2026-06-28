@@ -23,19 +23,17 @@ export async function ServiceAreas() {
           </p>
         </div>
 
-        {/* Horizontal Scrolling Banner */}
-        <div className="relative -mx-6 lg:-mx-8 px-6 lg:px-8 overflow-x-auto">
-          <div className="flex gap-4 lg:gap-6 min-w-min pb-4">
-            {areas.map((area) => (
-              <div
-                key={area.id}
-                className="flex items-center gap-3 px-5 py-3 lg:px-6 lg:py-4 bg-white rounded-lg border border-border shrink-0 hover:shadow-md hover:border-[#1A9AD2]/30 transition-all duration-200"
-              >
-                <MapPinIcon className="h-5 w-5 shrink-0" style={{ color: "#1A9AD2" }} />
-                <span className="font-medium text-foreground text-base whitespace-nowrap">{area.name as string}</span>
-              </div>
-            ))}
-          </div>
+        {/* Responsive Grid — 2 cols mobile, auto-fill on larger screens */}
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+          {areas.map((area) => (
+            <div
+              key={area.id}
+              className="flex items-center gap-2 px-4 py-3 bg-white rounded-lg border border-border hover:shadow-md hover:border-[#1A9AD2]/30 transition-all duration-200"
+            >
+              <MapPinIcon className="h-4 w-4 shrink-0" style={{ color: "#1A9AD2" }} />
+              <span className="font-medium text-foreground text-sm leading-tight">{area.name as string}</span>
+            </div>
+          ))}
         </div>
 
         <p className="mt-6 text-base leading-relaxed text-muted-foreground">

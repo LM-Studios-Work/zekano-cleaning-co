@@ -128,7 +128,7 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
                 Book a Clean
               </Link>
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white border-2 border-white/50 hover:bg-white hover:text-black transition-colors duration-200 w-full sm:w-auto text-center"
               >
                 Get Instant Quote
@@ -162,7 +162,7 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
                 }`}
               >
                 {slide.label}
-                <span className={`absolute bottom-0 left-0 w-20 h-0.5 transition-colors duration-200 ${index === currentSlide ? "bg-white" : "bg-white/15"}`} />
+                <span className={`absolute bottom-0 left-0 w-[calc(100%-4rem)] h-0.5 transition-colors duration-200 ${index === currentSlide ? "bg-white" : "bg-white/15"}`} />
               </button>
             ))}
           </div>

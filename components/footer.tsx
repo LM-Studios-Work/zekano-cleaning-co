@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { PhoneIcon, MailIcon, ClockIcon, MapPinIcon } from "@/components/icons"
 
 const services = [
@@ -25,9 +26,14 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
           {/* Company Info */}
           <div className="space-y-4">
-            <div>
-              <span className="text-2xl font-bold">Zenako</span>
-              <span className="text-sm opacity-80 ml-1">Cleaning Co.</span>
+            <div className="bg-white p-3 rounded-lg inline-block">
+              <Image
+                src="/logo.png"
+                alt="Zenako Cleaning Co."
+                width={180}
+                height={50}
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-base lg:text-sm opacity-80 leading-relaxed">
               Professional cleaning services for homes, offices, and commercial properties across Johannesburg.
