@@ -78,7 +78,7 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
       <div className="absolute inset-0 bg-black/60" />
 
       {/* Content - left aligned, no fluff */}
-      <div className="relative z-10 w-full pt-28 pb-24 md:py-0">
+      <div className="relative z-10 w-full pt-36 pb-24 md:py-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
           <div className="max-w-2xl">
             <h1
