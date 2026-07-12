@@ -119,7 +119,7 @@ export default async function ServicePage({
 
   const payload = await getPayload({ config: configPromise })
 
-  const [{ docs: relatedDocs }, { docs: detailImageDocs }, detailImageMap] = await Promise.all([
+  const [{ docs: relatedDocs }, detailImageMap] = await Promise.all([
     payload.find({
       collection: 'services',
       where: {
@@ -130,13 +130,20 @@ export default async function ServicePage({
       },
       limit: 3,
     }),
-    payload.find({
+    getServiceDetailImageMap(),
+  ])
+
+  let detailImageDocs: any[] = []
+  try {
+    const { docs } = await payload.find({
       collection: 'service-detail-images',
       where: { service: { equals: slug } },
       limit: 20,
-    }),
-    getServiceDetailImageMap(),
-  ])
+    })
+    detailImageDocs = docs as any[]
+  } catch {
+    // slug not in enum yet — no detail images
+  }
 
   const detailImages = detailImageDocs as any[]
 
