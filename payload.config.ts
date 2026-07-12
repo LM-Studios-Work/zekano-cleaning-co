@@ -3,6 +3,7 @@ import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { s3Storage } from '@payloadcms/storage-s3'
 import path from 'path'
+import { allServices } from './lib/services-data'
 
 export default buildConfig({
   admin: {
@@ -131,8 +132,9 @@ export default buildConfig({
         { name: 'alt', type: 'text', required: true },
         {
           name: 'service',
-          type: 'text',
-          admin: { description: 'Service slug this image belongs to (e.g. "pest-control", "carpet-cleaning").' },
+          type: 'select',
+          admin: { description: 'Which service page this image belongs to.' },
+          options: allServices.map((s) => ({ label: s.title, value: s.slug })),
         },
         { name: 'caption', type: 'text' },
       ],
