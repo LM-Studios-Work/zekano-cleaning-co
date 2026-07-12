@@ -1,7 +1,3 @@
-'use client'
-
-import { useState } from "react"
-import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
@@ -10,117 +6,131 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckIcon, ArrowRightIcon, ArrowLeftIcon, PhoneIcon } from "@/components/icons"
 import { getRelatedServices } from "@/lib/services-data"
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+import { getServiceDetailImageMap } from "@/lib/cms-images"
+import { FaqAccordion } from "./faq-accordion"
 
-export default function MoveInMoveOutCleaning() {
-  const [expandedFaq, setExpandedFaq] = useState<string | null>(null)
+const inspectionItems = [
+  {
+    title: "Kitchen",
+    image: "/move in move out/kitchen.webp",
+    items: [
+      "Clean cupboards and drawers (inside and outside)",
+      "Deep oven clean (inside and out)",
+      "Hobs and stovetop cleaned",
+      "Extractor fans cleaned and degreased",
+      "Appliance surrounds wiped down",
+    ],
+  },
+  {
+    title: "Bathrooms",
+    image: "/move in move out/bathroom.webp",
+    items: [
+      "Deep descaling of tiles and grout",
+      "Toilet sanitisation (inside, outside, and cistern)",
+      "Shower and bathtub scrubbed clean",
+      "Chrome fixtures polished",
+      "Mirror and glass cleaned streak-free",
+    ],
+  },
+  {
+    title: "Living & Bedrooms",
+    image: "/move in move out/bedrooms.webp",
+    items: [
+      "Skirting boards wiped clean",
+      "Light switches and power points sanitised",
+      "Window tracks (interior) cleaned",
+      "Door frames and handles polished",
+      "Cobwebs removed from corners and ceilings",
+    ],
+  },
+  {
+    number: "04",
+    title: "Floors",
+    image: "/move in move out/floors.webp",
+    items: [
+      "Professional-grade vacuuming of all areas",
+      "Deep mopping of hard surfaces",
+      "Tile grout lines cleaned thoroughly",
+      "Baseboards and corners vacuumed",
+      "Any stains or marks removed",
+    ],
+  },
+]
+
+const whyUsPoints = [
+  {
+    title: "Owner-Supervised Teams",
+    description: "Unlike faceless cleaning services, your move-out clean is overseen by our management. If anything is flagged, we handle it personally and fairly.",
+    icon: "CheckIcon",
+  },
+  {
+    title: "Vetted & Police-Checked Professionals",
+    description: "Every cleaner on your property is background-checked, insured, and trained specifically for move-out standards aligned with estate agent requirements.",
+    icon: "CheckIcon",
+  },
+  {
+    title: "Deep Oven Cleaning Included",
+    description: "Standard move-out cleaning includes full interior and exterior oven cleaning, which is a critical item on landlord and agent inspection checklists.",
+    icon: "CheckIcon",
+  },
+  {
+    title: "All Equipment & Products Provided",
+    description: "We bring our own professional-grade detergents, equipment, and tools. You don't need to provide anything. We handle the entire clean.",
+    icon: "CheckIcon",
+  },
+]
+
+const exclusions = [
+  "Carpet Steam Cleaning (available as add-on)",
+  "Exterior Window Cleaning (available as add-on)",
+  "Pest Control Services (available as add-on)",
+  "Garden or Yard Work",
+  "Structural Repairs",
+]
+
+const faqs = [
+  {
+    id: "timeline",
+    question: "How long does a move-out clean take?",
+    answer: "The duration depends on the property size and condition. A typical 3-bedroom house takes 4-6 hours. Larger properties may require additional time. We assess your property upfront and provide a clear timeline.",
+  },
+  {
+    id: "notice",
+    question: "How much notice do you need?",
+    answer: "We aim to accommodate move-outs with as little as 48 hours notice, though longer notice helps us schedule your team efficiently. Contact us urgently if your date is coming up soon.",
+  },
+  {
+    id: "deposit",
+    question: "What is your Deposit Back Guarantee?",
+    answer: "If your landlord or estate agent flags a cleaning issue from our inspection checklist within 72 hours of the clean, we return at no cost for a re-clean. This protects your deposit return.",
+  },
+  {
+    id: "home",
+    question: "Do I need to be home during the clean?",
+    answer: "No. Many clients provide us with key access or meeting instructions so we can clean while they're away or manage final packing. We respect your timeline and property.",
+  },
+  {
+    id: "checklist",
+    question: "Are your checklists aligned with estate agent standards?",
+    answer: "Yes. Our inspection checklist is aligned with professional estate agent and landlord standards across Johannesburg, including requirements from major agencies.",
+  },
+]
+
+export default async function MoveInMoveOutCleaning() {
+  const payload = await getPayload({ config: configPromise })
+  const [{ docs: detailImgs }, detailImageMap] = await Promise.all([
+    payload.find({
+      collection: 'service-detail-images',
+      where: { service: { equals: 'move-in-move-out-cleaning' } },
+      limit: 1,
+    }),
+    getServiceDetailImageMap(),
+  ])
+  const heroImage = (detailImgs[0] as any)?.url ?? "/move in move out/move in move out hero.webp"
+
   const otherServices = getRelatedServices("move-in-move-out-cleaning", 3)
-
-  const inspectionItems = [
-    {
-      title: "Kitchen",
-      image: "/move in move out/kitchen.webp",
-      items: [
-        "Clean cupboards and drawers (inside and outside)",
-        "Deep oven clean (inside and out)",
-        "Hobs and stovetop cleaned",
-        "Extractor fans cleaned and degreased",
-        "Appliance surrounds wiped down",
-      ],
-    },
-    {
-      title: "Bathrooms",
-      image: "/move in move out/bathroom.webp",
-      items: [
-        "Deep descaling of tiles and grout",
-        "Toilet sanitisation (inside, outside, and cistern)",
-        "Shower and bathtub scrubbed clean",
-        "Chrome fixtures polished",
-        "Mirror and glass cleaned streak-free",
-      ],
-    },
-    {
-      title: "Living & Bedrooms",
-      image: "/move in move out/bedrooms.webp",
-      items: [
-        "Skirting boards wiped clean",
-        "Light switches and power points sanitised",
-        "Window tracks (interior) cleaned",
-        "Door frames and handles polished",
-        "Cobwebs removed from corners and ceilings",
-      ],
-    },
-    {
-      number: "04",
-      title: "Floors",
-      image: "/move in move out/floors.webp",
-      items: [
-        "Professional-grade vacuuming of all areas",
-        "Deep mopping of hard surfaces",
-        "Tile grout lines cleaned thoroughly",
-        "Baseboards and corners vacuumed",
-        "Any stains or marks removed",
-      ],
-    },
-  ]
-
-  const whyUsPoints = [
-    {
-      title: "Owner-Supervised Teams",
-      description: "Unlike faceless cleaning services, your move-out clean is overseen by our management. If anything is flagged, we handle it personally and fairly.",
-      icon: "CheckIcon",
-    },
-    {
-      title: "Vetted & Police-Checked Professionals",
-      description: "Every cleaner on your property is background-checked, insured, and trained specifically for move-out standards aligned with estate agent requirements.",
-      icon: "CheckIcon",
-    },
-    {
-      title: "Deep Oven Cleaning Included",
-      description: "Standard move-out cleaning includes full interior and exterior oven cleaning, which is a critical item on landlord and agent inspection checklists.",
-      icon: "CheckIcon",
-    },
-    {
-      title: "All Equipment & Products Provided",
-      description: "We bring our own professional-grade detergents, equipment, and tools. You don't need to provide anything. We handle the entire clean.",
-      icon: "CheckIcon",
-    },
-  ]
-
-  const exclusions = [
-    "Carpet Steam Cleaning (available as add-on)",
-    "Exterior Window Cleaning (available as add-on)",
-    "Pest Control Services (available as add-on)",
-    "Garden or Yard Work",
-    "Structural Repairs",
-  ]
-
-  const faqs = [
-    {
-      id: "timeline",
-      question: "How long does a move-out clean take?",
-      answer: "The duration depends on the property size and condition. A typical 3-bedroom house takes 4-6 hours. Larger properties may require additional time. We assess your property upfront and provide a clear timeline.",
-    },
-    {
-      id: "notice",
-      question: "How much notice do you need?",
-      answer: "We aim to accommodate move-outs with as little as 48 hours notice, though longer notice helps us schedule your team efficiently. Contact us urgently if your date is coming up soon.",
-    },
-    {
-      id: "deposit",
-      question: "What is your Deposit Back Guarantee?",
-      answer: "If your landlord or estate agent flags a cleaning issue from our inspection checklist within 72 hours of the clean, we return at no cost for a re-clean. This protects your deposit return.",
-    },
-    {
-      id: "home",
-      question: "Do I need to be home during the clean?",
-      answer: "No. Many clients provide us with key access or meeting instructions so we can clean while they're away or manage final packing. We respect your timeline and property.",
-    },
-    {
-      id: "checklist",
-      question: "Are your checklists aligned with estate agent standards?",
-      answer: "Yes. Our inspection checklist is aligned with professional estate agent and landlord standards across Johannesburg, including requirements from major agencies.",
-    },
-  ]
 
   return (
     <>
@@ -171,12 +181,12 @@ export default function MoveInMoveOutCleaning() {
                 </div>
               </div>
               <div className="aspect-[4/3] relative overflow-hidden">
-                <Image 
-                  src="/move in move out/move in move out hero.webp" 
-                  alt="Professional move-out cleaning in Johannesburg" 
-                  fill 
-                  className="object-cover" 
-                  priority 
+                <Image
+                  src={heroImage}
+                  alt="Professional move-out cleaning in Johannesburg"
+                  fill
+                  className="object-cover"
+                  priority
                 />
               </div>
             </div>
@@ -209,14 +219,14 @@ export default function MoveInMoveOutCleaning() {
                     className="absolute top-0 left-0 w-full h-1 transition-transform duration-300 origin-left scale-x-0 group-hover:scale-x-100"
                     style={{ backgroundColor: idx % 2 === 0 ? "#1A9AD2" : "#6fbf00" }}
                   />
-                  
+
                   {/* Clean Number Badge */}
                   <div className="mb-6 flex items-center justify-center w-12 h-12 rounded-full bg-gray-50 group-hover:bg-blue-50/50 transition-colors">
                     <span className="text-xl font-black" style={{ color: idx % 2 === 0 ? "#1A9AD2" : "#6fbf00" }}>
                       0{idx + 1}
                     </span>
                   </div>
-                  
+
                   <h3 className="font-bold text-foreground text-lg mb-3">
                     {point.title}
                   </h3>
@@ -245,11 +255,11 @@ export default function MoveInMoveOutCleaning() {
               {inspectionItems.map((section, idx) => (
                 <Card key={idx} className="border-border overflow-hidden">
                   <div className="aspect-[3/2] relative">
-                    <Image 
-                      src={section.image} 
-                      alt={section.title} 
-                      fill 
-                      className="object-cover" 
+                    <Image
+                      src={section.image}
+                      alt={section.title}
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   <CardContent className="p-6">
@@ -306,11 +316,11 @@ export default function MoveInMoveOutCleaning() {
                 </div>
               </div>
               <div className="aspect-[3/2] relative lg:sticky lg:top-24">
-                <Image 
-                  src="/move in move out/move in move out hero.webp" 
-                  alt="Move-out cleaning process" 
-                  fill 
-                  className="object-cover" 
+                <Image
+                  src="/move in move out/move in move out hero.webp"
+                  alt="Move-out cleaning process"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -363,28 +373,7 @@ export default function MoveInMoveOutCleaning() {
             <p className="text-lg text-muted-foreground text-center mb-12">
               Have questions about your move-out clean? We&apos;ve answered the most common ones below.
             </p>
-            <div className="space-y-4">
-              {faqs.map((faq) => (
-                <button
-                  key={faq.id}
-                  onClick={() => setExpandedFaq(expandedFaq === faq.id ? null : faq.id)}
-                  className="w-full text-left p-6 bg-background border border-border transition-all hover:border-[#1A9AD2]/30"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-bold text-foreground text-lg">{faq.question}</h3>
-                    <span 
-                      className="text-2xl font-light mt-0.5 shrink-0 transition-transform"
-                      style={{ color: "#1A9AD2" }}
-                    >
-                      {expandedFaq === faq.id ? '−' : '+'}
-                    </span>
-                  </div>
-                  {expandedFaq === faq.id && (
-                    <p className="mt-4 text-muted-foreground leading-relaxed">{faq.answer}</p>
-                  )}
-                </button>
-              ))}
-            </div>
+            <FaqAccordion faqs={faqs} />
           </div>
         </section>
 
@@ -422,7 +411,7 @@ export default function MoveInMoveOutCleaning() {
                     <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
                       <div className="aspect-[3/2] relative overflow-hidden">
                         <Image
-                          src={related.image}
+                          src={detailImageMap[related.slug] ?? related.image}
                           alt={related.title}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"

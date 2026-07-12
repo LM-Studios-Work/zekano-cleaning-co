@@ -3,7 +3,13 @@
 import Image from "next/image"
 import { useState } from "react"
 
-const examples = [
+export type BeforeAfterExample = {
+  label: string
+  before: string
+  after: string
+}
+
+const FALLBACK_EXAMPLES: BeforeAfterExample[] = [
   {
     label: "Kitchen",
     before: "/cleaning images/zenako-kitchen-cleaning-before-after.webp",
@@ -21,7 +27,8 @@ const examples = [
   },
 ]
 
-export function BeforeAfter() {
+export function BeforeAfter({ examples: propExamples }: { examples?: BeforeAfterExample[] }) {
+  const examples = propExamples && propExamples.length > 0 ? propExamples : FALLBACK_EXAMPLES
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (

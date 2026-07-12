@@ -7,6 +7,9 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckIcon, ArrowRightIcon, ArrowLeftIcon, PhoneIcon, ShieldCheckIcon } from "@/components/icons"
 import { getRelatedServices } from "@/lib/services-data"
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+import { getServiceDetailImageMap } from "@/lib/cms-images"
 
 export const metadata: Metadata = {
   title: "Regular House Cleaning in Johannesburg | Zenako",
@@ -114,7 +117,18 @@ const steps = [
   },
 ]
 
-export default function StandardHouseCleaningPage() {
+export default async function StandardHouseCleaningPage() {
+  const payload = await getPayload({ config: configPromise })
+  const [{ docs: detailImgs }, detailImageMap] = await Promise.all([
+    payload.find({
+      collection: 'service-detail-images',
+      where: { service: { equals: 'standard-house-cleaning' } },
+      limit: 1,
+    }),
+    getServiceDetailImageMap(),
+  ])
+  const heroImage = (detailImgs[0] as any)?.url ?? "/house cleaning/house hero.webp"
+
   const otherServices = getRelatedServices("standard-house-cleaning", 3)
   return (
     <>
@@ -183,7 +197,7 @@ export default function StandardHouseCleaningPage() {
               </div>
               <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
-                  src="/house cleaning/house hero.webp"
+                  src={heroImage}
                   alt="Regular house cleaning service in Johannesburg by Zenako"
                   fill
                   className="object-cover"
@@ -488,7 +502,7 @@ export default function StandardHouseCleaningPage() {
                     <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
                       <div className="aspect-[3/2] relative overflow-hidden">
                         <Image
-                          src={related.image}
+                          src={detailImageMap[related.slug] ?? related.image}
                           alt={related.title}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"

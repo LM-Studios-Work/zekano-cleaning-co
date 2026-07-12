@@ -5,7 +5,7 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { HeroSlideshow, type HeroSlide } from "@/components/hero-slideshow"
 import { ServiceAreas } from "@/components/service-areas"
 import { ServicesPreview } from "@/components/services-preview"
-import { BeforeAfter } from "@/components/before-after"
+import { BeforeAfter, type BeforeAfterExample } from "@/components/before-after"
 import { ReviewsSection } from "@/components/reviews-section"
 import { FirstTimeOffer } from "@/components/first-time-offer"
 import { FAQSection } from "@/components/faq-section"
@@ -93,6 +93,33 @@ const localBusinessSchema = {
   priceRange: '$$',
 }
 
+async function getBeforeAfterExamples(): Promise<BeforeAfterExample[]> {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/api/before-after-images?limit=50&sort=pairLabel`,
+      { next: { revalidate: 60 } }
+    )
+    if (!res.ok) return []
+    const data = await res.json()
+    const docs: Record<string, unknown>[] = data.docs ?? []
+
+    // Group by pairLabel, pair before + after
+    const groups: Record<string, { before?: string; after?: string; label: string }> = {}
+    for (const doc of docs) {
+      const key = (doc.pairLabel as string) || (doc.room as string) || 'General'
+      if (!groups[key]) groups[key] = { label: key }
+      if (doc.type === 'before') groups[key].before = doc.url as string
+      if (doc.type === 'after') groups[key].after = doc.url as string
+    }
+
+    return Object.values(groups)
+      .filter((g) => g.before && g.after)
+      .map((g) => ({ label: g.label, before: g.before!, after: g.after! }))
+  } catch {
+    return []
+  }
+}
+
 async function getHeroSlides(): Promise<HeroSlide[]> {
   try {
     const res = await fetch(
@@ -114,7 +141,10 @@ async function getHeroSlides(): Promise<HeroSlide[]> {
 }
 
 export default async function HomePage() {
-  const heroSlides = await getHeroSlides()
+  const [heroSlides, beforeAfterExamples] = await Promise.all([
+    getHeroSlides(),
+    getBeforeAfterExamples(),
+  ])
 
   return (
     <>
@@ -127,7 +157,7 @@ export default async function HomePage() {
         <HeroSlideshow slides={heroSlides} />
         <ServiceAreas />
         <ServicesPreview />
-        <BeforeAfter />
+        <BeforeAfter examples={beforeAfterExamples} />
         {/* Google reviews */}
         <ReviewsSection />
         <FirstTimeOffer />

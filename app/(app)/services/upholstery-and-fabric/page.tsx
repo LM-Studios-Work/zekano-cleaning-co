@@ -7,6 +7,9 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckIcon, ArrowRightIcon, ArrowLeftIcon, PhoneIcon } from "@/components/icons"
 import { allServices } from "@/lib/services-data"
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+import { getServiceDetailImageMap } from "@/lib/cms-images"
 
 export const metadata: Metadata = {
   title: "Upholstery & Fabric Cleaning Services in Johannesburg | Zenako",
@@ -21,7 +24,18 @@ const categoryName = "Upholstery & Fabric Cleaning"
 const categoryDesc = "Refresh your soft furnishings and fabrics with our professional cleaning service. We remove stains, allergens, and odours to extend the life of your furniture."
 const categoryImage = "/cleaning images/Deep Carpet cleaning image 1.webp"
 
-export default function UpholsteryFabricHub() {
+export default async function UpholsteryFabricHub() {
+  const payload = await getPayload({ config: configPromise })
+  const [{ docs: catImgs }, detailImageMap] = await Promise.all([
+    payload.find({
+      collection: 'service-category-images',
+      where: { category: { equals: 'upholstery' } },
+      limit: 1,
+    }),
+    getServiceDetailImageMap(),
+  ])
+  const heroImage = (catImgs[0] as any)?.url ?? categoryImage
+
   const otherServices = allServices.filter((s) => s.categorySlug !== categorySlug).slice(0, 3)
   const categoryServices = allServices.filter((s) => s.categorySlug === categorySlug)
 
@@ -74,7 +88,7 @@ export default function UpholsteryFabricHub() {
                 </div>
               </div>
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
-                <Image src={categoryImage} alt={`Professional ${categoryName} in Johannesburg`} fill className="object-cover" priority />
+                <Image src={heroImage} alt={`Professional ${categoryName} in Johannesburg`} fill className="object-cover" priority />
               </div>
             </div>
           </div>
@@ -116,7 +130,7 @@ export default function UpholsteryFabricHub() {
                   <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
                     <div className="aspect-[3/2] relative overflow-hidden">
                       <Image
-                        src={service.image}
+                        src={detailImageMap[service.slug] ?? service.image}
                         alt={service.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -190,7 +204,7 @@ export default function UpholsteryFabricHub() {
                     <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
                       <div className="aspect-[3/2] relative overflow-hidden">
                         <Image
-                          src={related.image}
+                          src={detailImageMap[related.slug] ?? related.image}
                           alt={related.title}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"

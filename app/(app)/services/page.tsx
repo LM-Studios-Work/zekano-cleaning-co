@@ -1,11 +1,15 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckIcon, HouseIcon, OfficeIcon, CouchIcon, WrenchIcon, ArrowRightIcon } from "@/components/icons"
+
+export const revalidate = 60
 
 export const metadata: Metadata = {
   title: "Cleaning Services in Johannesburg",
@@ -37,34 +41,60 @@ const categoryIcons: Record<string, typeof HouseIcon> = {
   "specialised-cleaning": WrenchIcon,
 }
 
-const categories = [
+const STATIC_CATEGORIES = [
   {
     slug: "residential-cleaning",
+    cmsKey: "residential",
     name: "Residential Cleaning",
     description: "Keep your home spotless with our trusted residential cleaning services. From routine maintenance to thorough deep cleans, we take care of it all.",
     image: "/our services click/residential.jpg",
   },
   {
     slug: "commercial-cleaning",
+    cmsKey: "commercial",
     name: "Commercial Cleaning",
     description: "A clean workspace keeps your team healthy and your clients impressed. We offer reliable commercial cleaning tailored to your business schedule.",
     image: "/our services click/commercial.jpg",
   },
   {
     slug: "upholstery-and-fabric",
+    cmsKey: "upholstery",
     name: "Upholstery & Fabric Cleaning",
     description: "Refresh your soft furnishings and fabrics with our professional cleaning service. We remove stains, allergens, and odours to extend the life of your furniture.",
     image: "/our services click/upholstery.webp",
   },
   {
     slug: "specialised-cleaning",
+    cmsKey: "specialised",
     name: "Specialised Cleaning Services",
     description: "Beyond standard cleaning, we offer a range of specialised services to keep your property in top condition inside and out.",
     image: "/our services click/specialised.webp",
   },
 ]
 
-export default function ServicesPage() {
+async function getCategoryImages(): Promise<Record<string, string>> {
+  try {
+    const payload = await getPayload({ config: configPromise })
+    const { docs } = await payload.find({
+      collection: 'service-category-images',
+      limit: 10,
+    })
+    const map: Record<string, string> = {}
+    for (const doc of docs as any[]) {
+      if (doc.category && doc.url) map[doc.category] = doc.url
+    }
+    return map
+  } catch {
+    return {}
+  }
+}
+
+export default async function ServicesPage() {
+  const imageMap = await getCategoryImages()
+  const categories = STATIC_CATEGORIES.map((c) => ({
+    ...c,
+    image: imageMap[c.cmsKey] ?? c.image,
+  }))
   return (
     <>
       <Header />
