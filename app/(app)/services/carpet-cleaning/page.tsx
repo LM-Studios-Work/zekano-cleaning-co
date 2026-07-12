@@ -7,6 +7,9 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckIcon, ArrowRightIcon, ArrowLeftIcon, PhoneIcon } from "@/components/icons"
 import { getRelatedServices } from "@/lib/services-data"
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+import { getServiceDetailImageMap } from "@/lib/cms-images"
 
 export const metadata: Metadata = {
   title: "Professional Carpet Steam Cleaning in Johannesburg | Zenako",
@@ -97,7 +100,18 @@ const limitations = [
   },
 ]
 
-export default function CarpetCleaningPage() {
+export default async function CarpetCleaningPage() {
+  const payload = await getPayload({ config: configPromise })
+  const [{ docs: detailImgs }, detailImageMap] = await Promise.all([
+    payload.find({
+      collection: 'service-detail-images',
+      where: { service: { equals: 'carpet-cleaning' } },
+      limit: 1,
+    }),
+    getServiceDetailImageMap(),
+  ])
+  const heroImage = (detailImgs[0] as any)?.url ?? "/authentic/Carpet before and after.webp"
+
   const otherServices = getRelatedServices("carpet-cleaning", 3)
 
   return (
@@ -150,12 +164,12 @@ export default function CarpetCleaningPage() {
                 </div>
               </div>
               <div className="aspect-[4/3] relative overflow-hidden shadow-lg">
-                <Image 
-                  src="/authentic/Carpet before and after.webp" 
-                  alt="Professional carpet steam cleaning in Johannesburg" 
-                  fill 
-                  className="object-cover" 
-                  priority 
+                <Image
+                  src={heroImage}
+                  alt="Professional carpet steam cleaning in Johannesburg"
+                  fill
+                  className="object-cover"
+                  priority
                 />
               </div>
             </div>
@@ -341,7 +355,7 @@ export default function CarpetCleaningPage() {
                     <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
                       <div className="aspect-[3/2] relative overflow-hidden">
                         <Image
-                          src={related.image}
+                          src={detailImageMap[related.slug] ?? related.image}
                           alt={related.title}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"

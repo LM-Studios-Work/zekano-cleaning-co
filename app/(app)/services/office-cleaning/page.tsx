@@ -13,6 +13,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+import { getServiceDetailImageMap } from "@/lib/cms-images"
 
 export const metadata: Metadata = {
   title: "Professional Office Cleaning Services in Johannesburg | Zenako",
@@ -69,7 +72,18 @@ const faqs = [
   },
 ]
 
-export default function OfficeCleaningPage() {
+export default async function OfficeCleaningPage() {
+  const payload = await getPayload({ config: configPromise })
+  const [{ docs: detailImgs }, detailImageMap] = await Promise.all([
+    payload.find({
+      collection: 'service-detail-images',
+      where: { service: { equals: 'office-cleaning' } },
+      limit: 1,
+    }),
+    getServiceDetailImageMap(),
+  ])
+  const heroImage = (detailImgs[0] as any)?.url ?? "/office/office hero.webp"
+
   const otherServices = getRelatedServices("office-cleaning", 3)
 
   return (
@@ -126,12 +140,12 @@ export default function OfficeCleaningPage() {
                 </div>
               </div>
               <div className="aspect-[4/3] relative overflow-hidden">
-                <Image 
-                  src="/office/office hero.webp" 
-                  alt="Professional office cleaning in Johannesburg by Zenako" 
-                  fill 
-                  className="object-cover" 
-                  priority 
+                <Image
+                  src={heroImage}
+                  alt="Professional office cleaning in Johannesburg by Zenako"
+                  fill
+                  className="object-cover"
+                  priority
                 />
               </div>
             </div>
@@ -316,7 +330,7 @@ export default function OfficeCleaningPage() {
                     <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
                       <div className="aspect-[3/2] relative overflow-hidden">
                         <Image
-                          src={related.image}
+                          src={detailImageMap[related.slug] ?? related.image}
                           alt={related.title}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"

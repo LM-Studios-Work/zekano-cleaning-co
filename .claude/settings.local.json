@@ -16,7 +16,9 @@
       "Bash(npx tsx:*)",
       "Bash(npm run:*)",
       "Bash(npm list:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(grep -E \"\\\\.\\(tsx?|json|js\\)$\")",
+      "Bash(dir \"C:\\\\Personal\\\\Code\\\\zekano-cleaning-co\\\\src\\\\collections\" /b /s)"
     ]
   }
 }

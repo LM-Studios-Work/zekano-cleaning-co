@@ -7,6 +7,9 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckIcon, ArrowRightIcon, ArrowLeftIcon, PhoneIcon } from "@/components/icons"
 import { allServices } from "@/lib/services-data"
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+import { getServiceDetailImageMap } from "@/lib/cms-images"
 
 export const metadata: Metadata = {
   title: "Professional Commercial Cleaning Services in Johannesburg | Zenako",
@@ -21,7 +24,18 @@ const categoryName = "Commercial Cleaning"
 const categoryDesc = "A clean workspace keeps your team healthy and your clients impressed. We offer reliable commercial cleaning tailored to your business schedule."
 const categoryImage = "/cleaning images/zenako-office-cleaning-johannesburg.webp"
 
-export default function CommercialCleaningHub() {
+export default async function CommercialCleaningHub() {
+  const payload = await getPayload({ config: configPromise })
+  const [{ docs: catImgs }, detailImageMap] = await Promise.all([
+    payload.find({
+      collection: 'service-category-images',
+      where: { category: { equals: 'commercial' } },
+      limit: 1,
+    }),
+    getServiceDetailImageMap(),
+  ])
+  const heroImage = (catImgs[0] as any)?.url ?? categoryImage
+
   const categoryServices = allServices.filter((s) => s.categorySlug === categorySlug)
   const otherServices = allServices.filter((s) => s.categorySlug !== categorySlug).slice(0, 3)
 
@@ -74,7 +88,7 @@ export default function CommercialCleaningHub() {
                 </div>
               </div>
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
-                <Image src={categoryImage} alt={`Professional ${categoryName} in Johannesburg`} fill className="object-cover" priority />
+                <Image src={heroImage} alt={`Professional ${categoryName} in Johannesburg`} fill className="object-cover" priority />
               </div>
             </div>
           </div>
@@ -97,7 +111,7 @@ export default function CommercialCleaningHub() {
                   <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
                     <div className="aspect-[3/2] relative overflow-hidden">
                       <Image
-                        src={service.image}
+                        src={detailImageMap[service.slug] ?? service.image}
                         alt={service.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -171,7 +185,7 @@ export default function CommercialCleaningHub() {
                     <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
                       <div className="aspect-[3/2] relative overflow-hidden">
                         <Image
-                          src={related.image}
+                          src={detailImageMap[related.slug] ?? related.image}
                           alt={related.title}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"

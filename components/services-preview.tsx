@@ -2,34 +2,71 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRightIcon } from "@/components/icons"
 
-const services = [
+type ServiceCard = {
+  title: string
+  href: string
+  image: string
+  description: string
+  cmsKey: string
+}
+
+const STATIC_SERVICES: ServiceCard[] = [
   {
     title: "Deep Cleaning",
     href: "/services/deep-cleaning",
     image: "/home_page services_block images/deep clean.webp",
     description: "A comprehensive clean covering every surface, appliance interior, and hard-to-reach area throughout your property.",
+    cmsKey: "deep-clean",
   },
   {
     title: "Standard House Cleaning",
     href: "/services/standard-house-cleaning",
     image: "/home_page services_block images/house cleaning.webp",
     description: "Scheduled weekly, fortnightly, or monthly maintenance to keep your home consistently clean and comfortable.",
+    cmsKey: "house-cleaning",
   },
   {
     title: "Move-in / Move-out",
     href: "/services/move-in-move-out-cleaning",
     image: "/home_page services_block images/move in move out.webp",
     description: "Thorough end-of-tenancy or pre-occupancy cleaning to ensure the property is in excellent condition.",
+    cmsKey: "move-in-move-out",
   },
   {
     title: "Pest Control",
     href: "/services/pest-control",
     image: "/home_page services_block images/pest control.webp",
     description: "Targeted pest treatments that address the source of the problem using eco-friendly, low-toxicity products.",
+    cmsKey: "pest-control",
   },
 ]
 
-export function ServicesPreview() {
+async function getServiceBlockImages(): Promise<Record<string, string>> {
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/api/homepage-service-block?limit=10`,
+      { next: { revalidate: 60 } }
+    )
+    if (!res.ok) return {}
+    const data = await res.json()
+    const map: Record<string, string> = {}
+    for (const doc of data.docs ?? []) {
+      if (doc.service && doc.url) map[doc.service] = doc.url
+    }
+    return map
+  } catch {
+    return {}
+  }
+}
+
+export async function ServicesPreview() {
+  const imageMap = await getServiceBlockImages()
+
+  const services = STATIC_SERVICES.map((s) => ({
+    ...s,
+    image: imageMap[s.cmsKey] ?? s.image,
+  }))
+
   return (
     <section className="py-20 lg:py-28 bg-white">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-8">

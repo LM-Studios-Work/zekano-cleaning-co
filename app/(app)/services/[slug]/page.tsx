@@ -11,6 +11,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckIcon, ArrowRightIcon, ArrowLeftIcon, PhoneIcon, ChatIcon } from "@/components/icons"
 
 import { allServices, getServiceBySlug } from "@/lib/services-data"
+import { getServiceDetailImageMap } from "@/lib/cms-images"
 
 export const revalidate = 60
 
@@ -117,19 +118,30 @@ export default async function ServicePage({
   if (!service) notFound()
 
   const payload = await getPayload({ config: configPromise })
-  const { docs: relatedDocs } = await payload.find({
-    collection: 'services',
-    where: {
-      and: [
-        { categorySlug: { equals: service.categorySlug } },
-        { slug: { not_equals: slug } },
-      ],
-    },
-    limit: 3,
-  })
-  
+
+  const [{ docs: relatedDocs }, { docs: detailImageDocs }, detailImageMap] = await Promise.all([
+    payload.find({
+      collection: 'services',
+      where: {
+        and: [
+          { categorySlug: { equals: service.categorySlug } },
+          { slug: { not_equals: slug } },
+        ],
+      },
+      limit: 3,
+    }),
+    payload.find({
+      collection: 'service-detail-images',
+      where: { service: { equals: slug } },
+      limit: 20,
+    }),
+    getServiceDetailImageMap(),
+  ])
+
+  const detailImages = detailImageDocs as any[]
+
   let relatedServices = relatedDocs as any[]
-  
+
   if (relatedServices.length < 3) {
     const existingSlugs = new Set(relatedServices.map((d: any) => d.slug))
     const staticRelated = allServices
@@ -215,7 +227,21 @@ export default async function ServicePage({
                   </Link>
                 </div>
               </div>
-              {service.image && (
+              {detailImages.length > 0 ? (
+                <div className="grid grid-cols-2 gap-4">
+                  {detailImages.slice(0, 4).map((img: any) => (
+                    <div key={img.id} className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
+                      <Image
+                        src={img.url as string}
+                        alt={img.alt as string}
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : service.image ? (
                 <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
                   <Image
                     src={service.image as string}
@@ -225,7 +251,7 @@ export default async function ServicePage({
                     priority
                   />
                 </div>
-              )}
+              ) : null}
             </div>
           </div>
         </section>
@@ -338,10 +364,10 @@ export default async function ServicePage({
               {relatedServices.map((related: any) => (
                 <Link key={related.slug} href={`/services/${related.slug}`} className="group">
                   <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
-                    {related.image && (
+                    {(detailImageMap[related.slug] ?? related.image) && (
                       <div className="aspect-[3/2] relative overflow-hidden">
                         <Image
-                          src={related.image as string}
+                          src={(detailImageMap[related.slug] ?? related.image) as string}
                           alt={related.title as string}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"

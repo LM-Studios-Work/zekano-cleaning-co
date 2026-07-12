@@ -13,6 +13,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
+import { getServiceDetailImageMap } from "@/lib/cms-images"
 
 export const metadata: Metadata = {
   title: "Professional Deep Cleaning Services in Johannesburg | Zenako",
@@ -108,7 +111,18 @@ const whyUsPoints = [
   },
 ]
 
-export default function DeepCleaningPage() {
+export default async function DeepCleaningPage() {
+  const payload = await getPayload({ config: configPromise })
+  const [{ docs: detailImgs }, detailImageMap] = await Promise.all([
+    payload.find({
+      collection: 'service-detail-images',
+      where: { service: { equals: 'deep-cleaning' } },
+      limit: 1,
+    }),
+    getServiceDetailImageMap(),
+  ])
+  const heroImage = (detailImgs[0] as any)?.url ?? "/deep cleaning/deep clean.webp"
+
   const otherServices = getRelatedServices("deep-cleaning", 3)
   return (
     <>
@@ -170,7 +184,7 @@ export default function DeepCleaningPage() {
               </div>
               <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
-                  src="/deep cleaning/deep clean.webp"
+                  src={heroImage}
                   alt="Professional deep cleaning service in Johannesburg by Zenako"
                   fill
                   className="object-cover"
@@ -467,7 +481,7 @@ export default function DeepCleaningPage() {
                     <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
                       <div className="aspect-[3/2] relative overflow-hidden">
                         <Image
-                          src={related.image}
+                          src={detailImageMap[related.slug] ?? related.image}
                           alt={related.title}
                           fill
                           className="object-cover transition-transform duration-300 group-hover:scale-105"

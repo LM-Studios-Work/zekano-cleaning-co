@@ -49,12 +49,20 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 
 export default async function AboutPage() {
   const payload = await getPayload({ config: configPromise })
-  const { docs: values } = await payload.find({
-    collection: 'company-values',
-    where: { section: { equals: 'about' } },
-    sort: 'order',
-    limit: 20,
-  })
+  const [{ docs: values }, { docs: teamImages }] = await Promise.all([
+    payload.find({
+      collection: 'company-values',
+      where: { section: { equals: 'about' } },
+      sort: 'order',
+      limit: 20,
+    }),
+    payload.find({
+      collection: 'team-images',
+      limit: 1,
+    }),
+  ])
+
+  const teamImageUrl = (teamImages[0] as any)?.url as string | undefined
 
   return (
     <>
@@ -175,7 +183,7 @@ export default async function AboutPage() {
               <div className="relative">
                 <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
                   <Image
-                    src="/cleaning images/zenako-cleaning-team.webp"
+                    src={teamImageUrl ?? "/cleaning images/zenako-cleaning-team.webp"}
                     alt="Professional cleaning in action"
                     fill
                     className="object-cover"
