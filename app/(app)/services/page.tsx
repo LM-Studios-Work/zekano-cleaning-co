@@ -118,10 +118,7 @@ async function getCategoryImages(): Promise<Record<string, string>> {
 
 export default async function ServicesPage() {
   const imageMap = await getCategoryImages()
-  const categories = STATIC_CATEGORIES.map((c) => ({
-    ...c,
-    image: imageMap[c.cmsKey] ?? c.image,
-  }))
+  const cleaningCategories = CLEANING_CATEGORIES.map((c) => ({ ...c, image: imageMap[c.cmsKey] ?? c.image })); const propertyCategories = PROPERTY_CATEGORIES.map((c) => ({ ...c, image: imageMap[c.cmsKey] ?? c.image }))
   return (
     <>
       <Header />
