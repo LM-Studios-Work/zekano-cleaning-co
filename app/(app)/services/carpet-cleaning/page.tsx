@@ -14,7 +14,7 @@ import { getServiceDetailImageMap } from "@/lib/cms-images"
 export const metadata: Metadata = {
   title: "Professional Carpet Steam Cleaning in Johannesburg | Zenako",
   description:
-    "Zenako Cleaning Co. provides professional carpet steam cleaning using Hot Water Extraction. Serving Sandton, Randburg, Fourways, Midrand, and Bryanston.",
+    "Zenako Cleaning & Property Services provides professional carpet steam cleaning using Hot Water Extraction. Serving Sandton, Randburg, Fourways, Midrand, and Bryanston.",
   alternates: {
     canonical: "/services/carpet-cleaning",
   },
@@ -144,7 +144,7 @@ export default async function CarpetCleaningPage() {
                   <span style={{ color: "#1A9AD2" }}>in Johannesburg</span>
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                  Zenako Cleaning Co. provides professional carpet steam cleaning across Johannesburg, including Sandton, Randburg, Fourways, Midrand, and Bryanston. Our deep-cleaning method, known as Hot Water Extraction (HWE), is designed to remove embedded dirt, reduce allergens, and treat common household stains. This service is ideal for homeowners, tenants, and pet owners who require a more thorough clean than standard vacuuming provides.
+                  Zenako Cleaning & Property Services provides professional carpet steam cleaning across Johannesburg, including Sandton, Randburg, Fourways, Midrand, and Bryanston. Our deep-cleaning method, known as Hot Water Extraction (HWE), is designed to remove embedded dirt, reduce allergens, and treat common household stains. This service is ideal for homeowners, tenants, and pet owners who require a more thorough clean than standard vacuuming provides.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <Link

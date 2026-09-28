@@ -234,7 +234,7 @@ export const allServices: ServiceData[] = [
     category: "Upholstery & Fabric Cleaning",
     categorySlug: "upholstery-and-fabric",
     description: "Professional on-site curtain cleaning in Johannesburg. We clean most curtains while they remain hanging, removing dust, allergens, and odours without the hassle of removal.",
-    longDescription: "Curtains act as filters for dust, pollen, and allergens. Over time, these particles settle into the fabric, which can lead to discoloration and affect indoor air quality. Zenako Cleaning Co. provides specialised on-site curtain cleaning across Johannesburg to restore your window treatments without the need for removal. We clean most curtains while they are still hanging on the rail, using controlled steam extraction to lift dust and grime from the fibres while targeting dust mites, household odours, and allergens. Our method is designed to prevent shrinkage and maintain the original length and texture of your drapes.",
+    longDescription: "Curtains act as filters for dust, pollen, and allergens. Over time, these particles settle into the fabric, which can lead to discoloration and affect indoor air quality. Zenako Cleaning & Property Services provides specialised on-site curtain cleaning across Johannesburg to restore your window treatments without the need for removal. We clean most curtains while they are still hanging on the rail, using controlled steam extraction to lift dust and grime from the fibres while targeting dust mites, household odours, and allergens. Our method is designed to prevent shrinkage and maintain the original length and texture of your drapes.",
     image: "/Curtain-Cleaning.jpg",
     icon: "Wind",
     features: [
@@ -375,7 +375,7 @@ export const allServices: ServiceData[] = [
     category: "Specialised Cleaning Services",
     categorySlug: "specialised-cleaning",
     description: "Fast, reliable drain cleaning and unblocking in Johannesburg. We resolve blocked toilets, overflowing sinks, and sewer line backups with owner-supervised, vetted teams.",
-    longDescription: "Professional Drain Cleaning & Unblocking in Johannesburg. If your drains are slow, smells are emerging, or your bathroom and kitchen fixtures are overflowing, professional cleaning is required. Zenako Cleaning Co. specialises in clearing blocked toilets and main sewer lines, slow-draining showers, baths, and basins, kitchen sink blockages and grease build-up, and sewer backups and septic tank issues. We use professional-grade electro-mechanical cleaning and high-pressure water jetting to deliver long-lasting results across Johannesburg and surrounding areas.",
+    longDescription: "Professional Drain Cleaning & Unblocking in Johannesburg. If your drains are slow, smells are emerging, or your bathroom and kitchen fixtures are overflowing, professional cleaning is required. Zenako Cleaning & Property Services specialises in clearing blocked toilets and main sewer lines, slow-draining showers, baths, and basins, kitchen sink blockages and grease build-up, and sewer backups and septic tank issues. We use professional-grade electro-mechanical cleaning and high-pressure water jetting to deliver long-lasting results across Johannesburg and surrounding areas.",
     image: "/cleaning-kitchen-sink-drain.webp",
     icon: "Droplets",
     features: [
@@ -506,6 +506,106 @@ export const allServices: ServiceData[] = [
       "A disinfection certificate is provided on request.",
     ],
   },
+
+  // Property Services
+  {
+    slug: "garden-and-lawn",
+    title: "Garden & Lawn Services",
+    category: "Property Services",
+    categorySlug: "property-services",
+    description: "Comprehensive garden maintenance and lawn care solutions to keep your outdoor spaces pristine.",
+    longDescription: "Our Garden & Lawn Services provide comprehensive care for your outdoor spaces. From routine maintenance to specialised lawn treatments, we ensure your garden remains healthy, vibrant, and well-maintained year-round.",
+    image: "/cleaning images/zenako-garden-cleaning.webp",
+    icon: "TreePine",
+    features: [
+      "Garden Maintenance",
+      "Lawn Care & Maintenance",
+      "Lawn Mowing",
+      "Fertilising & Weed Control",
+      "Moss Control",
+      "Lime Treatment",
+      "Organic Fertilisation",
+      "Instant Lawn Supply & Installation",
+      "Artificial Grass / Artificial Turf",
+    ],
+    benefits: [
+      "Expert care for healthy plant growth",
+      "Professional lawn management",
+      "Tailored treatment plans",
+      "Year-round maintenance",
+      "Enhanced property curb appeal",
+    ],
+    process: [
+      "Initial assessment of garden and lawn condition.",
+      "Customised care plan developed.",
+      "Regular mowing, trimming, and maintenance.",
+      "Application of necessary treatments and fertilisers.",
+      "Ongoing monitoring and adjustments.",
+    ],
+  },
+  {
+    slug: "landscaping-and-property",
+    title: "Landscaping & Property Services",
+    category: "Property Services",
+    categorySlug: "property-services",
+    description: "Professional landscaping, paving, and property maintenance services.",
+    longDescription: "Transform and maintain your property with our professional landscaping and property services. We handle everything from site clearance to irrigation systems and tree maintenance, ensuring your property looks its best.",
+    image: "/cleaning images/zenako-roof-cleaning.webp",
+    icon: "Home",
+    features: [
+      "Landscaping",
+      "Paving",
+      "Irrigation & Sprinkler Systems",
+      "Tree Felling",
+      "Tree Trimming & Maintenance",
+      "Stump Removal",
+      "Site Clearance / Rubble Removal",
+    ],
+    benefits: [
+      "Complete property transformation",
+      "Professional installation and maintenance",
+      "Safe and efficient tree removal",
+      "Proper water management systems",
+      "Clean and cleared sites",
+    ],
+    process: [
+      "Site evaluation and requirements gathering.",
+      "Design and planning phase.",
+      "Professional execution of landscaping or maintenance.",
+      "Safe removal of rubble and garden waste.",
+      "Final inspection and client approval.",
+    ],
+  },
+  {
+    slug: "commercial-and-specialist",
+    title: "Commercial & Specialist Services",
+    category: "Property Services",
+    categorySlug: "property-services",
+    description: "Specialised maintenance for commercial properties, sports fields, and unique facilities.",
+    longDescription: "Our Commercial & Specialist Services are tailored for business parks, sports facilities, and commercial properties. We provide expert maintenance for sports fields, padel courts, and supply professional landscaping products.",
+    image: "/office/office hero.webp",
+    icon: "Building2",
+    features: [
+      "Commercial Property Services",
+      "Sports Field Maintenance",
+      "Padel Court Maintenance",
+      "Garden & Landscaping Products",
+    ],
+    benefits: [
+      "Professional facility management",
+      "Specialised sports surface care",
+      "High-quality product supply",
+      "Reliable commercial partnerships",
+      "Maintained property value",
+    ],
+    process: [
+      "Detailed facility assessment.",
+      "Specialised maintenance plan creation.",
+      "Regular expert servicing of sports and commercial areas.",
+      "Supply and application of necessary products.",
+      "Quality assurance and ongoing support.",
+    ],
+  },
 ]
 
 export function getServiceBySlug(slug: string): ServiceData | undefined {
@@ -566,4 +666,14 @@ export const serviceCategories = [
       { name: "Disinfection Services", slug: "disinfection-services" },
     ],
   },
-]
+
+  {
+    name: "Property Services",
+    slug: "property-services",
+    services: [
+      { name: "Garden & Lawn Services", slug: "garden-and-lawn" },
+      { name: "Landscaping & Property Services", slug: "landscaping-and-property" },
+      { name: "Commercial & Specialist Services", slug: "commercial-and-specialist" },
+    ],
+  },
+];

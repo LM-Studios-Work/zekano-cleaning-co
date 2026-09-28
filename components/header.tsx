@@ -101,7 +101,7 @@ export function Header() {
           <Link href="/" className="flex items-center shrink-0">
             <Image
               src="/logo.png"
-              alt="Zenako Cleaning Co."
+              alt="Zenako Cleaning & Property Services"
               width={180}
               height={50}
               className="h-14 w-auto object-contain"
@@ -262,7 +262,7 @@ export function Header() {
               <div className="h-32 w-auto overflow-hidden border-4 border-gray-100 bg-gray-100 rounded-xl">
                 <Image
                   src="/logo.png"
-                  alt="Zenako Cleaning Co."
+                  alt="Zenako Cleaning & Property Services"
                   width={256}
                   height={128}
                   className="h-full w-auto object-contain p-2"
@@ -272,7 +272,7 @@ export function Header() {
 
             {/* Description */}
             <p className="text-gray-500 text-sm leading-relaxed mb-8">
-              Zenako Cleaning Co. Professional cleaning services for homes and businesses in Johannesburg and surrounding areas.
+              Zenako Cleaning & Property Services Professional cleaning services for homes and businesses in Johannesburg and surrounding areas.
             </p>
 
             {/* Social Icons */}
@@ -320,7 +320,7 @@ export function Header() {
 
           {/* Footer */}
           <div className="px-10 py-6 border-t border-gray-100 text-center">
-            <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} Zenako Cleaning Co. All Rights Reserved.</p>
+            <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} Zenako Cleaning & Property Services All Rights Reserved.</p>
           </div>
         </div>
       </div>
@@ -343,7 +343,7 @@ export function Header() {
             <Link href="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
               <Image
                 src="/logo.png"
-                alt="Zenako Cleaning Co."
+                alt="Zenako Cleaning & Property Services"
                 width={120}
                 height={40}
                 className="h-10 w-auto object-contain"

@@ -61,24 +61,24 @@ export async function generateMetadata({
   if (!service) return { title: "Service Not Found" }
 
   return {
-    title: `${service.title} | Zenako Cleaning Co. | Johannesburg`,
-    description: `${service.description} Professional ${(service.title as string).toLowerCase()} in Johannesburg, including Sandton, Randburg, Fourways, Midrand, and Bryanston. Book with Zenako Cleaning Co. today.`,
+    title: `${service.title} | Zenako Cleaning & Property Services | Johannesburg`,
+    description: `${service.description} Professional ${(service.title as string).toLowerCase()} in Johannesburg, including Sandton, Randburg, Fourways, Midrand, and Bryanston. Book with Zenako Cleaning & Property Services today.`,
     alternates: {
       canonical: `/services/${slug}`,
     },
     openGraph: {
-      title: `${service.title} in Johannesburg | Zenako Cleaning Co.`,
+      title: `${service.title} in Johannesburg | Zenako Cleaning & Property Services`,
       description: service.description,
       url: `/services/${slug}`,
       images: [
         {
           url: service.image,
-          alt: `${service.title} in Johannesburg by Zenako Cleaning Co.`,
+          alt: `${service.title} in Johannesburg by Zenako Cleaning & Property Services`,
         },
       ],
     },
     twitter: {
-      title: `${service.title} in Johannesburg | Zenako Cleaning Co.`,
+      title: `${service.title} in Johannesburg | Zenako Cleaning & Property Services`,
       description: service.description,
     },
   }
@@ -166,7 +166,7 @@ export default async function ServicePage({
     url: `${SITE_URL}/services/${service.slug}`,
     provider: {
       '@type': 'LocalBusiness',
-      name: 'Zenako Cleaning Co.',
+      name: 'Zenako Cleaning & Property Services',
       telephone: '+27657018482',
       url: SITE_URL,
     },

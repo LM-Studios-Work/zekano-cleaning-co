@@ -18,18 +18,18 @@ export const metadata: Metadata = {
     canonical: '/services',
   },
   openGraph: {
-    title: "Cleaning Services in Johannesburg | Zenako Cleaning Co.",
+    title: "Cleaning Services in Johannesburg | Zenako Cleaning & Property Services",
     description: "Residential, commercial, upholstery, and specialised cleaning services across Johannesburg and surrounding areas.",
     url: '/services',
     images: [
       {
         url: '/cleaning images/zenako-office-cleaning-johannesburg.webp',
-        alt: 'Professional office cleaning in Johannesburg by Zenako Cleaning Co.',
+        alt: 'Professional office cleaning in Johannesburg by Zenako Cleaning & Property Services',
       },
     ],
   },
   twitter: {
-    title: "Cleaning Services in Johannesburg | Zenako Cleaning Co.",
+    title: "Cleaning Services in Johannesburg | Zenako Cleaning & Property Services",
     description: "Residential, commercial, upholstery, and specialised cleaning services across Johannesburg and surrounding areas.",
   },
 }
@@ -39,9 +39,12 @@ const categoryIcons: Record<string, typeof HouseIcon> = {
   "commercial-cleaning": OfficeIcon,
   "upholstery-and-fabric": CouchIcon,
   "specialised-cleaning": WrenchIcon,
+  "garden-and-lawn": WrenchIcon,
+  "landscaping-and-property": HouseIcon,
+  "commercial-and-specialist": OfficeIcon,
 }
 
-const STATIC_CATEGORIES = [
+const CLEANING_CATEGORIES = [
   {
     slug: "residential-cleaning",
     cmsKey: "residential",
@@ -70,7 +73,31 @@ const STATIC_CATEGORIES = [
     description: "Beyond standard cleaning, we offer a range of specialised services to keep your property in top condition inside and out.",
     image: "/our services click/specialised.webp",
   },
-]
+];
+
+const PROPERTY_CATEGORIES = [
+  {
+    slug: "garden-and-lawn",
+    cmsKey: "garden",
+    name: "Garden & Lawn Services",
+    description: "Expert care for healthy plant growth, professional lawn management, and tailored treatment plans to enhance your property's curb appeal year-round.",
+    image: "/cleaning images/zenako-garden-cleaning.webp",
+  },
+  {
+    slug: "landscaping-and-property",
+    cmsKey: "landscaping",
+    name: "Landscaping & Property Services",
+    description: "Complete property transformation, professional paving, irrigation, tree felling, and site clearance for a beautiful and functional space.",
+    image: "/cleaning images/zenako-roof-cleaning.webp",
+  },
+  {
+    slug: "commercial-and-specialist",
+    cmsKey: "commercial-specialist",
+    name: "Commercial & Specialist Services",
+    description: "Specialised maintenance for commercial properties, sports fields, padel courts, and supply of professional landscaping products.",
+    image: "/office/office hero.webp",
+  },
+];
 
 async function getCategoryImages(): Promise<Record<string, string>> {
   try {
@@ -107,7 +134,7 @@ export default async function ServicesPage() {
               Our <span style={{ color: "#1A9AD2" }}>Services</span>
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-              From routine residential maintenance to specialised property services, Zenako Cleaning Co. provides professional cleaning across Johannesburg and surrounding areas.
+              From routine residential maintenance to specialised property services, Zenako Cleaning & Property Services provides professional cleaning across Johannesburg and surrounding areas.
             </p>
             <div className="mt-4 h-1 w-24 bg-gray-300"></div>
           </div>
@@ -117,20 +144,14 @@ export default async function ServicesPage() {
         <section className="py-16 lg:py-24 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="space-y-24">
-              {categories.map((category, catIdx) => {
+              {cleaningCategories.map((category, catIdx) => {
                 const Icon = categoryIcons[category.slug]
                 return (
                   <div key={category.slug}>
-                    {/* Category Header */}
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
                       <div className={catIdx % 2 === 1 ? "lg:order-2" : ""}>
                         <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
-                          <Image
-                            src={category.image}
-                            alt={category.name}
-                            fill
-                            className="object-cover"
-                          />
+                          <Image src={category.image} alt={category.name} fill className="object-cover" />
                         </div>
                       </div>
                       <div className={catIdx % 2 === 1 ? "lg:order-1" : ""}>
@@ -144,6 +165,48 @@ export default async function ServicesPage() {
                         </div>
                         <p className="text-lg text-muted-foreground mb-6">{category.description}</p>
                         <Link href={`/services/${category.slug}`} className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors h-11 px-8 py-2 bg-[#6fbf00] text-white hover:bg-[#5da200] mt-2 shadow-sm">
+                          Explore {category.name} <ArrowRightIcon className="ml-2 h-4 w-4" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+            
+            <div className="mt-24 mb-16">
+              <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#1A9AD2" }}>New Offering</span>
+              <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">
+                Property <span style={{ color: "#6fbf00" }}>Services</span>
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
+                Beyond cleaning, we now offer extensive property care including landscaping, garden maintenance, and specialist commercial services.
+              </p>
+              <div className="mt-4 h-1 w-24 bg-gray-300"></div>
+            </div>
+
+            <div className="space-y-24">
+              {propertyCategories.map((category, catIdx) => {
+                const Icon = categoryIcons[category.slug]
+                return (
+                  <div key={category.slug}>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                      <div className={catIdx % 2 === 1 ? "lg:order-2" : ""}>
+                        <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
+                          <Image src={category.image} alt={category.name} fill className="object-cover" />
+                        </div>
+                      </div>
+                      <div className={catIdx % 2 === 1 ? "lg:order-1" : ""}>
+                        <div className="flex items-center gap-3 mb-4 transition-colors hover:text-[#6fbf00]">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-lg" style={{ backgroundColor: "rgba(111, 191, 0, 0.1)", color: "#6fbf00" }}>
+                            <Icon className="h-6 w-6" />
+                          </div>
+                          <Link href={`/services/${category.slug}`}>
+                            <h2 className="text-2xl font-bold text-foreground sm:text-3xl hover:text-[#6fbf00] transition-colors">{category.name}</h2>
+                          </Link>
+                        </div>
+                        <p className="text-lg text-muted-foreground mb-6">{category.description}</p>
+                        <Link href={`/services/${category.slug}`} className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors h-11 px-8 py-2 bg-[#1A9AD2] text-white hover:bg-[#1581b3] mt-2 shadow-sm">
                           Explore {category.name} <ArrowRightIcon className="ml-2 h-4 w-4" />
                         </Link>
                       </div>

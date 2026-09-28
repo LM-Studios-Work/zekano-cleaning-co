@@ -2,7 +2,7 @@
 
 export function WhatsAppButton() {
   const phoneNumber = "27657018482"
-  const message = "Hello! I'm interested in Zenako Cleaning Co. services. Can I get a free quote?"
+  const message = "Hello! I'm interested in Zenako Cleaning & Property Services services. Can I get a free quote?"
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 

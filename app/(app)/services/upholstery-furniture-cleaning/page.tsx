@@ -14,7 +14,7 @@ import { getServiceDetailImageMap } from "@/lib/cms-images"
 export const metadata: Metadata = {
   title: "Professional Upholstery Cleaning Services in Johannesburg | Zenako",
   description:
-    "Zenako Cleaning Co. provides safe and gentle professional cleaning services for all upholstered lounge suites and leather furnishings in Johannesburg.",
+    "Zenako Cleaning & Property Services provides safe and gentle professional cleaning services for all upholstered lounge suites and leather furnishings in Johannesburg.",
   alternates: {
     canonical: "/services/upholstery-furniture-cleaning",
   },
@@ -98,7 +98,7 @@ export default async function UpholsteryCleaningPage() {
                   <span style={{ color: "#1A9AD2" }}>in Johannesburg</span>
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                  Zenako Cleaning Co. provides safe and gentle professional cleaning services for all upholstered lounge suites and leather furnishings. Our process is designed to rejuvenate your furniture while ensuring it remains nourished and fresh.
+                  Zenako Cleaning & Property Services provides safe and gentle professional cleaning services for all upholstered lounge suites and leather furnishings. Our process is designed to rejuvenate your furniture while ensuring it remains nourished and fresh.
                 </p>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                   We utilize environmentally-friendly cleaning solutions to eradicate germs, bacteria, dust mites, and common allergens. Unlike standard services, our methods ensure that your upholstered furniture is left clean and able to dry quickly, minimizing disruption to your home or office.
@@ -200,7 +200,7 @@ export default async function UpholsteryCleaningPage() {
                 <div className="p-8 bg-gray-50/50 border border-border rounded-xl">
                   <h3 className="text-2xl font-bold text-foreground mb-6">Why Choose a Professional Service?</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                    DIY cleaning attempts often lead to unintended damage, such as fabric discolouration or texture ruin caused by unsuitable shop-bought products. At Zenako Cleaning Co., we provide:
+                    DIY cleaning attempts often lead to unintended damage, such as fabric discolouration or texture ruin caused by unsuitable shop-bought products. At Zenako Cleaning & Property Services, we provide:
                   </p>
                   
                   <div className="space-y-6">

@@ -21,7 +21,7 @@ const reviews = [
     reviewCount: 1,
     date: "5 days ago",
     rating: 5,
-    text: "Very happy with the service from Zenako Cleaning Co. They did a deep clean of our house in Sandton and were professional and reliable.",
+    text: "Very happy with the service from Zenako Cleaning & Property Services They did a deep clean of our house in Sandton and were professional and reliable.",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const reviews = [
     reviewCount: 3,
     date: "5 days ago",
     rating: 5,
-    text: "Zenako Cleaning Co. cleaned our house in Bryanston and did an excellent job. They were friendly, professional and very reliable.",
+    text: "Zenako Cleaning & Property Services cleaned our house in Bryanston and did an excellent job. They were friendly, professional and very reliable.",
   },
 ]
 
@@ -133,7 +133,7 @@ export function ReviewsSection() {
           >
             <Image
               src="/google-reviews-1-.png"
-              alt="Google Reviews for Zenako Cleaning Co."
+              alt="Google Reviews for Zenako Cleaning & Property Services"
               width={1200}
               height={300}
               className="w-full h-auto"

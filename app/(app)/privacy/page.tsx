@@ -3,8 +3,8 @@ import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export const metadata = {
-  title: "Privacy Policy | Zenako Cleaning Co.",
-  description: "Learn how Zenako Cleaning Co. collects, uses, and protects your personal information in compliance with POPIA.",
+  title: "Privacy Policy | Zenako Cleaning & Property Services",
+  description: "Learn how Zenako Cleaning & Property Services collects, uses, and protects your personal information in compliance with POPIA.",
 }
 
 export default function PrivacyPage() {
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-3">Introduction</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Welcome to Zenako Cleaning Co. (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or use our services, in accordance with the Protection of Personal Information Act (POPIA) of South Africa.
+                  Welcome to Zenako Cleaning & Property Services (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;). We respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website or use our services, in accordance with the Protection of Personal Information Act (POPIA) of South Africa.
                 </p>
               </div>
 
@@ -73,7 +73,7 @@ export default function PrivacyPage() {
               <div>
                 <h2 className="text-2xl font-bold text-foreground mb-3">Data Sharing and Security</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  We do not sell, trade, or rent your personal information to third parties. Your data is strictly used by Zenako Cleaning Co. staff and management to deliver our services. Since communications are handled via WhatsApp, your data benefits from WhatsApp&apos;s standard end-to-end encryption during transit.
+                  We do not sell, trade, or rent your personal information to third parties. Your data is strictly used by Zenako Cleaning & Property Services staff and management to deliver our services. Since communications are handled via WhatsApp, your data benefits from WhatsApp&apos;s standard end-to-end encryption during transit.
                 </p>
               </div>
 

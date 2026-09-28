@@ -29,7 +29,7 @@ export function Footer() {
             <div className="bg-white p-3 rounded-lg inline-block">
               <Image
                 src="/logo.png"
-                alt="Zenako Cleaning Co."
+                alt="Zenako Cleaning & Property Services"
                 width={180}
                 height={50}
                 className="h-10 w-auto object-contain"
@@ -117,7 +117,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/20 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-sm opacity-80">
-            &copy; {new Date().getFullYear()} Zenako Cleaning Co. Johannesburg, South Africa.
+            &copy; {new Date().getFullYear()} Zenako Cleaning & Property Services Johannesburg, South Africa.
           </p>
           <div className="flex items-center gap-4 text-sm opacity-80">
             <Link href="/privacy" className="hover:opacity-100 transition-opacity">

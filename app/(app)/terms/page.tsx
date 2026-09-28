@@ -3,8 +3,8 @@ import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export const metadata = {
-  title: "Terms & Conditions | Zenako Cleaning Co.",
-  description: "Read the Terms and Conditions governing cleaning services provided by Zenako Cleaning Co. across Johannesburg.",
+  title: "Terms & Conditions | Zenako Cleaning & Property Services",
+  description: "Read the Terms and Conditions governing cleaning services provided by Zenako Cleaning & Property Services across Johannesburg.",
 }
 
 export default function TermsPage() {
@@ -32,14 +32,14 @@ export default function TermsPage() {
               <div>
                 <h2 className="text-xl font-bold text-foreground mb-3">1. Acceptance of Terms</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  By booking a cleaning service with Zenako Cleaning Co., you agree to be bound by the following Terms and Conditions. Please read them carefully before confirming your booking.
+                  By booking a cleaning service with Zenako Cleaning & Property Services, you agree to be bound by the following Terms and Conditions. Please read them carefully before confirming your booking.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-xl font-bold text-foreground mb-3">2. Services Provided</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Zenako Cleaning Co. provides professional residential, commercial, and specialized cleaning services across Johannesburg and surrounding areas. The specific scope of work will be agreed upon during the booking process via WhatsApp or email.
+                  Zenako Cleaning & Property Services provides professional residential, commercial, and specialized cleaning services across Johannesburg and surrounding areas. The specific scope of work will be agreed upon during the booking process via WhatsApp or email.
                 </p>
               </div>
 
@@ -74,7 +74,7 @@ export default function TermsPage() {
               <div>
                 <h2 className="text-xl font-bold text-foreground mb-3">7. Liability and Damages</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Our team is trained to handle your property with the utmost care. However, in the unlikely event that damage occurs due to our negligence, it must be reported to Zenako Cleaning Co. within 24 hours of the service completion. We will not be held liable for damage to items that were already broken, improperly secured, or highly fragile items left out in the open.
+                  Our team is trained to handle your property with the utmost care. However, in the unlikely event that damage occurs due to our negligence, it must be reported to Zenako Cleaning & Property Services within 24 hours of the service completion. We will not be held liable for damage to items that were already broken, improperly secured, or highly fragile items left out in the open.
                 </p>
               </div>
 

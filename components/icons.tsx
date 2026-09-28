@@ -1,4 +1,4 @@
-// Hand-drawn SVG icons for Zenako Cleaning Co.
+// Hand-drawn SVG icons for Zenako Cleaning & Property Services
 // No generic icon libraries. Every icon drawn with intent.
 import type { ComponentType, SVGProps } from 'react'
 

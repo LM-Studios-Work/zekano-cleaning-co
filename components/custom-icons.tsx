@@ -1,4 +1,4 @@
-// Premium quality SVG icons for Zenako Cleaning Co.
+// Premium quality SVG icons for Zenako Cleaning & Property Services
 import type { ComponentType } from 'react'
 
 interface IconProps {

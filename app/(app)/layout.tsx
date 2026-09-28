@@ -8,14 +8,14 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zenakocleaning
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Zenako Cleaning Co. | Professional Cleaning Services in Johannesburg',
-    template: '%s | Zenako Cleaning Co.',
+    default: 'Zenako Cleaning & Property Services | Professional Cleaning Services in Johannesburg',
+    template: '%s | Zenako Cleaning & Property Services',
   },
-  description: 'Zenako Cleaning Co. offers professional cleaning services in Johannesburg and surrounding areas, including Sandton, Randburg, Fourways, Midrand, and Bryanston. Residential cleaning, commercial cleaning, upholstery cleaning, pest control and more. Book today.',
+  description: 'Zenako Cleaning & Property Services offers professional cleaning services in Johannesburg and surrounding areas, including Sandton, Randburg, Fourways, Midrand, and Bryanston. Residential cleaning, commercial cleaning, upholstery cleaning, pest control and more. Book today.',
   keywords: [
     'cleaning services Johannesburg',
     'professional cleaners Johannesburg',
-    'Zenako Cleaning Co',
+    'Zenako Cleaning & Property Services',
     'commercial cleaning Johannesburg',
     'residential cleaning Johannesburg',
     'specialized cleaning services',
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_ZA',
     url: SITE_URL,
-    siteName: 'Zenako Cleaning Co.',
+    siteName: 'Zenako Cleaning & Property Services',
     images: [
       {
         url: '/cleaning images/zenako-cleaning-team.webp',
         width: 1200,
         height: 630,
-        alt: 'Zenako Cleaning Co. professional cleaning team, Johannesburg',
+        alt: 'Zenako Cleaning & Property Services professional cleaning team, Johannesburg',
       },
     ],
   },

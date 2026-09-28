@@ -13,7 +13,7 @@ export function GoogleReviewsCTA() {
         >
           <Image
             src="/google-reviews-1-.png"
-            alt="Google Reviews - Zenako Cleaning Co."
+            alt="Google Reviews - Zenako Cleaning & Property Services"
             width={1200}
             height={300}
             className="w-full h-auto"

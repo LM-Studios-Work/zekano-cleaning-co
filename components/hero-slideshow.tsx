@@ -81,6 +81,12 @@ export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {
       <div className="relative z-10 w-full pt-36 pb-24 md:py-0">
         <div className="mx-auto max-w-7xl w-full px-6 lg:px-8">
           <div className="max-w-2xl">
+            <div className="mb-2 text-[#6fbf00] font-black tracking-widest text-sm md:text-base uppercase">
+              ZENAKO CLEANING & PROPERTY SERVICES
+            </div>
+            <div className="mb-6 text-white/90 font-bold text-xs md:text-sm tracking-widest uppercase">
+              Professional Cleaning • Gardens • Lawns • Landscaping • Property Care
+            </div>
             <h1
               key={currentSlide}
               className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.1]"

@@ -15,24 +15,24 @@ import {
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: "About Zenako Cleaning Co. | Johannesburg",
-  description: "Learn about Zenako Cleaning Co., Johannesburg's trusted professional cleaning service for homes and businesses. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg.",
+  title: "About Zenako Cleaning & Property Services | Johannesburg",
+  description: "Learn about Zenako Cleaning & Property Services, Johannesburg's trusted professional cleaning service for homes and businesses. Serving Sandton, Randburg, Fourways, Midrand, Bryanston, and Johannesburg.",
   alternates: {
     canonical: '/about',
   },
   openGraph: {
-    title: "About Zenako Cleaning Co. | Johannesburg",
+    title: "About Zenako Cleaning & Property Services | Johannesburg",
     description: "Johannesburg-based cleaning company serving homes, offices, and commercial properties across Sandton, Randburg, Fourways, Midrand, and Bryanston.",
     url: '/about',
     images: [
       {
         url: '/cleaning images/zenako-cleaning-team.webp',
-        alt: 'Zenako Cleaning Co. professional cleaning team, Johannesburg',
+        alt: 'Zenako Cleaning & Property Services professional cleaning team, Johannesburg',
       },
     ],
   },
   twitter: {
-    title: "About Zenako Cleaning Co. | Johannesburg",
+    title: "About Zenako Cleaning & Property Services | Johannesburg",
     description: "Johannesburg-based cleaning company serving homes, offices, and commercial properties across Sandton, Randburg, Fourways, Midrand, and Bryanston.",
   },
 }
@@ -93,7 +93,7 @@ export default async function AboutPage() {
                 </h2>
                 <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    At Zenako Cleaning Co., we believe your space should be a source of calm, not another task on your list. We provide professional residential and commercial cleaning services across Johannesburg designed to help busy homeowners, families, and professionals maintain beautifully clean, healthy, and welcoming environments.
+                    At Zenako Cleaning & Property Services, we believe your space should be a source of calm, not another task on your list. We provide professional residential and commercial cleaning services across Johannesburg designed to help busy homeowners, families, and professionals maintain beautifully clean, healthy, and welcoming environments.
                   </p>
                   <p>
                     We didn't set out to be the largest cleaning agency in South Africa. Instead, we set out to be the most reliable. Proudly servicing Sandton, Bryanston, Fourways, Midrand, and Randburg, our team is committed to delivering detail-focused cleaning with a deeply personal touch.

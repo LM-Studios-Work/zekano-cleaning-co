@@ -118,7 +118,7 @@ export default async function OfficeCleaningPage() {
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                   Your workplace says a lot about your business. A clean, well-maintained office not
                   only creates a positive first impression for clients but also boosts team morale
-                  and supports a healthier work environment. At Zenako Cleaning Co., we deliver
+                  and supports a healthier work environment. At Zenako Cleaning & Property Services, we deliver
                   professional office cleaning services designed to keep your workplace spotless,
                   safe, and welcoming.
                 </p>
@@ -253,7 +253,7 @@ export default async function OfficeCleaningPage() {
                   <div className="p-8 lg:p-10 bg-white border border-border shadow-sm flex flex-col justify-center">
                       <h3 className="text-2xl font-bold text-foreground mb-4">Local Expertise</h3>
                       <p className="text-muted-foreground leading-relaxed">
-                          If you&apos;re searching for &quot;office cleaning services near me&quot; in Johannesburg, Zenako Cleaning Co. has you covered. We are locally based, fully insured, and dedicated to long-term partnerships built on trust and transparency.
+                          If you&apos;re searching for &quot;office cleaning services near me&quot; in Johannesburg, Zenako Cleaning & Property Services has you covered. We are locally based, fully insured, and dedicated to long-term partnerships built on trust and transparency.
                       </p>
                   </div>
               </div>
@@ -294,7 +294,7 @@ export default async function OfficeCleaningPage() {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
               <div>
                 <h2 className="text-2xl lg:text-3xl font-bold text-white text-balance">
-                  Partner with Zenako Cleaning Co.
+                  Partner with Zenako Cleaning & Property Services
                 </h2>
                 <div className="mt-4 flex flex-col gap-2 text-white/90">
                     <div><strong>Email:</strong> info@zenakocleaning.co.za</div>
