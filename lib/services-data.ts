@@ -606,7 +606,7 @@ export const allServices: ServiceData[] = [
       "Quality assurance and ongoing support.",
     ],
   },
-]
+];
 
 export function getServiceBySlug(slug: string): ServiceData | undefined {
   return allServices.find((s) => s.slug === slug)
@@ -667,6 +667,8 @@ export const serviceCategories = [
     ],
   },
 
+  
+  
   {
     name: "Property Services",
     slug: "property-services",

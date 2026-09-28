@@ -39,9 +39,7 @@ const categoryIcons: Record<string, typeof HouseIcon> = {
   "commercial-cleaning": OfficeIcon,
   "upholstery-and-fabric": CouchIcon,
   "specialised-cleaning": WrenchIcon,
-  "garden-and-lawn": WrenchIcon,
-  "landscaping-and-property": HouseIcon,
-  "commercial-and-specialist": OfficeIcon,
+  "property-services": HouseIcon,
 }
 
 const CLEANING_CATEGORIES = [
@@ -77,26 +75,12 @@ const CLEANING_CATEGORIES = [
 
 const PROPERTY_CATEGORIES = [
   {
-    slug: "garden-and-lawn",
-    cmsKey: "garden",
-    name: "Garden & Lawn Services",
-    description: "Expert care for healthy plant growth, professional lawn management, and tailored treatment plans to enhance your property's curb appeal year-round.",
+    slug: "property-services",
+    cmsKey: "property-services",
+    name: "Property Services",
+    description: "Extensive property care including landscaping, garden maintenance, and specialist commercial services.",
     image: "/cleaning images/zenako-garden-cleaning.webp",
-  },
-  {
-    slug: "landscaping-and-property",
-    cmsKey: "landscaping",
-    name: "Landscaping & Property Services",
-    description: "Complete property transformation, professional paving, irrigation, tree felling, and site clearance for a beautiful and functional space.",
-    image: "/cleaning images/zenako-roof-cleaning.webp",
-  },
-  {
-    slug: "commercial-and-specialist",
-    cmsKey: "commercial-specialist",
-    name: "Commercial & Specialist Services",
-    description: "Specialised maintenance for commercial properties, sports fields, padel courts, and supply of professional landscaping products.",
-    image: "/office/office hero.webp",
-  },
+  }
 ];
 
 async function getCategoryImages(): Promise<Record<string, string>> {
