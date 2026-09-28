@@ -101,15 +101,8 @@ const faqs = [
 
 export default async function CommercialAndSpecialistService() {
   const payload = await getPayload({ config: configPromise })
-  const [{ docs: detailImgs }, detailImageMap] = await Promise.all([
-    payload.find({
-      collection: 'service-detail-images',
-      where: { service: { equals: 'commercial-and-specialist' } },
-      limit: 1,
-    }),
-    getServiceDetailImageMap(),
-  ])
-  const heroImage = (detailImgs[0] as any)?.url ?? "/commercial and specialist services/sports field.jpg"
+  const detailImageMap = await getServiceDetailImageMap()
+  const heroImage = "/commercial and specialist services/sports field.jpg"
 
   const otherServices = getRelatedServices("commercial-and-specialist", 3)
 
