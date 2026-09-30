@@ -30,8 +30,8 @@ export function Footer() {
               <Image
                 src="/logo.png"
                 alt="Zenako Cleaning & Property Services"
-                width={180}
-                height={50}
+                width={799}
+                height={312}
                 className="h-10 w-auto object-contain"
               />
             </div>

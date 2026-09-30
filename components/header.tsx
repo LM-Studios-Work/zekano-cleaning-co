@@ -102,8 +102,8 @@ export function Header() {
             <Image
               src="/logo.png"
               alt="Zenako Cleaning & Property Services"
-              width={180}
-              height={50}
+              width={799}
+              height={312}
               className="h-14 w-auto object-contain"
               priority
             />
@@ -263,8 +263,8 @@ export function Header() {
                 <Image
                   src="/logo.png"
                   alt="Zenako Cleaning & Property Services"
-                  width={256}
-                  height={128}
+                  width={799}
+                  height={312}
                   className="h-full w-auto object-contain p-2"
                 />
               </div>
@@ -344,8 +344,8 @@ export function Header() {
               <Image
                 src="/logo.png"
                 alt="Zenako Cleaning & Property Services"
-                width={120}
-                height={40}
+                width={799}
+                height={312}
                 className="h-10 w-auto object-contain"
               />
             </Link>
