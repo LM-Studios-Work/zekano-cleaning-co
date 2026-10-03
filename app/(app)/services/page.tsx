@@ -78,7 +78,7 @@ const PROPERTY_CATEGORIES = [
     slug: "property-services",
     cmsKey: "property-services",
     name: "Property Services",
-    description: "Extensive property care including landscaping, garden maintenance, and specialist commercial services.",
+    description: "Extensive property care including landscaping, garden maintenance, and specialist commercial services delivered by our dedicated Specialised Contractor division.",
     image: "/cleaning images/zenako-garden-cleaning.webp",
   }
 ];
@@ -161,7 +161,7 @@ export default async function ServicesPage() {
                 Property <span style={{ color: "#6fbf00" }}>Services</span>
               </h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-                Beyond cleaning, we now offer extensive property care including landscaping, garden maintenance, and specialist commercial services.
+                Beyond cleaning, our dedicated Specialised Contractor division provides extensive property care, including landscaping, garden maintenance, and specialist commercial services.
               </p>
               <div className="mt-4 h-1 w-24 bg-gray-300"></div>
             </div>

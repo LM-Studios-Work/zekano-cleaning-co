@@ -513,8 +513,8 @@ export const allServices: ServiceData[] = [
     title: "Garden & Lawn Services",
     category: "Property Services",
     categorySlug: "property-services",
-    description: "Comprehensive garden maintenance and lawn care solutions to keep your outdoor spaces pristine.",
-    longDescription: "Our Garden & Lawn Services provide comprehensive care for your outdoor spaces. From routine maintenance to specialised lawn treatments, we ensure your garden remains healthy, vibrant, and well-maintained year-round.",
+    description: "Comprehensive garden maintenance and landscaping solutions from our specialised contracting team to keep your outdoor spaces pristine.",
+    longDescription: "Our Specialised Contractor division provides comprehensive care for your outdoor spaces. From routine maintenance to complex landscaping, we ensure your property remains healthy, vibrant, and well-managed year-round.",
     image: "/cleaning images/zenako-garden-cleaning.webp",
     icon: "TreePine",
     features: [
@@ -548,8 +548,8 @@ export const allServices: ServiceData[] = [
     title: "Landscaping & Property Services",
     category: "Property Services",
     categorySlug: "property-services",
-    description: "Professional landscaping, paving, and property maintenance services.",
-    longDescription: "Transform and maintain your property with our professional landscaping and property services. We handle everything from site clearance to irrigation systems and tree maintenance, ensuring your property looks its best.",
+    description: "Professional landscaping, paving, and specialised property maintenance from our dedicated contractor division.",
+    longDescription: "Transform and maintain your property with Zenako's Specialised Contractor division. We handle everything from site clearance to irrigation systems and tree maintenance, ensuring your property is managed safely and professionally.",
     image: "/cleaning images/zenako-roof-cleaning.webp",
     icon: "Home",
     features: [
@@ -581,8 +581,8 @@ export const allServices: ServiceData[] = [
     title: "Commercial & Specialist Services",
     category: "Property Services",
     categorySlug: "property-services",
-    description: "Specialised maintenance for commercial properties, sports fields, and unique facilities.",
-    longDescription: "Our Commercial & Specialist Services are tailored for business parks, sports facilities, and commercial properties. We provide expert maintenance for sports fields, padel courts, and supply professional landscaping products.",
+    description: "Specialised contractor maintenance for commercial properties, sports fields, and unique facilities.",
+    longDescription: "Our Specialised Contractor division is tailored for business parks, sports facilities, and commercial properties. We provide expert maintenance for sports fields, padel courts, and supply professional landscaping products.",
     image: "/office/office hero.webp",
     icon: "Building2",
     features: [
@@ -605,6 +605,43 @@ export const allServices: ServiceData[] = [
       "Supply and application of necessary products.",
       "Quality assurance and ongoing support.",
     ],
+  },
+  {
+    slug: "property-improvement-services",
+    title: "Property Improvement Services",
+    category: "Property Services",
+    categorySlug: "property-services",
+    description: "Property improvement, maintenance, and upgrade projects managed through our trusted network of specialised contractors.",
+    longDescription: "Zenako Cleaning & Property Services works with a trusted network of experienced and specialised contractors to assist with property improvement, maintenance and upgrade projects. Each project is matched with the appropriate specialist, while Zenako remains your point of contact throughout the process.",
+    image: "/property improvement/laminate flooring.webp",
+    icon: "Wrench",
+    features: [
+      "Laminate Flooring",
+      "Tiling",
+      "Drywalling",
+      "Painting & Waterproofing",
+      "Ceiling Installation",
+      "Paving",
+      "Irrigation",
+      "Landscaping",
+      "Tree Care",
+      "Garden & Lawn Services",
+      "General Property Maintenance"
+    ],
+    benefits: [
+      "Specialised contractors for each trade",
+      "Single point of contact via Zenako",
+      "Professional project management",
+      "Quality assurance and oversight",
+      "Trusted and vetted professionals"
+    ],
+    process: [
+      "We assess your property improvement requirements.",
+      "Zenako matches your project with the appropriate specialist contractor.",
+      "You receive a clear, comprehensive quote.",
+      "The specialist completes the work under Zenako's management.",
+      "Final inspection and quality assurance by Zenako."
+    ]
   },
 ];
 
@@ -674,8 +711,9 @@ export const serviceCategories = [
     slug: "property-services",
     services: [
       { name: "Garden & Lawn Services", slug: "garden-and-lawn" },
-      { name: "Landscaping & Property Services", slug: "landscaping-and-property" },
-      { name: "Commercial & Specialist Services", slug: "commercial-and-specialist" },
+      { name: "Landscaping & Property", slug: "landscaping-and-property" },
+      { name: "Commercial & Specialist", slug: "commercial-and-specialist" },
+      { name: "Property Improvement", slug: "property-improvement-services" },
     ],
   },
 ];

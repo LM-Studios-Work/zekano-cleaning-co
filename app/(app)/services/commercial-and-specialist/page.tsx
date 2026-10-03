@@ -130,7 +130,7 @@ export default async function CommercialAndSpecialistService() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#6fbf00" }}>
-                  Commercial & Specialist Services
+                  Zenako Specialised Contractors
                 </span>
                 <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
                   Expert Maintenance for Business & Sports Facilities
@@ -176,7 +176,7 @@ export default async function CommercialAndSpecialistService() {
                 Why Zenako
               </span>
               <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                Specialist Solutions for <span style={{ color: "#1A9AD2" }}>Commercial Clients</span>
+                Specialist Contractor Solutions for <span style={{ color: "#1A9AD2" }}>Commercial Clients</span>
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
                 We understand the high standards required for commercial properties and professional sports facilities.
