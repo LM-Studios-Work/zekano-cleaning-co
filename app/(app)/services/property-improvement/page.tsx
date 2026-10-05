@@ -9,7 +9,7 @@ import { getRelatedServices } from "@/lib/services-data"
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { getServiceDetailImageMap } from "@/lib/cms-images"
-import { FaqAccordion } from "../landscaping-and-property/faq-accordion"
+import { FaqAccordion } from "../landscaping-property/faq-accordion"
 import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 
 const inspectionItems = [

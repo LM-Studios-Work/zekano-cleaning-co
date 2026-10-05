@@ -338,7 +338,7 @@ export const allServices: ServiceData[] = [
     slug: "roof-cleaning",
     title: "Roof Cleaning",
     category: "Specialised Cleaning Services",
-    categorySlug: "specialised-cleaning",
+    categorySlug: "disinfection-services",
     description: "Professional roof cleaning to remove moss, algae, and built-up dirt.",
     longDescription: "Over time, roofs accumulate moss, algae, lichen, and general grime that not only looks unsightly but can cause structural damage if left untreated. Our professional roof cleaning service safely removes all build-up, restoring your roof's appearance and extending its lifespan. We use appropriate methods for tile, metal, and other roofing materials. Serving properties across Johannesburg.",
     image: "/cleaning images/zenako-roof-cleaning.webp",
@@ -373,7 +373,7 @@ export const allServices: ServiceData[] = [
     slug: "drain-cleaning",
     title: "Drain Cleaning",
     category: "Specialised Cleaning Services",
-    categorySlug: "specialised-cleaning",
+    categorySlug: "disinfection-services",
     description: "Fast, reliable drain cleaning and unblocking in Johannesburg. We resolve blocked toilets, overflowing sinks, and sewer line backups with owner-supervised, vetted teams.",
     longDescription: "Professional Drain Cleaning & Unblocking in Johannesburg. If your drains are slow, smells are emerging, or your bathroom and kitchen fixtures are overflowing, professional cleaning is required. Zenako Cleaning & Property Services specialises in clearing blocked toilets and main sewer lines, slow-draining showers, baths, and basins, kitchen sink blockages and grease build-up, and sewer backups and septic tank issues. We use professional-grade electro-mechanical cleaning and high-pressure water jetting to deliver long-lasting results across Johannesburg and surrounding areas.",
     image: "/cleaning-kitchen-sink-drain.webp",
@@ -405,7 +405,7 @@ export const allServices: ServiceData[] = [
     slug: "garden-clean-ups",
     title: "Garden Clean-ups",
     category: "Specialised Cleaning Services",
-    categorySlug: "specialised-cleaning",
+    categorySlug: "disinfection-services",
     description: "Tidy up your outdoor spaces with clearing, trimming, and general maintenance.",
     longDescription: "An overgrown or untidy garden can significantly affect the appearance of your property. Our garden clean-up service covers everything from clearing debris and trimming overgrowth to general tidying and waste removal, whether for a one-time restoration or regular ongoing maintenance. Available across Johannesburg and surrounding areas.",
     image: "/cleaning images/zenako-garden-cleaning.webp",
@@ -440,7 +440,7 @@ export const allServices: ServiceData[] = [
     slug: "pest-control",
     title: "Pest Control",
     category: "Specialised Cleaning Services",
-    categorySlug: "specialised-cleaning",
+    categorySlug: "disinfection-services",
     description: "Targeted pest treatments using eco-friendly products safe for your family and pets.",
     longDescription: "Pests can cause health risks, property damage, and general discomfort. Our pest control service uses targeted, eco-friendly treatments to eliminate pests at the source, addressing the root cause rather than the surface. We treat ants, cockroaches, rodents, spiders, bed bugs, mosquitoes, and more. All products are safe for families and pets. We also offer ongoing prevention plans to keep your home pest-free. Serving Johannesburg and surrounding areas.",
     image: "/cleaning images/zenako-disinfection-fogging-johannesburg.webp",
@@ -475,7 +475,7 @@ export const allServices: ServiceData[] = [
     slug: "disinfection-services",
     title: "Disinfection Services",
     category: "Specialised Cleaning Services",
-    categorySlug: "specialised-cleaning",
+    categorySlug: "disinfection-services",
     description: "Thorough disinfection and sanitisation for homes and businesses.",
     longDescription: "Protect your family, employees, and customers with our professional disinfection service. We provide thorough sanitisation of all surfaces using hospital-grade, eco-friendly disinfectants that eliminate bacteria, viruses, and germs. Ideal for homes, offices, schools, clinics, and any space that needs a higher level of hygiene. Available across Johannesburg and surrounding areas.",
     image: "/cleaning images/zenako-disinfection-fogging-johannesburg.webp",
@@ -509,7 +509,7 @@ export const allServices: ServiceData[] = [
 
   // Property Services
   {
-    slug: "garden-and-lawn",
+    slug: "garden-lawn",
     title: "Garden & Lawn Services",
     category: "Property Services",
     categorySlug: "property-services",
@@ -544,7 +544,7 @@ export const allServices: ServiceData[] = [
     ],
   },
   {
-    slug: "landscaping-and-property",
+    slug: "landscaping-property",
     title: "Landscaping & Property Services",
     category: "Property Services",
     categorySlug: "property-services",
@@ -577,7 +577,7 @@ export const allServices: ServiceData[] = [
     ],
   },
   {
-    slug: "commercial-and-specialist",
+    slug: "commercial-property",
     title: "Commercial & Specialist Services",
     category: "Property Services",
     categorySlug: "property-services",
@@ -607,7 +607,7 @@ export const allServices: ServiceData[] = [
     ],
   },
   {
-    slug: "property-improvement-services",
+    slug: "property-improvement",
     title: "Property Improvement Services",
     category: "Property Services",
     categorySlug: "property-services",
@@ -694,7 +694,7 @@ export const serviceCategories = [
   },
   {
     name: "Specialised Services",
-    slug: "specialised-cleaning",
+    slug: "disinfection-services",
     services: [
       { name: "Roof Cleaning", slug: "roof-cleaning" },
       { name: "Drain Cleaning", slug: "drain-cleaning" },
@@ -710,10 +710,10 @@ export const serviceCategories = [
     name: "Property Services",
     slug: "property-services",
     services: [
-      { name: "Garden & Lawn Services", slug: "garden-and-lawn" },
-      { name: "Landscaping & Property", slug: "landscaping-and-property" },
-      { name: "Commercial & Specialist", slug: "commercial-and-specialist" },
-      { name: "Property Improvement", slug: "property-improvement-services" },
+      { name: "Garden & Lawn Services", slug: "garden-lawn" },
+      { name: "Landscaping & Property", slug: "landscaping-property" },
+      { name: "Commercial & Specialist", slug: "commercial-property" },
+      { name: "Property Improvement", slug: "property-improvement" },
     ],
   },
 ];

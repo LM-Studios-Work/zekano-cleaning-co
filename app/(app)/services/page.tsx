@@ -38,7 +38,7 @@ const categoryIcons: Record<string, typeof HouseIcon> = {
   "residential-cleaning": HouseIcon,
   "commercial-cleaning": OfficeIcon,
   "upholstery-and-fabric": CouchIcon,
-  "specialised-cleaning": WrenchIcon,
+  "disinfection-services": WrenchIcon,
   "property-services": HouseIcon,
 }
 
@@ -65,7 +65,7 @@ const CLEANING_CATEGORIES = [
     image: "/our services click/upholstery.webp",
   },
   {
-    slug: "specialised-cleaning",
+    slug: "disinfection-services",
     cmsKey: "specialised",
     name: "Specialised Cleaning Services",
     description: "Beyond standard cleaning, we offer a range of specialised services to keep your property in top condition inside and out.",
