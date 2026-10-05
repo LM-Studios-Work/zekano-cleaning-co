@@ -39,7 +39,7 @@ export function Footer() {
               Professional cleaning services for homes, offices, and commercial properties across Johannesburg.
             </p>
             <div className="flex gap-5">
-              <a href="https://facebook.com" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61579543874261" className="opacity-80 hover:opacity-100 transition-opacity" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <i className="fa-brands fa-facebook-f text-xl lg:text-lg"></i>
               </a>
               <a href="https://instagram.com" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="Instagram">

@@ -121,36 +121,20 @@ function ReviewCard({ review }: { review: typeof reviews[0] }) {
 
 export function ReviewsSection() {
   return (
-    <section className="py-10 lg:py-16 bg-[#f8f9fa]">
+    <section className="py-8 bg-[#f8f9fa]">
       <div className="mx-auto max-w-6xl px-5">
-        {/* Google Reviews badge - small and centred */}
-        <div className="flex justify-center">
+        <div className="flex flex-col items-center justify-center mb-6">
           <Link
             href="https://share.google/jLQESscLkIi9xGnXp"
             target="_blank"
             rel="noopener noreferrer"
-            className="block w-full max-w-[260px] lg:max-w-[300px]"
+            className="text-center group flex flex-col items-center"
           >
-            <Image
-              src="/google-reviews-1-.png"
-              alt="Google Reviews for Zenako Cleaning & Property Services"
-              width={1200}
-              height={300}
-              className="w-full h-auto"
-            />
-          </Link>
-        </div>
-
-        {/* Link to Google reviews */}
-        <div className="flex justify-center mt-3 mb-7">
-          <Link
-            href="https://share.google/jLQESscLkIi9xGnXp"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1A9AD2] underline underline-offset-2 hover:text-blue-700 transition-colors"
-          >
-            <GoogleGIcon className="w-4 h-4" />
-            See our Google reviews
+            <div className="text-3xl tracking-[0.2em] mb-1" style={{ color: "#FBBC04" }}>★★★★★</div>
+            <div className="text-xl font-bold text-gray-900 group-hover:text-[#1A9AD2] transition-colors flex items-center gap-2">
+              <GoogleGIcon className="w-5 h-5" />
+              5-Star Rated on Google
+            </div>
           </Link>
         </div>
 

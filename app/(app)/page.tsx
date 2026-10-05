@@ -11,7 +11,6 @@ import { FirstTimeOffer } from "@/components/first-time-offer"
 import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
 import { allServices } from "@/lib/services-data"
-import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 
 export const revalidate = 60
 
@@ -156,9 +155,8 @@ export default async function HomePage() {
       <Header />
       <main className="relative">
         <HeroSlideshow slides={heroSlides} />
-        <ServiceAreas />
-        <GoogleReviewsCTA />
         <ServicesPreview />
+        <ServiceAreas />
         <BeforeAfter examples={beforeAfterExamples} />
         {/* Google reviews */}
         <ReviewsSection />

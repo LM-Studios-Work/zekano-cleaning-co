@@ -19,25 +19,25 @@ const STATIC_SERVICES: ServiceCard[] = [
     cmsKey: "deep-clean",
   },
   {
-    title: "Standard House Cleaning",
-    href: "/services/standard-house-cleaning",
-    image: "/home_page services_block images/house cleaning.webp",
-    description: "Scheduled weekly, fortnightly, or monthly maintenance to keep your home consistently clean and comfortable.",
-    cmsKey: "house-cleaning",
-  },
-  {
-    title: "Move-in / Move-out",
+    title: "Move-In / Move-Out Cleaning",
     href: "/services/move-in-move-out-cleaning",
     image: "/home_page services_block images/move in move out.webp",
     description: "Thorough end-of-tenancy or pre-occupancy cleaning to ensure the property is in excellent condition.",
     cmsKey: "move-in-move-out",
   },
   {
-    title: "Pest Control",
-    href: "/services/pest-control",
-    image: "/home_page services_block images/pest control.webp",
-    description: "Targeted pest treatments that address the source of the problem using eco-friendly, low-toxicity products.",
-    cmsKey: "pest-control",
+    title: "Weekly House Cleaning",
+    href: "/services/standard-house-cleaning",
+    image: "/home_page services_block images/house cleaning.webp",
+    description: "Scheduled weekly, fortnightly, or monthly maintenance to keep your home consistently clean and comfortable.",
+    cmsKey: "house-cleaning",
+  },
+  {
+    title: "Commercial Cleaning",
+    href: "/services/commercial-cleaning",
+    image: "/cleaning images/zenako-office-cleaning-johannesburg.webp",
+    description: "Professional cleaning for businesses of all sizes. A clean workspace keeps your team healthy and clients impressed.",
+    cmsKey: "commercial-cleaning",
   },
 ]
 

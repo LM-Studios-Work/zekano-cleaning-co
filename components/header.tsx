@@ -61,7 +61,7 @@ export function Header() {
             <a href="https://twitter.com" className="text-white/80 hover:text-white transition-colors" title="Twitter">
               <i className="fa-brands fa-twitter text-base"></i>
             </a>
-            <a href="https://facebook.com" className="text-white/80 hover:text-white transition-colors" title="Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61579543874261" className="text-white/80 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" title="Facebook">
               <i className="fa-brands fa-facebook-f text-base"></i>
             </a>
             <a href="https://instagram.com" className="text-white/80 hover:text-white transition-colors" title="Instagram">
@@ -280,7 +280,7 @@ export function Header() {
               <a href="https://twitter.com" className="text-gray-400 hover:text-gray-600 transition-colors" title="Twitter">
                 <i className="fa-brands fa-twitter text-lg"></i>
               </a>
-              <a href="https://facebook.com" className="text-gray-400 hover:text-gray-600 transition-colors" title="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61579543874261" className="text-gray-400 hover:text-gray-600 transition-colors" target="_blank" rel="noopener noreferrer" title="Facebook">
                 <i className="fa-brands fa-facebook-f text-lg"></i>
               </a>
               <a href="https://instagram.com" className="text-gray-400 hover:text-gray-600 transition-colors" title="Instagram">
