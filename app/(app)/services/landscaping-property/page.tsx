@@ -82,11 +82,6 @@ const whyUsPoints = [
   },
 ]
 
-const exclusions = [
-  "Routine lawn mowing (Available under Garden & Lawn)",
-  "Indoor plumbing repairs",
-  "Major building construction or roofing",
-]
 
 const faqs = [
   {

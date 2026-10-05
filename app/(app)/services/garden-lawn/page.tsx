@@ -82,12 +82,6 @@ const whyUsPoints = [
   },
 ]
 
-const exclusions = [
-  "Major tree felling (Available under Landscaping)",
-  "Hardscaping and paving (Available under Landscaping)",
-  "Irrigation system installation (Available under Landscaping)",
-  "Structural property repairs",
-]
 
 const faqs = [
   {
@@ -258,33 +252,6 @@ Chat on WhatsApp
           </div>
         </section>
 
-        {/* Exclusions */}
-        <section className="py-16 lg:py-24 bg-background">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-8">Related Services</h2>
-                <p className="text-muted-foreground mb-6">
-                  While our Garden & Lawn Services cover all routine maintenance, you may also be interested in our structural property improvements:
-                </p>
-                <ul className="space-y-3">
-                  {exclusions.map((item, idx) => (
-                    <li key={idx} className="flex gap-3 items-start">
-                      <span className="text-lg" style={{ color: "#6fbf00" }}>→</span>
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="p-8 border-l-4 bg-white" style={{ borderColor: "#6fbf00" }}>
-                <h3 className="text-2xl font-bold text-foreground mb-4">The Zenako Standard</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  We guarantee a reliable and professional service. If you are not completely satisfied with our garden maintenance, contact us within 24 hours and we will address the issue promptly.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* FAQs */}
         <section className="py-16 lg:py-24 bg-white">
