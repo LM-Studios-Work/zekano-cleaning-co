@@ -10,6 +10,7 @@ import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { getServiceDetailImageMap } from "@/lib/cms-images"
 import { FaqAccordion } from "./faq-accordion"
+import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 
 const inspectionItems = [
   {
@@ -25,7 +26,7 @@ const inspectionItems = [
   },
   {
     title: "Sports Field Maintenance",
-    image: "/commercial and specialist services/sports field.jpg",
+    image: "/property improvement/sportsfield.jpeg",
     items: [
       "Deep aeration and professional top dressing",
       "Accurate line marking and turf repair",
@@ -103,14 +104,15 @@ const faqs = [
 export default async function CommercialAndSpecialistService() {
   const payload = await getPayload({ config: configPromise })
   const detailImageMap = await getServiceDetailImageMap()
-  const heroImage = "/commercial and specialist services/sports field.jpg"
+  const heroImage = "/property improvement/sportsfield.jpeg"
 
-  const otherServices = getRelatedServices("commercial-and-specialist", 3)
+  const otherServices = getRelatedServices("commercial-property", 3)
 
   return (
     <>
       <Header />
       <main className="pt-24">
+        <GoogleReviewsCTA />
         {/* Breadcrumb */}
         <section className="py-4 bg-background border-b border-border">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -139,13 +141,16 @@ export default async function CommercialAndSpecialistService() {
                   Dedicated maintenance for sports fields, padel courts, and commercial properties. We supply the expertise and products your business needs to stay at the top of its game.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/book"
-                    className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:opacity-90"
-                    style={{ backgroundColor: "#6fbf00" }}
+                  <a
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20to%20request%20a%20B2B%20Commercial%20Property%20Maintenance%20proposal."
+target="_blank"
+rel="noopener noreferrer"
+                    className="shadow-xl text-base py-4 inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:opacity-90"
+                    style={{ backgroundColor: "#1A9AD2" }}
                   >
-                    Discuss Your Requirements
-                  </Link>
+<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+Request Corporate Proposal
+</a>
                   <a
                     href="tel:+27657018482"
                     className="btn-lift inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-bold text-foreground border-2 border-foreground hover:bg-foreground hover:text-white transition-colors duration-200"
@@ -266,13 +271,16 @@ export default async function CommercialAndSpecialistService() {
             <p className="text-white mb-8 max-w-2xl mx-auto">
               Partner with Zenako for reliable, professional maintenance of your commercial property or sports facilities.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white hover:opacity-90"
-              style={{ backgroundColor: "#6fbf00" }}
+            <a
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20to%20request%20a%20B2B%20Commercial%20Property%20Maintenance%20proposal."
+target="_blank"
+rel="noopener noreferrer"
+              className="shadow-xl text-base py-4 inline-flex items-center justify-center px-8 py-3 font-semibold hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: "#ffffff", color: "#1A9AD2" }}
             >
-              Contact Our Commercial Team
-            </Link>
+<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+Request Corporate Proposal
+</a>
           </div>
         </section>
 

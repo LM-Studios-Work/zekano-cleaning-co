@@ -9,107 +9,115 @@ import { getRelatedServices } from "@/lib/services-data"
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { getServiceDetailImageMap } from "@/lib/cms-images"
-import { FaqAccordion } from "../landscaping-and-property/faq-accordion"
+import { FaqAccordion } from "./faq-accordion"
+import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 
 const inspectionItems = [
   {
-    title: "Flooring & Tiling",
-    image: "/property improvement/laminate flooring.webp",
+    title: "Landscaping",
+    image: "/landscaping/landscaping.jpg",
     items: [
-      "Professional laminate flooring installation",
-      "Bathroom and kitchen tiling",
-      "Floor and wall tile application",
-      "Surface preparation and levelling",
-      "Grouting and sealing",
+      "Custom garden design and layout planning",
+      "Soil preparation and expert planting",
+      "Retaining walls and decorative stone work",
+      "Seasonal plant selection for year round colour",
+      "Transforming unused spaces into garden features",
     ],
   },
   {
-    title: "Drywalling & Ceilings",
-    image: "/property improvement/ceiling installation.webp",
+    title: "Paving",
+    image: "/landscaping/paving.jpg",
     items: [
-      "Drywall installation and partitioning",
-      "Ceiling installation and repairs",
-      "Skimming and plastering",
-      "Bulkheads and decorative ceilings",
-      "Soundproofing and insulation",
+      "Driveway and walkway paving installation",
+      "Patio and outdoor living area construction",
+      "Wide selection of bricks, stones, and cobbles",
+      "Professional leveling and robust base preparation",
+      "Edge restraints and grouting for durability",
     ],
   },
   {
-    title: "Painting & Waterproofing",
-    image: "/property improvement/drywalling.jpg",
+    title: "Irrigation & Sprinklers",
+    image: "/landscaping/sprinkler-with-rotary.jpg",
     items: [
-      "Interior and exterior painting",
-      "Roof and balcony waterproofing",
-      "Damp proofing solutions",
-      "Surface preparation and crack repair",
-      "Protective coatings for walls and floors",
+      "Automated sprinkler system design and installation",
+      "Drip irrigation setup for maximum water efficiency",
+      "Maintenance and repair of existing systems",
+      "Smart controller programming",
+      "Seasonal adjustments to watering schedules",
     ],
   },
   {
-    title: "Outdoor Improvements",
-    image: "/property improvement/tiling-a-bathroom-floor-for-beginners-planning.webp",
+    title: "Tree Felling & Clearance",
+    image: "/property improvement/maintenance.jpeg",
     items: [
-      "Driveway and walkway paving",
-      "Irrigation system installation",
-      "Landscaping and garden design",
-      "Tree felling and care",
-      "General property maintenance",
+      "Safe tree felling and complete removal",
+      "Professional tree trimming and canopy shaping",
+      "Stump removal and deep root clearing",
+      "Comprehensive site clearance and rubble removal",
+      "Responsible disposal of all green waste and rubble",
     ],
   },
 ]
 
 const whyUsPoints = [
   {
-    title: "Specialised Network",
-    description: "We work with a trusted network of experienced and specialised contractors ensuring the right expert is matched to your specific project.",
-    icon: "CheckIcon",
-  },
-  {
-    title: "Single Point of Contact",
-    description: "Zenako remains your dedicated point of contact throughout the entire process, managing the contractors so you don't have to.",
-    icon: "CheckIcon",
-  },
-  {
-    title: "Quality Assurance",
-    description: "All work is overseen and vetted to meet Zenako's high standards of quality and professionalism.",
-    icon: "CheckIcon",
-  },
-  {
     title: "Comprehensive Solutions",
-    description: "From indoor renovations to outdoor landscaping, we cover all aspects of property improvement.",
+    description: "From design to installation and maintenance, we handle all aspects of landscaping so you only deal with one contractor.",
     icon: "CheckIcon",
   },
+  {
+    title: "Quality Craftsmanship",
+    description: "Our paving and hardscaping is built to last, using proper base preparation and premium materials.",
+    icon: "CheckIcon",
+  },
+  {
+    title: "Safety First Approach",
+    description: "Tree felling and heavy clearance work is conducted under strict safety protocols to protect your property.",
+    icon: "CheckIcon",
+  },
+  {
+    title: "Sustainable Practices",
+    description: "We design irrigation systems that save water and select plants that thrive naturally in your specific environment.",
+    icon: "CheckIcon",
+  },
+]
+
+const exclusions = [
+  "Routine lawn mowing (Available under Garden & Lawn)",
+  "Indoor plumbing repairs",
+  "Major building construction or roofing",
 ]
 
 const faqs = [
   {
-    id: "contractors",
-    question: "Do you employ these specialists directly?",
-    answer: "Zenako Cleaning & Property Services works with a trusted network of experienced and specialised contractors. We match each project with the appropriate specialist, while Zenako remains your dedicated point of contact and project manager throughout the entire process.",
+    id: "trees",
+    question: "Is tree felling safe for surrounding structures?",
+    answer: "Yes, our team is highly trained in directional felling and section removal. We use the correct rigging equipment to safely dismantle trees piece by piece if they are close to walls or roofs.",
   },
   {
-    id: "quotes",
-    question: "How do quotes work for property improvement?",
-    answer: "We assess your specific requirements and coordinate with our specialist network to provide you with a single, comprehensive quote for the entire project.",
+    id: "paving",
+    question: "Do you supply the paving materials?",
+    answer: "Absolutely. We supply a wide range of paving bricks and stones, and we handle all the logistics including sand, cement, and rubble removal.",
   },
   {
-    id: "management",
-    question: "Who manages the project?",
-    answer: "Zenako manages the project end-to-end. You deal directly with us, and we ensure the specialist contractors deliver to our exacting standards.",
+    id: "irrigation",
+    question: "Can you fix my existing sprinkler system?",
+    answer: "Yes, we provide full maintenance and repair services for existing irrigation systems, including fixing leaks, replacing broken sprinkler heads, and upgrading controllers.",
   },
 ]
 
-export default async function PropertyImprovementServices() {
+export default async function LandscapingAndPropertyService() {
   const payload = await getPayload({ config: configPromise })
   const detailImageMap = await getServiceDetailImageMap()
-  const heroImage = "/property improvement/laminate flooring.webp"
+  const heroImage = "/landscaping/landscaping.jpg"
 
-  const otherServices = getRelatedServices("property-improvement-services", 3)
+  const otherServices = getRelatedServices("landscaping-property", 3)
 
   return (
     <>
       <Header />
       <main className="pt-24">
+        <GoogleReviewsCTA />
         {/* Breadcrumb */}
         <section className="py-4 bg-background border-b border-border">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -118,7 +126,7 @@ export default async function PropertyImprovementServices() {
               <span>/</span>
               <Link href="/services/property-services" className="hover:text-foreground transition-colors">Property Services</Link>
               <span>/</span>
-              <span className="text-foreground font-medium">Property Improvement Services</span>
+              <span className="text-foreground font-medium">Landscaping & Property Services</span>
             </nav>
           </div>
         </section>
@@ -129,22 +137,25 @@ export default async function PropertyImprovementServices() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#6fbf00" }}>
-                  Zenako Cleaning & Property Services
+                  Zenako Specialised Contractors
                 </span>
                 <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
-                  Property Improvement Services
+                  Transform Your Property with Expert Landscaping
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                  Zenako Cleaning & Property Services works with a trusted network of experienced and specialised contractors to assist with property improvement, maintenance and upgrade projects. Each project is matched with the appropriate specialist, while Zenako remains your point of contact throughout the process.
+                  We provide complete outdoor solutions. From beautiful garden redesigns and durable paving to complex tree felling and irrigation systems, we manage it all.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/book"
+                  <a
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20Landscaping%2C%20Paving%20or%20Artificial%20Grass."
+target="_blank"
+rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:opacity-90"
                     style={{ backgroundColor: "#6fbf00" }}
                   >
-                    Request a Quote
-                  </Link>
+<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+Get a Quote via WhatsApp
+</a>
                   <a
                     href="tel:+27657018482"
                     className="btn-lift inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-bold text-foreground border-2 border-foreground hover:bg-foreground hover:text-white transition-colors duration-200"
@@ -157,7 +168,7 @@ export default async function PropertyImprovementServices() {
               <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
                   src={heroImage}
-                  alt="Property Improvement Services"
+                  alt="Expert Landscaping and Paving Services"
                   fill
                   className="object-cover"
                   priority
@@ -175,10 +186,10 @@ export default async function PropertyImprovementServices() {
                 Why Zenako
               </span>
               <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                Your Trusted Contractor <span style={{ color: "#1A9AD2" }}>Network</span>
+                Your Trusted Specialised <span style={{ color: "#1A9AD2" }}>Contractor</span>
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                We deliver major property improvement projects safely and professionally through our network of vetted specialists.
+                We deliver major outdoor projects safely, professionally, and exactly to your specifications.
               </p>
             </div>
 
@@ -215,7 +226,7 @@ export default async function PropertyImprovementServices() {
             <div className="text-center mb-12 lg:mb-16">
               <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Capabilities</span>
               <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                Our Property Improvement Services
+                Our Property & Landscaping Expertise
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -263,15 +274,18 @@ export default async function PropertyImprovementServices() {
               Ready to Upgrade Your Property?
             </h2>
             <p className="text-white mb-8 max-w-2xl mx-auto">
-              Contact us today to discuss your property improvement projects and connect with our network of specialists.
+              Contact us today to discuss your landscaping, paving, or tree felling requirements.
             </p>
-            <Link
-              href="/book"
+            <a
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20Landscaping%2C%20Paving%20or%20Artificial%20Grass."
+target="_blank"
+rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white hover:opacity-90"
               style={{ backgroundColor: "#6fbf00" }}
             >
-              Get a Free Estimate
-            </Link>
+<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+Get a Quote via WhatsApp
+</a>
           </div>
         </section>
 

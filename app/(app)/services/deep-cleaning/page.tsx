@@ -16,6 +16,7 @@ import {
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { getServiceDetailImageMap } from "@/lib/cms-images"
+import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 
 export const metadata: Metadata = {
   title: "Professional Deep Cleaning Services in Johannesburg | Zenako",
@@ -128,6 +129,7 @@ export default async function DeepCleaningPage() {
     <>
       <Header />
       <main className="pt-24">
+        <GoogleReviewsCTA />
         {/* Breadcrumb */}
         <section className="py-4 bg-background border-b border-border">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -166,13 +168,16 @@ export default async function DeepCleaningPage() {
                   and beyond.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/book"
+                  <a
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20a%20home%2Foffice%20Deep%20Clean."
+target="_blank"
+rel="noopener noreferrer"
                     className="inline-flex items-center justify-center rounded-none px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:opacity-90"
                     style={{ backgroundColor: "#6fbf00" }}
                   >
-                    Book Your Deep Clean
-                  </Link>
+<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+Get a Quote via WhatsApp
+</a>
                   <a
                     href="tel:+27657018482"
                     className="btn-lift inline-flex items-center justify-center gap-2 rounded-none px-8 py-3 text-sm font-bold text-foreground border-2 border-foreground hover:bg-foreground hover:text-white transition-colors duration-200"
@@ -414,13 +419,16 @@ export default async function DeepCleaningPage() {
                 </p>
               </div>
               <div className="shrink-0">
-                <Link
-                  href="/book"
+                <a
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20a%20home%2Foffice%20Deep%20Clean."
+target="_blank"
+rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-none px-8 py-3 text-sm font-semibold text-white hover:opacity-90 whitespace-nowrap"
                   style={{ backgroundColor: "#6fbf00" }}
                 >
-                  Book Now
-                </Link>
+<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+Get a Quote via WhatsApp
+</a>
               </div>
             </div>
           </div>
@@ -455,13 +463,16 @@ export default async function DeepCleaningPage() {
               ))}
             </div>
             <div className="mt-10">
-              <Link
-                href="/book"
+              <a
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20a%20home%2Foffice%20Deep%20Clean."
+target="_blank"
+rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-none px-8 py-3 text-sm font-semibold text-white hover:opacity-90"
                 style={{ backgroundColor: "#6fbf00" }}
               >
-                Book Your Deep Clean Today
-              </Link>
+<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+Get a Quote via WhatsApp
+</a>
             </div>
           </div>
         </section>

@@ -10,16 +10,17 @@ import { allServices } from "@/lib/services-data"
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { getServiceDetailImageMap } from "@/lib/cms-images"
+import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 
 export const metadata: Metadata = {
   title: "Specialised Cleaning Services in Johannesburg | Zenako",
   description: "Beyond standard cleaning. Roof cleaning, drain clearing, garden clean-ups, pest control, and disinfection services in Johannesburg.",
   alternates: {
-    canonical: "/services/specialised-cleaning",
+    canonical: "/services/disinfection-services",
   },
 }
 
-const categorySlug = "specialised-cleaning"
+const categorySlug = "disinfection-services"
 const categoryName = "Specialised Cleaning Services"
 const categoryDesc = "Beyond standard cleaning, we offer a range of specialised services to keep your property in top condition inside and out."
 const categoryImage = "/cleaning images/zenako-garden-cleaning.webp"
@@ -43,6 +44,7 @@ export default async function SpecialisedCleaningHub() {
     <>
       <Header />
       <main className="pt-24">
+        <GoogleReviewsCTA />
         {/* Breadcrumb */}
         <section className="py-4 bg-background border-b border-border">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -71,13 +73,16 @@ export default async function SpecialisedCleaningHub() {
                   {categoryDesc} Trusted by homeowners and businesses across Johannesburg, from Sandton to Randburg.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/contact"
+                  <a
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20to%20book%20a%20Disinfection%20%26%20Sanitisation%20service."
+target="_blank"
+rel="noopener noreferrer"
                     className="inline-flex items-center justify-center rounded px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:opacity-90"
                     style={{ backgroundColor: "#6fbf00" }}
                   >
-                    Request a Quote
-                  </Link>
+<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+Book via WhatsApp
+</a>
                   <a
                     href="tel:+27657018482"
                     className="btn-lift inline-flex items-center justify-center gap-2 rounded px-8 py-3 text-sm font-bold text-foreground border-2 border-foreground hover:bg-foreground hover:text-white transition-colors duration-200"
@@ -157,13 +162,16 @@ export default async function SpecialisedCleaningHub() {
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
               Request Specialised Cleaning Assistance
             </h2>
-            <Link
-              href="/contact"
+            <a
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20to%20book%20a%20Disinfection%20%26%20Sanitisation%20service."
+target="_blank"
+rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded px-8 py-3 text-sm font-semibold text-white hover:opacity-90"
               style={{ backgroundColor: "#6fbf00" }}
             >
-              Request Specialised Assistance
-            </Link>
+<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+Book via WhatsApp
+</a>
           </div>
         </section>
 

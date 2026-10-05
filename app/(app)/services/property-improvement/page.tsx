@@ -9,114 +9,109 @@ import { getRelatedServices } from "@/lib/services-data"
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { getServiceDetailImageMap } from "@/lib/cms-images"
-import { FaqAccordion } from "./faq-accordion"
+import { FaqAccordion } from "../landscaping-and-property/faq-accordion"
+import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 
 const inspectionItems = [
   {
-    title: "Garden Maintenance",
-    image: "/garden/weed control.jpg",
+    title: "Flooring & Tiling",
+    image: "/property improvement/laminate flooring.webp",
     items: [
-      "Thorough weeding and soil turning",
-      "Pruning and deadheading of flowers",
-      "Leaf clearing and overall garden tidy up",
-      "Mulching and compost application",
-      "Pest identification and organic remedies",
+      "Professional laminate flooring installation",
+      "Bathroom and kitchen tiling",
+      "Floor and wall tile application",
+      "Surface preparation and levelling",
+      "Grouting and sealing",
     ],
   },
   {
-    title: "Lawn Care & Maintenance",
-    image: "/garden/lawn.jpg",
+    title: "Drywalling & Ceilings",
+    image: "/property improvement/ceiling installation.webp",
     items: [
-      "Regular lawn mowing and crisp edge trimming",
-      "Targeted fertilising and weed control treatments",
-      "Lime treatment for optimal pH balance",
-      "Organic fertilisation options for healthy soil",
-      "Aeration to improve water and nutrient flow",
+      "Drywall installation and partitioning",
+      "Ceiling installation and repairs",
+      "Skimming and plastering",
+      "Bulkheads and decorative ceilings",
+      "Soundproofing and insulation",
     ],
   },
   {
-    title: "Moss Control",
-    image: "/cleaning images/zenako-garden-cleaning.webp",
+    title: "Painting & Waterproofing",
+    image: "/property improvement/drywalling.jpg",
     items: [
-      "Identifying and safely removing moss build up",
-      "Treating the root cause of moss growth",
-      "Specialised seasonal care for shaded lawn areas",
-      "Improving drainage to prevent future growth",
-      "Ensuring a vibrant green lawn all year",
+      "Interior and exterior painting",
+      "Roof and balcony waterproofing",
+      "Damp proofing solutions",
+      "Surface preparation and crack repair",
+      "Protective coatings for walls and floors",
     ],
   },
   {
-    title: "Turf Supply & Installation",
-    image: "/garden/Royal-Paving-Artificial-Grass-25mm-Augusta-Product-Residential.png",
+    title: "Outdoor Improvements",
+    image: "/property improvement/tiling-a-bathroom-floor-for-beginners-planning.webp",
     items: [
-      "Instant lawn supply and professional installation",
-      "Premium artificial grass and turf fitting",
-      "Comprehensive site preparation and leveling",
-      "Base compacting for synthetic options",
-      "Long term maintenance and care advice",
+      "Driveway and walkway paving",
+      "Irrigation system installation",
+      "Landscaping and garden design",
+      "Tree felling and care",
+      "General property maintenance",
     ],
   },
 ]
 
 const whyUsPoints = [
   {
-    title: "Expert Horticulturists",
-    description: "Our team understands the local climate and soil conditions in Johannesburg, ensuring your plants and lawns thrive.",
+    title: "Specialised Network",
+    description: "We work with a trusted network of experienced and specialised contractors ensuring the right expert is matched to your specific project.",
     icon: "CheckIcon",
   },
   {
-    title: "Tailored Care Plans",
-    description: "We do not believe in one size fits all. We assess your garden and create a maintenance plan specifically for your property.",
+    title: "Single Point of Contact",
+    description: "Zenako remains your dedicated point of contact throughout the entire process, managing the contractors so you don't have to.",
     icon: "CheckIcon",
   },
   {
-    title: "Premium Products",
-    description: "We use high quality organic fertilisers and safe weed control products to protect your family and the environment.",
+    title: "Quality Assurance",
+    description: "All work is overseen and vetted to meet Zenako's high standards of quality and professionalism.",
     icon: "CheckIcon",
   },
   {
-    title: "Reliable Scheduling",
-    description: "Whether you need weekly mowing or seasonal overhauls, our teams arrive on time and fully equipped for the job.",
+    title: "Comprehensive Solutions",
+    description: "From indoor renovations to outdoor landscaping, we cover all aspects of property improvement.",
     icon: "CheckIcon",
   },
-]
-
-const exclusions = [
-  "Major tree felling (Available under Landscaping)",
-  "Hardscaping and paving (Available under Landscaping)",
-  "Irrigation system installation (Available under Landscaping)",
-  "Structural property repairs",
 ]
 
 const faqs = [
   {
-    id: "frequency",
-    question: "How often should I have my lawn mowed?",
-    answer: "During the growing season, weekly mowing is recommended for optimal health. In cooler months, fortnightly or monthly mowing is usually sufficient. We adjust our schedule based on your lawn's specific needs.",
+    id: "contractors",
+    question: "Do you employ these specialists directly?",
+    answer: "Zenako Cleaning & Property Services works with a trusted network of experienced and specialised contractors. We match each project with the appropriate specialist, while Zenako remains your dedicated point of contact and project manager throughout the entire process.",
   },
   {
-    id: "artificial",
-    question: "Do you install artificial grass?",
-    answer: "Yes, we supply and install high quality artificial grass. Our team handles the full process from site clearing and leveling to the final installation.",
+    id: "quotes",
+    question: "How do quotes work for property improvement?",
+    answer: "We assess your specific requirements and coordinate with our specialist network to provide you with a single, comprehensive quote for the entire project.",
   },
   {
-    id: "organic",
-    question: "Are your fertilisers safe for pets?",
-    answer: "We offer organic fertilisation options that are completely safe for pets and children once applied. We will always advise you on safety protocols for any treatments used.",
+    id: "management",
+    question: "Who manages the project?",
+    answer: "Zenako manages the project end-to-end. You deal directly with us, and we ensure the specialist contractors deliver to our exacting standards.",
   },
 ]
 
-export default async function GardenAndLawnService() {
+export default async function PropertyImprovementServices() {
   const payload = await getPayload({ config: configPromise })
   const detailImageMap = await getServiceDetailImageMap()
-  const heroImage = "/garden/lawn.jpg"
+  const heroImage = "/property improvement/laminate flooring.webp"
 
-  const otherServices = getRelatedServices("garden-and-lawn", 3)
+  const otherServices = getRelatedServices("property-improvement", 3)
 
   return (
     <>
       <Header />
       <main className="pt-24">
+        <GoogleReviewsCTA />
         {/* Breadcrumb */}
         <section className="py-4 bg-background border-b border-border">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -125,7 +120,7 @@ export default async function GardenAndLawnService() {
               <span>/</span>
               <Link href="/services/property-services" className="hover:text-foreground transition-colors">Property Services</Link>
               <span>/</span>
-              <span className="text-foreground font-medium">Garden & Lawn Services</span>
+              <span className="text-foreground font-medium">Property Improvement Services</span>
             </nav>
           </div>
         </section>
@@ -136,22 +131,25 @@ export default async function GardenAndLawnService() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#6fbf00" }}>
-                  Garden & Lawn Services
+                  Zenako Cleaning & Property Services
                 </span>
                 <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
-                  Professional Garden Care in Johannesburg
+                  Property Improvement Services
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                  Keep your outdoor spaces vibrant and healthy all year. From routine lawn mowing to specialised weed control and instant turf installation, our expert teams deliver outstanding results.
+                  Zenako Cleaning & Property Services works with a trusted network of experienced and specialised contractors to assist with property improvement, maintenance and upgrade projects. Each project is matched with the appropriate specialist, while Zenako remains your point of contact throughout the process.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <Link
-                    href="/book"
+                  <a
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20Painting%2C%20Renovations%20or%20Property%20Maintenance."
+target="_blank"
+rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:opacity-90"
                     style={{ backgroundColor: "#6fbf00" }}
                   >
-                    Book Your Garden Service
-                  </Link>
+<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+Get a Quote via WhatsApp
+</a>
                   <a
                     href="tel:+27657018482"
                     className="btn-lift inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-bold text-foreground border-2 border-foreground hover:bg-foreground hover:text-white transition-colors duration-200"
@@ -164,7 +162,7 @@ export default async function GardenAndLawnService() {
               <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
                   src={heroImage}
-                  alt="Professional garden and lawn maintenance"
+                  alt="Property Improvement Services"
                   fill
                   className="object-cover"
                   priority
@@ -182,10 +180,10 @@ export default async function GardenAndLawnService() {
                 Why Zenako
               </span>
               <h2 className="mt-4 text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                Why Trust Us With <span style={{ color: "#1A9AD2" }}>Your Garden</span>
+                Your Trusted Contractor <span style={{ color: "#1A9AD2" }}>Network</span>
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                We combine horticultural knowledge with reliable service to ensure your property always looks its best.
+                We deliver major property improvement projects safely and professionally through our network of vetted specialists.
               </p>
             </div>
 
@@ -220,9 +218,9 @@ export default async function GardenAndLawnService() {
         <section className="py-16 lg:py-24 bg-background">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12 lg:mb-16">
-              <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Features</span>
+              <span className="text-sm font-bold uppercase tracking-widest" style={{ color: "#6fbf00" }}>Capabilities</span>
               <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                Our Comprehensive Lawn & Garden Services
+                Our Property Improvement Services
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -253,43 +251,12 @@ export default async function GardenAndLawnService() {
           </div>
         </section>
 
-        {/* Exclusions */}
-        <section className="py-16 lg:py-24 bg-background">
-          <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-8">Related Services</h2>
-                <p className="text-muted-foreground mb-6">
-                  While our Garden & Lawn Services cover all routine maintenance, you may also be interested in our structural property improvements:
-                </p>
-                <ul className="space-y-3">
-                  {exclusions.map((item, idx) => (
-                    <li key={idx} className="flex gap-3 items-start">
-                      <span className="text-lg" style={{ color: "#6fbf00" }}>→</span>
-                      <span className="text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="p-8 border-l-4 bg-white" style={{ borderColor: "#6fbf00" }}>
-                <h3 className="text-2xl font-bold text-foreground mb-4">The Zenako Standard</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  We guarantee a reliable and professional service. If you are not completely satisfied with our garden maintenance, contact us within 24 hours and we will address the issue promptly.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* FAQs */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="mx-auto max-w-3xl px-4 lg:px-8">
             <h2 className="text-3xl font-bold text-foreground text-center mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-muted-foreground text-center mb-12">
-              Learn more about our gardening approaches.
-            </p>
             <FaqAccordion faqs={faqs} />
           </div>
         </section>
@@ -298,18 +265,21 @@ export default async function GardenAndLawnService() {
         <section className="py-12 lg:py-16" style={{ backgroundColor: "#1A9AD2" }}>
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Ready to Transform Your Garden?
+              Ready to Upgrade Your Property?
             </h2>
             <p className="text-white mb-8 max-w-2xl mx-auto">
-              Get in touch today for a tailored quote and bring life back to your outdoor spaces.
+              Contact us today to discuss your property improvement projects and connect with our network of specialists.
             </p>
-            <Link
-              href="/book"
+            <a
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20Painting%2C%20Renovations%20or%20Property%20Maintenance."
+target="_blank"
+rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white hover:opacity-90"
               style={{ backgroundColor: "#6fbf00" }}
             >
-              Book Your Service
-            </Link>
+<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+Get a Quote via WhatsApp
+</a>
           </div>
         </section>
 
