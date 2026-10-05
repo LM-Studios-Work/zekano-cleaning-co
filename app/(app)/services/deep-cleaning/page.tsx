@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { Header } from "@/components/header"
+import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 import { Footer } from "@/components/footer"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -198,6 +199,8 @@ Get a Quote via WhatsApp
             </div>
           </div>
         </section>
+
+        <GoogleReviewsCTA />
 
         {/* REDESIGNED: Why Choose Us */}
         <section className="py-20 lg:py-28 bg-gray-50/40">

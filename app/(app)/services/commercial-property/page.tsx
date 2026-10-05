@@ -173,6 +173,8 @@ Request Corporate Proposal
           </div>
         </section>
 
+        <GoogleReviewsCTA />
+
         {/* Why Us Section */}
         <section className="py-20 lg:py-28 bg-gray-50/40">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
