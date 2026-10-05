@@ -156,8 +156,8 @@ export default async function HomePage() {
       <Header />
       <main className="relative">
         <HeroSlideshow slides={heroSlides} />
-        <GoogleReviewsCTA />
         <ServiceAreas />
+        <GoogleReviewsCTA />
         <ServicesPreview />
         <BeforeAfter examples={beforeAfterExamples} />
         {/* Google reviews */}
