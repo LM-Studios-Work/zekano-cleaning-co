@@ -48,7 +48,7 @@ const inspectionItems = [
   },
   {
     title: "Outdoor Improvements",
-    image: "/property improvement/tiling-a-bathroom-floor-for-beginners-planning.webp",
+    image: "/property improvement/outdoor improvement.png",
     items: [
       "Driveway and walkway paving",
       "Irrigation system installation",
@@ -103,7 +103,7 @@ const faqs = [
 export default async function PropertyImprovementServices() {
   const payload = await getPayload({ config: configPromise })
   const detailImageMap = await getServiceDetailImageMap()
-  const heroImage = "/property improvement/laminate flooring.webp"
+  const heroImage = "/property improvement/outdoor improvement.png"
 
   const otherServices = getRelatedServices("property-improvement", 3)
 
@@ -111,7 +111,7 @@ export default async function PropertyImprovementServices() {
     <>
       <Header />
       <main className="pt-24">
-        <GoogleReviewsCTA />
+        
         {/* Breadcrumb */}
         <section className="py-4 bg-background border-b border-border">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">

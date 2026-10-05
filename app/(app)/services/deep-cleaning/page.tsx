@@ -16,7 +16,6 @@ import {
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import { getServiceDetailImageMap } from "@/lib/cms-images"
-import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 
 export const metadata: Metadata = {
   title: "Professional Deep Cleaning Services in Johannesburg | Zenako",
@@ -129,7 +128,7 @@ export default async function DeepCleaningPage() {
     <>
       <Header />
       <main className="pt-24">
-        <GoogleReviewsCTA />
+        
         {/* Breadcrumb */}
         <section className="py-4 bg-background border-b border-border">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
