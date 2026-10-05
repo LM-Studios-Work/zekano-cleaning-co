@@ -161,7 +161,7 @@ export default async function ServicesPage() {
                 Property <span style={{ color: "#6fbf00" }}>Services</span>
               </h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-                Beyond cleaning, our dedicated Specialised Contractor division provides extensive property care, including landscaping, garden maintenance, and specialist commercial services.
+                Beyond cleaning, our dedicated Specialised Contractor division provides extensive property care, including landscaping, garden maintenance, and specialist commercial services. Zenako acts as your main point of contact, working closely with a trusted network of experienced, specialist contractors where required.
               </p>
               <div className="mt-4 h-1 w-24 bg-gray-300"></div>
             </div>

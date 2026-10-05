@@ -341,7 +341,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "disinfection-services",
     description: "Professional roof cleaning to remove moss, algae, and built-up dirt.",
     longDescription: "Over time, roofs accumulate moss, algae, lichen, and general grime that not only looks unsightly but can cause structural damage if left untreated. Our professional roof cleaning service safely removes all build-up, restoring your roof's appearance and extending its lifespan. We use appropriate methods for tile, metal, and other roofing materials. Serving properties across Johannesburg.",
-    image: "/cleaning images/zenako-roof-cleaning.webp",
+    image: "/property improvement/maintenance.jpeg",
     icon: "Home",
     features: [
       "Moss and algae removal",
@@ -408,7 +408,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "disinfection-services",
     description: "Tidy up your outdoor spaces with clearing, trimming, and general maintenance.",
     longDescription: "An overgrown or untidy garden can significantly affect the appearance of your property. Our garden clean-up service covers everything from clearing debris and trimming overgrowth to general tidying and waste removal, whether for a one-time restoration or regular ongoing maintenance. Available across Johannesburg and surrounding areas.",
-    image: "/cleaning images/zenako-garden-cleaning.webp",
+    image: "/property improvement/atificial grass.jpeg",
     icon: "TreePine",
     features: [
       "Overgrowth clearing and trimming",
@@ -514,8 +514,8 @@ export const allServices: ServiceData[] = [
     category: "Property Services",
     categorySlug: "property-services",
     description: "Comprehensive garden maintenance and landscaping solutions from our specialised contracting team to keep your outdoor spaces pristine.",
-    longDescription: "Our Specialised Contractor division provides comprehensive care for your outdoor spaces. From routine maintenance to complex landscaping, we ensure your property remains healthy, vibrant, and well-managed year-round.",
-    image: "/cleaning images/zenako-garden-cleaning.webp",
+    longDescription: "Our Specialised Contractor division provides comprehensive care for your outdoor spaces. From routine maintenance to complex landscaping, we ensure your property remains healthy, vibrant, and well-managed year-round. Zenako acts as your main point of contact, working closely with a trusted network of experienced, specialist contractors where required.",
+    image: "/property improvement/atificial grass.jpeg",
     icon: "TreePine",
     features: [
       "Garden Maintenance",
@@ -549,8 +549,8 @@ export const allServices: ServiceData[] = [
     category: "Property Services",
     categorySlug: "property-services",
     description: "Professional landscaping, paving, and specialised property maintenance from our dedicated contractor division.",
-    longDescription: "Transform and maintain your property with Zenako's Specialised Contractor division. We handle everything from site clearance to irrigation systems and tree maintenance, ensuring your property is managed safely and professionally.",
-    image: "/cleaning images/zenako-roof-cleaning.webp",
+    longDescription: "Transform and maintain your property with Zenako's Specialised Contractor division. We handle everything from site clearance to irrigation systems and tree maintenance, ensuring your property is managed safely and professionally. Zenako acts as your main point of contact, working closely with a trusted network of experienced, specialist contractors where required.",
+    image: "/property improvement/maintenance.jpeg",
     icon: "Home",
     features: [
       "Landscaping",
@@ -582,8 +582,8 @@ export const allServices: ServiceData[] = [
     category: "Property Services",
     categorySlug: "property-services",
     description: "Specialised contractor maintenance for commercial properties, sports fields, and unique facilities.",
-    longDescription: "Our Specialised Contractor division is tailored for business parks, sports facilities, and commercial properties. We provide expert maintenance for sports fields, padel courts, and supply professional landscaping products.",
-    image: "/office/office hero.webp",
+    longDescription: "Our Specialised Contractor division is tailored for business parks, sports facilities, and commercial properties. We provide expert maintenance for sports fields, padel courts, and supply professional landscaping products. Zenako acts as your main point of contact, working closely with a trusted network of experienced, specialist contractors where required.",
+    image: "/property improvement/sportsfield.jpeg",
     icon: "Building2",
     features: [
       "Commercial Property Services",
@@ -612,8 +612,8 @@ export const allServices: ServiceData[] = [
     category: "Property Services",
     categorySlug: "property-services",
     description: "Property improvement, maintenance, and upgrade projects managed through our trusted network of specialised contractors.",
-    longDescription: "Zenako Cleaning & Property Services works with a trusted network of experienced and specialised contractors to assist with property improvement, maintenance and upgrade projects. Each project is matched with the appropriate specialist, while Zenako remains your point of contact throughout the process.",
-    image: "/property improvement/laminate flooring.webp",
+    longDescription: "Zenako Cleaning & Property Services works with a trusted network of experienced and specialised contractors to assist with property improvement, maintenance and upgrade projects. Each project is matched with the appropriate specialist, while Zenako remains your point of contact throughout the process. Zenako acts as your main point of contact, working closely with a trusted network of experienced, specialist contractors where required.",
+    image: "/property improvement/outdoor improvement.png",
     icon: "Wrench",
     features: [
       "Laminate Flooring",
