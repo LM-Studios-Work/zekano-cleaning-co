@@ -15,7 +15,7 @@ import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 const inspectionItems = [
   {
     title: "Landscaping",
-    image: "/landscaping/landscaping.jpg",
+    image: "/new services/Landscaping (1).webp",
     items: [
       "Custom garden design and layout planning",
       "Soil preparation and expert planting",
@@ -26,7 +26,7 @@ const inspectionItems = [
   },
   {
     title: "Paving",
-    image: "/landscaping/paving.jpg",
+    image: "/new services/Paving and pathways (1).webp",
     items: [
       "Driveway and walkway paving installation",
       "Patio and outdoor living area construction",
@@ -37,7 +37,7 @@ const inspectionItems = [
   },
   {
     title: "Irrigation & Sprinklers",
-    image: "/landscaping/sprinkler-with-rotary.jpg",
+    image: "/new services/Irrigation .webp",
     items: [
       "Automated sprinkler system design and installation",
       "Drip irrigation setup for maximum water efficiency",
@@ -48,7 +48,7 @@ const inspectionItems = [
   },
   {
     title: "Tree Felling & Clearance",
-    image: "/property improvement/maintenance.jpeg",
+    image: "/new services/Tree felling and tree trimming (1).webp",
     items: [
       "Safe tree felling and complete removal",
       "Professional tree trimming and canopy shaping",
@@ -104,7 +104,7 @@ const faqs = [
 export default async function LandscapingAndPropertyService() {
   const payload = await getPayload({ config: configPromise })
   const detailImageMap = await getServiceDetailImageMap()
-  const heroImage = "/landscaping/landscaping.jpg"
+  const heroImage = "/new services/Landscaping (1).webp"
 
   const otherServices = getRelatedServices("landscaping-property", 3)
 

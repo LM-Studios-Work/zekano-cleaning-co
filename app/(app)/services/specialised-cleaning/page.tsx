@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   title: "Specialised Cleaning Services in Johannesburg | Zenako",
   description: "Beyond standard cleaning. Roof cleaning, drain clearing, garden clean-ups, pest control, and disinfection services in Johannesburg.",
   alternates: {
-    canonical: "/services/disinfection-services",
+    canonical: "/services/specialised-cleaning",
   },
 }
 
-const categorySlug = "disinfection-services"
+const categorySlug = "specialised-cleaning"
 const categoryName = "Specialised Cleaning Services"
 const categoryDesc = "Beyond standard cleaning, we offer a range of specialised services to keep your property in top condition inside and out."
-const categoryImage = "/cleaning images/zenako-garden-cleaning.webp"
+const categoryImage = "/commercial and specialist services/Roof clean.webp"
 
 export default async function SpecialisedCleaningHub() {
   const payload = await getPayload({ config: configPromise })
@@ -74,7 +74,7 @@ export default async function SpecialisedCleaningHub() {
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <a
-href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20to%20book%20a%20Disinfection%20%26%20Sanitisation%20service."
+href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20to%20book%20a%20Specialised%20Cleaning%20service."
 target="_blank"
 rel="noopener noreferrer"
                     className="inline-flex items-center justify-center rounded px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:opacity-90"

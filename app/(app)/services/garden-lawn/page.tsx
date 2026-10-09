@@ -15,7 +15,7 @@ import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 const inspectionItems = [
   {
     title: "Garden Maintenance",
-    image: "/garden/weed control.jpg",
+    image: "/new services/Garden Maintenance.webp",
     items: [
       "Thorough weeding and soil turning",
       "Pruning and deadheading of flowers",
@@ -26,7 +26,7 @@ const inspectionItems = [
   },
   {
     title: "Lawn Care & Maintenance",
-    image: "/garden/lawn.jpg",
+    image: "/new services/Lawn mowing (1).webp",
     items: [
       "Regular lawn mowing and crisp edge trimming",
       "Targeted fertilising and weed control treatments",
@@ -37,7 +37,7 @@ const inspectionItems = [
   },
   {
     title: "Moss Control",
-    image: "/cleaning images/zenako-garden-cleaning.webp",
+    image: "/new services/Garden Clean Up.webp",
     items: [
       "Identifying and safely removing moss build up",
       "Treating the root cause of moss growth",
@@ -48,7 +48,7 @@ const inspectionItems = [
   },
   {
     title: "Turf Supply & Installation",
-    image: "/property improvement/atificial grass.jpeg",
+    image: "/new services/Garden Makeover.webp",
     items: [
       "Instant lawn supply and professional installation",
       "Premium artificial grass and turf fitting",
@@ -104,7 +104,7 @@ const faqs = [
 export default async function GardenAndLawnService() {
   const payload = await getPayload({ config: configPromise })
   const detailImageMap = await getServiceDetailImageMap()
-  const heroImage = "/garden/lawn.jpg"
+  const heroImage = "/new services/Garden Makeover.webp"
 
   const otherServices = getRelatedServices("garden-lawn", 3)
 

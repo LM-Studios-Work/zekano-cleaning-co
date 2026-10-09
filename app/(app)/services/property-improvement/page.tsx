@@ -15,7 +15,7 @@ import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 const inspectionItems = [
   {
     title: "Flooring & Tiling",
-    image: "/property improvement/laminate flooring.webp",
+    image: "/property improvement/Laminate Flooring_ Before and After.webp",
     items: [
       "Professional laminate flooring installation",
       "Bathroom and kitchen tiling",
@@ -26,7 +26,7 @@ const inspectionItems = [
   },
   {
     title: "Drywalling & Ceilings",
-    image: "/property improvement/ceiling installation.webp",
+    image: "/property improvement/Drywalling and ceiling installation.webp",
     items: [
       "Drywall installation and partitioning",
       "Ceiling installation and repairs",
@@ -37,7 +37,7 @@ const inspectionItems = [
   },
   {
     title: "Painting & Waterproofing",
-    image: "/property improvement/drywalling.jpg",
+    image: "/property improvement/Painting.webp",
     items: [
       "Interior and exterior painting",
       "Roof and balcony waterproofing",
@@ -48,7 +48,7 @@ const inspectionItems = [
   },
   {
     title: "Outdoor Improvements",
-    image: "/property improvement/outdoor improvement.png",
+    image: "/property improvement/Before and After_ Modern Yard Transformation.webp",
     items: [
       "Driveway and walkway paving",
       "Irrigation system installation",
@@ -103,7 +103,7 @@ const faqs = [
 export default async function PropertyImprovementServices() {
   const payload = await getPayload({ config: configPromise })
   const detailImageMap = await getServiceDetailImageMap()
-  const heroImage = "/property improvement/outdoor improvement.png"
+  const heroImage = "/property improvement/Modern House Window Cleaning Scene.webp"
 
   const otherServices = getRelatedServices("property-improvement", 3)
 

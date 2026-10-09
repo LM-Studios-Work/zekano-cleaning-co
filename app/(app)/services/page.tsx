@@ -38,7 +38,7 @@ const categoryIcons: Record<string, typeof HouseIcon> = {
   "residential-cleaning": HouseIcon,
   "commercial-cleaning": OfficeIcon,
   "upholstery-and-fabric": CouchIcon,
-  "disinfection-services": WrenchIcon,
+  "specialised-cleaning": WrenchIcon,
   "property-services": HouseIcon,
 }
 
@@ -65,11 +65,11 @@ const CLEANING_CATEGORIES = [
     image: "/our services click/upholstery.webp",
   },
   {
-    slug: "disinfection-services",
+    slug: "specialised-cleaning",
     cmsKey: "specialised",
     name: "Specialised Cleaning Services",
     description: "Beyond standard cleaning, we offer a range of specialised services to keep your property in top condition inside and out.",
-    image: "/our services click/specialised.webp",
+    image: "/commercial and specialist services/Professional Window Cleaner on Glass Facade.webp",
   },
 ];
 
@@ -79,7 +79,7 @@ const PROPERTY_CATEGORIES = [
     cmsKey: "property-services",
     name: "Property Services",
     description: "Extensive property care including landscaping, garden maintenance, and specialist commercial services delivered by our dedicated Specialised Contractor division.",
-    image: "/cleaning images/zenako-garden-cleaning.webp",
+    image: "/commercial and specialist services/Tiling.webp",
   }
 ];
 
@@ -132,7 +132,7 @@ export default async function ServicesPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
                       <div className={catIdx % 2 === 1 ? "lg:order-2" : ""}>
                         <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
-                          <Image src={category.image} alt={category.name} fill className="object-cover" />
+                          <Image src={category.image} alt={category.name} fill className="object-cover" priority={catIdx <= 1} />
                         </div>
                       </div>
                       <div className={catIdx % 2 === 1 ? "lg:order-1" : ""}>
@@ -174,7 +174,7 @@ export default async function ServicesPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
                       <div className={catIdx % 2 === 1 ? "lg:order-2" : ""}>
                         <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
-                          <Image src={category.image} alt={category.name} fill className="object-cover" />
+                          <Image src={category.image} alt={category.name} fill className="object-cover" priority={catIdx === 0} />
                         </div>
                       </div>
                       <div className={catIdx % 2 === 1 ? "lg:order-1" : ""}>
