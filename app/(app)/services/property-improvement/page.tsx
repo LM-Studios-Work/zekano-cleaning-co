@@ -57,6 +57,17 @@ const inspectionItems = [
       "General property maintenance",
     ],
   },
+  {
+    title: "Window & High-Access Cleaning",
+    image: "/property improvement/Modern House Window Cleaning Scene.webp",
+    items: [
+      "Exterior and interior window cleaning",
+      "High-access and hard-to-reach window cleaning",
+      "Glass facade and skylight cleaning",
+      "Water-fed pole systems for safe access",
+      "Removal of hard water stains and mineral deposits",
+    ],
+  },
 ]
 
 const whyUsPoints = [
