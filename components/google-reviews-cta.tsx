@@ -84,7 +84,9 @@ export function GoogleReviewsCTA() {
           {compactReviews.map((r, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl border border-gray-200/80 p-4 shadow-2xs flex flex-col justify-between"
+              className={`bg-white rounded-xl border border-gray-200/80 p-4 shadow-2xs flex-col justify-between ${
+                i > 0 ? "hidden md:flex" : "flex"
+              }`}
             >
               <div>
                 <div className="flex items-center justify-between mb-2.5">

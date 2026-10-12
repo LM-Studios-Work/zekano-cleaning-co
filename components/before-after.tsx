@@ -57,12 +57,12 @@ export function BeforeAfter({
               We don&apos;t just wipe surfaces; we clean with care and attention to detail. Here&apos;s the standard you can expect from every visit.
             </p>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex gap-1.5 sm:gap-2 w-full sm:w-auto">
             {ITEMS.map((item, idx) => (
               <button
                 key={item.label}
                 onClick={() => setActiveIndex(idx)}
-                className={`px-5 py-3 sm:px-4 sm:py-2 text-base sm:text-sm font-bold transition-colors ${
+                className={`flex-1 sm:flex-none px-2 py-2 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold text-center transition-colors whitespace-nowrap ${
                   idx === activeIndex
                     ? "bg-foreground text-background"
                     : "bg-transparent text-muted-foreground hover:text-foreground border border-border"
@@ -74,7 +74,7 @@ export function BeforeAfter({
           </div>
         </div>
 
-        <div className="overflow-hidden border border-border bg-card">
+        <div className="-mx-6 sm:mx-0 overflow-hidden border-y sm:border border-border bg-card">
           <Image
             key={current.image}
             src={current.image}
@@ -82,7 +82,7 @@ export function BeforeAfter({
             width={current.width}
             height={current.height}
             priority
-            className="w-full h-auto object-cover"
+            className="w-full h-auto block"
           />
         </div>
       </div>
