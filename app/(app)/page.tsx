@@ -5,7 +5,6 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { HeroSlideshow, type HeroSlide } from "@/components/hero-slideshow"
 import { ServiceAreas } from "@/components/service-areas"
 import { ServicesPreview } from "@/components/services-preview"
-import { CommercialPropertySection } from "@/components/commercial-property-section"
 import { BeforeAfter, type BeforeAfterExample } from "@/components/before-after"
 import { ReviewsSection } from "@/components/reviews-section"
 import { FirstTimeOffer } from "@/components/first-time-offer"
@@ -18,8 +17,8 @@ export const revalidate = 60
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.zenakocleaning.co.za'
 
 export const metadata: Metadata = {
-  title: 'Professional Cleaning & Commercial Property Services in Johannesburg',
-  description: 'Zenako Cleaning & Property Services is your one point of contact for cleaning, gardens, landscaping, and commercial property maintenance across Johannesburg, Sandton, Randburg, Fourways, Midrand, and Bryanston.',
+  title: 'Professional Cleaning Services in Johannesburg',
+  description: 'Zenako Cleaning & Property Services provides professional residential, commercial, upholstery, and specialised cleaning services across Johannesburg, Sandton, Randburg, Fourways, Midrand, and Bryanston.',
   alternates: {
     canonical: '/',
   },
@@ -157,7 +156,6 @@ export default async function HomePage() {
       <main className="relative">
         <HeroSlideshow slides={heroSlides} />
         <ServicesPreview />
-        <CommercialPropertySection />
         <ServiceAreas />
         <BeforeAfter examples={beforeAfterExamples} />
         {/* Google reviews */}

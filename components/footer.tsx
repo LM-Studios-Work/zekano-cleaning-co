@@ -3,18 +3,17 @@ import Image from "next/image"
 import { PhoneIcon, MailIcon, ClockIcon, MapPinIcon } from "@/components/icons"
 
 const services = [
-  { name: "Commercial Property Care", href: "/services/commercial-property" },
-  { name: "Office Cleaning", href: "/services/office-cleaning" },
-  { name: "Deep Cleaning", href: "/services/deep-cleaning" },
   { name: "Standard House Cleaning", href: "/services/standard-house-cleaning" },
-  { name: "Garden & Lawn Care", href: "/services/garden-lawn" },
-  { name: "Property Improvement", href: "/services/property-improvement" },
+  { name: "Deep Cleaning", href: "/services/deep-cleaning" },
+  { name: "Move-in/Move-out", href: "/services/move-in-move-out-cleaning" },
+  { name: "Office Cleaning", href: "/services/office-cleaning" },
+  { name: "Carpet Cleaning", href: "/services/carpet-cleaning" },
+  { name: "Pest Control", href: "/services/pest-control" },
 ]
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Commercial Property", href: "/services/commercial-property" },
   { name: "Book Online", href: "/book" },
   { name: "Contact", href: "/contact" },
   { name: "Get a Free Quote", href: "/contact" },
@@ -37,7 +36,7 @@ export function Footer() {
               />
             </div>
             <p className="text-base lg:text-sm opacity-80 leading-relaxed">
-              One point of contact for cleaning, gardens, landscaping, and commercial property maintenance across Johannesburg.
+              Professional cleaning services for homes, offices, and commercial properties across Johannesburg.
             </p>
             <div className="flex gap-5">
               <a href="https://www.facebook.com/profile.php?id=61579543874261" className="opacity-80 hover:opacity-100 transition-opacity" target="_blank" rel="noopener noreferrer" aria-label="Facebook">

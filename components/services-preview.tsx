@@ -105,20 +105,14 @@ export async function ServicesPreview() {
           ))}
         </div>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 lg:mt-16">
+        {/* CTA Button */}
+        <div className="flex justify-center mt-12 lg:mt-16">
           <Link
             href="/services"
-            className="btn-lift btn-green-lift inline-flex items-center justify-center px-8 py-3 lg:py-4 text-base lg:text-lg font-bold text-white w-full sm:w-auto"
+            className="btn-lift btn-green-lift inline-flex items-center justify-center px-8 py-3 lg:py-4 text-base lg:text-lg font-bold text-white"
             style={{ backgroundColor: "#6fbf00" }}
           >
             See All 15+ Services
-          </Link>
-          <Link
-            href="/services/commercial-property"
-            className="inline-flex items-center justify-center gap-2 px-8 py-3 lg:py-4 text-base lg:text-lg font-bold text-foreground border-2 border-slate-300 hover:border-[#1A9AD2] hover:text-[#1A9AD2] transition-colors w-full sm:w-auto rounded-lg"
-          >
-            Commercial Property Services <ArrowRightIcon className="w-4 h-4" />
           </Link>
         </div>
       </div>

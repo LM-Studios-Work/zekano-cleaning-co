@@ -274,22 +274,9 @@ export function Header() {
             </div>
 
             {/* Description */}
-            <p className="text-gray-500 text-sm leading-relaxed mb-6">
-              One point of contact for cleaning, gardens, landscaping, and commercial property maintenance across Johannesburg.
+            <p className="text-gray-500 text-sm leading-relaxed mb-8">
+              Zenako Cleaning & Property Services Professional cleaning services for homes and businesses in Johannesburg and surrounding areas.
             </p>
-
-            {/* Commercial Property Link */}
-            <div className="mb-6">
-              <Link
-                href="/services/commercial-property"
-                onClick={() => setDesktopPanelOpen(false)}
-                className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg text-xs font-bold text-white transition-colors"
-                style={{ backgroundColor: "#1A9AD2" }}
-              >
-                Commercial Property Services
-                <ArrowRightIcon className="w-3.5 h-3.5" />
-              </Link>
-            </div>
 
             {/* Social Icons */}
             <div className="flex justify-center gap-5 mb-10">
@@ -465,14 +452,6 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Book Now
-            </Link>
-            <Link
-              href="/services/commercial-property"
-              className="block w-full rounded-lg px-5 py-2.5 text-center text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1A9AD2" }}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Commercial Property Services
             </Link>
           </div>
         </div>
