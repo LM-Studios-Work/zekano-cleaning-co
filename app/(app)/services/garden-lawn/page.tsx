@@ -25,36 +25,47 @@ const inspectionItems = [
     ],
   },
   {
-    title: "Lawn Care & Maintenance",
+    title: "Lawn Mowing",
     image: "/new services/Lawn mowing (1).webp",
     items: [
       "Regular lawn mowing and crisp edge trimming",
-      "Targeted fertilising and weed control treatments",
-      "Lime treatment for optimal pH balance",
-      "Organic fertilisation options for healthy soil",
-      "Aeration to improve water and nutrient flow",
+      "Edging along pathways, driveways and borders",
+      "Mowing height adjustments for seasonal conditions",
+      "Clipping removal and disposal",
+      "Consistent scheduling for a neat finish",
     ],
   },
   {
-    title: "Moss Control",
-    image: "/garden/Artificial Grass Cleaning_ Before & After.webp",
+    title: "Tree Care & Trimming",
+    image: "/new services/Tree felling and tree trimming (1).webp",
     items: [
-      "Identifying and safely removing moss build up",
-      "Treating the root cause of moss growth",
-      "Specialised seasonal care for shaded lawn areas",
-      "Improving drainage to prevent future growth",
-      "Ensuring a vibrant green lawn all year",
+      "Professional tree trimming and shaping",
+      "Canopy thinning and deadwood removal",
+      "Branch clearing and safe disposal",
+      "Hedge and shrub trimming",
+      "Tree health assessment and advice",
     ],
   },
   {
-    title: "Turf Supply & Installation",
-    image: "/garden/Artifical grass installation.webp",
+    title: "Irrigation",
+    image: "/new services/Irrigation .webp",
     items: [
-      "Instant lawn supply and professional installation",
-      "Premium artificial grass and turf fitting",
-      "Comprehensive site preparation and leveling",
-      "Base compacting for synthetic options",
-      "Long term maintenance and care advice",
+      "Sprinkler system installation and setup",
+      "Drip irrigation for water-efficient gardens",
+      "Irrigation maintenance and repairs",
+      "Smart controller programming and adjustments",
+      "Seasonal watering schedule management",
+    ],
+  },
+  {
+    title: "General Garden Clean-Ups",
+    image: "/new services/Garden Clean Up.webp",
+    items: [
+      "Removal of leaves, branches and garden waste",
+      "Overgrown area clearing and trimming",
+      "Pathway and patio sweeping",
+      "Green waste collection and disposal",
+      "Once-off or regular garden tidy-ups",
     ],
   },
 ]
@@ -135,10 +146,10 @@ export default async function GardenAndLawnService() {
                   Garden & Lawn Services
                 </span>
                 <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
-                  Professional Garden Care in Johannesburg
+                  Professional Garden & Lawn Services in Johannesburg
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                  Keep your outdoor spaces vibrant and healthy all year. From routine lawn mowing to specialised weed control and instant turf installation, our expert teams deliver outstanding results.
+                  From routine garden maintenance and lawn mowing to tree care, irrigation and garden clean-ups, Zenako provides reliable outdoor services to keep your property neat, healthy and well maintained.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <a
@@ -226,7 +237,7 @@ Chat on WhatsApp
                 Our Comprehensive Lawn & Garden Services
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {inspectionItems.map((section, idx) => (
                 <Card key={idx} className="border-border overflow-hidden">
                   <div className="aspect-[3/2] relative">

@@ -14,25 +14,36 @@ import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 
 const inspectionItems = [
   {
-    title: "Flooring & Tiling",
+    title: "Laminate Flooring",
     image: "/property improvement/Laminate Flooring_ Before and After.webp",
     items: [
       "Professional laminate flooring installation",
-      "Bathroom and kitchen tiling",
-      "Floor and wall tile application",
       "Surface preparation and levelling",
-      "Grouting and sealing",
+      "Underlay fitting and moisture protection",
+      "Skirting and trim finishing",
+      "Repair and replacement of damaged boards",
     ],
   },
   {
-    title: "Drywalling & Ceilings",
+    title: "Tiling",
+    image: "/property improvement/Laminate Flooring_ Before and After.webp",
+    items: [
+      "Bathroom and kitchen tiling",
+      "Floor and wall tile application",
+      "Grouting and sealing",
+      "Tile cutting and precise fitting",
+      "Waterproof tiling for wet areas",
+    ],
+  },
+  {
+    title: "Drywalling",
     image: "/property improvement/Drywalling and ceiling installation.webp",
     items: [
       "Drywall installation and partitioning",
-      "Ceiling installation and repairs",
       "Skimming and plastering",
-      "Bulkheads and decorative ceilings",
+      "Bulkheads and decorative features",
       "Soundproofing and insulation",
+      "Repair and patching of damaged walls",
     ],
   },
   {
@@ -47,14 +58,25 @@ const inspectionItems = [
     ],
   },
   {
-    title: "Outdoor Improvements",
-    image: "/property improvement/Before and After_ Modern Yard Transformation.webp",
+    title: "Ceiling Installation",
+    image: "/property improvement/Drywalling and ceiling installation.webp",
+    items: [
+      "New ceiling installation",
+      "Ceiling board replacement and repairs",
+      "Suspended and drop ceiling systems",
+      "Cornice and trim installation",
+      "Insulation above ceiling boards",
+    ],
+  },
+  {
+    title: "Paving",
+    image: "/commercial and specialist services/Paving Installation to Finished Pathway.webp",
     items: [
       "Driveway and walkway paving",
-      "Irrigation system installation",
-      "Landscaping and garden design",
-      "Tree felling and care",
-      "General property maintenance",
+      "Patio and outdoor area paving",
+      "Professional levelling and base preparation",
+      "Wide selection of bricks, stones and cobbles",
+      "Edge restraints and grouting for durability",
     ],
   },
   {
@@ -66,6 +88,17 @@ const inspectionItems = [
       "Glass facade and skylight cleaning",
       "Water-fed pole systems for safe access",
       "Removal of hard water stains and mineral deposits",
+    ],
+  },
+  {
+    title: "General Property Maintenance",
+    image: "/property improvement/Before and After_ Modern Yard Transformation.webp",
+    items: [
+      "Routine property inspections and upkeep",
+      "Minor repairs and handyman services",
+      "Plumbing and electrical coordination",
+      "General wear and tear maintenance",
+      "Seasonal property care and preparation",
     ],
   },
 ]
@@ -131,7 +164,7 @@ export default async function PropertyImprovementServices() {
               <span>/</span>
               <Link href="/services/property-services" className="hover:text-foreground transition-colors">Property Services</Link>
               <span>/</span>
-              <span className="text-foreground font-medium">Property Improvement Services</span>
+              <span className="text-foreground font-medium">Property Improvement & Maintenance Services</span>
             </nav>
           </div>
         </section>
@@ -145,10 +178,10 @@ export default async function PropertyImprovementServices() {
                   Zenako Cleaning & Property Services
                 </span>
                 <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
-                  Property Improvement Services
+                  Property Improvement & Maintenance Services
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                  Zenako Cleaning & Property Services works with a trusted network of experienced and specialised contractors to assist with property improvement, maintenance and upgrade projects. Each project is matched with the appropriate specialist, while Zenako remains your point of contact throughout the process.
+                  Keep your property looking its best with reliable improvement and maintenance services. From flooring, tiling and painting to ceilings, waterproofing and high-access window cleaning, Zenako provides practical solutions for residential and commercial properties.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <a

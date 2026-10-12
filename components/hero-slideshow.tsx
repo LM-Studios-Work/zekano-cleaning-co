@@ -35,6 +35,13 @@ const FALLBACK_SLIDES: HeroSlide[] = [
     heading: "Reliable Commercial\nCleaning.",
     description: "Scheduled after-hours cleaning so your workspace is ready each morning without interrupting your operations.",
   },
+  {
+    image: "/commercial and specialist services/Professional Window Cleaner on Glass Facade.webp",
+    alt: "Commercial property maintenance Johannesburg",
+    label: "04. Property Services",
+    heading: "Commercial Property\n& Facility Care.",
+    description: "One point of contact for cleaning, gardens, landscaping, and property maintenance across Johannesburg.",
+  },
 ]
 
 export function HeroSlideshow({ slides }: { slides?: HeroSlide[] }) {

@@ -25,36 +25,36 @@ const inspectionItems = [
     ],
   },
   {
-    title: "Paving",
+    title: "Paving & Pathways",
     image: "/new services/Paving and pathways (1).webp",
     items: [
       "Driveway and walkway paving installation",
       "Patio and outdoor living area construction",
-      "Wide selection of bricks, stones, and cobbles",
-      "Professional leveling and robust base preparation",
+      "Wide selection of bricks, stones and cobbles",
+      "Professional levelling and robust base preparation",
       "Edge restraints and grouting for durability",
     ],
   },
   {
-    title: "Irrigation & Sprinklers",
-    image: "/new services/Irrigation .webp",
+    title: "Garden Makeovers",
+    image: "/new services/Garden Makeover.webp",
     items: [
-      "Automated sprinkler system design and installation",
-      "Drip irrigation setup for maximum water efficiency",
-      "Maintenance and repair of existing systems",
-      "Smart controller programming",
-      "Seasonal adjustments to watering schedules",
+      "Complete garden redesign and transformation",
+      "Preparation, planting and garden features",
+      "Plant selection suited to local conditions",
+      "Removal of old landscaping and site clearing",
+      "Neat finishing and clean-up after work",
     ],
   },
   {
-    title: "Tree Felling & Clearance",
-    image: "/new services/Tree felling and tree trimming (1).webp",
+    title: "Outdoor Property Improvements",
+    image: "/property improvement/Before and After_ Modern Yard Transformation.webp",
     items: [
-      "Safe tree felling and complete removal",
-      "Professional tree trimming and canopy shaping",
-      "Stump removal and deep root clearing",
-      "Comprehensive site clearance and rubble removal",
-      "Responsible disposal of all green waste and rubble",
+      "Outdoor living area upgrades",
+      "Retaining walls and decorative features",
+      "Drainage and grading improvements",
+      "Property boundary and fencing work",
+      "General outdoor enhancements and maintenance",
     ],
   },
 ]
@@ -121,7 +121,7 @@ export default async function LandscapingAndPropertyService() {
               <span>/</span>
               <Link href="/services/property-services" className="hover:text-foreground transition-colors">Property Services</Link>
               <span>/</span>
-              <span className="text-foreground font-medium">Landscaping & Property Services</span>
+              <span className="text-foreground font-medium">Landscaping & Paving Services</span>
             </nav>
           </div>
         </section>
@@ -135,10 +135,10 @@ export default async function LandscapingAndPropertyService() {
                   Zenako Specialised Contractors
                 </span>
                 <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
-                  Transform Your Property with Expert Landscaping
+                  Professional Landscaping & Paving Services
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                  We provide complete outdoor solutions. From beautiful garden redesigns and durable paving to complex tree felling and irrigation systems, we manage it all.
+                  Transform your outdoor space with professional landscaping, paving and pathway solutions designed to improve the appearance, functionality and overall presentation of your property.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <a
@@ -264,25 +264,33 @@ Get a Quote via WhatsApp
           </div>
         </section>
 
-        {/* CTA */}
+                {/* CTA */}
         <section className="py-12 lg:py-16" style={{ backgroundColor: "#1A9AD2" }}>
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Ready to Upgrade Your Property?
+              Ready to Improve Your Property?
             </h2>
             <p className="text-white mb-8 max-w-2xl mx-auto">
-              Contact us today to discuss your landscaping, paving, or tree felling requirements.
+              Tell us what you need and we&apos;ll help you find the right service for your home or business.
             </p>
-            <a
-href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20Landscaping%2C%20Paving%20or%20Artificial%20Grass."
-target="_blank"
-rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white hover:opacity-90"
-              style={{ backgroundColor: "#6fbf00" }}
-            >
-<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
-Get a Quote via WhatsApp
-</a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/book"
+                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: "#ffffff", color: "#1A9AD2" }}
+              >
+                GET A FREE QUOTE TODAY
+              </Link>
+              <a
+                href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20your%20property%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold border-2 border-white text-white hover:bg-white hover:text-[#1A9AD2] transition-colors duration-200"
+              >
+                <i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+                CHAT ON WHATSAPP
+              </a>
+            </div>
           </div>
         </section>
 

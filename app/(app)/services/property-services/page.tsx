@@ -152,15 +152,29 @@ export default async function PropertyServicesHub() {
         <section className="py-12 lg:py-16" style={{ backgroundColor: "#1A9AD2" }}>
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Book Your Residential Clean Today
+              Ready to Improve Your Property?
             </h2>
-            <Link
-              href="/book"
-              className="inline-flex items-center justify-center rounded px-8 py-3 text-sm font-semibold text-white hover:opacity-90"
-              style={{ backgroundColor: "#6fbf00" }}
-            >
-              Book {categoryName} Today
-            </Link>
+            <p className="text-white mb-8 max-w-2xl mx-auto">
+              Tell us what you need and we&apos;ll help you find the right service for your home or business.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/book"
+                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold hover:opacity-90 transition-opacity"
+                style={{ backgroundColor: "#ffffff", color: "#1A9AD2" }}
+              >
+                GET A FREE QUOTE TODAY
+              </Link>
+              <a
+                href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20your%20property%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold border-2 border-white text-white hover:bg-white hover:text-[#1A9AD2] transition-colors duration-200"
+              >
+                <i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+                CHAT ON WHATSAPP
+              </a>
+            </div>
           </div>
         </section>
 

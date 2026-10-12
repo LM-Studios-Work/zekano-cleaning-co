@@ -717,6 +717,7 @@ export const serviceCategories = [
     services: [
       { name: "Garden & Lawn Services", slug: "garden-lawn" },
       { name: "Landscaping & Property", slug: "landscaping-property" },
+      { name: "Artificial Grass Services", slug: "artificial-grass" },
       { name: "Commercial Property Services", slug: "commercial-property" },
       { name: "Property Improvement", slug: "property-improvement" },
     ],
