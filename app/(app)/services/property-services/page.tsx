@@ -95,7 +95,7 @@ export default async function PropertyServicesHub() {
                 Select a specific service below to learn more about our process, what's included, and the benefits of choosing Zenako.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {categoryServices.map((service) => (
                 <Link key={service.slug} href={`/services/${service.slug}`} className="group">
                   <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">

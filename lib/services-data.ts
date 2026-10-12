@@ -577,6 +577,39 @@ export const allServices: ServiceData[] = [
     ],
   },
   {
+    slug: "artificial-grass",
+    title: "Artificial Grass Services",
+    category: "Property Services",
+    categorySlug: "property-services",
+    description: "Professional artificial grass supply, installation, deep cleaning, and maintenance for vibrant synthetic lawns.",
+    longDescription: "From professional artificial grass supply and installation to deep cleaning, stain removal and ongoing maintenance, Zenako helps keep synthetic lawns looking fresh, clean and well maintained. Zenako acts as your main point of contact, working closely with a trusted network of experienced, specialist contractors where required.",
+    image: "/garden/Artifical grass installation.webp",
+    icon: "TreePine",
+    features: [
+      "Artificial Grass Supply & Installation",
+      "Artificial Grass Cleaning",
+      "Moss & Algae Removal",
+      "Stain Removal",
+      "Refresh & Sanitise",
+      "Base Preparation & Levelling",
+      "Odour Elimination & Pet Treatments",
+    ],
+    benefits: [
+      "Green, lush appearance all year round without mowing",
+      "Safe and hygienic for children and pets",
+      "Removes stubborn stains, moss, and bad odours",
+      "Specialist knowledge in synthetic turf installation and care",
+      "Extends the lifespan and appearance of your turf",
+    ],
+    process: [
+      "Assessment of your site, lawn dimensions, or current turf condition.",
+      "Thorough preparation, base levelling, or professional deep cleaning.",
+      "Application of sanitising, deodorising, or moss treatments if cleaning.",
+      "Precision installation, seaming, infill, and power-brushing if fitting.",
+      "Final inspection and ongoing maintenance guidance.",
+    ],
+  },
+  {
     slug: "property-improvement",
     title: "Property Improvement Services",
     category: "Property Services",
@@ -621,12 +654,25 @@ export function getServiceBySlug(slug: string): ServiceData | undefined {
 
 export function getRelatedServices(slug: string, limit = 3): ServiceData[] {
   const current = getServiceBySlug(slug)
-  if (!current) return allServices.slice(0, limit)
+  if (!current) {
+    if (["garden-lawn", "landscaping-property", "artificial-grass", "property-improvement"].includes(slug)) {
+      return allServices
+        .filter((s) => s.categorySlug === "property-services" && s.slug !== slug)
+        .slice(0, limit)
+    }
+    return allServices.slice(0, limit)
+  }
 
-  // First try same category, then fill with others
+  // First try same category
   const sameCategory = allServices.filter(
     (s) => s.categorySlug === current.categorySlug && s.slug !== slug
   )
+
+  // Property services must strictly only show related property services
+  if (current.categorySlug === "property-services") {
+    return sameCategory.slice(0, limit)
+  }
+
   const others = allServices.filter(
     (s) => s.categorySlug !== current.categorySlug && s.slug !== slug
   )
