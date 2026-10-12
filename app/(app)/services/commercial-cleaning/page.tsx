@@ -135,6 +135,34 @@ export default async function CommercialCleaningHub() {
           </div>
         </section>
 
+        {/* Commercial Property Maintenance Cross-Link Banner */}
+        <section className="py-12 bg-slate-900 text-white">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-6 p-6 lg:p-8 rounded-2xl bg-slate-800/80 border border-slate-700">
+              <div className="max-w-2xl">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#6fbf00]">
+                  Full Facility Management
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mt-1">
+                  Need Property Maintenance Beyond Office Cleaning?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
+                  Zenako provides integrated care for <strong>office parks, estates, body corporates, retail properties, schools, sports facilities</strong>, and commercial buildings. We are your one point of contact for cleaning, gardens, landscaping, and ongoing repairs.
+                </p>
+              </div>
+              <div className="shrink-0 w-full lg:w-auto">
+                <Link
+                  href="/services/commercial-property"
+                  className="inline-flex items-center justify-center gap-2 w-full lg:w-auto px-6 py-3 rounded-lg text-sm font-bold bg-[#1A9AD2] text-white hover:bg-[#1581b3] transition-colors"
+                >
+                  Commercial Property Services
+                  <ArrowRightIcon className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* FAQs */}
         <section className="py-16 lg:py-24 bg-background">
           <div className="mx-auto max-w-3xl px-4 lg:px-8">

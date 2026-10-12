@@ -58,17 +58,20 @@ export function Header() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between h-12">
           {/* Left - Social Icons */}
           <div className="flex items-center gap-5">
-            <a href="https://twitter.com" className="text-white/80 hover:text-white transition-colors" title="Twitter">
-              <i className="fa-brands fa-twitter text-base"></i>
-            </a>
             <a href="https://www.facebook.com/profile.php?id=61579543874261" className="text-white/80 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" title="Facebook">
               <i className="fa-brands fa-facebook-f text-base"></i>
             </a>
-            <a href="https://instagram.com" className="text-white/80 hover:text-white transition-colors" title="Instagram">
+            <a href="https://www.instagram.com/zenakocleaning/" className="text-white/80 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" title="Instagram">
               <i className="fa-brands fa-instagram text-base"></i>
             </a>
-            <a href="https://youtube.com" className="text-white/80 hover:text-white transition-colors" title="YouTube">
+            <a href="https://www.tiktok.com/@zenakocleaningco_" className="text-white/80 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" title="TikTok">
+              <i className="fa-brands fa-tiktok text-base"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCBeVq9nY_xNdawsrMitiALQ" className="text-white/80 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" title="YouTube">
               <i className="fa-brands fa-youtube text-base"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/zenako-cleaning-co/about/" className="text-white/80 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <i className="fa-brands fa-linkedin-in text-base"></i>
             </a>
           </div>
 
@@ -271,23 +274,39 @@ export function Header() {
             </div>
 
             {/* Description */}
-            <p className="text-gray-500 text-sm leading-relaxed mb-8">
-              Zenako Cleaning & Property Services Professional cleaning services for homes and businesses in Johannesburg and surrounding areas.
+            <p className="text-gray-500 text-sm leading-relaxed mb-6">
+              One point of contact for cleaning, gardens, landscaping, and commercial property maintenance across Johannesburg.
             </p>
+
+            {/* Commercial Property Link */}
+            <div className="mb-6">
+              <Link
+                href="/services/commercial-property"
+                onClick={() => setDesktopPanelOpen(false)}
+                className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-lg text-xs font-bold text-white transition-colors"
+                style={{ backgroundColor: "#1A9AD2" }}
+              >
+                Commercial Property Services
+                <ArrowRightIcon className="w-3.5 h-3.5" />
+              </Link>
+            </div>
 
             {/* Social Icons */}
             <div className="flex justify-center gap-5 mb-10">
-              <a href="https://twitter.com" className="text-gray-400 hover:text-gray-600 transition-colors" title="Twitter">
-                <i className="fa-brands fa-twitter text-lg"></i>
-              </a>
               <a href="https://www.facebook.com/profile.php?id=61579543874261" className="text-gray-400 hover:text-gray-600 transition-colors" target="_blank" rel="noopener noreferrer" title="Facebook">
                 <i className="fa-brands fa-facebook-f text-lg"></i>
               </a>
-              <a href="https://instagram.com" className="text-gray-400 hover:text-gray-600 transition-colors" title="Instagram">
+              <a href="https://www.instagram.com/zenakocleaning/" className="text-gray-400 hover:text-gray-600 transition-colors" target="_blank" rel="noopener noreferrer" title="Instagram">
                 <i className="fa-brands fa-instagram text-lg"></i>
               </a>
-              <a href="https://youtube.com" className="text-gray-400 hover:text-gray-600 transition-colors" title="YouTube">
+              <a href="https://www.tiktok.com/@zenakocleaningco_" className="text-gray-400 hover:text-gray-600 transition-colors" target="_blank" rel="noopener noreferrer" title="TikTok">
+                <i className="fa-brands fa-tiktok text-lg"></i>
+              </a>
+              <a href="https://www.youtube.com/channel/UCBeVq9nY_xNdawsrMitiALQ" className="text-gray-400 hover:text-gray-600 transition-colors" target="_blank" rel="noopener noreferrer" title="YouTube">
                 <i className="fa-brands fa-youtube text-lg"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/zenako-cleaning-co/about/" className="text-gray-400 hover:text-gray-600 transition-colors" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <i className="fa-brands fa-linkedin-in text-lg"></i>
               </a>
             </div>
 
@@ -446,6 +465,14 @@ export function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Book Now
+            </Link>
+            <Link
+              href="/services/commercial-property"
+              className="block w-full rounded-lg px-5 py-2.5 text-center text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              style={{ backgroundColor: "#1A9AD2" }}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Commercial Property Services
             </Link>
           </div>
         </div>

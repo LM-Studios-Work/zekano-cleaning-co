@@ -204,7 +204,7 @@ export default async function MoveInMoveOutCleaning() {
                 Why Choose Zenako for <span style={{ color: "#1A9AD2" }}>Your Move-Out Clean</span>
               </h2>
               <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                Professional, accountable, and guaranteed to help you get your full deposit back. Our owner-supervised service and estate agent approved checklist give you peace of mind.
+                Professional, accountable and thorough cleaning to help you leave the property in the best possible condition. Our owner-supervised service and estate-agent-approved checklist give you peace of mind.
               </p>
             </div>
 

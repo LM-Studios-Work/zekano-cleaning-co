@@ -3,17 +3,18 @@ import Image from "next/image"
 import { PhoneIcon, MailIcon, ClockIcon, MapPinIcon } from "@/components/icons"
 
 const services = [
-  { name: "Standard House Cleaning", href: "/services/standard-house-cleaning" },
-  { name: "Deep Cleaning", href: "/services/deep-cleaning" },
-  { name: "Move-in/Move-out", href: "/services/move-in-move-out-cleaning" },
+  { name: "Commercial Property Care", href: "/services/commercial-property" },
   { name: "Office Cleaning", href: "/services/office-cleaning" },
-  { name: "Carpet Cleaning", href: "/services/carpet-cleaning" },
-  { name: "Pest Control", href: "/services/pest-control" },
+  { name: "Deep Cleaning", href: "/services/deep-cleaning" },
+  { name: "Standard House Cleaning", href: "/services/standard-house-cleaning" },
+  { name: "Garden & Lawn Care", href: "/services/garden-lawn" },
+  { name: "Property Improvement", href: "/services/property-improvement" },
 ]
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
+  { name: "Commercial Property", href: "/services/commercial-property" },
   { name: "Book Online", href: "/book" },
   { name: "Contact", href: "/contact" },
   { name: "Get a Free Quote", href: "/contact" },
@@ -23,7 +24,7 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_0.85fr_0.85fr_1.4fr] xl:gap-10">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="bg-white p-3 rounded-lg inline-block">
@@ -36,20 +37,23 @@ export function Footer() {
               />
             </div>
             <p className="text-base lg:text-sm opacity-80 leading-relaxed">
-              Professional cleaning services for homes, offices, and commercial properties across Johannesburg.
+              One point of contact for cleaning, gardens, landscaping, and commercial property maintenance across Johannesburg.
             </p>
             <div className="flex gap-5">
               <a href="https://www.facebook.com/profile.php?id=61579543874261" className="opacity-80 hover:opacity-100 transition-opacity" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <i className="fa-brands fa-facebook-f text-xl lg:text-lg"></i>
               </a>
-              <a href="https://instagram.com" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="Instagram">
+              <a href="https://www.instagram.com/zenakocleaning/" className="opacity-80 hover:opacity-100 transition-opacity" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <i className="fa-brands fa-instagram text-xl lg:text-lg"></i>
               </a>
-              <a href="https://twitter.com" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="Twitter">
-                <i className="fa-brands fa-twitter text-xl lg:text-lg"></i>
+              <a href="https://www.tiktok.com/@zenakocleaningco_" className="opacity-80 hover:opacity-100 transition-opacity" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <i className="fa-brands fa-tiktok text-xl lg:text-lg"></i>
               </a>
-              <a href="https://youtube.com" className="opacity-80 hover:opacity-100 transition-opacity" aria-label="YouTube">
+              <a href="https://www.youtube.com/channel/UCBeVq9nY_xNdawsrMitiALQ" className="opacity-80 hover:opacity-100 transition-opacity" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <i className="fa-brands fa-youtube text-xl lg:text-lg"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/zenako-cleaning-co/about/" className="opacity-80 hover:opacity-100 transition-opacity" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i className="fa-brands fa-linkedin-in text-xl lg:text-lg"></i>
               </a>
             </div>
           </div>
@@ -109,7 +113,10 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <ClockIcon className="h-5 w-5 shrink-0 mt-0.5" />
-                <span className="text-base lg:text-sm opacity-80">Mon-Fri: 08:00 am to 05:00 pm<br />Sat: 09:00 am to 02:00 pm</span>
+                <div className="text-base lg:text-sm opacity-80 space-y-1">
+                  <p className="whitespace-nowrap">Mon-Fri: 08:00 am to 05:00 pm</p>
+                  <p className="whitespace-nowrap">Sat: 09:00 am to 02:00 pm</p>
+                </div>
               </li>
             </ul>
           </div>

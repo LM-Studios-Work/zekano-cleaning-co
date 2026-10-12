@@ -42,7 +42,7 @@ export function BeforeAfter({ examples: propExamples }: { examples?: BeforeAfter
               The Zenako Standard
             </h2>
             <p className="mt-2 text-base lg:text-sm text-muted-foreground">
-              We don&apos;t just wipe surfaces; we restore them. Here is the level of detail you can expect from every visit.
+              We don&apos;t just wipe surfaces; we clean with care and attention to detail. Here&apos;s the standard you can expect from every visit.
             </p>
           </div>
           <div className="flex gap-2">

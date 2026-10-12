@@ -71,7 +71,7 @@ const whyUsPoints = [
   {
     title: "Same Professional Each Visit",
     description:
-      "Build trust and familiarity with a cleaner who knows your home and priorities. We send no strangers each time.",
+      "Build trust and familiarity with a cleaner who knows your home and priorities. We aim to keep the same cleaner assigned to your home wherever possible.",
   },
   {
     title: "Flexible Scheduling",

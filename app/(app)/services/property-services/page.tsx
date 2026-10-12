@@ -21,15 +21,15 @@ export const metadata: Metadata = {
 
 const categorySlug = "property-services"
 const categoryName = "Property Services"
-const categoryDesc = "Comprehensive property care including landscaping, garden maintenance, and specialist commercial services."
-const categoryImage = "/cleaning images/zenako-garden-cleaning.webp"
+const categoryDesc = "Complete property solutions for residential and commercial clients across Johannesburg. Zenako is your one point of contact for cleaning, gardens, landscaping, and building maintenance."
+const categoryImage = "/new services/Zenako Garden Care Team.webp"
 
 export default async function PropertyServicesHub() {
   const payload = await getPayload({ config: configPromise })
   const [{ docs: catImgs }, detailImageMap] = await Promise.all([
     payload.find({
       collection: 'service-category-images',
-      where: { category: { equals: 'residential' } },
+      where: { category: { equals: 'property-services' } },
       limit: 1,
     }),
     getServiceDetailImageMap(),
@@ -62,21 +62,21 @@ export default async function PropertyServicesHub() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#6fbf00" }}>
-                  Johannesburg Premier Cleaners
+                  Johannesburg Premier Property Care
                 </span>
                 <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
-                  {categoryName} <span style={{ color: "#1A9AD2" }}>Services</span>
+                  {categoryName} &amp; <span style={{ color: "#1A9AD2" }}>Facility Care</span>
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                  {categoryDesc} We proudly serve homes across Sandton, Randburg, Fourways, Midrand, Bryanston, and greater Johannesburg.
+                  {categoryDesc} Proudly serving homes, estates, office parks, and commercial facilities in Sandton, Randburg, Fourways, Midrand, Bryanston, and greater Johannesburg.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="/book"
+                    href="/services/commercial-property"
                     className="inline-flex items-center justify-center rounded px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:opacity-90"
-                    style={{ backgroundColor: "#6fbf00" }}
+                    style={{ backgroundColor: "#1A9AD2" }}
                   >
-                    Book Online Now
+                    Commercial Property Services
                   </Link>
                   <a
                     href="tel:+27657018482"
@@ -89,6 +89,43 @@ export default async function PropertyServicesHub() {
               </div>
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
                 <Image src={heroImage} alt={`Professional ${categoryName} in Johannesburg`} fill className="object-cover" priority />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Commercial Property Maintenance Highlight Banner */}
+        <section className="bg-slate-900 text-white py-12 border-y border-slate-800">
+          <div className="mx-auto max-w-7xl px-4 lg:px-8">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-bold uppercase tracking-widest text-[#6fbf00] mb-2">
+                  One Point of Contact
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-black text-white">
+                  Commercial Property &amp; Facility Maintenance
+                </h2>
+                <p className="text-slate-300 text-sm mt-2 leading-relaxed">
+                  Specialised facility care for <strong>office parks, estates, body corporates, retail centres, schools, sports facilities</strong>, and commercial buildings. Consolidate your cleaning, grounds, landscaping, and repairs with Zenako.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
+                <Link
+                  href="/services/commercial-property"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-sm font-bold bg-[#1A9AD2] text-white hover:bg-[#1581b3] transition-colors"
+                >
+                  Commercial Solutions
+                  <ArrowRightIcon className="w-4 h-4" />
+                </Link>
+                <a
+                  href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20to%20request%20a%20commercial%20property%20maintenance%20proposal."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-sm font-bold border border-white/20 text-white hover:bg-white/10 transition-colors"
+                >
+                  <i className="fa-brands fa-whatsapp text-base text-[#25D366]"></i>
+                  Request Proposal
+                </a>
               </div>
             </div>
           </div>

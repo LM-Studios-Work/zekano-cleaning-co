@@ -37,7 +37,7 @@ const inspectionItems = [
   },
   {
     title: "Moss Control",
-    image: "/new services/Garden Clean Up.webp",
+    image: "/garden/Artificial Grass Cleaning_ Before & After.webp",
     items: [
       "Identifying and safely removing moss build up",
       "Treating the root cause of moss growth",
@@ -48,7 +48,7 @@ const inspectionItems = [
   },
   {
     title: "Turf Supply & Installation",
-    image: "/new services/Garden Makeover.webp",
+    image: "/garden/Artifical grass installation.webp",
     items: [
       "Instant lawn supply and professional installation",
       "Premium artificial grass and turf fitting",

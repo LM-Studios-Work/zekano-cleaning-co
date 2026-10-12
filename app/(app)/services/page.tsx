@@ -39,7 +39,8 @@ const categoryIcons: Record<string, typeof HouseIcon> = {
   "commercial-cleaning": OfficeIcon,
   "upholstery-and-fabric": CouchIcon,
   "specialised-cleaning": WrenchIcon,
-  "property-services": HouseIcon,
+  "property-services": WrenchIcon,
+  "commercial-property": OfficeIcon,
 }
 
 const CLEANING_CATEGORIES = [
@@ -75,11 +76,18 @@ const CLEANING_CATEGORIES = [
 
 const PROPERTY_CATEGORIES = [
   {
+    slug: "commercial-property",
+    cmsKey: "commercial-property",
+    name: "Commercial Property Services",
+    description: "Integrated facility maintenance for office parks, estates, body corporates, retail properties, schools, sports facilities, and commercial buildings. Zenako is your one point of contact for cleaning, gardens, landscaping, and property maintenance.",
+    image: "/commercial and specialist services/Professional Window Cleaner on Glass Facade.webp",
+  },
+  {
     slug: "property-services",
     cmsKey: "property-services",
-    name: "Property Services",
-    description: "Extensive property care including landscaping, garden maintenance, and specialist commercial services delivered by our dedicated Specialised Contractor division.",
-    image: "/commercial and specialist services/Tiling.webp",
+    name: "Property Improvement & Maintenance",
+    description: "Comprehensive property care including landscaping, garden maintenance, paving, painting, waterproofing, and contractor projects delivered by our dedicated Specialised Contractor division.",
+    image: "/new services/Zenako Garden Care Team.webp",
   }
 ];
 
@@ -156,12 +164,12 @@ export default async function ServicesPage() {
             </div>
             
             <div className="mt-24 mb-16">
-              <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#1A9AD2" }}>New Offering</span>
+              <span className="text-sm font-medium uppercase tracking-wider" style={{ color: "#1A9AD2" }}>Integrated Facility &amp; Grounds Care</span>
               <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl text-balance">
-                Property <span style={{ color: "#6fbf00" }}>Services</span>
+                Commercial Property &amp; <span style={{ color: "#6fbf00" }}>Facility Maintenance</span>
               </h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-                Beyond cleaning, our dedicated Specialised Contractor division provides extensive property care, including landscaping, garden maintenance, and specialist commercial services. Zenako acts as your main point of contact, working closely with a trusted network of experienced, specialist contractors where required.
+                Position Zenako as your single point of contact for cleaning, gardens, landscaping, and ongoing property maintenance. Tailored facility solutions for office parks, residential estates, body corporates, retail centres, schools, sports facilities, and commercial buildings.
               </p>
               <div className="mt-4 h-1 w-24 bg-gray-300"></div>
             </div>
