@@ -7,8 +7,6 @@ import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Card, CardContent } from "@/components/ui/card"
 import { CheckIcon, ArrowRightIcon, ArrowLeftIcon, PhoneIcon } from "@/components/icons"
 import { allServices } from "@/lib/services-data"
-import { getPayload } from 'payload'
-import configPromise from '@payload-config'
 import { getServiceDetailImageMap } from "@/lib/cms-images"
 
 export const metadata: Metadata = {
@@ -25,16 +23,8 @@ const categoryDesc = "Complete property solutions for residential and commercial
 const categoryImage = "/new services/Zenako Garden Care Team.webp"
 
 export default async function PropertyServicesHub() {
-  const payload = await getPayload({ config: configPromise })
-  const [{ docs: catImgs }, detailImageMap] = await Promise.all([
-    payload.find({
-      collection: 'service-category-images',
-      where: { category: { equals: 'property-services' } },
-      limit: 1,
-    }),
-    getServiceDetailImageMap(),
-  ])
-  const heroImage = (catImgs[0] as any)?.url ?? categoryImage
+  const detailImageMap = await getServiceDetailImageMap()
+  const heroImage = categoryImage
 
   const categoryServices = allServices.filter((s) => s.categorySlug === categorySlug)
   const otherServices = allServices.filter((s) => s.categorySlug !== categorySlug).slice(0, 3)
