@@ -26,24 +26,11 @@ const inspectionItems = [
   },
   {
     title: "Tiling",
-    image: "/property improvement/Laminate Flooring_ Before and After.webp",
+    image: "/new services/Tiling.webp",
     items: [
       "Bathroom and kitchen tiling",
       "Floor and wall tile application",
       "Grouting and sealing",
-      "Tile cutting and precise fitting",
-      "Waterproof tiling for wet areas",
-    ],
-  },
-  {
-    title: "Drywalling",
-    image: "/property improvement/Drywalling and ceiling installation.webp",
-    items: [
-      "Drywall installation and partitioning",
-      "Skimming and plastering",
-      "Bulkheads and decorative features",
-      "Soundproofing and insulation",
-      "Repair and patching of damaged walls",
     ],
   },
   {
@@ -63,9 +50,9 @@ const inspectionItems = [
     items: [
       "New ceiling installation",
       "Ceiling board replacement and repairs",
+      "Drywall installation, partitioning & patching",
       "Suspended and drop ceiling systems",
       "Cornice and trim installation",
-      "Insulation above ceiling boards",
     ],
   },
   {
@@ -95,7 +82,7 @@ const inspectionItems = [
     image: "/property improvement/Before and After_ Modern Yard Transformation.webp",
     items: [
       "Routine property inspections and upkeep",
-      "Minor repairs and handyman services",
+      "Drywall patching and handyman repairs",
       "Plumbing and electrical coordination",
       "General wear and tear maintenance",
       "Seasonal property care and preparation",
@@ -181,7 +168,7 @@ export default async function PropertyImprovementServices() {
                   Property Improvement & Maintenance Services
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                  Keep your property looking its best with reliable improvement and maintenance services. From flooring, tiling and painting to ceilings, waterproofing and high-access window cleaning, Zenako provides practical solutions for residential and commercial properties.
+                  Keep your property looking its best with reliable improvement and maintenance services. From flooring, tiling and painting to ceilings, drywall repairs, waterproofing and high-access window cleaning, Zenako provides practical solutions for residential and commercial properties.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <a

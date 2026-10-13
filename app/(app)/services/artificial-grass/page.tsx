@@ -26,7 +26,7 @@ const inspectionItems = [
   },
   {
     title: "Artificial Grass Cleaning",
-    image: "/garden/Artificial Grass Cleaning_ Before & After.webp",
+    image: "/new services/Artificial Lawn_ Before and After.webp",
     items: [
       "Deep cleaning of synthetic turf fibres",
       "Removal of dust, debris and organic build-up",
@@ -47,25 +47,12 @@ const inspectionItems = [
     ],
   },
   {
-    title: "Stain Removal",
-    image: "/garden/Artifical grass installation.webp",
-    items: [
-      "Targeted stain treatment for artificial turf",
-      "Removal of food, drink and pet stains",
-      "Oil and grease stain treatment",
-      "Colour-safe cleaning solutions",
-      "Spot cleaning and full-surface treatment",
-    ],
-  },
-  {
     title: "Refresh & Sanitise",
-    image: "/garden/Artificial Grass Cleaning_ Before & After.webp",
+    image: "/new services/refresh and sanitize.webp",
     items: [
       "Full sanitisation of artificial grass surfaces",
       "Anti-bacterial treatment for pet areas",
       "UV-safe deodorising application",
-      "Pile lifting and grooming",
-      "Leaving your lawn looking and smelling fresh",
     ],
   },
 ]
@@ -148,7 +135,7 @@ export default async function ArtificialGrassService() {
                   Artificial Grass Installation & Cleaning
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                  From professional artificial grass installation to cleaning, stain removal and maintenance, Zenako helps keep synthetic lawns looking fresh, clean and well maintained.
+                  From professional artificial grass installation to deep cleaning, sanitisation and maintenance, Zenako helps keep synthetic lawns looking fresh, clean and well maintained.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <a
@@ -236,7 +223,7 @@ Chat on WhatsApp
                 Our Artificial Grass Services
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {inspectionItems.map((section, idx) => (
                 <Card key={idx} className="border-border overflow-hidden">
                   <div className="aspect-[3/2] relative">
