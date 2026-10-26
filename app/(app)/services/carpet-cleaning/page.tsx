@@ -110,7 +110,7 @@ export default async function CarpetCleaningPage() {
     }),
     getServiceDetailImageMap(),
   ])
-  const heroImage = (detailImgs[0] as any)?.url ?? "/authentic/Carpet before and after.webp"
+  const heroImage = "/carpet/Carpet Cleaning Before and After GREY CARPET.webp"
 
   const otherServices = getRelatedServices("carpet-cleaning", 3)
 

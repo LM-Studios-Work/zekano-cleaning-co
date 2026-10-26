@@ -34,7 +34,7 @@ const includedSections = [
     points: [
       "Outside of all appliances wiped down",
       "Wet-wipe fridge and oven exterior",
-      "Cupboards and drawers cleaned outside",
+      "Cupboards and draws cleaned",
       "Stove surfaces cleaned and degreased",
       "Sink scrubbed and sanitised",
       "Microwave cleaned inside and out",
@@ -67,11 +67,12 @@ const includedSections = [
 ]
 
 const addOns = [
-  "Inside Oven",
-  "Inside Fridge",
+  "Couch & Upholstery Cleaning",
+  "Mattress Deep Cleaning",
   "Carpet Steam Cleaning",
-  "Inside Cupboards",
-  "Wall Spot Cleaning",
+  "Curtain Steam Cleaning",
+  "Exterior Window Cleaning",
+  "Garage Deep Cleaning",
 ]
 
 const exclusions = [
@@ -106,9 +107,9 @@ const whyUsPoints = [
       "If any checklist item is missed, we return within 24 hours at no cost. Your satisfaction is backed by our written guarantee.",
   },
   {
-    title: "All Equipment Provided",
+    title: "All Equipment & Cleaning Products Provided",
     description:
-      "We arrive fully equipped with professional-grade, eco-conscious products. You don't need to supply a thing.",
+      "Our team arrives fully equipped with professional-grade cleaning equipment and quality cleaning products to deliver a thorough, professional clean.",
   },
 ]
 
@@ -169,15 +170,15 @@ export default async function DeepCleaningPage() {
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                   <a
-href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20a%20home%2Foffice%20Deep%20Clean."
-target="_blank"
-rel="noopener noreferrer"
+                    href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20a%20home%2Foffice%20Deep%20Clean."
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center rounded-none px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:opacity-90"
                     style={{ backgroundColor: "#6fbf00" }}
                   >
-<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
-Get a Quote via WhatsApp
-</a>
+                    <i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+                    Get a Quote via WhatsApp
+                  </a>
                   <a
                     href="tel:+27657018482"
                     className="btn-lift inline-flex items-center justify-center gap-2 rounded-none px-8 py-3 text-sm font-bold text-foreground border-2 border-foreground hover:bg-foreground hover:text-white transition-colors duration-200"
@@ -221,7 +222,7 @@ Get a Quote via WhatsApp
               {whyUsPoints.map((point, idx) => (
                 <div
                   key={idx}
-                  className="relative p-8 bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-all duration-300 group overflow-hidden flex flex-col"
+                  className="relative p-8 bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-all duration-300 group overflow-hidden flex flex-col h-full"
                 >
                   {/* Subtle animated top border on hover */}
                   <div
@@ -339,7 +340,7 @@ Get a Quote via WhatsApp
               </div>
               <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
-                   src="/deep cleaning/deep clean.webp"
+                  src="/deep cleaning/deep clean.webp"
                   alt="Deep cleaning add-on services in Johannesburg"
                   fill
                   className="object-cover"
@@ -422,15 +423,15 @@ Get a Quote via WhatsApp
               </div>
               <div className="shrink-0">
                 <a
-href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20a%20home%2Foffice%20Deep%20Clean."
-target="_blank"
-rel="noopener noreferrer"
+                  href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20a%20home%2Foffice%20Deep%20Clean."
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-none px-8 py-3 text-sm font-semibold text-white hover:opacity-90 whitespace-nowrap"
                   style={{ backgroundColor: "#6fbf00" }}
                 >
-<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
-Get a Quote via WhatsApp
-</a>
+                  <i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+                  Get a Quote via WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -466,15 +467,15 @@ Get a Quote via WhatsApp
             </div>
             <div className="mt-10">
               <a
-href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20a%20home%2Foffice%20Deep%20Clean."
-target="_blank"
-rel="noopener noreferrer"
+                href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20a%20home%2Foffice%20Deep%20Clean."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-none px-8 py-3 text-sm font-semibold text-white hover:opacity-90"
                 style={{ backgroundColor: "#6fbf00" }}
               >
-<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
-Get a Quote via WhatsApp
-</a>
+                <i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+                Get a Quote via WhatsApp
+              </a>
             </div>
           </div>
         </section>

@@ -235,7 +235,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "upholstery-and-fabric",
     description: "Professional on-site curtain cleaning in Johannesburg. We clean most curtains while they remain hanging, removing dust, allergens, and odours without the hassle of removal.",
     longDescription: "Curtains act as filters for dust, pollen, and allergens. Over time, these particles settle into the fabric, which can lead to discoloration and affect indoor air quality. Zenako Cleaning & Property Services provides specialised on-site curtain cleaning across Johannesburg to restore your window treatments without the need for removal. We clean most curtains while they are still hanging on the rail, using controlled steam extraction to lift dust and grime from the fibres while targeting dust mites, household odours, and allergens. Our method is designed to prevent shrinkage and maintain the original length and texture of your drapes.",
-    image: "/Curtain-Cleaning.jpg",
+    image: "/carpet/Professional Curtain Steam Cleaning.webp",
     icon: "Wind",
     features: [
       "On-site cleaning with no removal or re-hanging needed",
@@ -269,7 +269,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "upholstery-and-fabric",
     description: "Expert carpet cleaning that removes deep stains, allergens, and odours.",
     longDescription: "Carpets trap dirt, dust, allergens, pet dander, and spills deep in their fibres, well beyond what regular vacuuming can reach. Our professional carpet cleaning service uses hot water extraction and eco-friendly solutions to deep clean your carpets, removing stubborn stains and odours while restoring colour and texture. Serving homes and offices across Johannesburg.",
-    image: "/carpet/carpet hero.webp",
+    image: "/carpet/Professional Carpet Cleaning Close-Up.webp",
     icon: "Sparkles",
     features: [
       "Hot water extraction deep cleaning",
@@ -408,7 +408,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "specialised-cleaning",
     description: "Tidy up your outdoor spaces with clearing, trimming, and general maintenance.",
     longDescription: "An overgrown or untidy garden can significantly affect the appearance of your property. Our garden clean-up service covers everything from clearing debris and trimming overgrowth to general tidying and waste removal, whether for a one-time restoration or regular ongoing maintenance. Available across Johannesburg and surrounding areas.",
-    image: "/new services/Garden Clean Up.webp",
+    image: "/new services/Zenako Garden Care Team.webp",
     icon: "TreePine",
     features: [
       "Overgrowth clearing and trimming",

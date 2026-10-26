@@ -234,7 +234,7 @@ export default async function ServicePage({
                   </Link>
                 </div>
               </div>
-              {detailImages.length > 0 ? (
+              {detailImages.length > 0 && slug !== 'curtain-cleaning' ? (
                 <div className="grid grid-cols-2 gap-4">
                   {detailImages.slice(0, 4).map((img: any) => (
                     <div key={img.id} className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
