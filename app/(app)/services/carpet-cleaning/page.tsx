@@ -163,7 +163,7 @@ export default async function CarpetCleaningPage() {
                   </a>
                 </div>
               </div>
-              <div className="aspect-[4/3] relative overflow-hidden shadow-lg">
+              <div className="aspect-[3/2] relative rounded-2xl overflow-hidden shadow-xl">
                 <Image
                   src={heroImage}
                   alt="Professional carpet steam cleaning in Johannesburg"

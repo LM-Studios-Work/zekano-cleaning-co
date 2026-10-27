@@ -117,7 +117,7 @@ export default async function UpholsteryFabricHub() {
               </div>
               <div className="aspect-[3/2] relative rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
                 <Image
-                  src="/couch/Before and After_ Sofa Cleaning CREAM.webp"
+                  src="/couch/Before and After_ Sofa Cleaning CREAM.jpg"
                   alt="Sofa cleaning cream before and after"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

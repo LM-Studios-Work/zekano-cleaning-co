@@ -15,7 +15,7 @@ import { GoogleReviewsCTA } from "@/components/google-reviews-cta"
 const inspectionItems = [
   {
     title: "Laminate Flooring",
-    image: "/property improvement/Laminate Flooring_ Before and After.webp",
+    image: "/property improvement/Laminate Flooring_ Before and After.jpg",
     items: [
       "Professional laminate flooring installation",
       "Surface preparation and levelling",
@@ -256,7 +256,7 @@ Get a Quote via WhatsApp
                 Our Property Improvement Services
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {inspectionItems.map((section, idx) => (
                 <Card key={idx} className="border-border overflow-hidden">
                   <div className="aspect-[3/2] relative">

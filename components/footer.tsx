@@ -26,15 +26,15 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_0.85fr_0.85fr_1.4fr] xl:gap-10">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="bg-white p-3 rounded-lg inline-block">
+            <Link href="/" className="inline-block">
               <Image
-                src="/logo.png"
+                src="/footer logo.png"
                 alt="Zenako Cleaning & Property Services"
-                width={799}
-                height={312}
-                className="h-10 w-auto object-contain"
+                width={790}
+                height={316}
+                className="h-14 w-auto object-contain"
               />
-            </div>
+            </Link>
             <p className="text-base lg:text-sm opacity-80 leading-relaxed">
               Professional cleaning services for homes, offices, and commercial properties across Johannesburg.
             </p>
