@@ -18,7 +18,13 @@ import {
 } from "@/components/ui/select"
 import { PhoneIcon, MailIcon, ClockIcon, ChatIcon, MapPinIcon } from "@/components/icons"
 
-const contactInfo = [
+const contactInfo: {
+  icon: any
+  title: string
+  details: React.ReactNode
+  action: string | null
+  actionText: string | null
+}[] = [
   {
     icon: PhoneIcon,
     title: "Phone",
@@ -36,7 +42,12 @@ const contactInfo = [
   {
     icon: ClockIcon,
     title: "Business Hours",
-    details: "Mon-Fri: 08:00 am to 05:00 pm, Sat: 09:00 am to 02:00 pm",
+    details: (
+      <>
+        <span>Mon-Fri: 08:00 am to 05:00 pm, </span>
+        <span className="whitespace-nowrap">Sat: 09:00 am to 02:00 pm</span>
+      </>
+    ),
     action: null,
     actionText: null,
   },
@@ -93,12 +104,12 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {contactInfo.map((info) => (
                 <Card key={info.title} className="text-center border-border">
-                  <CardContent className="pt-6">
+                  <CardContent className="pt-6 px-3 sm:px-4">
                     <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full" style={{ backgroundColor: "rgba(26, 154, 210, 0.1)", color: "#1A9AD2" }}>
                       <info.icon className="h-6 w-6" />
                     </div>
                     <h3 className="font-semibold text-card-foreground">{info.title}</h3>
-                    <p className="mt-2 text-muted-foreground text-sm">{info.details}</p>
+                    <p className="mt-2 text-muted-foreground text-[13px] sm:text-sm">{info.details}</p>
                     {info.action && (
                       <a
                         href={info.action}

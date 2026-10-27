@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const categorySlug = "upholstery-and-fabric"
 const categoryName = "Upholstery & Fabric Cleaning"
 const categoryDesc = "Refresh your soft furnishings and fabrics with our professional cleaning service. We remove stains, allergens, and odours to extend the life of your furniture."
-const categoryImage = "/cleaning images/Deep Carpet cleaning image 1.webp"
+const categoryImage = "/carpet/Professional Carpet Cleaning Close-Up.webp"
 
 export default async function UpholsteryFabricHub() {
   const payload = await getPayload({ config: configPromise })
@@ -34,7 +34,7 @@ export default async function UpholsteryFabricHub() {
     }),
     getServiceDetailImageMap(),
   ])
-  const heroImage = (catImgs[0] as any)?.url ?? categoryImage
+  const heroImage = "/carpet/Professional Carpet Cleaning Close-Up.webp"
 
   const otherServices = allServices.filter((s) => s.categorySlug !== categorySlug).slice(0, 3)
   const categoryServices = allServices.filter((s) => s.categorySlug === categorySlug)
@@ -106,11 +106,23 @@ export default async function UpholsteryFabricHub() {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg border border-border bg-gray-100">
-                <Image src="/authentic/Brown couch before and after.webp" alt="Brown couch before and after cleaning" fill className="object-contain" />
+              <div className="aspect-[3/2] relative rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
+                <Image
+                  src="/authentic/Before and After_ Clean Sofa Makeover GREY.webp"
+                  alt="Clean sofa makeover before and after"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
               </div>
-              <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg border border-border bg-gray-100">
-                <Image src="/authentic/Cream couch before and after.webp" alt="Cream couch before and after cleaning" fill className="object-contain" />
+              <div className="aspect-[3/2] relative rounded-2xl overflow-hidden shadow-lg border border-border bg-card">
+                <Image
+                  src="/couch/Before and After_ Sofa Cleaning CREAM.webp"
+                  alt="Sofa cleaning cream before and after"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>

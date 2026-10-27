@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "About Zenako Cleaning & Property Services | Johannesburg",
-    description: "Johannesburg-based cleaning company serving homes, offices, and commercial properties across Sandton, Randburg, Fourways, Midrand, and Bryanston.",
+    description: "Johannesburg-based cleaning and property services company serving homes, offices, and commercial properties across Sandton, Randburg, Fourways, Midrand, and Bryanston.",
     url: '/about',
     images: [
       {
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: "About Zenako Cleaning & Property Services | Johannesburg",
-    description: "Johannesburg-based cleaning company serving homes, offices, and commercial properties across Sandton, Randburg, Fourways, Midrand, and Bryanston.",
+    description: "Johannesburg-based cleaning and property services company serving homes, offices, and commercial properties across Sandton, Randburg, Fourways, Midrand, and Bryanston.",
   },
 }
 
@@ -75,8 +75,8 @@ export default async function AboutPage() {
             <h1 className="mt-2 text-4xl font-bold text-foreground sm:text-5xl text-balance">
               Who We <span style={{ color: "#1A9AD2" }}>Are</span>
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
-              A Johannesburg-based cleaning company built on accountability, consistent standards, and clients who return because the work speaks for itself.
+            <p className="mt-4 text-lg text-muted-foreground max-w-3xl">
+              A Johannesburg based cleaning and property services company built on accountability, consistent standards, and clients who return because the work speaks for itself.
             </p>
             <div className="mt-4 h-1 w-24 bg-gray-300"></div>
           </div>
