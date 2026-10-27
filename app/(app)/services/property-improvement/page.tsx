@@ -16,6 +16,7 @@ const inspectionItems = [
   {
     title: "Laminate Flooring",
     image: "/property improvement/Laminate Flooring_ Before and After.jpg",
+    aspectRatio: "aspect-[2/1]",
     items: [
       "Professional laminate flooring installation",
       "Surface preparation and levelling",
@@ -58,6 +59,7 @@ const inspectionItems = [
   {
     title: "Paving",
     image: "/commercial and specialist services/Paving Installation to Finished Pathway.webp",
+    aspectRatio: "aspect-[2/1]",
     items: [
       "Driveway and walkway paving",
       "Patio and outdoor area paving",
@@ -80,6 +82,7 @@ const inspectionItems = [
   {
     title: "General Property Maintenance",
     image: "/property improvement/Before and After_ Modern Yard Transformation.webp",
+    aspectRatio: "aspect-[2/1]",
     items: [
       "Routine property inspections and upkeep",
       "Drywall patching and handyman repairs",
@@ -259,7 +262,7 @@ Get a Quote via WhatsApp
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {inspectionItems.map((section, idx) => (
                 <Card key={idx} className="border-border overflow-hidden">
-                  <div className="aspect-[3/2] relative">
+                  <div className={`${(section as any).aspectRatio || "aspect-[3/2]"} relative`}>
                     <Image
                       src={section.image}
                       alt={section.title}
@@ -329,7 +332,7 @@ Get a Quote via WhatsApp
                 {otherServices.map((related) => (
                   <Link key={related.slug} href={`/services/${related.slug}`} className="group">
                     <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
-                      <div className="aspect-[3/2] relative overflow-hidden">
+                      <div className={`${related.slug === 'property-improvement' ? 'aspect-[2/1]' : 'aspect-[3/2]'} relative overflow-hidden`}>
                         <Image
                           src={detailImageMap[related.slug] ?? related.image}
                           alt={related.title}
