@@ -49,7 +49,6 @@ const inspectionItems = [
   {
     title: "Outdoor Property Improvements",
     image: "/property improvement/Before and After_ Modern Yard Transformation.webp",
-    aspectRatio: "aspect-[2/1]",
     items: [
       "Outdoor living area upgrades",
       "Retaining walls and decorative features",
@@ -230,7 +229,7 @@ Get a Quote via WhatsApp
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {inspectionItems.map((section, idx) => (
                 <Card key={idx} className="border-border overflow-hidden">
-                  <div className={`${(section as any).aspectRatio || "aspect-[3/2]"} relative`}>
+                  <div className="aspect-[3/2] relative">
                     <Image
                       src={section.image}
                       alt={section.title}
@@ -308,7 +307,7 @@ Get a Quote via WhatsApp
                 {otherServices.map((related) => (
                   <Link key={related.slug} href={`/services/${related.slug}`} className="group">
                     <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
-                      <div className={`${related.slug === 'property-improvement' ? 'aspect-[2/1]' : 'aspect-[3/2]'} relative overflow-hidden`}>
+                      <div className="aspect-[3/2] relative overflow-hidden">
                         <Image
                           src={detailImageMap[related.slug] ?? related.image}
                           alt={related.title}

@@ -314,7 +314,7 @@ Chat on WhatsApp
                 {otherServices.map((related) => (
                   <Link key={related.slug} href={`/services/${related.slug}`} className="group">
                     <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
-                      <div className={`${related.slug === 'property-improvement' ? 'aspect-[2/1]' : 'aspect-[3/2]'} relative overflow-hidden`}>
+                      <div className="aspect-[3/2] relative overflow-hidden">
                         <Image
                           src={detailImageMap[related.slug] ?? related.image}
                           alt={related.title}
