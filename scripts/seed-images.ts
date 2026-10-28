@@ -246,13 +246,15 @@ async function seed() {
       { path: 'office/office 2.jpg', alt: 'Office cleaning professionals', service: 'office-cleaning' },
       { path: 'office/office 3.jpg', alt: 'Clean and tidy office space', service: 'office-cleaning' },
       // Carpet Cleaning
+      { path: 'carpet/Professional Carpet Cleaning Close-Up.webp', alt: 'Professional carpet cleaning close-up', service: 'carpet-cleaning' },
       { path: 'carpet/Carpet 2.jpeg', alt: 'Professional carpet cleaning', service: 'carpet-cleaning' },
       { path: 'carpet/carpet.jpeg', alt: 'Carpet deep cleaning process', service: 'carpet-cleaning' },
       // Mattress Cleaning
+      { path: 'matress/mattress-cleaning-services.webp', alt: 'Professional mattress cleaning', service: 'mattress-cleaning' },
       { path: 'matress/How-to-clean-your-mattress-feature-759x500.png', alt: 'Mattress cleaning process', service: 'mattress-cleaning' },
       { path: 'matress/matress.jpg', alt: 'Clean mattress after service', service: 'mattress-cleaning' },
-      { path: 'matress/mattress-cleaning-services.webp', alt: 'Professional mattress cleaning', service: 'mattress-cleaning' },
       // Upholstery & Furniture
+      { path: 'couch/couch hero.png', alt: 'Professional upholstery cleaning', service: 'upholstery-furniture-cleaning' },
       { path: 'couch/coach2.webp', alt: 'Couch upholstery cleaning', service: 'upholstery-furniture-cleaning' },
       { path: 'couch/couch 3.jpg', alt: 'Sofa cleaning result', service: 'upholstery-furniture-cleaning' },
       { path: 'couch/couch.webp', alt: 'Upholstery cleaning process', service: 'upholstery-furniture-cleaning' },
@@ -335,7 +337,7 @@ async function seed() {
     const media = [
       { path: 'Curtain-Cleaning.jpg', alt: 'Curtain cleaning service' },
       { path: 'cleaning-kitchen-sink-drain.webp', alt: 'Kitchen sink drain cleaning' },
-      { path: 'cleaning images/Deep Carpet cleaning image 1.webp', alt: 'Deep carpet cleaning' },
+      { path: 'carpet/Professional Carpet Cleaning Close-Up.webp', alt: 'Professional carpet cleaning' },
       { path: 'cleaning images/zenako-airbnb-cleaning-johannesburg.webp', alt: 'Airbnb cleaning Johannesburg' },
       { path: 'cleaning images/zenako-deep-cleaning.webp', alt: 'Zekano deep cleaning service' },
       { path: 'cleaning images/zenako-disinfection-fogging-johannesburg.webp', alt: 'Disinfection fogging Johannesburg' },

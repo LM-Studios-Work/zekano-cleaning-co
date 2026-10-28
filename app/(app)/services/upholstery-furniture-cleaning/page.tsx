@@ -64,7 +64,7 @@ export default async function UpholsteryCleaningPage() {
     }),
     getServiceDetailImageMap(),
   ])
-  const heroImage = (detailImgs[0] as any)?.url ?? "/couch/couch hero.png"
+  const heroImage = "/couch/couch hero.png"
 
   const otherServices = getRelatedServices("upholstery-furniture-cleaning", 3)
 

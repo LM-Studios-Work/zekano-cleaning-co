@@ -98,7 +98,7 @@ export default async function MattressCleaningPage() {
     }),
     getServiceDetailImageMap(),
   ])
-  const heroImage = (detailImgs[0] as any)?.url ?? "/authentic/Cleaning bed.webp"
+  const heroImage = "/matress/mattress-cleaning-services.webp"
 
   const otherServices = getRelatedServices("mattress-cleaning", 3)
 
