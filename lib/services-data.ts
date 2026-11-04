@@ -190,6 +190,39 @@ export const allServices: ServiceData[] = [
       "Regular reviews ensure the service meets your evolving needs.",
     ],
   },
+  {
+    slug: "weekly-cleaning",
+    title: "Weekly Cleaning",
+    category: "Commercial Cleaning",
+    categorySlug: "commercial-cleaning",
+    description: "Reliable weekly commercial and office cleaning to keep your business premises consistently immaculate.",
+    longDescription: "Our weekly cleaning service is designed for offices, retail stores, and small businesses requiring regular, high-standard maintenance without disruptions. We handle dusting, vacuuming, waste management, sanitising high-touch surfaces, and keeping staff and customer areas spotless. Customised weekly schedules available across Johannesburg.",
+    image: "/November updates/Weekly office clean.webp",
+    icon: "Building2",
+    features: [
+      "Scheduled weekly visits tailored to your hours",
+      "Workstation and common area cleaning",
+      "Kitchen, canteen, and restroom sanitisation",
+      "Floor vacuuming, mopping, and maintenance",
+      "Waste bin emptying and liner replacement",
+      "Entrance and glass partition cleaning",
+      "Dedicated, vetted cleaning team",
+    ],
+    benefits: [
+      "Consistent high standards of cleanliness",
+      "Flexible daytime or after-hours service",
+      "Healthier working environment for your team",
+      "No long-term lock-in contracts",
+      "Tailored cleaning checklists for your space",
+    ],
+    process: [
+      "We assess your business premises and determine your optimal weekly schedule.",
+      "A tailored cleaning plan and checklist are created for your premises.",
+      "Our vetted professional cleaners arrive on your scheduled days.",
+      "Workstations, restrooms, floors, and common areas are thoroughly cleaned.",
+      "Regular supervisor audits ensure consistent quality week after week.",
+    ],
+  },
 
   // Upholstery & Fabric Cleaning
 
@@ -408,7 +441,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "specialised-cleaning",
     description: "Tidy up your outdoor spaces with clearing, trimming, and general maintenance.",
     longDescription: "An overgrown or untidy garden can significantly affect the appearance of your property. Our garden clean-up service covers everything from clearing debris and trimming overgrowth to general tidying and waste removal, whether for a one-time restoration or regular ongoing maintenance. Available across Johannesburg and surrounding areas.",
-    image: "/new services/Zenako Garden Care Team.webp",
+    image: "/November updates/Zenako Garden Cleanup.webp",
     icon: "TreePine",
     features: [
       "Overgrowth clearing and trimming",
@@ -443,7 +476,7 @@ export const allServices: ServiceData[] = [
     categorySlug: "specialised-cleaning",
     description: "Targeted pest treatments using eco-friendly products safe for your family and pets.",
     longDescription: "Pests can cause health risks, property damage, and general discomfort. Our pest control service uses targeted, eco-friendly treatments to eliminate pests at the source, addressing the root cause rather than the surface. We treat ants, cockroaches, rodents, spiders, bed bugs, mosquitoes, and more. All products are safe for families and pets. We also offer ongoing prevention plans to keep your home pest-free. Serving Johannesburg and surrounding areas.",
-    image: "/cleaning images/zenako-disinfection-fogging-johannesburg.webp",
+    image: "/home_page services_block images/pest control.webp",
     icon: "Bug",
     features: [
       "Full property pest inspection",
@@ -693,6 +726,7 @@ export const serviceCategories = [
     services: [
       { name: "Office Cleaning", slug: "office-cleaning" },
       { name: "Small Business Cleaning", slug: "small-business-cleaning" },
+      { name: "Weekly Cleaning", slug: "weekly-cleaning" },
     ],
   },
   {

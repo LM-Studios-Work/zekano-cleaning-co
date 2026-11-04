@@ -340,7 +340,7 @@ export default async function DeepCleaningPage() {
               </div>
               <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
-                  src="/deep cleaning/deep clean.webp"
+                  src="/November updates/Deep cleaning.webp"
                   alt="Deep cleaning add-on services in Johannesburg"
                   fill
                   className="object-cover"

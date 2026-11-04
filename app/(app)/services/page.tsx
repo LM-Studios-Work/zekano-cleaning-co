@@ -62,7 +62,7 @@ const CLEANING_CATEGORIES = [
     cmsKey: "upholstery",
     name: "Upholstery & Fabric Cleaning",
     description: "Refresh your soft furnishings and fabrics with our professional cleaning service. We remove stains, allergens, and odours to extend the life of your furniture.",
-    image: "/our services click/upholstery.webp",
+    image: "/November updates/Zenako Upholstery & Carpet Care.webp",
   },
   {
     slug: "specialised-cleaning",
@@ -92,8 +92,9 @@ async function getCategoryImages(): Promise<Record<string, string>> {
     })
     const map: Record<string, string> = {}
     for (const doc of docs as any[]) {
-      if (doc.category && doc.url) map[doc.category] = doc.url
+      if (doc.category && doc.url && doc.category !== "upholstery") map[doc.category] = doc.url
     }
+    map["upholstery"] = "/November updates/Zenako Upholstery & Carpet Care.webp"
     return map
   } catch {
     return {}

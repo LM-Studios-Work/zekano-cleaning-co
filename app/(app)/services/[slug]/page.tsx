@@ -149,7 +149,31 @@ export default async function ServicePage({
 
   let relatedServices = relatedDocs as any[]
 
-  if (relatedServices.length < 3) {
+  if (slug === 'small-business-cleaning') {
+    relatedServices = [
+      {
+        slug: 'office-cleaning',
+        title: 'Office Cleaning',
+        category: 'Commercial Cleaning',
+        description: 'Professional cleaning for offices of all sizes. A clean workspace keeps your team healthy and clients impressed.',
+        image: detailImageMap['office-cleaning'] ?? '/office/office hero.webp',
+      },
+      {
+        slug: 'deep-cleaning',
+        title: 'Deep Cleaning',
+        category: 'Commercial Cleaning',
+        description: 'Comprehensive top-to-bottom deep clean covering workstations, appliance interiors, and hard-to-reach areas.',
+        image: '/November updates/Office deep clean.webp',
+      },
+      {
+        slug: 'weekly-cleaning',
+        title: 'Weekly Cleaning',
+        category: 'Commercial Cleaning',
+        description: 'Scheduled weekly cleaning to keep your office or small business consistently pristine and welcoming.',
+        image: '/November updates/Weekly office clean.webp',
+      },
+    ]
+  } else if (relatedServices.length < 3) {
     const existingSlugs = new Set(relatedServices.map((d: any) => d.slug))
     const staticRelated = allServices
       .filter(s => s.categorySlug === service.categorySlug && s.slug !== slug && !existingSlugs.has(s.slug))
@@ -368,19 +392,21 @@ export default async function ServicePage({
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {relatedServices.map((related: any) => (
-                <Link key={related.slug} href={`/services/${related.slug}`} className="group">
-                  <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
-                    {(detailImageMap[related.slug] ?? related.image) && (
-                      <div className="aspect-[3/2] relative overflow-hidden">
-                        <Image
-                          src={(detailImageMap[related.slug] ?? related.image) as string}
-                          alt={related.title as string}
-                          fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
-                      </div>
-                    )}
+              {relatedServices.map((related: any) => {
+                const cardImage = (slug === 'small-business-cleaning' ? related.image : null) ?? detailImageMap[related.slug] ?? related.image
+                return (
+                  <Link key={related.slug} href={`/services/${related.slug}`} className="group">
+                    <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
+                      {cardImage && (
+                        <div className="aspect-[3/2] relative overflow-hidden">
+                          <Image
+                            src={cardImage as string}
+                            alt={related.title as string}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                      )}
                     <CardContent className="p-6">
                       <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{related.category}</span>
                       <h3 className="mt-1 font-bold text-foreground text-lg group-hover:text-[#1A9AD2] transition-colors">
@@ -393,7 +419,7 @@ export default async function ServicePage({
                     </CardContent>
                   </Card>
                 </Link>
-              ))}
+              )})
             </div>
 
             <div className="mt-12 text-center">

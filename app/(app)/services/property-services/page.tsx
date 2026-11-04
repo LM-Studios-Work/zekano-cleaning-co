@@ -148,31 +148,32 @@ export default async function PropertyServicesHub() {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* Call to Action */}
         <section className="py-12 lg:py-16" style={{ backgroundColor: "#1A9AD2" }}>
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Ready to Improve Your Property?
+              Need Help Improving Your Property?
             </h2>
-            <p className="text-white mb-8 max-w-2xl mx-auto">
-              Tell us what you need and we&apos;ll help you find the right service for your home or business.
+            <p className="text-white mb-8 max-w-3xl mx-auto leading-relaxed">
+              From flooring and tiling to painting, waterproofing, decking and general property maintenance, Zenako Cleaning &amp; Property Services offers reliable solutions for residential and commercial properties through our trusted contractor network.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/book"
-                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: "#ffffff", color: "#1A9AD2" }}
-              >
-                GET A FREE QUOTE TODAY
-              </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20your%20property%20services."
+                href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20improving%20my%20property."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold border-2 border-white text-white hover:bg-white hover:text-[#1A9AD2] transition-colors duration-200"
+                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white rounded hover:opacity-90 transition-opacity duration-200"
+                style={{ backgroundColor: "#6fbf00" }}
               >
                 <i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
-                CHAT ON WHATSAPP
+                Get a Quote on WhatsApp
+              </a>
+              <a
+                href="tel:+27657018482"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold rounded border-2 border-white text-white hover:bg-white hover:text-[#1A9AD2] transition-colors duration-200"
+              >
+                <PhoneIcon className="h-4 w-4" />
+                Call Us Today
               </a>
             </div>
           </div>

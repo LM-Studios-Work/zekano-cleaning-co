@@ -68,6 +68,17 @@ const inspectionItems = [
       "Once-off or regular garden tidy-ups",
     ],
   },
+  {
+    title: "Garden Waste Removal & Disposal",
+    image: "/November updates/Zenako Garden Cleanup.webp",
+    items: [
+      "Removal of branches, leaves and garden debris",
+      "Collection and disposal of grass cuttings",
+      "Clearing green waste after pruning and trimming",
+      "Garden clean-ups and waste collection",
+      "Leaving outdoor spaces neat and tidy",
+    ],
+  },
 ]
 
 const whyUsPoints = [
@@ -279,25 +290,34 @@ Chat on WhatsApp
           </div>
         </section>
 
-        {/* CTA */}
+        {/* Call to Action */}
         <section className="py-12 lg:py-16" style={{ backgroundColor: "#1A9AD2" }}>
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Ready to Transform Your Garden?
+              Need Help Improving Your Property?
             </h2>
-            <p className="text-white mb-8 max-w-2xl mx-auto">
-              Get in touch today for a tailored quote and bring life back to your outdoor spaces.
+            <p className="text-white mb-8 max-w-3xl mx-auto leading-relaxed">
+              From flooring and tiling to painting, waterproofing, decking and general property maintenance, Zenako Cleaning &amp; Property Services offers reliable solutions for residential and commercial properties through our trusted contractor network.
             </p>
-            <a
-href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20to%20chat%20about%20Regular%20Garden%20Maintenance%20%2F%20a%20Once-off%20Clean-up."
-target="_blank"
-rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white hover:opacity-90"
-              style={{ backgroundColor: "#6fbf00" }}
-            >
-<i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
-Chat on WhatsApp
-</a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20improving%20my%20property."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white rounded hover:opacity-90 transition-opacity duration-200"
+                style={{ backgroundColor: "#6fbf00" }}
+              >
+                <i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
+                Get a Quote on WhatsApp
+              </a>
+              <a
+                href="tel:+27657018482"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold rounded border-2 border-white text-white hover:bg-white hover:text-[#1A9AD2] transition-colors duration-200"
+              >
+                <PhoneIcon className="h-4 w-4" />
+                Call Us Today
+              </a>
+            </div>
           </div>
         </section>
 

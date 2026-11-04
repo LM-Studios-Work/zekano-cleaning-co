@@ -11,14 +11,15 @@ export const SERVICE_HERO_IMAGES: Record<string, string> = {
   'carpet-cleaning': '/carpet/Professional Carpet Cleaning Close-Up.webp',
   'upholstery-furniture-cleaning': '/couch/couch hero.png',
   'roof-cleaning': '/commercial and specialist services/Roof clean.webp',
-  'drain-cleaning': '/commercial and specialist services/cleaning kitchen sink drain.webp',
-  'garden-clean-ups': '/garden/Garden clean up.webp',
-  'pest-control': '/commercial and specialist services/pest control (1).webp',
+  'drain-cleaning': '/deep cleaning/cleaning-kitchen-sink-drain.webp',
+  'garden-clean-ups': '/November updates/Zenako Garden Cleanup.webp',
+  'pest-control': '/home_page services_block images/pest control.webp',
   'disinfection-services': '/cleaning images/zenako-disinfection-fogging-johannesburg.webp',
   'garden-lawn': '/new services/Garden Makeover.webp',
   'landscaping-property': '/new services/Landscaping (1).webp',
   'artificial-grass': '/garden/Artifical grass installation.webp',
   'property-improvement': '/property improvement/Modern House Window Cleaning Scene.webp',
+  'weekly-cleaning': '/November updates/Weekly office clean.webp',
 }
 
 export async function getServiceDetailImageMap(): Promise<Record<string, string>> {

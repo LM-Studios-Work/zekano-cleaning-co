@@ -57,6 +57,40 @@ const inspectionItems = [
       "General outdoor enhancements and maintenance",
     ],
   },
+  {
+    title: "Decking & Outdoor Living Spaces",
+    description: "Transform your outdoor area with professional decking installation and stylish outdoor living solutions.",
+    image: "/November updates/Backyard Makeover_ Before and After.webp",
+    items: [
+      "Wooden and composite decking installation",
+      "Pergola and patio installations",
+      "Outdoor entertainment area improvements",
+      "Deck repairs and maintenance",
+      "Finishing and weather protection",
+    ],
+  },
+  {
+    title: "Landscape Design & Installation",
+    image: "/November updates/zenako_landscape_garden_card_2_bright.webp",
+    items: [
+      "Garden design and layout planning",
+      "Plant selection and installation",
+      "Flower beds and decorative borders",
+      "Pathways, edging and garden features",
+      "Beautiful, functional outdoor spaces",
+    ],
+  },
+  {
+    title: "Garden Landscaping & Upgrades",
+    image: "/November updates/zenako_landscape_garden_card_1.webp",
+    items: [
+      "Garden renovations and improvements",
+      "Lawn installation and garden preparation",
+      "Decorative stone and rock garden features",
+      "Shrub planting and garden bed design",
+      "Outdoor space enhancements and finishing",
+    ],
+  },
 ]
 
 const whyUsPoints = [
@@ -238,7 +272,10 @@ Get a Quote via WhatsApp
                     />
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="font-bold text-foreground text-lg mb-4">{section.title}</h3>
+                    <h3 className={`font-bold text-foreground text-lg ${section.description ? "mb-2" : "mb-4"}`}>{section.title}</h3>
+                    {section.description && (
+                      <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{section.description}</p>
+                    )}
                     <ul className="space-y-3">
                       {section.items.map((item, itemIdx) => (
                         <li key={itemIdx} className="flex gap-3">
@@ -265,30 +302,32 @@ Get a Quote via WhatsApp
         </section>
 
                 {/* CTA */}
+        {/* Call to Action */}
         <section className="py-12 lg:py-16" style={{ backgroundColor: "#1A9AD2" }}>
           <div className="mx-auto max-w-7xl px-4 lg:px-8 text-center">
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Ready to Improve Your Property?
+              Need Help Improving Your Property?
             </h2>
-            <p className="text-white mb-8 max-w-2xl mx-auto">
-              Tell us what you need and we&apos;ll help you find the right service for your home or business.
+            <p className="text-white mb-8 max-w-3xl mx-auto leading-relaxed">
+              From flooring and tiling to painting, waterproofing, decking and general property maintenance, Zenako Cleaning &amp; Property Services offers reliable solutions for residential and commercial properties through our trusted contractor network.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/book"
-                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: "#ffffff", color: "#1A9AD2" }}
-              >
-                GET A FREE QUOTE TODAY
-              </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20your%20property%20services."
+                href="https://wa.me/27657018482?text=Hi%20Zenako%2C%20I%27d%20like%20a%20quote%20for%20improving%20my%20property."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold border-2 border-white text-white hover:bg-white hover:text-[#1A9AD2] transition-colors duration-200"
+                className="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-white rounded hover:opacity-90 transition-opacity duration-200"
+                style={{ backgroundColor: "#6fbf00" }}
               >
                 <i className="fa-brands fa-whatsapp mr-2 text-lg"></i>
-                CHAT ON WHATSAPP
+                Get a Quote on WhatsApp
+              </a>
+              <a
+                href="tel:+27657018482"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3 text-sm font-semibold rounded border-2 border-white text-white hover:bg-white hover:text-[#1A9AD2] transition-colors duration-200"
+              >
+                <PhoneIcon className="h-4 w-4" />
+                Call Us Today
               </a>
             </div>
           </div>
