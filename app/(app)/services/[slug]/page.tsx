@@ -419,7 +419,7 @@ export default async function ServicePage({
                     </CardContent>
                   </Card>
                 </Link>
-              )})
+              })}
             </div>
 
             <div className="mt-12 text-center">
