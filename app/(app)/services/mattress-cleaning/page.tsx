@@ -206,7 +206,7 @@ export default async function MattressCleaningPage() {
         </section>
 
         {/* Before and After Gallery Section */}
-        <section className="py-16 bg-gray-50/40">
+        <section className="py-16 bg-white">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
             <div className="text-center mb-12">
               <span className="text-sm font-bold uppercase tracking-[0.2em]" style={{ color: "#6fbf00" }}>
@@ -217,11 +217,11 @@ export default async function MattressCleaningPage() {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg border border-border bg-gray-100">
-                <Image src="/November updates/zenako_mattress_before_after_indoor.jpg" alt="Mattress before and after cleaning" fill className="object-contain" />
+              <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-lg">
+                <Image src="/November updates/zenako_mattress_before_after_indoor.jpg" alt="Mattress before and after cleaning" fill className="object-cover" />
               </div>
-              <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-lg border border-border bg-gray-100">
-                <Image src="/November updates/zenako_mattress_before_after_outdoor.jpg" alt="Very dirty mattress before and after cleaning" fill className="object-contain" />
+              <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-lg">
+                <Image src="/November updates/zenako_mattress_before_after_outdoor.jpg" alt="Very dirty mattress before and after cleaning" fill className="object-cover" />
               </div>
             </div>
           </div>
