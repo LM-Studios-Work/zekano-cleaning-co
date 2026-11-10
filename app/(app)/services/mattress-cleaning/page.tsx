@@ -218,10 +218,10 @@ export default async function MattressCleaningPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-lg">
-                <Image src="/November updates/zenako_mattress_before_after_indoor.jpg" alt="Mattress before and after cleaning" fill className="object-cover" />
+                <Image src="/November updates/zenako_mattress_before_after_indoor.jpg" alt="Mattress before and after cleaning" fill className="object-cover object-top" />
               </div>
               <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-lg">
-                <Image src="/November updates/zenako_mattress_before_after_outdoor.jpg" alt="Very dirty mattress before and after cleaning" fill className="object-cover" />
+                <Image src="/November updates/zenako_mattress_before_after_outdoor.jpg" alt="Very dirty mattress before and after cleaning" fill className="object-cover object-top" />
               </div>
             </div>
           </div>
