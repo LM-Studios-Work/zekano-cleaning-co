@@ -392,21 +392,19 @@ export default async function ServicePage({
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {relatedServices.map((related: any) => {
-                const cardImage = (slug === 'small-business-cleaning' ? related.image : null) ?? detailImageMap[related.slug] ?? related.image
-                return (
-                  <Link key={related.slug} href={`/services/${related.slug}`} className="group">
-                    <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
-                      {cardImage && (
-                        <div className="aspect-[3/2] relative overflow-hidden">
-                          <Image
-                            src={cardImage as string}
-                            alt={related.title as string}
-                            fill
-                            className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          />
-                        </div>
-                      )}
+              {relatedServices.map((related: any) => (
+                <Link key={related.slug} href={`/services/${related.slug}`} className="group">
+                  <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
+                    {(related.image ?? detailImageMap[related.slug]) && (
+                      <div className="aspect-[3/2] relative overflow-hidden">
+                        <Image
+                          src={(related.image ?? detailImageMap[related.slug]) as string}
+                          alt={related.title as string}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    )}
                     <CardContent className="p-6">
                       <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{related.category}</span>
                       <h3 className="mt-1 font-bold text-foreground text-lg group-hover:text-[#1A9AD2] transition-colors">
@@ -419,7 +417,7 @@ export default async function ServicePage({
                     </CardContent>
                   </Card>
                 </Link>
-              })}
+              ))}
             </div>
 
             <div className="mt-12 text-center">
