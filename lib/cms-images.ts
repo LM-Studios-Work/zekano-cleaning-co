@@ -11,7 +11,7 @@ export const SERVICE_HERO_IMAGES: Record<string, string> = {
   'carpet-cleaning': '/carpet/Professional Carpet Cleaning Close-Up.webp',
   'upholstery-furniture-cleaning': '/couch/couch hero.png',
   'roof-cleaning': '/commercial and specialist services/Roof clean.webp',
-  'drain-cleaning': '/deep cleaning/cleaning-kitchen-sink-drain.webp',
+  'drain-cleaning': '/cleaning-kitchen-sink-drain.webp',
   'garden-clean-ups': '/November updates/Zenako Garden Cleanup.webp',
   'pest-control': '/home_page services_block images/pest control.webp',
   'disinfection-services': '/cleaning images/zenako-disinfection-fogging-johannesburg.webp',
@@ -35,11 +35,12 @@ export async function getServiceDetailImageMap(): Promise<Record<string, string>
         map[doc.page] = doc.url
       }
     }
-    // Always guarantee canonical hero images for upholstery, mattress, carpet, curtain
+    // Always guarantee canonical hero images for upholstery, mattress, carpet, curtain, drain
     map['upholstery-furniture-cleaning'] = '/couch/couch hero.png'
     map['mattress-cleaning'] = '/matress/mattress-cleaning-services.webp'
     map['carpet-cleaning'] = '/carpet/Professional Carpet Cleaning Close-Up.webp'
     map['curtain-cleaning'] = '/carpet/Professional Curtain Steam Cleaning.webp'
+    map['drain-cleaning'] = '/cleaning-kitchen-sink-drain.webp'
     return map
   } catch {
     return { ...SERVICE_HERO_IMAGES }

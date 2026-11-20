@@ -28,9 +28,11 @@ const inspectionItems = [
     title: "Tiling",
     image: "/new services/Tiling.webp",
     items: [
-      "Bathroom and kitchen tiling",
-      "Floor and wall tile application",
-      "Grouting and sealing",
+      "Bathroom, kitchen and living area tiling",
+      "Precision floor and wall tile application",
+      "Surface preparation, priming and levelling",
+      "Professional grouting and waterproof sealing",
+      "Damaged tile replacement and regrouting",
     ],
   },
   {
@@ -86,6 +88,17 @@ const inspectionItems = [
       "Plumbing and electrical coordination",
       "General wear and tear maintenance",
       "Seasonal property care and preparation",
+    ],
+  },
+  {
+    title: "Decking & Outdoor Living",
+    image: "/November updates/Backyard Makeover_ Before and After.webp",
+    items: [
+      "Wooden and composite decking installation",
+      "Pergola, patio and entertainment area upgrades",
+      "Deck sanding, staining and weather sealing",
+      "Structural board repairs and maintenance",
+      "Custom outdoor living space enhancements",
     ],
   },
 ]
@@ -256,9 +269,9 @@ Get a Quote via WhatsApp
                 Our Property Improvement Services
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {inspectionItems.map((section, idx) => (
-                <Card key={idx} className="border-border overflow-hidden">
+                <Card key={idx} className="border-border overflow-hidden py-0 gap-0">
                   <div className="aspect-[3/2] relative">
                     <Image
                       src={section.image}
@@ -267,11 +280,11 @@ Get a Quote via WhatsApp
                       className="object-cover"
                     />
                   </div>
-                  <CardContent className="p-6">
+                  <CardContent className="p-5">
                     <h3 className="font-bold text-foreground text-lg mb-4">{section.title}</h3>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2.5">
                       {section.items.map((item, itemIdx) => (
-                        <li key={itemIdx} className="flex gap-3">
+                        <li key={itemIdx} className="flex gap-2.5">
                           <CheckIcon className="h-4 w-4 shrink-0 mt-0.5" style={{ color: "#6fbf00" }} />
                           <span className="text-sm text-muted-foreground leading-relaxed">{item}</span>
                         </li>

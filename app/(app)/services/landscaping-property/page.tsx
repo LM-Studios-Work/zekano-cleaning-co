@@ -59,7 +59,6 @@ const inspectionItems = [
   },
   {
     title: "Decking & Outdoor Living Spaces",
-    description: "Transform your outdoor area with professional decking installation and stylish outdoor living solutions.",
     image: "/November updates/Backyard Makeover_ Before and After.webp",
     items: [
       "Wooden and composite decking installation",
@@ -89,6 +88,17 @@ const inspectionItems = [
       "Decorative stone and rock garden features",
       "Shrub planting and garden bed design",
       "Outdoor space enhancements and finishing",
+    ],
+  },
+  {
+    title: "Tree Felling & Site Clearance",
+    image: "/new services/Tree felling and tree trimming (1).webp",
+    items: [
+      "Safe directional tree felling and section removal",
+      "Tree trimming, pruning and canopy shaping",
+      "Stump grinding and complete root removal",
+      "Site clearance and green waste disposal",
+      "Rubble removal for landscaping preparation",
     ],
   },
 ]
@@ -260,9 +270,9 @@ Get a Quote via WhatsApp
                 Our Property & Landscaping Expertise
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {inspectionItems.map((section, idx) => (
-                <Card key={idx} className="border-border overflow-hidden">
+                <Card key={idx} className="border-border overflow-hidden py-0 gap-0">
                   <div className="aspect-[3/2] relative">
                     <Image
                       src={section.image}
@@ -271,14 +281,11 @@ Get a Quote via WhatsApp
                       className="object-cover"
                     />
                   </div>
-                  <CardContent className="p-6">
-                    <h3 className={`font-bold text-foreground text-lg ${section.description ? "mb-2" : "mb-4"}`}>{section.title}</h3>
-                    {section.description && (
-                      <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{section.description}</p>
-                    )}
-                    <ul className="space-y-3">
+                  <CardContent className="p-5">
+                    <h3 className="font-bold text-foreground text-lg mb-4">{section.title}</h3>
+                    <ul className="space-y-2.5">
                       {section.items.map((item, itemIdx) => (
-                        <li key={itemIdx} className="flex gap-3">
+                        <li key={itemIdx} className="flex gap-2.5">
                           <CheckIcon className="h-4 w-4 shrink-0 mt-0.5" style={{ color: "#6fbf00" }} />
                           <span className="text-sm text-muted-foreground leading-relaxed">{item}</span>
                         </li>

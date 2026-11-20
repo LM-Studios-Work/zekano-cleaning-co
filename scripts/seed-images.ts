@@ -151,7 +151,7 @@ async function seed() {
     const categories = [
       { path: 'our services click/residential.jpg', alt: 'Residential cleaning services', category: 'residential' },
       { path: 'our services click/commercial.jpg', alt: 'Commercial cleaning services', category: 'commercial' },
-      { path: 'our services click/upholstery.webp', alt: 'Upholstery and fabric cleaning', category: 'upholstery' },
+      { path: 'November updates/Zenako Carpet Cleaner in Modern Living Room EDITED 18 NOV.webp', alt: 'Upholstery and fabric cleaning', category: 'upholstery' },
       { path: 'our services click/specialised.webp', alt: 'Specialised cleaning services', category: 'specialised' },
     ]
 

@@ -136,26 +136,27 @@ export default async function UpholsteryFabricHub() {
                 Our <span style={{ color: "#1A9AD2" }}>{categoryName}</span> Range
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {categoryServices.map((service) => (
                 <Link key={service.slug} href={`/services/${service.slug}`} className="group">
-                  <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">
+                  <Card className="border-border h-full flex flex-col transition-shadow duration-200 group-hover:shadow-lg">
                     <div className="aspect-[3/2] relative overflow-hidden">
                       <Image
                         src={detailImageMap[service.slug] ?? service.image}
                         alt={service.title}
                         fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
-                    <CardContent className="p-6">
+                    <CardContent className="p-5 flex flex-col flex-1">
                       <h3 className="font-bold text-foreground text-lg group-hover:text-[#1A9AD2] transition-colors">
                         {service.title}
                       </h3>
                       <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-2">
                         {service.description}
                       </p>
-                      <span className="mt-3 inline-flex items-center text-sm font-medium" style={{ color: "#6fbf00" }}>
+                      <span className="mt-auto pt-4 inline-flex items-center text-sm font-medium" style={{ color: "#6fbf00" }}>
                         View Details <ArrowRightIcon className="ml-1 h-4 w-4" />
                       </span>
                     </CardContent>

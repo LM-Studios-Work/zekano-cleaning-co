@@ -147,7 +147,11 @@ export default async function ServicePage({
 
   const detailImages = detailImageDocs as any[]
 
-  let relatedServices = relatedDocs as any[]
+  let relatedServices = (relatedDocs as any[]).map((doc) =>
+    doc.slug === 'drain-cleaning'
+      ? { ...doc, image: '/cleaning-kitchen-sink-drain.webp' }
+      : doc
+  )
 
   if (slug === 'small-business-cleaning') {
     relatedServices = [
@@ -171,6 +175,30 @@ export default async function ServicePage({
         category: 'Commercial Cleaning',
         description: 'Scheduled weekly cleaning to keep your office or small business consistently pristine and welcoming.',
         image: '/November updates/Weekly office clean.webp',
+      },
+    ]
+  } else if (slug === 'weekly-cleaning') {
+    relatedServices = [
+      {
+        slug: 'small-business-cleaning',
+        title: 'Small Business Cleaning',
+        category: 'Commercial Cleaning',
+        description: 'Affordable cleaning solutions for small businesses, retail shops, and commercial spaces.',
+        image: detailImageMap['small-business-cleaning'] ?? '/cleaning images/zenako-airbnb-cleaning-johannesburg.webp',
+      },
+      {
+        slug: 'office-cleaning',
+        title: 'Office Cleaning',
+        category: 'Commercial Cleaning',
+        description: 'Professional cleaning for offices of all sizes. A clean workspace keeps your team healthy and clients impressed.',
+        image: detailImageMap['office-cleaning'] ?? '/office/office hero.webp',
+      },
+      {
+        slug: 'deep-cleaning',
+        title: 'Deep Cleaning',
+        category: 'Commercial Cleaning',
+        description: 'Comprehensive top-to-bottom deep clean covering workstations, appliance interiors, and hard-to-reach areas.',
+        image: '/November updates/Office deep clean.webp',
       },
     ]
   } else if (relatedServices.length < 3) {
@@ -332,9 +360,15 @@ export default async function ServicePage({
                 How We Deliver This <span style={{ color: "#6fbf00" }}>Service</span>
               </h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div
+              className={
+                (service.process ?? []).length === 4
+                  ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+                  : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
+              }
+            >
               {(service.process ?? []).map((step: any, idx: number) => (
-                <Card key={step.id} className="border-border">
+                <Card key={step.id} className="border-border h-full">
                   <CardContent className="p-6">
                     <div
                       className="flex h-10 w-10 items-center justify-center rounded-full text-white text-sm font-bold mb-4"

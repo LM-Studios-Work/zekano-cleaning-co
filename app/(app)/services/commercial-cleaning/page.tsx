@@ -105,7 +105,7 @@ export default async function CommercialCleaningHub() {
                 Discover how we can customize a cleaning program to suit your exact business needs and operating hours.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {categoryServices.map((service) => (
                 <Link key={service.slug} href={`/services/${service.slug}`} className="group">
                   <Card className="border-border h-full transition-shadow duration-200 group-hover:shadow-lg">

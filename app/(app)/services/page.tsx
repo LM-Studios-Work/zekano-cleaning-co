@@ -62,7 +62,7 @@ const CLEANING_CATEGORIES = [
     cmsKey: "upholstery",
     name: "Upholstery & Fabric Cleaning",
     description: "Refresh your soft furnishings and fabrics with our professional cleaning service. We remove stains, allergens, and odours to extend the life of your furniture.",
-    image: "/November updates/Zenako Upholstery & Carpet Care.webp",
+    image: "/November updates/Zenako Carpet Cleaner in Modern Living Room EDITED 18 NOV.webp",
   },
   {
     slug: "specialised-cleaning",
@@ -94,7 +94,7 @@ async function getCategoryImages(): Promise<Record<string, string>> {
     for (const doc of docs as any[]) {
       if (doc.category && doc.url && doc.category !== "upholstery") map[doc.category] = doc.url
     }
-    map["upholstery"] = "/November updates/Zenako Upholstery & Carpet Care.webp"
+    map["upholstery"] = "/November updates/Zenako Carpet Cleaner in Modern Living Room EDITED 18 NOV.webp"
     return map
   } catch {
     return {}
@@ -133,7 +133,13 @@ export default async function ServicesPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
                       <div className={catIdx % 2 === 1 ? "lg:order-2" : ""}>
                         <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
-                          <Image src={category.image} alt={category.name} fill className="object-cover" priority={catIdx <= 1} />
+                          <Image
+                            src={category.image}
+                            alt={category.name}
+                            fill
+                            className={category.cmsKey === "upholstery" ? "object-cover object-top" : "object-cover"}
+                            priority={catIdx <= 1}
+                          />
                         </div>
                       </div>
                       <div className={catIdx % 2 === 1 ? "lg:order-1" : ""}>
