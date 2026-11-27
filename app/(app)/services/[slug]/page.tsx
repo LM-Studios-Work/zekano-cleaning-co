@@ -147,11 +147,13 @@ export default async function ServicePage({
 
   const detailImages = detailImageDocs as any[]
 
-  let relatedServices = (relatedDocs as any[]).map((doc) =>
-    doc.slug === 'drain-cleaning'
-      ? { ...doc, image: '/cleaning-kitchen-sink-drain.webp' }
-      : doc
-  )
+  let relatedServices = (relatedDocs as any[]).map((doc) => ({
+    ...doc,
+    image:
+      detailImageMap[doc.slug] ??
+      getServiceBySlug(doc.slug)?.image ??
+      doc.image,
+  }))
 
   if (slug === 'small-business-cleaning') {
     relatedServices = [
@@ -364,11 +366,18 @@ export default async function ServicePage({
               className={
                 (service.process ?? []).length === 4
                   ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
-                  : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto"
+                  : "flex flex-wrap justify-center gap-6 max-w-5xl mx-auto"
               }
             >
               {(service.process ?? []).map((step: any, idx: number) => (
-                <Card key={step.id} className="border-border h-full">
+                <Card
+                  key={step.id}
+                  className={
+                    (service.process ?? []).length === 4
+                      ? "border-border h-full"
+                      : "border-border w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+                  }
+                >
                   <CardContent className="p-6">
                     <div
                       className="flex h-10 w-10 items-center justify-center rounded-full text-white text-sm font-bold mb-4"
